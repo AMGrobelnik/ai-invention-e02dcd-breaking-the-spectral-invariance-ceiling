@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "title": "Comprehensive Graph Expressiveness Benchmark Dataset",
+    "description": "525 non-isomorphic graph pairs across 4 families for evaluating graph distinguishing methods (Koopman Walk PE hypothesis). Families: cospectral (64), CSL (59), strongly regular (2), BREC (400). Each pair includes adjacency matrices, edge lists, eigenvalues, cospectrality labels, and WL-level annotations.",
+    "total_pairs": 525,
+    "sources": {
+      "programmatic": "Generated via NetworkX (cospectral atlas enumeration, CSL circulant graphs, Shrikhande/Chang SRG pairs)",
+      "brec": "Official BREC benchmark (GraphPKU/BREC, arXiv:2304.07702)"
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "graph_expressiveness_benchmark",
+      "examples": [
+        {
+          "input": "{\"graph_A\": {\"num_nodes\": 5, \"num_edges\": 4, \"adjacency_matrix\": [[0, 1, 1, 1, 1], [1, 0, 0, 0, 0], [1, 0, 0, 0, 0], [1, 0, 0, 0, 0], [1, 0, 0, 0, 0]], \"edge_list\": [[0, 1], [0, 2], [0, 3], [0, 4]], \"degree_sequence\": [1, 1, 1, 1, 4], \"eigenvalues\": [-2.0, 0.0, 0.0, 0.0, 2.0]}, \"graph_B\": {\"num_nodes\": 5, \"num_edges\": 4, \"adjacency_matrix\": [[0, 1, 0, 1, 0], [1, 0, 1, 0, 0], [0, 1, 0, 1, 0], [1, 0, 1, 0, 0], [0, 0, 0, 0, 0]], \"edge_list\": [[0, 1], [0, 3], [1, 2], [2, 3]], \"degree_sequence\": [0, 2, 2, 2, 2], \"eigenvalues\": [-2.0, -0.0, 0.0, 0.0, 2.0]}}",
+          "output": "{\"is_isomorphic\": false, \"are_cospectral\": true}",
+          "metadata_fold": 0,
+          "metadata_pair_id": "cospectral_5v_canonical",
+          "metadata_category": "cospectral",
+          "metadata_subcategory": "5_vertex_canonical",
+          "metadata_wl_level": "1-WL",
+          "metadata_difficulty": "easy",
+          "metadata_num_nodes_A": 5,
+          "metadata_num_nodes_B": 5,
+          "metadata_row_index": 0,
+          "metadata_task_type": "graph_pair_classification"
+        },
+        {
+          "input": "{\"graph_A\": {\"num_nodes\": 6, \"num_edges\": 4, \"adjacency_matrix\": [[0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1], [0, 0, 0, 1, 1, 0]], \"edge_list\": [[0, 3], [0, 4], [3, 5], [4, 5]], \"degree_sequence\": [0, 0, 2, 2, 2, 2], \"eigenvalues\": [-2.0, -0.0, 0.0, 0.0, 0.0, 2.0]}, \"graph_B\": {\"num_nodes\": 6, \"num_edges\": 4, \"adjacency_matrix\": [[0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 0, 0]], \"edge_list\": [[0, 5], [1, 5], [2, 5], [3, 5]], \"degree_sequence\": [0, 1, 1, 1, 1, 4], \"eigenvalues\": [-2.0, 0.0, 0.0, 0.0, 0.0, 2.0]}}",
+          "output": "{\"is_isomorphic\": false, \"are_cospectral\": true}",
+          "metadata_fold": 1,
+          "metadata_pair_id": "cospectral_6v_0",
+          "metadata_category": "cospectral",
+          "metadata_subcategory": "6_vertex_atlas",
+          "metadata_wl_level": "1-WL",
+          "metadata_difficulty": "easy",
+          "metadata_num_nodes_A": 6,
+          "metadata_num_nodes_B": 6,
+          "metadata_row_index": 1,
+          "metadata_task_type": "graph_pair_classification"
+        },
+        {
+          "input": "{\"graph_A\": {\"num_nodes\": 6, \"num_edges\": 4, \"adjacency_matrix\": [[0, 0, 1, 0, 0, 0], [0, 0, 1, 1, 0, 0], [1, 1, 0, 0, 0, 0], [0, 1, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0]], \"edge_list\": [[0, 2], [1, 2], [1, 3], [3, 5]], \"degree_sequence\": [0, 1, 1, 2, 2, 2], \"eigenvalues\": [-1.73205081, -1.0, -0.0, 0.0, 1.0, 1.73205081]}, \"graph_B\": {\"num_nodes\": 6, \"num_edges\": 4, \"adjacency_matrix\": [[0, 0, 0, 1, 1, 1], [0, 0, 1, 0, 0, 0], [0, 1, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0]], \"edge_list\": [[0, 3], [0, 4], [0, 5], [1, 2]], \"degree_sequence\": [1, 1, 1, 1, 1, 3], \"eigenvalues\": [-1.73205081, -1.0, 0.0, 0.0, 1.0, 1.73205081]}}",
+          "output": "{\"is_isomorphic\": false, \"are_cospectral\": true}",
+          "metadata_fold": 2,
+          "metadata_pair_id": "cospectral_6v_1",
+          "metadata_category": "cospectral",
+          "metadata_subcategory": "6_vertex_atlas",
+          "metadata_wl_level": "1-WL",
+          "metadata_difficulty": "easy",
+          "metadata_num_nodes_A": 6,
+          "metadata_num_nodes_B": 6,
+          "metadata_row_index": 2,
+          "metadata_task_type": "graph_pair_classification"
+        }
+      ]
+    }
+  ]
+}

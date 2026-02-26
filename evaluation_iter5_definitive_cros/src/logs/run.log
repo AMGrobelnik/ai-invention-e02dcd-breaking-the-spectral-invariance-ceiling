@@ -1,0 +1,56 @@
+2026-02-25 18:50:38.267 | INFO     | __main__:main:1143 - ======================================================================
+2026-02-25 18:50:38.268 | INFO     | __main__:main:1144 - Cross-Iteration Synthesis Evaluation starting
+2026-02-25 18:50:38.269 | INFO     | __main__:main:1145 - Workspace: /workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/eval_id3_it5__opus
+2026-02-25 18:50:38.270 | INFO     | __main__:main:1146 - RAM budget: 20.0 GB
+2026-02-25 18:50:38.271 | INFO     | __main__:main:1147 - ======================================================================
+2026-02-25 18:50:38.276 | DEBUG    | __main__:load_json:78 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/mini_method_out.json
+2026-02-25 18:50:38.281 | INFO     | __main__:main:1158 - Loaded exp_id1_it4 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/mini_method_out.json)
+2026-02-25 18:50:38.283 | DEBUG    | __main__:load_json:78 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id2_it4__opus/mini_method_out.json
+2026-02-25 18:50:38.289 | INFO     | __main__:main:1158 - Loaded exp_id2_it4 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id2_it4__opus/mini_method_out.json)
+2026-02-25 18:50:38.293 | DEBUG    | __main__:load_json:78 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id1_it2__opus/mini_method_out.json
+2026-02-25 18:50:38.356 | INFO     | __main__:main:1158 - Loaded exp_id1_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id1_it2__opus/mini_method_out.json)
+2026-02-25 18:50:38.359 | DEBUG    | __main__:load_json:78 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id2_it2__opus/mini_method_out.json
+2026-02-25 18:50:38.365 | INFO     | __main__:main:1158 - Loaded exp_id2_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id2_it2__opus/mini_method_out.json)
+2026-02-25 18:50:38.367 | DEBUG    | __main__:load_json:78 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/mini_method_out.json
+2026-02-25 18:50:38.374 | INFO     | __main__:main:1158 - Loaded exp_id3_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/mini_method_out.json)
+2026-02-25 18:50:38.376 | DEBUG    | __main__:load_json:78 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/mini_method_out.json
+2026-02-25 18:50:38.529 | INFO     | __main__:main:1158 - Loaded exp_id2_it3 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/mini_method_out.json)
+2026-02-25 18:50:38.533 | DEBUG    | __main__:load_json:78 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id1_it3__opus/mini_method_out.json
+2026-02-25 18:50:38.538 | INFO     | __main__:main:1158 - Loaded exp_id1_it3 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id1_it3__opus/mini_method_out.json)
+2026-02-25 18:50:38.539 | INFO     | __main__:main:1168 - Loaded 7 dependency experiments
+2026-02-25 18:50:38.541 | DEBUG    | __main__:load_json:78 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/full_method_out.json
+2026-02-25 18:50:38.682 | INFO     | __main__:main:1177 - Loaded full exp_id1_it4 data for per-category analysis (525 examples)
+2026-02-25 18:50:38.684 | INFO     | __main__:main:1183 - Running Analysis 1: Unified Expressiveness Table
+2026-02-25 18:50:38.685 | INFO     | __main__:analysis1_expressiveness_table:99 - Analysis 1: Building unified expressiveness table
+2026-02-25 18:50:38.698 | INFO     | __main__:analysis1_expressiveness_table:247 - Analysis 1 complete: 30 method entries, max disc=525
+2026-02-25 18:50:38.706 | INFO     | __main__:main:1186 - Running Analysis 2: Downstream ZINC Consolidation
+2026-02-25 18:50:38.707 | INFO     | __main__:analysis2_downstream_consolidation:271 - Analysis 2: Downstream ZINC consolidation
+2026-02-25 18:50:38.721 | INFO     | __main__:analysis2_downstream_consolidation:455 - Analysis 2 complete: 15 ZINC results, 6 collapsed, Cohen's d=3.716036278056861
+2026-02-25 18:50:38.722 | INFO     | __main__:main:1189 - Running Analysis 3: Theoretical Contribution Assessment
+2026-02-25 18:50:38.723 | INFO     | __main__:analysis3_theoretical_contribution:481 - Analysis 3: Theoretical contribution assessment
+2026-02-25 18:50:38.724 | INFO     | __main__:analysis3_theoretical_contribution:568 - Analysis 3 complete: theoretical assessment built
+2026-02-25 18:50:38.725 | INFO     | __main__:main:1192 - Running Analysis 4: Hypothesis Scorecard v2
+2026-02-25 18:50:38.726 | INFO     | __main__:analysis4_hypothesis_scorecard:595 - Analysis 4: Hypothesis scorecard v2
+2026-02-25 18:50:38.727 | INFO     | __main__:analysis4_hypothesis_scorecard:729 - Analysis 4 complete: overall score=0.485 [0.360, 0.625]
+2026-02-25 18:50:38.728 | INFO     | __main__:main:1195 - Running Analysis 5: Iteration 6 Guidance
+2026-02-25 18:50:38.729 | INFO     | __main__:analysis5_iteration6_guidance:762 - Analysis 5: Iteration 6 guidance
+2026-02-25 18:50:38.730 | INFO     | __main__:analysis5_iteration6_guidance:841 - Analysis 5 complete: guidance generated
+2026-02-25 18:50:38.730 | INFO     | __main__:build_output:868 - Building output in schema format
+2026-02-25 18:50:38.741 | INFO     | __main__:main:1216 - Saved output to /workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/eval_id3_it5__opus/eval_out.json (46.5 KB)
+2026-02-25 18:50:38.742 | INFO     | __main__:main:1219 - ======================================================================
+2026-02-25 18:50:38.743 | INFO     | __main__:main:1220 - KEY RESULTS:
+2026-02-25 18:50:38.744 | INFO     | __main__:main:1221 -   Hypothesis overall score: 0.4850
+2026-02-25 18:50:38.745 | INFO     | __main__:main:1222 -   Max equivariant discrimination: 346/525
+2026-02-25 18:50:38.746 | INFO     | __main__:main:1223 -   Max non-equivariant discrimination: 525/525
+2026-02-25 18:50:38.747 | INFO     | __main__:main:1224 -   Best nRWPE ZINC MAE: 0.1825
+2026-02-25 18:50:38.748 | INFO     | __main__:main:1225 -   Best RWPE ZINC MAE: 0.1707
+2026-02-25 18:50:38.749 | INFO     | __main__:main:1226 -   Cohen's d (nRWPE vs RWPE): 3.716
+2026-02-25 18:50:38.750 | INFO     | __main__:main:1227 -   Spearman rho (disc vs MAE): 0.3591
+2026-02-25 18:50:38.751 | INFO     | __main__:main:1228 -   Datasets in output: 5
+2026-02-25 18:50:38.752 | INFO     | __main__:main:1230 -     expressiveness_unified_table: 30 examples
+2026-02-25 18:50:38.752 | INFO     | __main__:main:1230 -     zinc_downstream_consolidation: 15 examples
+2026-02-25 18:50:38.753 | INFO     | __main__:main:1230 -     hypothesis_scorecard_v2: 5 examples
+2026-02-25 18:50:38.754 | INFO     | __main__:main:1230 -     theoretical_contribution_assessment: 5 examples
+2026-02-25 18:50:38.755 | INFO     | __main__:main:1230 -     iteration_6_guidance: 7 examples
+2026-02-25 18:50:38.757 | INFO     | __main__:main:1231 -   Top recommendation: Formal separation theorem
+2026-02-25 18:50:38.759 | INFO     | __main__:main:1232 - ======================================================================

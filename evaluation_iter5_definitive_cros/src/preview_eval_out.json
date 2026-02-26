@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "evaluation_name": "Cross-Iteration Synthesis v2",
+    "description": "Definitive cross-iteration synthesis analyzing 7 experiments across 4 iterations. Produces unified expressiveness table, downstream consolidation, theoretical contribution assessment, hypothesis score...",
+    "experiments_analyzed": [
+      "exp_id1_it2 (KW-PE expressiveness, iter2)",
+      "exp_id2_it2 (ZINC KW-PE downstream, iter2)",
+      "exp_id3_it2 (KW-PE foundational properties, iter2)"
+    ],
+    "analysis_components": [
+      "Analysis 1: Unified Expressiveness Table",
+      "Analysis 2: Downstream ZINC Consolidation",
+      "Analysis 3: Theoretical Contribution Assessment"
+    ],
+    "discrepancy_resolution": {
+      "nRWPE_it2_full_EDMD_threshold_1e5": 429,
+      "nRWPE_it3_equivariant_diag_threshold_1e6": 345,
+      "difference": 84,
+      "explanation": "The discrepancy (429 vs 345) is explained by two factors: (1) threshold difference (1e-5 vs 1e-6), and (2) implementation difference (full EDMD row-sorted fingerprint vs equivariant sorted diagonal). ..."
+    },
+    "cohens_d_detail": {
+      "rwpe_mean": 0.17073333333333332,
+      "rwpe_std": 0.0025106440076867425,
+      "rwpe_n": 3,
+      "rwpe_filtered_maes": [
+        0.1731,
+        0.171,
+        0.1681
+      ],
+      "nrwpe_diag_mean": 0.18253333333333333,
+      "nrwpe_diag_std": 0.003723349746308204,
+      "nrwpe_diag_n": 3,
+      "nrwpe_diag_filtered_maes": [
+        0.1853,
+        0.1783,
+        0.184
+      ],
+      "pooled_std": 0.0031754264805429456,
+      "cohens_d": 3.716036278056861,
+      "interpretation": "Large positive Cohen's d means nRWPE-diag has higher (worse) MAE than RWPE. d=3.72: nRWPE-diag is significantly worse than RWPE on ZINC downstream."
+    },
+    "spearman_correlation": {
+      "rho": 0.35909242322980395,
+      "p_value": 0.5528147466433505,
+      "n_points": 5,
+      "data_points": [
+        {
+          "method": "RWPE_diag",
+          "discrimination": 345,
+          "mae": 0.17073333333333332
+        },
+        {
+          "method": "nRWPE_diag_tanh",
+          "discrimination": 345,
+          "mae": 0.18253333333333333
+        },
+        {
+          "method": "KW-PE_tanh_EDMD",
+          "discrimination": 525,
+          "mae": 0.3354
+        }
+      ],
+      "interpretation": "Spearman rho=0.359 (p=0.553): Positive correlation means higher expressiveness is associated with WORSE downstream MAE. This contradicts the hypothesis that expressiveness predicts downstream utility."
+    },
+    "scorecard_verdict": "Overall hypothesis score: 0.48/1.00 [0.36, 0.62]. The hypothesis shows a mixed-result profile: strong on theoretical spectral invariance breaking and cospectral separation, but fails on the most impor...",
+    "top_recommendation": "Formal separation theorem",
+    "overall_strategy": "Focus iteration 6 on the formal separation theorem (rank 1). This is the strongest deliverable because: (a) the mathematical claim is provably true, (b) it requires no new experiments, (c) it's a genu..."
+  },
+  "metrics_agg": {
+    "hypothesis_overall_score": 0.485,
+    "hypothesis_ci_lower": 0.36,
+    "hypothesis_ci_upper": 0.625,
+    "claim1_spectral_invariance": 0.7,
+    "claim2_sign_canonical": 0.5,
+    "claim3_cospectral_separation": 0.85,
+    "claim4_avoids_eigendecomp": 0.4,
+    "claim5_downstream_performance": 0.1,
+    "max_equivariant_discrimination": 346,
+    "max_nonequivariant_discrimination": 525,
+    "total_pairs": 525,
+    "best_nrwpe_zinc_mae": 0.1825,
+    "best_rwpe_zinc_mae": 0.1707,
+    "cohens_d_nrwpe_vs_rwpe": 3.716,
+    "spearman_disc_vs_mae": 0.3591,
+    "num_experiments_analyzed": 7,
+    "num_iterations_covered": 4,
+    "num_dead_ends_identified": 3,
+    "num_productive_paths": 4
+  },
+  "datasets": [
+    {
+      "dataset": "expressiveness_unified_table",
+      "examples": [
+        {
+          "input": "{\"method\": \"KW-PE_tanh\", \"source\": \"exp_id1_it2\", \"iteration\": 2, \"threshold\": 1e-05, \"equivariant\": false, \"implementation\": \"full_EDMD_row_sorted\"}",
+          "output": "{\"total_distinguished\": 525, \"total_pairs\": 525, \"rate\": 1.0, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:2/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_CFI...",
+          "eval_discrimination_count": 525,
+          "eval_discrimination_rate": 1.0,
+          "predict_method": "KW-PE_tanh"
+        },
+        {
+          "input": "{\"method\": \"KW-PE_softplus\", \"source\": \"exp_id1_it2\", \"iteration\": 2, \"threshold\": 1e-05, \"equivariant\": false, \"implementation\": \"full_EDMD_row_sorted\"}",
+          "output": "{\"total_distinguished\": 524, \"total_pairs\": 525, \"rate\": 0.9981, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:2/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_...",
+          "eval_discrimination_count": 524,
+          "eval_discrimination_rate": 0.9981,
+          "predict_method": "KW-PE_softplus"
+        },
+        {
+          "input": "{\"method\": \"LapPE\", \"source\": \"exp_id1_it2\", \"iteration\": 2, \"threshold\": 1e-05, \"equivariant\": false, \"implementation\": \"standard\"}",
+          "output": "{\"total_distinguished\": 524, \"total_pairs\": 525, \"rate\": 0.9981, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:2/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_...",
+          "eval_discrimination_count": 524,
+          "eval_discrimination_rate": 0.9981,
+          "predict_method": "LapPE"
+        }
+      ]
+    },
+    {
+      "dataset": "zinc_downstream_consolidation",
+      "examples": [
+        {
+          "input": "{\"method\": \"GIN_rwpe\", \"source\": \"exp_id1_it3\", \"iteration\": 3, \"architecture\": \"GIN_v2\", \"n_seeds\": 4}",
+          "output": "{\"test_mae_mean\": 0.17073333333333332, \"test_mae_std\": 0.0025106440076867425, \"collapsed\": false, \"n_collapsed\": 1}",
+          "eval_test_mae": 0.170733,
+          "eval_is_collapsed": 0.0,
+          "predict_method": "GIN_rwpe"
+        },
+        {
+          "input": "{\"method\": \"GIN_nrwpe_diag\", \"source\": \"exp_id1_it3\", \"iteration\": 3, \"architecture\": \"GIN_v2\", \"n_seeds\": 4}",
+          "output": "{\"test_mae_mean\": 0.18253333333333333, \"test_mae_std\": 0.003723349746308204, \"collapsed\": false, \"n_collapsed\": 1}",
+          "eval_test_mae": 0.182533,
+          "eval_is_collapsed": 0.0,
+          "predict_method": "GIN_nrwpe_diag"
+        },
+        {
+          "input": "{\"method\": \"GIN_plus_RWPE\", \"source\": \"exp_id2_it2\", \"iteration\": 2, \"architecture\": \"GIN\", \"n_seeds\": 1}",
+          "output": "{\"test_mae_mean\": 0.1845, \"test_mae_std\": 0.0, \"collapsed\": false, \"n_collapsed\": 0}",
+          "eval_test_mae": 0.1845,
+          "eval_is_collapsed": 0.0,
+          "predict_method": "GIN_plus_RWPE"
+        }
+      ]
+    },
+    {
+      "dataset": "hypothesis_scorecard_v2",
+      "examples": [
+        {
+          "input": "{\"claim_id\": 1, \"claim\": \"Nonlinear walk features break spectral invariance\"}",
+          "output": "{\"score\": 0.7, \"confidence_interval\": [0.55, 0.85], \"assessment\": \"The theoretical claim is TRUE: raw nonlinear walk features break spectral invariance. But the PRACTICAL claim is WEAK: equivariant ex...",
+          "eval_claim_score": 0.7,
+          "eval_ci_lower": 0.55,
+          "eval_ci_upper": 0.85,
+          "predict_evidence_for": "[\"Raw nRWPE matrix is non-spectrally-invariant (tanh is transcendental)\", \"Full EDMD achieves 429/525 vs RWPE 345-361/525\", \"KW-PE with EDMD achieves 525/525\", \"All 64 cospectral pairs distinguished b...",
+          "predict_evidence_against": "[\"Equivariant sorted-diagonal extraction achieves same 345/525 as RWPE at threshold 1e-6\", \"Gram matrix features (equivariant) peak at 327/525, below RWPE\", \"The gain from raw features is lost in equi..."
+        },
+        {
+          "input": "{\"claim_id\": 2, \"claim\": \"Nonlinear walk PEs are sign-canonical (no sign ambiguity)\"}",
+          "output": "{\"score\": 0.5, \"confidence_interval\": [0.35, 0.65], \"assessment\": \"Trivially true for diagonal extraction (both RWPE and nRWPE diag are sign-canonical). Not a distinguishing advantage. Full EDMD-based...",
+          "eval_claim_score": 0.5,
+          "eval_ci_lower": 0.35,
+          "eval_ci_upper": 0.65,
+          "predict_evidence_for": "[\"Diagonal extraction is trivially sign-canonical (diag entries are real, unique)\", \"Equivariance verified (max error ~1e-16) across all experiments\", \"No sign flipping needed unlike LapPE eigenvector...",
+          "predict_evidence_against": "[\"Full EDMD requires eigendecomposition of K matrix -> has sign issues\", \"The sign-canonicity advantage is trivial for diagonal features (RWPE is also sign-canonical)\", \"Only the full KW-PE (non-diago..."
+        },
+        {
+          "input": "{\"claim_id\": 3, \"claim\": \"Can separate cospectral graph pairs\"}",
+          "output": "{\"score\": 0.85, \"confidence_interval\": [0.75, 0.95], \"assessment\": \"Strongly supported: nonlinear walk features consistently separate cospectral pairs. But RWPE also separates most of them, so the mar...",
+          "eval_claim_score": 0.85,
+          "eval_ci_lower": 0.75,
+          "eval_ci_upper": 0.95,
+          "predict_evidence_for": "[\"All 64 cospectral pairs distinguished in every experiment\", \"5-node minimal cospectral pair shows clear tanh diagonal difference (0.2995)\", \"Even equivariant nRWPE-diag distinguishes all 64 cospectr...",
+          "predict_evidence_against": "[\"RWPE_diag also distinguishes 63-64/64 cospectral pairs\", \"Cospectral pairs are the 'easiest' hard category (degree distributions differ)\", \"Strongly regular graphs (2 pairs) remain undistinguished b..."
+        }
+      ]
+    }
+  ]
+}

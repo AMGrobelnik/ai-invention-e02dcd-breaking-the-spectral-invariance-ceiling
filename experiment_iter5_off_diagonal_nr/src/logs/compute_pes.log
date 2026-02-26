@@ -1,0 +1,57 @@
+2026-02-25 18:47:16.245 | INFO     | __main__:<module>:78 - Hardware: 11 CPUs, 62.0GB RAM, budget=37.2GB
+2026-02-25 18:47:16.249 | INFO     | __main__:main:286 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id3_it1__opus/full_data_out.json
+2026-02-25 18:47:16.430 | INFO     | __main__:main:291 - Loaded 10 graphs
+2026-02-25 18:47:16.432 | INFO     | __main__:main:301 - Parsed 10 graphs, 10 train
+2026-02-25 18:47:16.433 | INFO     | __main__:main:305 - Computing PEs with 10 workers...
+2026-02-25 18:47:16.450 | INFO     | __main__:main:329 -   Computed 10/10 graphs (0.2s)
+2026-02-25 18:47:16.456 | INFO     | __main__:main:335 - Validating PEs...
+2026-02-25 18:47:16.458 | INFO     | __main__:main:351 -   rwpe_16: nodes=222, nan=0, inf=0, all_zero_graphs=0/10, var=0.021631, range=[0.0000, 0.8333]
+2026-02-25 18:47:16.459 | INFO     | __main__:main:351 -   nrwpe_diag_softplus_16: nodes=222, nan=0, inf=0, all_zero_graphs=0/10, var=0.363803, range=[0.7981, 3.6930]
+2026-02-25 18:47:16.459 | INFO     | __main__:main:351 -   nrwpe_diag_tanh_16: nodes=222, nan=0, inf=0, all_zero_graphs=0/10, var=0.005875, range=[0.0511, 0.4621]
+2026-02-25 18:47:16.460 | INFO     | __main__:main:351 -   nrwpe_offdiag_16: nodes=222, nan=0, inf=0, all_zero_graphs=0/10, var=1.152166, range=[0.0317, 3.6068]
+2026-02-25 18:47:16.462 | INFO     | __main__:main:351 -   nrwpe_combined_16: nodes=222, nan=0, inf=0, all_zero_graphs=0/10, var=0.491400, range=[0.6992, 3.6068]
+2026-02-25 18:47:16.463 | INFO     | __main__:main:351 -   no_pe: nodes=222, nan=0, inf=0, all_zero_graphs=10/10, var=0.000000, range=[0.0000, 0.0000]
+2026-02-25 18:47:16.464 | INFO     | __main__:main:356 - Normalizing PEs (z-score on train set)...
+2026-02-25 18:47:16.465 | DEBUG    | __main__:normalize_pes:270 -   rwpe_16: mean=[0.         0.44719726 0.0045045  0.31562808]..., std=[9.9999999e-09 1.1140508e-01 2.7027095e-02 9.8394863e-02]...
+2026-02-25 18:47:16.466 | DEBUG    | __main__:normalize_pes:270 -   nrwpe_diag_softplus_16: mean=[0.8784354 1.2142386 1.4460808 1.6473345]..., std=[0.05229748 0.04962796 0.08501522 0.11838164]...
+2026-02-25 18:47:16.468 | DEBUG    | __main__:normalize_pes:270 -   nrwpe_diag_tanh_16: mean=[0.32506242 0.30183294 0.22392382 0.19664167]..., std=[0.07664625 0.02786146 0.0315366  0.03012886]...
+2026-02-25 18:47:16.469 | DEBUG    | __main__:normalize_pes:270 -   nrwpe_offdiag_16: mean=[0.7096278  0.0490232  0.87246495 0.734733  ]..., std=[0.00604029 0.00745868 0.01772089 0.06287482]...
+2026-02-25 18:47:16.469 | DEBUG    | __main__:normalize_pes:270 -   nrwpe_combined_16: mean=[0.8784354 1.2142386 1.4460808 1.6473345]..., std=[0.05229748 0.04962796 0.08501522 0.11838164]...
+2026-02-25 18:47:16.470 | INFO     | __main__:main:364 -   After norm rwpe_16: mean=-0.0034, std=0.9492, range=[-1.7701, 5.0000]
+2026-02-25 18:47:16.471 | INFO     | __main__:main:364 -   After norm nrwpe_diag_softplus_16: mean=-0.0000, std=1.0000, range=[-1.6641, 4.4078]
+2026-02-25 18:47:16.472 | INFO     | __main__:main:364 -   After norm nrwpe_diag_tanh_16: mean=-0.0000, std=1.0000, range=[-2.3353, 3.9751]
+2026-02-25 18:47:16.473 | INFO     | __main__:main:364 -   After norm nrwpe_offdiag_16: mean=-0.0000, std=1.0000, range=[-4.1950, 3.8548]
+2026-02-25 18:47:16.474 | INFO     | __main__:main:364 -   After norm nrwpe_combined_16: mean=-0.0000, std=1.0000, range=[-4.1950, 4.4078]
+2026-02-25 18:47:16.558 | INFO     | __main__:main:377 - Saved PEs to /workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id1_it5__opus/precomputed_pes.pkl (0.1MB)
+2026-02-25 18:47:16.559 | INFO     | __main__:main:380 - PE computation complete in 0.3s
+2026-02-25 18:47:24.289 | INFO     | __main__:<module>:78 - Hardware: 11 CPUs, 62.0GB RAM, budget=37.2GB
+2026-02-25 18:47:24.297 | INFO     | __main__:main:286 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id3_it1__opus/full_data_out.json
+2026-02-25 18:47:24.340 | INFO     | __main__:main:291 - Loaded 12000 graphs
+2026-02-25 18:47:24.423 | INFO     | __main__:main:301 - Parsed 12000 graphs, 10000 train
+2026-02-25 18:47:24.425 | INFO     | __main__:main:305 - Computing PEs with 10 workers...
+2026-02-25 18:47:25.105 | INFO     | __main__:main:329 -   Computed 2000/12000 graphs (0.8s)
+2026-02-25 18:47:25.623 | INFO     | __main__:main:329 -   Computed 4000/12000 graphs (1.3s)
+2026-02-25 18:47:26.085 | INFO     | __main__:main:329 -   Computed 6000/12000 graphs (1.8s)
+2026-02-25 18:47:26.545 | INFO     | __main__:main:329 -   Computed 8000/12000 graphs (2.2s)
+2026-02-25 18:47:27.002 | INFO     | __main__:main:329 -   Computed 10000/12000 graphs (2.7s)
+2026-02-25 18:47:27.465 | INFO     | __main__:main:329 -   Computed 12000/12000 graphs (3.2s)
+2026-02-25 18:47:27.473 | INFO     | __main__:main:335 - Validating PEs...
+2026-02-25 18:47:27.608 | INFO     | __main__:main:351 -   rwpe_16: nodes=277864, nan=0, inf=0, all_zero_graphs=0/12000, var=0.021286, range=[0.0000, 0.8750]
+2026-02-25 18:47:27.736 | INFO     | __main__:main:351 -   nrwpe_diag_softplus_16: nodes=277864, nan=0, inf=0, all_zero_graphs=0/12000, var=0.361024, range=[0.7981, 3.7936]
+2026-02-25 18:47:27.853 | INFO     | __main__:main:351 -   nrwpe_diag_tanh_16: nodes=277864, nan=0, inf=0, all_zero_graphs=0/12000, var=0.005805, range=[0.0309, 0.4621]
+2026-02-25 18:47:27.975 | INFO     | __main__:main:351 -   nrwpe_offdiag_16: nodes=277864, nan=0, inf=0, all_zero_graphs=0/12000, var=1.131247, range=[0.0284, 3.7012]
+2026-02-25 18:47:28.091 | INFO     | __main__:main:351 -   nrwpe_combined_16: nodes=277864, nan=0, inf=0, all_zero_graphs=0/12000, var=0.473818, range=[0.6980, 3.7012]
+2026-02-25 18:47:28.207 | INFO     | __main__:main:351 -   no_pe: nodes=277864, nan=0, inf=0, all_zero_graphs=12000/12000, var=0.000000, range=[0.0000, 0.0000]
+2026-02-25 18:47:28.209 | INFO     | __main__:main:356 - Normalizing PEs (z-score on train set)...
+2026-02-25 18:47:28.229 | DEBUG    | __main__:normalize_pes:270 -   rwpe_16: mean=[0.         0.4437976  0.00122285 0.312568  ]..., std=[9.9999999e-09 1.1047258e-01 1.3760535e-02 9.7930014e-02]...
+2026-02-25 18:47:28.299 | DEBUG    | __main__:normalize_pes:270 -   nrwpe_diag_softplus_16: mean=[0.8767035 1.2127588 1.4452028 1.6470346]..., std=[0.05046659 0.0499448  0.08297858 0.11435089]...
+2026-02-25 18:47:28.368 | DEBUG    | __main__:normalize_pes:270 -   nrwpe_diag_tanh_16: mean=[0.3212732  0.29970592 0.22042514 0.19323654]..., std=[0.07416508 0.02866657 0.03240871 0.0309533 ]...
+2026-02-25 18:47:28.440 | DEBUG    | __main__:normalize_pes:270 -   nrwpe_offdiag_16: mean=[0.70891106 0.04809342 0.87130636 0.7364702 ]..., std=[0.00559155 0.00688336 0.01843351 0.06444992]...
+2026-02-25 18:47:28.511 | DEBUG    | __main__:normalize_pes:270 -   nrwpe_combined_16: mean=[0.8767035 1.2127588 1.4452028 1.6470346]..., std=[0.05046659 0.0499448  0.08297858 0.11435089]...
+2026-02-25 18:47:28.574 | INFO     | __main__:main:364 -   After norm rwpe_16: mean=-0.0065, std=0.9153, range=[-2.0319, 5.0000]
+2026-02-25 18:47:28.583 | INFO     | __main__:main:364 -   After norm nrwpe_diag_softplus_16: mean=0.0001, std=1.0008, range=[-2.0140, 4.9155]
+2026-02-25 18:47:28.593 | INFO     | __main__:main:364 -   After norm nrwpe_diag_tanh_16: mean=-0.0004, std=1.0005, range=[-2.9166, 4.9745]
+2026-02-25 18:47:28.602 | INFO     | __main__:main:364 -   After norm nrwpe_offdiag_16: mean=0.0203, std=0.9967, range=[-5.0000, 5.0000]
+2026-02-25 18:47:28.616 | INFO     | __main__:main:364 -   After norm nrwpe_combined_16: mean=0.0185, std=1.0006, range=[-5.0000, 5.0000]
+2026-02-25 18:47:28.969 | INFO     | __main__:main:377 - Saved PEs to /workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id1_it5__opus/precomputed_pes.pkl (109.7MB)
+2026-02-25 18:47:28.970 | INFO     | __main__:main:380 - PE computation complete in 4.7s

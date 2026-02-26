@@ -1,0 +1,1226 @@
+{
+  "metadata": {
+    "experiment": "nRWPE-diag Discrimination Testing",
+    "total_pairs": 525,
+    "methods_tested": 7,
+    "method_names": [
+      "RWPE_diag_K20",
+      "linear_walk_diag_T20",
+      "nRWPE_diag_tanh_T20",
+      "nRWPE_diag_softplus_T20",
+      "nRWPE_diag_relu_T20",
+      "nRWPE_offdiag_tanh_T20",
+      "nRWPE_diag_tanh_T50"
+    ],
+    "method_descriptions": {
+      "RWPE_diag_K20": "Standard RWPE: diagonal of A_tilde^k, k=1..20",
+      "linear_walk_diag_T20": "Linear walk (identity nonlinearity) - sanity check against RWPE",
+      "nRWPE_diag_tanh_T20": "Nonlinear walk with tanh, T=20",
+      "nRWPE_diag_softplus_T20": "Nonlinear walk with softplus, T=20",
+      "nRWPE_diag_relu_T20": "Nonlinear walk with ReLU, T=20",
+      "nRWPE_offdiag_tanh_T20": "Nonlinear walk with tanh + off-diagonal (1/2-hop), T=20",
+      "nRWPE_diag_tanh_T50": "Nonlinear walk with tanh, T=50 (convergence test)"
+    },
+    "categories": {
+      "BREC_4Vertex": 20,
+      "BREC_Basic": 60,
+      "BREC_CFI": 100,
+      "BREC_Distance_Regular": 20,
+      "BREC_Extension": 100,
+      "BREC_Regular": 50,
+      "BREC_Strongly_Regular": 50,
+      "CSL": 59,
+      "cospectral": 64,
+      "strongly_regular": 2
+    },
+    "threshold": 1e-06,
+    "per_method_results": {
+      "RWPE_diag_K20": {
+        "overall": {
+          "distinguished": 345,
+          "total": 525,
+          "rate": 0.6571428571428571
+        },
+        "per_category": {
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 6.547283627176747e-17,
+            "margin_min": 5.329865540490841e-17,
+            "margin_max": 8.285007358124453e-17,
+            "margin_mean": 6.567443878813797e-17,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 8.285007358124453e-17
+          },
+          "BREC_Basic": {
+            "distinguished": 60,
+            "total": 60,
+            "rate": 1.0,
+            "margin_median": 0.07058899139979835,
+            "margin_min": 0.008757012463266125,
+            "margin_max": 0.2796957971573391,
+            "margin_mean": 0.08814849005435912,
+            "dist_margin_median": 0.07058899139979835,
+            "undist_margin_max": 0.0
+          },
+          "BREC_CFI": {
+            "distinguished": 12,
+            "total": 100,
+            "rate": 0.12,
+            "margin_median": 2.0242934243151895e-17,
+            "margin_min": 0.0,
+            "margin_max": 0.28621107551136127,
+            "margin_mean": 0.0031953975829348514,
+            "dist_margin_median": 0.0034143120432248556,
+            "undist_margin_max": 2.1942925933342445e-16
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 1.0219663111806849e-16,
+            "margin_min": 0.0,
+            "margin_max": 2.0816681711721685e-16,
+            "margin_mean": 9.305601296517741e-17,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 2.0816681711721685e-16
+          },
+          "BREC_Extension": {
+            "distinguished": 100,
+            "total": 100,
+            "rate": 1.0,
+            "margin_median": 0.03190259133153232,
+            "margin_min": 0.0008601485279335822,
+            "margin_max": 1.2079226890589505,
+            "margin_mean": 0.09965450062954878,
+            "dist_margin_median": 0.03190259133153232,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Regular": {
+            "distinguished": 50,
+            "total": 50,
+            "rate": 1.0,
+            "margin_median": 0.08129650110390771,
+            "margin_min": 0.0008288890955064814,
+            "margin_max": 1.0512348941917817,
+            "margin_mean": 0.14736688140771198,
+            "dist_margin_median": 0.08129650110390771,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0,
+            "margin_median": 1.6931958941581996e-16,
+            "margin_min": 1.1506853769672337e-17,
+            "margin_max": 2.7997383580713486e-16,
+            "margin_mean": 1.5714324187317274e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 2.7997383580713486e-16
+          },
+          "CSL": {
+            "distinguished": 59,
+            "total": 59,
+            "rate": 1.0,
+            "margin_median": 0.5659406076336035,
+            "margin_min": 0.049000802607573696,
+            "margin_max": 1.5994737352272985,
+            "margin_mean": 0.6239399690375511,
+            "dist_margin_median": 0.5659406076336035,
+            "undist_margin_max": 0.0
+          },
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0,
+            "margin_median": 0.9107609418972846,
+            "margin_min": 0.28873902569413423,
+            "margin_max": 3.880276538850236,
+            "margin_mean": 1.2987736993907535,
+            "dist_margin_median": 0.9107609418972846,
+            "undist_margin_max": 0.0
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0,
+            "margin_median": 1.4394686287964427e-16,
+            "margin_min": 1.2981481815797577e-16,
+            "margin_max": 1.5807890760131279e-16,
+            "margin_mean": 1.4394686287964427e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 1.5807890760131279e-16
+          }
+        }
+      },
+      "linear_walk_diag_T20": {
+        "overall": {
+          "distinguished": 344,
+          "total": 525,
+          "rate": 0.6552380952380953
+        },
+        "per_category": {
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 1.944128986425528e-16,
+            "margin_min": 5.204170427930421e-17,
+            "margin_max": 1.9778890766513103e-16,
+            "margin_mean": 1.7988398297070729e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 1.9778890766513103e-16
+          },
+          "BREC_Basic": {
+            "distinguished": 60,
+            "total": 60,
+            "rate": 1.0,
+            "margin_median": 0.07058899139979835,
+            "margin_min": 0.008757012463266118,
+            "margin_max": 0.27969579715733905,
+            "margin_mean": 0.08814849005435912,
+            "dist_margin_median": 0.07058899139979835,
+            "undist_margin_max": 0.0
+          },
+          "BREC_CFI": {
+            "distinguished": 11,
+            "total": 100,
+            "rate": 0.11,
+            "margin_median": 2.913739686248386e-17,
+            "margin_min": 0.0,
+            "margin_max": 0.28621107551136127,
+            "margin_mean": 0.0032231862655719783,
+            "dist_margin_median": 0.002147690546583108,
+            "undist_margin_max": 1.1354494227940098e-16
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 1.0219663111806849e-16,
+            "margin_min": 0.0,
+            "margin_max": 2.0816681711721685e-16,
+            "margin_mean": 9.311878135763739e-17,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 2.0816681711721685e-16
+          },
+          "BREC_Extension": {
+            "distinguished": 100,
+            "total": 100,
+            "rate": 1.0,
+            "margin_median": 0.031902591331532316,
+            "margin_min": 0.0008601485279336474,
+            "margin_max": 1.2079226890589505,
+            "margin_mean": 0.0996629569641596,
+            "dist_margin_median": 0.031902591331532316,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Regular": {
+            "distinguished": 50,
+            "total": 50,
+            "rate": 1.0,
+            "margin_median": 0.08129650110390771,
+            "margin_min": 0.0008288890955064814,
+            "margin_max": 1.0512348941917817,
+            "margin_mean": 0.14736688140771198,
+            "dist_margin_median": 0.08129650110390771,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0,
+            "margin_median": 1.5951267566981037e-16,
+            "margin_min": 6.938893903907228e-18,
+            "margin_max": 2.9052345828309734e-16,
+            "margin_mean": 1.4882599330771766e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 2.9052345828309734e-16
+          },
+          "CSL": {
+            "distinguished": 59,
+            "total": 59,
+            "rate": 1.0,
+            "margin_median": 0.5659406076336035,
+            "margin_min": 0.049000802607573696,
+            "margin_max": 1.5994737352272985,
+            "margin_mean": 0.6239399690375511,
+            "dist_margin_median": 0.5659406076336035,
+            "undist_margin_max": 0.0
+          },
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0,
+            "margin_median": 0.9107609418972844,
+            "margin_min": 0.2887390256941342,
+            "margin_max": 3.880276538850236,
+            "margin_mean": 1.2987736993907535,
+            "dist_margin_median": 0.9107609418972844,
+            "undist_margin_max": 0.0
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0,
+            "margin_median": 1.4394686287964427e-16,
+            "margin_min": 1.2981481815797577e-16,
+            "margin_max": 1.5807890760131279e-16,
+            "margin_mean": 1.4394686287964427e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 1.5807890760131279e-16
+          }
+        }
+      },
+      "nRWPE_diag_tanh_T20": {
+        "overall": {
+          "distinguished": 345,
+          "total": 525,
+          "rate": 0.6571428571428571
+        },
+        "per_category": {
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 1.4356744996351025e-16,
+            "margin_min": 6.378500613402836e-17,
+            "margin_max": 1.8744648415725123e-16,
+            "margin_mean": 1.3661160234303886e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 1.8744648415725123e-16
+          },
+          "BREC_Basic": {
+            "distinguished": 60,
+            "total": 60,
+            "rate": 1.0,
+            "margin_median": 0.06787337238689026,
+            "margin_min": 0.008240280810292919,
+            "margin_max": 0.24647373183665036,
+            "margin_mean": 0.08194905905913616,
+            "dist_margin_median": 0.06787337238689026,
+            "undist_margin_max": 0.0
+          },
+          "BREC_CFI": {
+            "distinguished": 12,
+            "total": 100,
+            "rate": 0.12,
+            "margin_median": 2.4835266811008758e-17,
+            "margin_min": 0.0,
+            "margin_max": 0.23796685265565626,
+            "margin_mean": 0.002803427689951553,
+            "dist_margin_median": 0.003500550030267316,
+            "undist_margin_max": 3.145778321765049e-07
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 5.445777136586278e-17,
+            "margin_min": 0.0,
+            "margin_max": 1.3383253895372864e-16,
+            "margin_mean": 5.348931395545635e-17,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 1.3383253895372864e-16
+          },
+          "BREC_Extension": {
+            "distinguished": 100,
+            "total": 100,
+            "rate": 1.0,
+            "margin_median": 0.02977166444677712,
+            "margin_min": 0.000808744063939526,
+            "margin_max": 0.9347172976715411,
+            "margin_mean": 0.07797077704067229,
+            "dist_margin_median": 0.02977166444677712,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Regular": {
+            "distinguished": 50,
+            "total": 50,
+            "rate": 1.0,
+            "margin_median": 0.07608591542829582,
+            "margin_min": 0.0007913423710111607,
+            "margin_max": 0.8751367868078381,
+            "margin_mean": 0.1318725378812349,
+            "dist_margin_median": 0.07608591542829582,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0,
+            "margin_median": 1.4007158688126808e-16,
+            "margin_min": 3.784719799586234e-17,
+            "margin_max": 2.4226579423270015e-16,
+            "margin_mean": 1.2687536986810001e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 2.4226579423270015e-16
+          },
+          "CSL": {
+            "distinguished": 59,
+            "total": 59,
+            "rate": 1.0,
+            "margin_median": 0.5441188711019794,
+            "margin_min": 0.04691648534719097,
+            "margin_max": 1.5163186980163035,
+            "margin_mean": 0.5845963861593362,
+            "dist_margin_median": 0.5441188711019794,
+            "undist_margin_max": 0.0
+          },
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0,
+            "margin_median": 0.6690543129810639,
+            "margin_min": 0.23153457358431712,
+            "margin_max": 1.4770005715433963,
+            "margin_mean": 0.6958597962088355,
+            "dist_margin_median": 0.6690543129810639,
+            "undist_margin_max": 0.0
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0,
+            "margin_median": 1.8094401523962575e-16,
+            "margin_min": 1.5406844766068322e-16,
+            "margin_max": 2.0781958281856828e-16,
+            "margin_mean": 1.8094401523962575e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 2.0781958281856828e-16
+          }
+        }
+      },
+      "nRWPE_diag_softplus_T20": {
+        "overall": {
+          "distinguished": 342,
+          "total": 525,
+          "rate": 0.6514285714285715
+        },
+        "per_category": {
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 4.9675496006204345e-15,
+            "margin_min": 3.0927234722497852e-15,
+            "margin_max": 6.3155981126285585e-15,
+            "margin_mean": 4.874795195632615e-15,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 6.3155981126285585e-15
+          },
+          "BREC_Basic": {
+            "distinguished": 60,
+            "total": 60,
+            "rate": 1.0,
+            "margin_median": 0.01777750165071252,
+            "margin_min": 0.001705639853221226,
+            "margin_max": 0.06226054728400951,
+            "margin_mean": 0.020262228103342387,
+            "dist_margin_median": 0.01777750165071252,
+            "undist_margin_max": 0.0
+          },
+          "BREC_CFI": {
+            "distinguished": 9,
+            "total": 100,
+            "rate": 0.09,
+            "margin_median": 8.881784197001252e-16,
+            "margin_min": 0.0,
+            "margin_max": 0.019440497170179625,
+            "margin_mean": 0.00020255246418634826,
+            "dist_margin_median": 6.180403864447516e-05,
+            "undist_margin_max": 7.851352530061186e-09
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 3.059612950632139e-15,
+            "margin_min": 0.0,
+            "margin_max": 1.1675830813415638e-14,
+            "margin_mean": 4.021255589267889e-15,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 1.1675830813415638e-14
+          },
+          "BREC_Extension": {
+            "distinguished": 100,
+            "total": 100,
+            "rate": 1.0,
+            "margin_median": 0.005535521855601961,
+            "margin_min": 7.89290561515293e-05,
+            "margin_max": 0.11036569922966452,
+            "margin_mean": 0.013123470809863915,
+            "dist_margin_median": 0.005535521855601961,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Regular": {
+            "distinguished": 50,
+            "total": 50,
+            "rate": 1.0,
+            "margin_median": 0.018844396700069287,
+            "margin_min": 0.00014714482561029791,
+            "margin_max": 0.10718963378390031,
+            "margin_mean": 0.025847343733309172,
+            "dist_margin_median": 0.018844396700069287,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0,
+            "margin_median": 6.9642272262285275e-15,
+            "margin_min": 2.9036099814798757e-15,
+            "margin_max": 1.484879197137844e-14,
+            "margin_mean": 8.720222880598427e-15,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 1.484879197137844e-14
+          },
+          "CSL": {
+            "distinguished": 59,
+            "total": 59,
+            "rate": 1.0,
+            "margin_median": 0.054003773396403124,
+            "margin_min": 0.0031160063261375854,
+            "margin_max": 0.24150246823602176,
+            "margin_mean": 0.07885131039587215,
+            "dist_margin_median": 0.054003773396403124,
+            "undist_margin_max": 0.0
+          },
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0,
+            "margin_median": 0.17330340886540085,
+            "margin_min": 0.041480965402144326,
+            "margin_max": 10.841424971765633,
+            "margin_mean": 2.9190155602781958,
+            "dist_margin_median": 0.17330340886540085,
+            "undist_margin_max": 0.0
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0,
+            "margin_median": 4.408001823775844e-15,
+            "margin_min": 2.9036099814798757e-15,
+            "margin_max": 5.912393666071813e-15,
+            "margin_mean": 4.408001823775844e-15,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 5.912393666071813e-15
+          }
+        }
+      },
+      "nRWPE_diag_relu_T20": {
+        "overall": {
+          "distinguished": 344,
+          "total": 525,
+          "rate": 0.6552380952380953
+        },
+        "per_category": {
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 1.944128986425528e-16,
+            "margin_min": 5.204170427930421e-17,
+            "margin_max": 1.9778890766513103e-16,
+            "margin_mean": 1.7988398297070729e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 1.9778890766513103e-16
+          },
+          "BREC_Basic": {
+            "distinguished": 60,
+            "total": 60,
+            "rate": 1.0,
+            "margin_median": 0.07058899139979835,
+            "margin_min": 0.008757012463266118,
+            "margin_max": 0.27969579715733905,
+            "margin_mean": 0.08814849005435912,
+            "dist_margin_median": 0.07058899139979835,
+            "undist_margin_max": 0.0
+          },
+          "BREC_CFI": {
+            "distinguished": 11,
+            "total": 100,
+            "rate": 0.11,
+            "margin_median": 2.913739686248386e-17,
+            "margin_min": 0.0,
+            "margin_max": 0.28621107551136127,
+            "margin_mean": 0.0032231862655719783,
+            "dist_margin_median": 0.002147690546583108,
+            "undist_margin_max": 1.1354494227940098e-16
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 1.0219663111806849e-16,
+            "margin_min": 0.0,
+            "margin_max": 2.0816681711721685e-16,
+            "margin_mean": 9.311878135763739e-17,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 2.0816681711721685e-16
+          },
+          "BREC_Extension": {
+            "distinguished": 100,
+            "total": 100,
+            "rate": 1.0,
+            "margin_median": 0.031902591331532316,
+            "margin_min": 0.0008601485279336474,
+            "margin_max": 1.2079226890589505,
+            "margin_mean": 0.0996629569641596,
+            "dist_margin_median": 0.031902591331532316,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Regular": {
+            "distinguished": 50,
+            "total": 50,
+            "rate": 1.0,
+            "margin_median": 0.08129650110390771,
+            "margin_min": 0.0008288890955064814,
+            "margin_max": 1.0512348941917817,
+            "margin_mean": 0.14736688140771198,
+            "dist_margin_median": 0.08129650110390771,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0,
+            "margin_median": 1.5951267566981037e-16,
+            "margin_min": 6.938893903907228e-18,
+            "margin_max": 2.9052345828309734e-16,
+            "margin_mean": 1.4882599330771766e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 2.9052345828309734e-16
+          },
+          "CSL": {
+            "distinguished": 59,
+            "total": 59,
+            "rate": 1.0,
+            "margin_median": 0.5659406076336035,
+            "margin_min": 0.049000802607573696,
+            "margin_max": 1.5994737352272985,
+            "margin_mean": 0.6239399690375511,
+            "dist_margin_median": 0.5659406076336035,
+            "undist_margin_max": 0.0
+          },
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0,
+            "margin_median": 0.9107609418972844,
+            "margin_min": 0.2887390256941342,
+            "margin_max": 3.880276538850236,
+            "margin_mean": 1.2987736993907535,
+            "dist_margin_median": 0.9107609418972844,
+            "undist_margin_max": 0.0
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0,
+            "margin_median": 1.4394686287964427e-16,
+            "margin_min": 1.2981481815797577e-16,
+            "margin_max": 1.5807890760131279e-16,
+            "margin_mean": 1.4394686287964427e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 1.5807890760131279e-16
+          }
+        }
+      },
+      "nRWPE_offdiag_tanh_T20": {
+        "overall": {
+          "distinguished": 346,
+          "total": 525,
+          "rate": 0.659047619047619
+        },
+        "per_category": {
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 2.426850113574924e-16,
+            "margin_min": 1.6540931736891719e-16,
+            "margin_max": 2.998463381166506e-16,
+            "margin_mean": 2.4558715035313756e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 2.998463381166506e-16
+          },
+          "BREC_Basic": {
+            "distinguished": 60,
+            "total": 60,
+            "rate": 1.0,
+            "margin_median": 0.12192606184829072,
+            "margin_min": 0.017001266486248254,
+            "margin_max": 0.4041877960846298,
+            "margin_mean": 0.14832314941617422,
+            "dist_margin_median": 0.12192606184829072,
+            "undist_margin_max": 0.0
+          },
+          "BREC_CFI": {
+            "distinguished": 13,
+            "total": 100,
+            "rate": 0.13,
+            "margin_median": 4.3185867877414634e-17,
+            "margin_min": 0.0,
+            "margin_max": 0.5233588741967554,
+            "margin_mean": 0.006275280226072778,
+            "dist_margin_median": 0.009484756342274943,
+            "undist_margin_max": 6.277879425933392e-07
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 1.045358461938548e-16,
+            "margin_min": 0.0,
+            "margin_max": 2.600002712459969e-16,
+            "margin_mean": 1.0799434719750708e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 2.600002712459969e-16
+          },
+          "BREC_Extension": {
+            "distinguished": 100,
+            "total": 100,
+            "rate": 1.0,
+            "margin_median": 0.053370047284838275,
+            "margin_min": 0.0011580346975326586,
+            "margin_max": 1.7566271525016188,
+            "margin_mean": 0.1496053230957091,
+            "dist_margin_median": 0.053370047284838275,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Regular": {
+            "distinguished": 50,
+            "total": 50,
+            "rate": 1.0,
+            "margin_median": 0.12155318815893065,
+            "margin_min": 0.0019707634421326937,
+            "margin_max": 1.5931875632647605,
+            "margin_mean": 0.2275480315701773,
+            "dist_margin_median": 0.12155318815893065,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0,
+            "margin_median": 2.7550913677170357e-16,
+            "margin_min": 8.735844209138818e-17,
+            "margin_max": 4.216198926366519e-16,
+            "margin_mean": 2.56479957528581e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 4.216198926366519e-16
+          },
+          "CSL": {
+            "distinguished": 59,
+            "total": 59,
+            "rate": 1.0,
+            "margin_median": 0.8449429023297156,
+            "margin_min": 0.08609274252154377,
+            "margin_max": 2.4904744966214403,
+            "margin_mean": 0.997103879652012,
+            "dist_margin_median": 0.8449429023297156,
+            "undist_margin_max": 0.0
+          },
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0,
+            "margin_median": 1.252756306946253,
+            "margin_min": 0.5445084199283791,
+            "margin_max": 2.5606785230720384,
+            "margin_mean": 1.3612660500389868,
+            "dist_margin_median": 1.252756306946253,
+            "undist_margin_max": 0.0
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0,
+            "margin_median": 3.448275177412555e-16,
+            "margin_min": 2.761644904721361e-16,
+            "margin_max": 4.134905450103749e-16,
+            "margin_mean": 3.448275177412555e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 4.134905450103749e-16
+          }
+        }
+      },
+      "nRWPE_diag_tanh_T50": {
+        "overall": {
+          "distinguished": 346,
+          "total": 525,
+          "rate": 0.659047619047619
+        },
+        "per_category": {
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 7.585730232041802e-16,
+            "margin_min": 3.304363641983186e-16,
+            "margin_max": 9.773500417800469e-16,
+            "margin_mean": 7.307311253702416e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 9.773500417800469e-16
+          },
+          "BREC_Basic": {
+            "distinguished": 60,
+            "total": 60,
+            "rate": 1.0,
+            "margin_median": 0.06788547489564145,
+            "margin_min": 0.00825502284124207,
+            "margin_max": 0.2480074305564502,
+            "margin_mean": 0.08205430280097734,
+            "dist_margin_median": 0.06788547489564145,
+            "undist_margin_max": 0.0
+          },
+          "BREC_CFI": {
+            "distinguished": 13,
+            "total": 100,
+            "rate": 0.13,
+            "margin_median": 6.169038952357835e-17,
+            "margin_min": 1.4662005554438312e-17,
+            "margin_max": 1.0558024567864748,
+            "margin_mean": 0.013821740448649611,
+            "dist_margin_median": 0.005035847953080303,
+            "undist_margin_max": 7.898994388117805e-07
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0,
+            "margin_median": 1.5421956832218047e-16,
+            "margin_min": 2.4037033579794548e-17,
+            "margin_max": 5.435860573245157e-16,
+            "margin_mean": 2.0513742086097286e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 5.435860573245157e-16
+          },
+          "BREC_Extension": {
+            "distinguished": 100,
+            "total": 100,
+            "rate": 1.0,
+            "margin_median": 0.029828014484882953,
+            "margin_min": 0.0008100860509103275,
+            "margin_max": 1.573789527716529,
+            "margin_mean": 0.1043788965897544,
+            "dist_margin_median": 0.029828014484882953,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Regular": {
+            "distinguished": 50,
+            "total": 50,
+            "rate": 1.0,
+            "margin_median": 0.07616830448418854,
+            "margin_min": 0.0007913423710111622,
+            "margin_max": 1.5131702729926944,
+            "margin_mean": 0.14553476056937248,
+            "dist_margin_median": 0.07616830448418854,
+            "undist_margin_max": 0.0
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0,
+            "margin_median": 4.0044043280423937e-16,
+            "margin_min": 2.6390612272909363e-16,
+            "margin_max": 6.793031831775718e-16,
+            "margin_mean": 4.314595787713529e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 6.793031831775718e-16
+          },
+          "CSL": {
+            "distinguished": 59,
+            "total": 59,
+            "rate": 1.0,
+            "margin_median": 0.6237610588404667,
+            "margin_min": 0.057049232400835925,
+            "margin_max": 1.8523850338728638,
+            "margin_mean": 0.7857729659283837,
+            "dist_margin_median": 0.6237610588404667,
+            "undist_margin_max": 0.0
+          },
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0,
+            "margin_median": 0.8898159961364315,
+            "margin_min": 0.3065030116447728,
+            "margin_max": 1.9247159148047692,
+            "margin_mean": 0.89992779694457,
+            "dist_margin_median": 0.8898159961364315,
+            "undist_margin_max": 0.0
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0,
+            "margin_median": 6.357874606817932e-16,
+            "margin_min": 4.958760990909326e-16,
+            "margin_max": 7.756988222726538e-16,
+            "margin_mean": 6.357874606817932e-16,
+            "dist_margin_median": 0.0,
+            "undist_margin_max": 7.756988222726538e-16
+          }
+        }
+      }
+    },
+    "head_to_head": {
+      "nRWPE_tanh_vs_RWPE": {
+        "both_distinguish": 343,
+        "nRWPE_diag_tanh_T20_only": 2,
+        "RWPE_diag_K20_only": 2,
+        "neither": 178
+      },
+      "nRWPE_tanh_vs_linear_walk": {
+        "both_distinguish": 343,
+        "nRWPE_diag_tanh_T20_only": 2,
+        "linear_walk_diag_T20_only": 1,
+        "neither": 179
+      },
+      "nRWPE_offdiag_vs_diag": {
+        "both_distinguish": 344,
+        "nRWPE_offdiag_tanh_T20_only": 2,
+        "nRWPE_diag_tanh_T20_only": 1,
+        "neither": 178
+      },
+      "tanh_vs_softplus": {
+        "both_distinguish": 341,
+        "nRWPE_diag_tanh_T20_only": 4,
+        "nRWPE_diag_softplus_T20_only": 1,
+        "neither": 179
+      },
+      "tanh_vs_relu": {
+        "both_distinguish": 343,
+        "nRWPE_diag_tanh_T20_only": 2,
+        "nRWPE_diag_relu_T20_only": 1,
+        "neither": 179
+      }
+    },
+    "equivariance_test": {
+      "graphs_tested": 20,
+      "permutations_per_graph": 50,
+      "max_error": 8.326672684688674e-17,
+      "all_pass": true,
+      "errors_per_graph": [
+        4.5102810375396984e-17,
+        4.5102810375396984e-17,
+        6.938893903907228e-17,
+        8.326672684688674e-17,
+        5.551115123125783e-17,
+        5.551115123125783e-17,
+        6.938893903907228e-18,
+        6.938893903907228e-17,
+        6.938893903907228e-17,
+        8.326672684688674e-17,
+        5.551115123125783e-17,
+        5.551115123125783e-17,
+        4.85722573273506e-17,
+        4.163336342344337e-17,
+        2.7755575615628914e-17,
+        2.7755575615628914e-17,
+        0.0,
+        0.0,
+        4.163336342344337e-17,
+        4.85722573273506e-17
+      ]
+    },
+    "convergence_analysis": {
+      "T20_rate": 0.6571428571428571,
+      "T50_rate": 0.659047619047619,
+      "T20_vs_T50_rate_difference": 0.0019047619047618536,
+      "T20_vs_T50_distance_correlation": 0.9807908533852793,
+      "T20_T50_max_discrimination_change": 1
+    },
+    "cospectral_analysis": {
+      "total_cospectral_pairs": 148,
+      "pairs_where_nRWPE_beats_RWPE": [
+        "brec_cfi_13"
+      ],
+      "count_nRWPE_beats_RWPE": 1,
+      "pairs_where_both_fail": [
+        "srg_shrikhande_vs_rook",
+        "srg_T8_vs_chang0",
+        "brec_str_0",
+        "brec_str_1",
+        "brec_str_2",
+        "brec_str_3",
+        "brec_str_4",
+        "brec_str_5",
+        "brec_str_6",
+        "brec_str_7",
+        "brec_str_8",
+        "brec_str_9",
+        "brec_str_10",
+        "brec_str_11",
+        "brec_str_12",
+        "brec_str_13",
+        "brec_str_14",
+        "brec_str_15",
+        "brec_str_16",
+        "brec_str_17",
+        "brec_str_18",
+        "brec_str_19",
+        "brec_str_20",
+        "brec_str_21",
+        "brec_str_22",
+        "brec_str_23",
+        "brec_str_24",
+        "brec_str_25",
+        "brec_str_26",
+        "brec_str_27",
+        "brec_str_28",
+        "brec_str_29",
+        "brec_str_30",
+        "brec_str_31",
+        "brec_str_32",
+        "brec_str_33",
+        "brec_str_34",
+        "brec_str_35",
+        "brec_str_36",
+        "brec_str_37",
+        "brec_str_38",
+        "brec_str_39",
+        "brec_str_40",
+        "brec_str_41",
+        "brec_str_42",
+        "brec_str_43",
+        "brec_str_44",
+        "brec_str_45",
+        "brec_str_46",
+        "brec_str_47",
+        "brec_str_48",
+        "brec_str_49",
+        "brec_cfi_11",
+        "brec_cfi_12",
+        "brec_cfi_17",
+        "brec_cfi_21",
+        "brec_cfi_31",
+        "brec_cfi_34",
+        "brec_cfi_39",
+        "brec_cfi_42",
+        "brec_cfi_73",
+        "brec_dr_1",
+        "brec_dr_2",
+        "brec_dr_3",
+        "brec_dr_4",
+        "brec_dr_5",
+        "brec_dr_6",
+        "brec_dr_7",
+        "brec_dr_8",
+        "brec_dr_9",
+        "brec_dr_10",
+        "brec_dr_11",
+        "brec_dr_12",
+        "brec_dr_13",
+        "brec_dr_14",
+        "brec_dr_15",
+        "brec_dr_16",
+        "brec_dr_17",
+        "brec_dr_18",
+        "brec_dr_19"
+      ],
+      "count_both_fail": 80,
+      "strongly_regular_results": {
+        "srg_shrikhande_vs_rook": {
+          "RWPE_diag_K20": false,
+          "linear_walk_diag_T20": false,
+          "nRWPE_diag_tanh_T20": false,
+          "nRWPE_diag_softplus_T20": false,
+          "nRWPE_diag_relu_T20": false,
+          "nRWPE_offdiag_tanh_T20": false,
+          "nRWPE_diag_tanh_T50": false
+        },
+        "srg_T8_vs_chang0": {
+          "RWPE_diag_K20": false,
+          "linear_walk_diag_T20": false,
+          "nRWPE_diag_tanh_T20": false,
+          "nRWPE_diag_softplus_T20": false,
+          "nRWPE_diag_relu_T20": false,
+          "nRWPE_offdiag_tanh_T20": false,
+          "nRWPE_diag_tanh_T50": false
+        }
+      }
+    },
+    "sanity_checks": {
+      "rwpe_vs_linear_walk": {
+        "cospectral_5v_canonical": 0.0,
+        "cospectral_6v_0": 0.0,
+        "cospectral_6v_1": 0.0,
+        "cospectral_6v_2": 1.3877787807814457e-16,
+        "cospectral_6v_3": 0.0
+      },
+      "row_stochastic": true,
+      "nonlinearity_effect": {
+        "cospectral_5v_canonical": 0.7383612839472671,
+        "cospectral_6v_0": 0.2608329861592877,
+        "cospectral_6v_1": 0.2715228440195402,
+        "cospectral_6v_2": 0.3581752497183408,
+        "cospectral_6v_3": 0.12751373440832353
+      }
+    },
+    "threshold_sensitivity": {
+      "threshold_1e-08": {
+        "RWPE_diag_K20": {
+          "distinguished": 345,
+          "rate": 0.6571428571428571
+        },
+        "linear_walk_diag_T20": {
+          "distinguished": 344,
+          "rate": 0.6552380952380953
+        },
+        "nRWPE_diag_tanh_T20": {
+          "distinguished": 347,
+          "rate": 0.660952380952381
+        },
+        "nRWPE_diag_softplus_T20": {
+          "distinguished": 342,
+          "rate": 0.6514285714285715
+        },
+        "nRWPE_diag_relu_T20": {
+          "distinguished": 344,
+          "rate": 0.6552380952380953
+        },
+        "nRWPE_offdiag_tanh_T20": {
+          "distinguished": 350,
+          "rate": 0.6666666666666666
+        },
+        "nRWPE_diag_tanh_T50": {
+          "distinguished": 350,
+          "rate": 0.6666666666666666
+        }
+      },
+      "threshold_1e-06": {
+        "RWPE_diag_K20": {
+          "distinguished": 345,
+          "rate": 0.6571428571428571
+        },
+        "linear_walk_diag_T20": {
+          "distinguished": 344,
+          "rate": 0.6552380952380953
+        },
+        "nRWPE_diag_tanh_T20": {
+          "distinguished": 345,
+          "rate": 0.6571428571428571
+        },
+        "nRWPE_diag_softplus_T20": {
+          "distinguished": 342,
+          "rate": 0.6514285714285715
+        },
+        "nRWPE_diag_relu_T20": {
+          "distinguished": 344,
+          "rate": 0.6552380952380953
+        },
+        "nRWPE_offdiag_tanh_T20": {
+          "distinguished": 346,
+          "rate": 0.659047619047619
+        },
+        "nRWPE_diag_tanh_T50": {
+          "distinguished": 346,
+          "rate": 0.659047619047619
+        }
+      },
+      "threshold_1e-04": {
+        "RWPE_diag_K20": {
+          "distinguished": 345,
+          "rate": 0.6571428571428571
+        },
+        "linear_walk_diag_T20": {
+          "distinguished": 344,
+          "rate": 0.6552380952380953
+        },
+        "nRWPE_diag_tanh_T20": {
+          "distinguished": 345,
+          "rate": 0.6571428571428571
+        },
+        "nRWPE_diag_softplus_T20": {
+          "distinguished": 335,
+          "rate": 0.638095238095238
+        },
+        "nRWPE_diag_relu_T20": {
+          "distinguished": 344,
+          "rate": 0.6552380952380953
+        },
+        "nRWPE_offdiag_tanh_T20": {
+          "distinguished": 345,
+          "rate": 0.6571428571428571
+        },
+        "nRWPE_diag_tanh_T50": {
+          "distinguished": 346,
+          "rate": 0.659047619047619
+        }
+      },
+      "fragile_zone_counts": {
+        "RWPE_diag_K20": 0,
+        "linear_walk_diag_T20": 0,
+        "nRWPE_diag_tanh_T20": 2,
+        "nRWPE_diag_softplus_T20": 7,
+        "nRWPE_diag_relu_T20": 0,
+        "nRWPE_offdiag_tanh_T20": 5,
+        "nRWPE_diag_tanh_T50": 4
+      }
+    },
+    "timing": {
+      "total_seconds": 65.51726818084717,
+      "processing_seconds": 63.413673877716064,
+      "equivariance_seconds": 1.6476809978485107,
+      "pairs_per_second": 8.27897151980794
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "graph_expressiveness_benchmark",
+      "examples": [
+        {
+          "input": "{\"pair_id\": \"cospectral_5v_canonical\", \"category\": \"cospectral\", \"num_nodes\": 5, \"are_cospectral\": true}",
+          "output": "{\"distances\": {\"RWPE_diag_K20\": 2.23606797749979, \"linear_walk_diag_T20\": 2.23606797749979, \"nRWPE_diag_tanh_T20\": 0.9405873381584262, \"nRWPE_diag_softplus_T20\": 7.692838861957845, \"nRWPE_diag_relu_T20\": 2.23606797749979, \"nRWPE_offdiag_tanh_T20\": 1.93040032065906, \"nRWPE_diag_tanh_T50\": 1.1486905175675055}, \"linf_distances\": {\"RWPE_diag_K20\": 0.5, \"linear_walk_diag_T20\": 0.5, \"nRWPE_diag_tanh_T20\": 0.24013621895243303, \"nRWPE_diag_softplus_T20\": 2.3648096303422173, \"nRWPE_diag_relu_T20\": 0.5, \"nRWPE_offdiag_tanh_T20\": 0.4318081805950961, \"nRWPE_diag_tanh_T50\": 0.24013621895243303}, \"distinguished\": {\"RWPE_diag_K20\": true, \"linear_walk_diag_T20\": true, \"nRWPE_diag_tanh_T20\": true, \"nRWPE_diag_softplus_T20\": true, \"nRWPE_diag_relu_T20\": true, \"nRWPE_offdiag_tanh_T20\": true, \"nRWPE_diag_tanh_T50\": true}}",
+          "metadata_pair_id": "cospectral_5v_canonical",
+          "metadata_category": "cospectral",
+          "metadata_are_cospectral": true,
+          "metadata_num_nodes": 5,
+          "predict_RWPE_diag_K20": "{\"distinguished\": true, \"l2_distance\": 2.23606797749979}",
+          "predict_linear_walk_diag_T20": "{\"distinguished\": true, \"l2_distance\": 2.23606797749979}",
+          "predict_nRWPE_diag_tanh_T20": "{\"distinguished\": true, \"l2_distance\": 0.9405873381584262}",
+          "predict_nRWPE_diag_softplus_T20": "{\"distinguished\": true, \"l2_distance\": 7.692838861957845}",
+          "predict_nRWPE_diag_relu_T20": "{\"distinguished\": true, \"l2_distance\": 2.23606797749979}",
+          "predict_nRWPE_offdiag_tanh_T20": "{\"distinguished\": true, \"l2_distance\": 1.93040032065906}",
+          "predict_nRWPE_diag_tanh_T50": "{\"distinguished\": true, \"l2_distance\": 1.1486905175675055}"
+        },
+        {
+          "input": "{\"pair_id\": \"cospectral_6v_0\", \"category\": \"cospectral\", \"num_nodes\": 6, \"are_cospectral\": true}",
+          "output": "{\"distances\": {\"RWPE_diag_K20\": 2.23606797749979, \"linear_walk_diag_T20\": 2.23606797749979, \"nRWPE_diag_tanh_T20\": 0.9405873381584262, \"nRWPE_diag_softplus_T20\": 7.692838861957844, \"nRWPE_diag_relu_T20\": 2.23606797749979, \"nRWPE_offdiag_tanh_T20\": 1.93040032065906, \"nRWPE_diag_tanh_T50\": 1.1486905175675055}, \"linf_distances\": {\"RWPE_diag_K20\": 0.5, \"linear_walk_diag_T20\": 0.5, \"nRWPE_diag_tanh_T20\": 0.24013621895243303, \"nRWPE_diag_softplus_T20\": 2.3648096303422173, \"nRWPE_diag_relu_T20\": 0.5, \"nRWPE_offdiag_tanh_T20\": 0.4318081805950961, \"nRWPE_diag_tanh_T50\": 0.24013621895243303}, \"distinguished\": {\"RWPE_diag_K20\": true, \"linear_walk_diag_T20\": true, \"nRWPE_diag_tanh_T20\": true, \"nRWPE_diag_softplus_T20\": true, \"nRWPE_diag_relu_T20\": true, \"nRWPE_offdiag_tanh_T20\": true, \"nRWPE_diag_tanh_T50\": true}}",
+          "metadata_pair_id": "cospectral_6v_0",
+          "metadata_category": "cospectral",
+          "metadata_are_cospectral": true,
+          "metadata_num_nodes": 6,
+          "predict_RWPE_diag_K20": "{\"distinguished\": true, \"l2_distance\": 2.23606797749979}",
+          "predict_linear_walk_diag_T20": "{\"distinguished\": true, \"l2_distance\": 2.23606797749979}",
+          "predict_nRWPE_diag_tanh_T20": "{\"distinguished\": true, \"l2_distance\": 0.9405873381584262}",
+          "predict_nRWPE_diag_softplus_T20": "{\"distinguished\": true, \"l2_distance\": 7.692838861957844}",
+          "predict_nRWPE_diag_relu_T20": "{\"distinguished\": true, \"l2_distance\": 2.23606797749979}",
+          "predict_nRWPE_offdiag_tanh_T20": "{\"distinguished\": true, \"l2_distance\": 1.93040032065906}",
+          "predict_nRWPE_diag_tanh_T50": "{\"distinguished\": true, \"l2_distance\": 1.1486905175675055}"
+        },
+        {
+          "input": "{\"pair_id\": \"cospectral_6v_1\", \"category\": \"cospectral\", \"num_nodes\": 6, \"are_cospectral\": true}",
+          "output": "{\"distances\": {\"RWPE_diag_K20\": 2.8138595685804746, \"linear_walk_diag_T20\": 2.8138595685804746, \"nRWPE_diag_tanh_T20\": 0.94187073796422, \"nRWPE_diag_softplus_T20\": 7.720381192654803, \"nRWPE_diag_relu_T20\": 2.8138595685804746, \"nRWPE_offdiag_tanh_T20\": 2.2463597919972274, \"nRWPE_diag_tanh_T50\": 1.1767040172434795}, \"linf_distances\": {\"RWPE_diag_K20\": 0.5, \"linear_walk_diag_T20\": 0.5, \"nRWPE_diag_tanh_T20\": 0.3108741055945993, \"nRWPE_diag_softplus_T20\": 2.3700386935818436, \"nRWPE_diag_relu_T20\": 0.5, \"nRWPE_offdiag_tanh_T20\": 0.4318081805950961, \"nRWPE_diag_tanh_T50\": 0.3108741055945993}, \"distinguished\": {\"RWPE_diag_K20\": true, \"linear_walk_diag_T20\": true, \"nRWPE_diag_tanh_T20\": true, \"nRWPE_diag_softplus_T20\": true, \"nRWPE_diag_relu_T20\": true, \"nRWPE_offdiag_tanh_T20\": true, \"nRWPE_diag_tanh_T50\": true}}",
+          "metadata_pair_id": "cospectral_6v_1",
+          "metadata_category": "cospectral",
+          "metadata_are_cospectral": true,
+          "metadata_num_nodes": 6,
+          "predict_RWPE_diag_K20": "{\"distinguished\": true, \"l2_distance\": 2.8138595685804746}",
+          "predict_linear_walk_diag_T20": "{\"distinguished\": true, \"l2_distance\": 2.8138595685804746}",
+          "predict_nRWPE_diag_tanh_T20": "{\"distinguished\": true, \"l2_distance\": 0.94187073796422}",
+          "predict_nRWPE_diag_softplus_T20": "{\"distinguished\": true, \"l2_distance\": 7.720381192654803}",
+          "predict_nRWPE_diag_relu_T20": "{\"distinguished\": true, \"l2_distance\": 2.8138595685804746}",
+          "predict_nRWPE_offdiag_tanh_T20": "{\"distinguished\": true, \"l2_distance\": 2.2463597919972274}",
+          "predict_nRWPE_diag_tanh_T50": "{\"distinguished\": true, \"l2_distance\": 1.1767040172434795}"
+        }
+      ]
+    }
+  ]
+}

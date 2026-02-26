@@ -1,0 +1,258 @@
+2026-02-25 14:39:19.317 | INFO     | __main__:<module>:79 - Hardware: 11 CPUs, 62.0GB RAM, budget 15.0GB
+2026-02-25 14:39:19.324 | INFO     | __main__:load_data:203 - Loading data from mini_data_out.json
+2026-02-25 14:39:19.333 | INFO     | __main__:load_data:208 - Loaded 3 examples
+2026-02-25 14:39:19.336 | INFO     | __main__:main:675 - Categories: {'cospectral': 3}
+2026-02-25 14:39:19.337 | INFO     | __main__:main:678 - Running sanity checks...
+2026-02-25 14:39:19.352 | INFO     | __main__:main:680 - Sanity checks: RWPE vs linear walk max diffs = {'cospectral_5v_canonical': 0.0, 'cospectral_6v_0': 0.0, 'cospectral_6v_1': 0.0}
+2026-02-25 14:39:19.354 | INFO     | __main__:main:681 - Sanity checks: row-stochastic = True
+2026-02-25 14:39:19.357 | INFO     | __main__:main:682 - Sanity checks: nonlinearity effect = {'cospectral_5v_canonical': 0.7383612839472671, 'cospectral_6v_0': 0.2608329861592877, 'cospectral_6v_1': 0.2715228440195402}
+2026-02-25 14:39:19.359 | INFO     | __main__:main:685 - Processing 3 pairs with 7 methods...
+2026-02-25 14:39:19.381 | INFO     | __main__:main:726 - Processing completed in 0.02s (6.8ms/pair)
+2026-02-25 14:39:19.383 | INFO     | __main__:main:737 - No NaN/Inf values found in distances
+2026-02-25 14:39:19.385 | INFO     | __main__:main:740 - Aggregating results...
+2026-02-25 14:39:19.696 | INFO     | __main__:main:746 -   RWPE_diag_K20: 3/3 = 1.0000
+2026-02-25 14:39:19.705 | INFO     | __main__:main:746 -   linear_walk_diag_T20: 3/3 = 1.0000
+2026-02-25 14:39:19.707 | INFO     | __main__:main:746 -   nRWPE_diag_tanh_T20: 3/3 = 1.0000
+2026-02-25 14:39:19.709 | INFO     | __main__:main:746 -   nRWPE_diag_softplus_T20: 3/3 = 1.0000
+2026-02-25 14:39:19.711 | INFO     | __main__:main:746 -   nRWPE_diag_relu_T20: 3/3 = 1.0000
+2026-02-25 14:39:19.713 | INFO     | __main__:main:746 -   nRWPE_offdiag_tanh_T20: 3/3 = 1.0000
+2026-02-25 14:39:19.715 | INFO     | __main__:main:746 -   nRWPE_diag_tanh_T50: 3/3 = 1.0000
+2026-02-25 14:39:19.717 | INFO     | __main__:main:749 - Computing head-to-head comparisons...
+2026-02-25 14:39:19.719 | INFO     | __main__:main:752 -   nRWPE_tanh_vs_RWPE: {'both_distinguish': 3, 'nRWPE_diag_tanh_T20_only': 0, 'RWPE_diag_K20_only': 0, 'neither': 0}
+2026-02-25 14:39:19.721 | INFO     | __main__:main:752 -   nRWPE_tanh_vs_linear_walk: {'both_distinguish': 3, 'nRWPE_diag_tanh_T20_only': 0, 'linear_walk_diag_T20_only': 0, 'neither': 0}
+2026-02-25 14:39:19.723 | INFO     | __main__:main:752 -   nRWPE_offdiag_vs_diag: {'both_distinguish': 3, 'nRWPE_offdiag_tanh_T20_only': 0, 'nRWPE_diag_tanh_T20_only': 0, 'neither': 0}
+2026-02-25 14:39:19.725 | INFO     | __main__:main:752 -   tanh_vs_softplus: {'both_distinguish': 3, 'nRWPE_diag_tanh_T20_only': 0, 'nRWPE_diag_softplus_T20_only': 0, 'neither': 0}
+2026-02-25 14:39:19.726 | INFO     | __main__:main:752 -   tanh_vs_relu: {'both_distinguish': 3, 'nRWPE_diag_tanh_T20_only': 0, 'nRWPE_diag_relu_T20_only': 0, 'neither': 0}
+2026-02-25 14:39:19.728 | INFO     | __main__:main:755 - Running equivariance verification...
+2026-02-25 14:39:19.948 | INFO     | __main__:main:759 - Equivariance test: max_error=5.45e-01, all_pass=False (0.2s)
+2026-02-25 14:39:19.950 | INFO     | __main__:main:763 - Analyzing convergence (T=20 vs T=50)...
+2026-02-25 14:39:19.955 | INFO     | __main__:main:765 - Convergence: T20 rate=1.0000, T50 rate=1.0000, diff=0.0000
+2026-02-25 14:39:19.957 | INFO     | __main__:main:770 - Analyzing cospectral pairs...
+2026-02-25 14:39:19.959 | INFO     | __main__:main:772 - Cospectral: nRWPE beats RWPE on 0 pairs, both fail on 0 pairs
+2026-02-25 14:39:19.961 | INFO     | __main__:main:776 - Analyzing threshold sensitivity...
+2026-02-25 14:39:19.963 | INFO     | __main__:main:787 - Total time: 0.64s
+2026-02-25 14:39:19.965 | INFO     | __main__:main:790 - Formatting output...
+2026-02-25 14:39:19.981 | INFO     | __main__:main:806 - Saved output to /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-25 14:40:13.755 | INFO     | __main__:<module>:79 - Hardware: 11 CPUs, 62.0GB RAM, budget 15.0GB
+2026-02-25 14:40:13.765 | INFO     | __main__:load_data:203 - Loading data from mini_data_out.json
+2026-02-25 14:40:13.772 | INFO     | __main__:load_data:208 - Loaded 3 examples
+2026-02-25 14:40:13.774 | INFO     | __main__:main:676 - Categories: {'cospectral': 3}
+2026-02-25 14:40:13.776 | INFO     | __main__:main:679 - Running sanity checks...
+2026-02-25 14:40:13.781 | INFO     | __main__:main:681 - Sanity checks: RWPE vs linear walk max diffs = {'cospectral_5v_canonical': 0.0, 'cospectral_6v_0': 0.0, 'cospectral_6v_1': 0.0}
+2026-02-25 14:40:13.784 | INFO     | __main__:main:682 - Sanity checks: row-stochastic = True
+2026-02-25 14:40:13.786 | INFO     | __main__:main:683 - Sanity checks: nonlinearity effect = {'cospectral_5v_canonical': 0.7383612839472671, 'cospectral_6v_0': 0.2608329861592877, 'cospectral_6v_1': 0.2715228440195402}
+2026-02-25 14:40:13.788 | INFO     | __main__:main:686 - Processing 3 pairs with 7 methods...
+2026-02-25 14:40:13.808 | INFO     | __main__:main:727 - Processing completed in 0.02s (6.0ms/pair)
+2026-02-25 14:40:13.810 | INFO     | __main__:main:738 - No NaN/Inf values found in distances
+2026-02-25 14:40:13.812 | INFO     | __main__:main:741 - Aggregating results...
+2026-02-25 14:40:13.858 | INFO     | __main__:main:747 -   RWPE_diag_K20: 3/3 = 1.0000
+2026-02-25 14:40:13.860 | INFO     | __main__:main:747 -   linear_walk_diag_T20: 3/3 = 1.0000
+2026-02-25 14:40:13.862 | INFO     | __main__:main:747 -   nRWPE_diag_tanh_T20: 3/3 = 1.0000
+2026-02-25 14:40:13.864 | INFO     | __main__:main:747 -   nRWPE_diag_softplus_T20: 3/3 = 1.0000
+2026-02-25 14:40:13.866 | INFO     | __main__:main:747 -   nRWPE_diag_relu_T20: 3/3 = 1.0000
+2026-02-25 14:40:13.868 | INFO     | __main__:main:747 -   nRWPE_offdiag_tanh_T20: 3/3 = 1.0000
+2026-02-25 14:40:13.870 | INFO     | __main__:main:747 -   nRWPE_diag_tanh_T50: 3/3 = 1.0000
+2026-02-25 14:40:13.871 | INFO     | __main__:main:750 - Computing head-to-head comparisons...
+2026-02-25 14:40:13.873 | INFO     | __main__:main:753 -   nRWPE_tanh_vs_RWPE: {'both_distinguish': 3, 'nRWPE_diag_tanh_T20_only': 0, 'RWPE_diag_K20_only': 0, 'neither': 0}
+2026-02-25 14:40:13.875 | INFO     | __main__:main:753 -   nRWPE_tanh_vs_linear_walk: {'both_distinguish': 3, 'nRWPE_diag_tanh_T20_only': 0, 'linear_walk_diag_T20_only': 0, 'neither': 0}
+2026-02-25 14:40:13.878 | INFO     | __main__:main:753 -   nRWPE_offdiag_vs_diag: {'both_distinguish': 3, 'nRWPE_offdiag_tanh_T20_only': 0, 'nRWPE_diag_tanh_T20_only': 0, 'neither': 0}
+2026-02-25 14:40:13.881 | INFO     | __main__:main:753 -   tanh_vs_softplus: {'both_distinguish': 3, 'nRWPE_diag_tanh_T20_only': 0, 'nRWPE_diag_softplus_T20_only': 0, 'neither': 0}
+2026-02-25 14:40:13.882 | INFO     | __main__:main:753 -   tanh_vs_relu: {'both_distinguish': 3, 'nRWPE_diag_tanh_T20_only': 0, 'nRWPE_diag_relu_T20_only': 0, 'neither': 0}
+2026-02-25 14:40:13.884 | INFO     | __main__:main:756 - Running equivariance verification...
+2026-02-25 14:40:14.001 | INFO     | __main__:main:760 - Equivariance test: max_error=0.00e+00, all_pass=True (0.1s)
+2026-02-25 14:40:14.007 | INFO     | __main__:main:764 - Analyzing convergence (T=20 vs T=50)...
+2026-02-25 14:40:14.011 | INFO     | __main__:main:766 - Convergence: T20 rate=1.0000, T50 rate=1.0000, diff=0.0000
+2026-02-25 14:40:14.014 | INFO     | __main__:main:771 - Analyzing cospectral pairs...
+2026-02-25 14:40:14.016 | INFO     | __main__:main:773 - Cospectral: nRWPE beats RWPE on 0 pairs, both fail on 0 pairs
+2026-02-25 14:40:14.018 | INFO     | __main__:main:777 - Analyzing threshold sensitivity...
+2026-02-25 14:40:14.021 | INFO     | __main__:main:788 - Total time: 0.26s
+2026-02-25 14:40:14.024 | INFO     | __main__:main:791 - Formatting output...
+2026-02-25 14:40:14.045 | INFO     | __main__:main:807 - Saved output to /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-25 14:40:26.919 | INFO     | __main__:<module>:79 - Hardware: 11 CPUs, 62.0GB RAM, budget 15.0GB
+2026-02-25 14:40:26.926 | INFO     | __main__:load_data:203 - Loading data from full_data_out.json
+2026-02-25 14:40:27.007 | INFO     | __main__:load_data:208 - Loaded 10 examples
+2026-02-25 14:40:27.010 | INFO     | __main__:main:676 - Categories: {'cospectral': 10}
+2026-02-25 14:40:27.012 | INFO     | __main__:main:679 - Running sanity checks...
+2026-02-25 14:40:27.018 | INFO     | __main__:main:681 - Sanity checks: RWPE vs linear walk max diffs = {'cospectral_5v_canonical': 0.0, 'cospectral_6v_0': 0.0, 'cospectral_6v_1': 0.0, 'cospectral_6v_2': 1.3877787807814457e-16, 'cospectral_6v_3': 0.0}
+2026-02-25 14:40:27.020 | INFO     | __main__:main:682 - Sanity checks: row-stochastic = True
+2026-02-25 14:40:27.022 | INFO     | __main__:main:683 - Sanity checks: nonlinearity effect = {'cospectral_5v_canonical': 0.7383612839472671, 'cospectral_6v_0': 0.2608329861592877, 'cospectral_6v_1': 0.2715228440195402, 'cospectral_6v_2': 0.3581752497183408, 'cospectral_6v_3': 0.12751373440832353}
+2026-02-25 14:40:27.025 | INFO     | __main__:main:686 - Processing 10 pairs with 7 methods...
+2026-02-25 14:40:27.073 | INFO     | __main__:main:727 - Processing completed in 0.05s (4.6ms/pair)
+2026-02-25 14:40:27.075 | INFO     | __main__:main:738 - No NaN/Inf values found in distances
+2026-02-25 14:40:27.077 | INFO     | __main__:main:741 - Aggregating results...
+2026-02-25 14:40:27.112 | INFO     | __main__:main:747 -   RWPE_diag_K20: 10/10 = 1.0000
+2026-02-25 14:40:27.113 | INFO     | __main__:main:747 -   linear_walk_diag_T20: 10/10 = 1.0000
+2026-02-25 14:40:27.115 | INFO     | __main__:main:747 -   nRWPE_diag_tanh_T20: 10/10 = 1.0000
+2026-02-25 14:40:27.116 | INFO     | __main__:main:747 -   nRWPE_diag_softplus_T20: 10/10 = 1.0000
+2026-02-25 14:40:27.117 | INFO     | __main__:main:747 -   nRWPE_diag_relu_T20: 10/10 = 1.0000
+2026-02-25 14:40:27.119 | INFO     | __main__:main:747 -   nRWPE_offdiag_tanh_T20: 10/10 = 1.0000
+2026-02-25 14:40:27.120 | INFO     | __main__:main:747 -   nRWPE_diag_tanh_T50: 10/10 = 1.0000
+2026-02-25 14:40:27.122 | INFO     | __main__:main:750 - Computing head-to-head comparisons...
+2026-02-25 14:40:27.124 | INFO     | __main__:main:753 -   nRWPE_tanh_vs_RWPE: {'both_distinguish': 10, 'nRWPE_diag_tanh_T20_only': 0, 'RWPE_diag_K20_only': 0, 'neither': 0}
+2026-02-25 14:40:27.126 | INFO     | __main__:main:753 -   nRWPE_tanh_vs_linear_walk: {'both_distinguish': 10, 'nRWPE_diag_tanh_T20_only': 0, 'linear_walk_diag_T20_only': 0, 'neither': 0}
+2026-02-25 14:40:27.127 | INFO     | __main__:main:753 -   nRWPE_offdiag_vs_diag: {'both_distinguish': 10, 'nRWPE_offdiag_tanh_T20_only': 0, 'nRWPE_diag_tanh_T20_only': 0, 'neither': 0}
+2026-02-25 14:40:27.129 | INFO     | __main__:main:753 -   tanh_vs_softplus: {'both_distinguish': 10, 'nRWPE_diag_tanh_T20_only': 0, 'nRWPE_diag_softplus_T20_only': 0, 'neither': 0}
+2026-02-25 14:40:27.130 | INFO     | __main__:main:753 -   tanh_vs_relu: {'both_distinguish': 10, 'nRWPE_diag_tanh_T20_only': 0, 'nRWPE_diag_relu_T20_only': 0, 'neither': 0}
+2026-02-25 14:40:27.131 | INFO     | __main__:main:756 - Running equivariance verification...
+2026-02-25 14:40:27.313 | INFO     | __main__:main:760 - Equivariance test: max_error=8.33e-17, all_pass=True (0.2s)
+2026-02-25 14:40:27.316 | INFO     | __main__:main:764 - Analyzing convergence (T=20 vs T=50)...
+2026-02-25 14:40:27.318 | INFO     | __main__:main:766 - Convergence: T20 rate=1.0000, T50 rate=1.0000, diff=0.0000
+2026-02-25 14:40:27.321 | INFO     | __main__:main:771 - Analyzing cospectral pairs...
+2026-02-25 14:40:27.324 | INFO     | __main__:main:773 - Cospectral: nRWPE beats RWPE on 0 pairs, both fail on 0 pairs
+2026-02-25 14:40:27.326 | INFO     | __main__:main:777 - Analyzing threshold sensitivity...
+2026-02-25 14:40:27.330 | INFO     | __main__:main:788 - Total time: 0.40s
+2026-02-25 14:40:27.332 | INFO     | __main__:main:791 - Formatting output...
+2026-02-25 14:40:27.355 | INFO     | __main__:main:807 - Saved output to /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-25 14:40:35.147 | INFO     | __main__:<module>:79 - Hardware: 11 CPUs, 62.0GB RAM, budget 15.0GB
+2026-02-25 14:40:35.155 | INFO     | __main__:load_data:203 - Loading data from full_data_out.json
+2026-02-25 14:40:35.221 | INFO     | __main__:load_data:208 - Loaded 50 examples
+2026-02-25 14:40:35.225 | INFO     | __main__:main:676 - Categories: {'cospectral': 50}
+2026-02-25 14:40:35.226 | INFO     | __main__:main:679 - Running sanity checks...
+2026-02-25 14:40:35.233 | INFO     | __main__:main:681 - Sanity checks: RWPE vs linear walk max diffs = {'cospectral_5v_canonical': 0.0, 'cospectral_6v_0': 0.0, 'cospectral_6v_1': 0.0, 'cospectral_6v_2': 1.3877787807814457e-16, 'cospectral_6v_3': 0.0}
+2026-02-25 14:40:35.234 | INFO     | __main__:main:682 - Sanity checks: row-stochastic = True
+2026-02-25 14:40:35.237 | INFO     | __main__:main:683 - Sanity checks: nonlinearity effect = {'cospectral_5v_canonical': 0.7383612839472671, 'cospectral_6v_0': 0.2608329861592877, 'cospectral_6v_1': 0.2715228440195402, 'cospectral_6v_2': 0.3581752497183408, 'cospectral_6v_3': 0.12751373440832353}
+2026-02-25 14:40:35.238 | INFO     | __main__:main:686 - Processing 50 pairs with 7 methods...
+2026-02-25 14:40:35.241 | INFO     | __main__:main:691 - Using 10 workers for parallel processing
+2026-02-25 14:40:35.297 | INFO     | __main__:main:727 - Processing completed in 0.06s (1.1ms/pair)
+2026-02-25 14:40:35.308 | INFO     | __main__:main:738 - No NaN/Inf values found in distances
+2026-02-25 14:40:35.310 | INFO     | __main__:main:741 - Aggregating results...
+2026-02-25 14:40:35.354 | INFO     | __main__:main:747 -   RWPE_diag_K20: 50/50 = 1.0000
+2026-02-25 14:40:35.356 | INFO     | __main__:main:747 -   linear_walk_diag_T20: 50/50 = 1.0000
+2026-02-25 14:40:35.358 | INFO     | __main__:main:747 -   nRWPE_diag_tanh_T20: 50/50 = 1.0000
+2026-02-25 14:40:35.360 | INFO     | __main__:main:747 -   nRWPE_diag_softplus_T20: 50/50 = 1.0000
+2026-02-25 14:40:35.361 | INFO     | __main__:main:747 -   nRWPE_diag_relu_T20: 50/50 = 1.0000
+2026-02-25 14:40:35.363 | INFO     | __main__:main:747 -   nRWPE_offdiag_tanh_T20: 50/50 = 1.0000
+2026-02-25 14:40:35.365 | INFO     | __main__:main:747 -   nRWPE_diag_tanh_T50: 50/50 = 1.0000
+2026-02-25 14:40:35.367 | INFO     | __main__:main:750 - Computing head-to-head comparisons...
+2026-02-25 14:40:35.368 | INFO     | __main__:main:753 -   nRWPE_tanh_vs_RWPE: {'both_distinguish': 50, 'nRWPE_diag_tanh_T20_only': 0, 'RWPE_diag_K20_only': 0, 'neither': 0}
+2026-02-25 14:40:35.370 | INFO     | __main__:main:753 -   nRWPE_tanh_vs_linear_walk: {'both_distinguish': 50, 'nRWPE_diag_tanh_T20_only': 0, 'linear_walk_diag_T20_only': 0, 'neither': 0}
+2026-02-25 14:40:35.371 | INFO     | __main__:main:753 -   nRWPE_offdiag_vs_diag: {'both_distinguish': 50, 'nRWPE_offdiag_tanh_T20_only': 0, 'nRWPE_diag_tanh_T20_only': 0, 'neither': 0}
+2026-02-25 14:40:35.373 | INFO     | __main__:main:753 -   tanh_vs_softplus: {'both_distinguish': 50, 'nRWPE_diag_tanh_T20_only': 0, 'nRWPE_diag_softplus_T20_only': 0, 'neither': 0}
+2026-02-25 14:40:35.374 | INFO     | __main__:main:753 -   tanh_vs_relu: {'both_distinguish': 50, 'nRWPE_diag_tanh_T20_only': 0, 'nRWPE_diag_relu_T20_only': 0, 'neither': 0}
+2026-02-25 14:40:35.376 | INFO     | __main__:main:756 - Running equivariance verification...
+2026-02-25 14:40:35.618 | INFO     | __main__:main:760 - Equivariance test: max_error=1.11e-16, all_pass=True (0.2s)
+2026-02-25 14:40:35.620 | INFO     | __main__:main:764 - Analyzing convergence (T=20 vs T=50)...
+2026-02-25 14:40:35.623 | INFO     | __main__:main:766 - Convergence: T20 rate=1.0000, T50 rate=1.0000, diff=0.0000
+2026-02-25 14:40:35.625 | INFO     | __main__:main:771 - Analyzing cospectral pairs...
+2026-02-25 14:40:35.626 | INFO     | __main__:main:773 - Cospectral: nRWPE beats RWPE on 0 pairs, both fail on 0 pairs
+2026-02-25 14:40:35.628 | INFO     | __main__:main:777 - Analyzing threshold sensitivity...
+2026-02-25 14:40:35.632 | INFO     | __main__:main:788 - Total time: 0.48s
+2026-02-25 14:40:35.634 | INFO     | __main__:main:791 - Formatting output...
+2026-02-25 14:40:35.661 | INFO     | __main__:main:807 - Saved output to /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-25 14:40:42.083 | INFO     | __main__:<module>:79 - Hardware: 11 CPUs, 62.0GB RAM, budget 15.0GB
+2026-02-25 14:40:42.092 | INFO     | __main__:load_data:203 - Loading data from full_data_out.json
+2026-02-25 14:40:42.167 | INFO     | __main__:load_data:208 - Loaded 525 examples
+2026-02-25 14:40:42.359 | INFO     | __main__:main:676 - Categories: {'BREC_4Vertex': 20, 'BREC_Basic': 60, 'BREC_CFI': 100, 'BREC_Distance_Regular': 20, 'BREC_Extension': 100, 'BREC_Regular': 50, 'BREC_Strongly_Regular': 50, 'CSL': 59, 'cospectral': 64, 'strongly_regular': 2}
+2026-02-25 14:40:42.361 | INFO     | __main__:main:679 - Running sanity checks...
+2026-02-25 14:40:42.364 | INFO     | __main__:main:681 - Sanity checks: RWPE vs linear walk max diffs = {'cospectral_5v_canonical': 0.0, 'cospectral_6v_0': 0.0, 'cospectral_6v_1': 0.0, 'cospectral_6v_2': 1.3877787807814457e-16, 'cospectral_6v_3': 0.0}
+2026-02-25 14:40:42.366 | INFO     | __main__:main:682 - Sanity checks: row-stochastic = True
+2026-02-25 14:40:42.368 | INFO     | __main__:main:683 - Sanity checks: nonlinearity effect = {'cospectral_5v_canonical': 0.7383612839472671, 'cospectral_6v_0': 0.2608329861592877, 'cospectral_6v_1': 0.2715228440195402, 'cospectral_6v_2': 0.3581752497183408, 'cospectral_6v_3': 0.12751373440832353}
+2026-02-25 14:40:42.370 | INFO     | __main__:main:686 - Processing 525 pairs with 7 methods...
+2026-02-25 14:40:42.372 | INFO     | __main__:main:691 - Using 10 workers for parallel processing
+2026-02-25 14:40:42.498 | INFO     | __main__:main:716 -   Processed 100/525 pairs
+2026-02-25 14:40:42.539 | INFO     | __main__:main:716 -   Processed 200/525 pairs
+2026-02-25 14:40:42.598 | INFO     | __main__:main:716 -   Processed 300/525 pairs
+2026-02-25 14:40:43.073 | INFO     | __main__:main:716 -   Processed 400/525 pairs
+2026-02-25 14:41:15.381 | INFO     | __main__:main:716 -   Processed 500/525 pairs
+2026-02-25 14:41:27.378 | INFO     | __main__:main:727 - Processing completed in 45.01s (85.7ms/pair)
+2026-02-25 14:41:27.387 | INFO     | __main__:main:738 - No NaN/Inf values found in distances
+2026-02-25 14:41:27.388 | INFO     | __main__:main:741 - Aggregating results...
+2026-02-25 14:41:27.431 | INFO     | __main__:main:747 -   RWPE_diag_K20: 345/525 = 0.6571
+2026-02-25 14:41:27.432 | INFO     | __main__:main:747 -   linear_walk_diag_T20: 344/525 = 0.6552
+2026-02-25 14:41:27.434 | INFO     | __main__:main:747 -   nRWPE_diag_tanh_T20: 345/525 = 0.6571
+2026-02-25 14:41:27.436 | INFO     | __main__:main:747 -   nRWPE_diag_softplus_T20: 342/525 = 0.6514
+2026-02-25 14:41:27.438 | INFO     | __main__:main:747 -   nRWPE_diag_relu_T20: 344/525 = 0.6552
+2026-02-25 14:41:27.440 | INFO     | __main__:main:747 -   nRWPE_offdiag_tanh_T20: 346/525 = 0.6590
+2026-02-25 14:41:27.441 | INFO     | __main__:main:747 -   nRWPE_diag_tanh_T50: 346/525 = 0.6590
+2026-02-25 14:41:27.443 | INFO     | __main__:main:750 - Computing head-to-head comparisons...
+2026-02-25 14:41:27.446 | INFO     | __main__:main:753 -   nRWPE_tanh_vs_RWPE: {'both_distinguish': 343, 'nRWPE_diag_tanh_T20_only': 2, 'RWPE_diag_K20_only': 2, 'neither': 178}
+2026-02-25 14:41:27.448 | INFO     | __main__:main:753 -   nRWPE_tanh_vs_linear_walk: {'both_distinguish': 343, 'nRWPE_diag_tanh_T20_only': 2, 'linear_walk_diag_T20_only': 1, 'neither': 179}
+2026-02-25 14:41:27.449 | INFO     | __main__:main:753 -   nRWPE_offdiag_vs_diag: {'both_distinguish': 344, 'nRWPE_offdiag_tanh_T20_only': 2, 'nRWPE_diag_tanh_T20_only': 1, 'neither': 178}
+2026-02-25 14:41:27.451 | INFO     | __main__:main:753 -   tanh_vs_softplus: {'both_distinguish': 341, 'nRWPE_diag_tanh_T20_only': 4, 'nRWPE_diag_softplus_T20_only': 1, 'neither': 179}
+2026-02-25 14:41:27.452 | INFO     | __main__:main:753 -   tanh_vs_relu: {'both_distinguish': 343, 'nRWPE_diag_tanh_T20_only': 2, 'nRWPE_diag_relu_T20_only': 1, 'neither': 179}
+2026-02-25 14:41:27.454 | INFO     | __main__:main:756 - Running equivariance verification...
+2026-02-25 14:41:28.477 | INFO     | __main__:main:760 - Equivariance test: max_error=8.33e-17, all_pass=True (1.0s)
+2026-02-25 14:41:28.481 | INFO     | __main__:main:764 - Analyzing convergence (T=20 vs T=50)...
+2026-02-25 14:41:28.485 | INFO     | __main__:main:766 - Convergence: T20 rate=0.6571, T50 rate=0.6590, diff=0.0019
+2026-02-25 14:41:28.487 | INFO     | __main__:main:771 - Analyzing cospectral pairs...
+2026-02-25 14:41:28.490 | INFO     | __main__:main:773 - Cospectral: nRWPE beats RWPE on 1 pairs, both fail on 80 pairs
+2026-02-25 14:41:28.491 | INFO     | __main__:main:777 - Analyzing threshold sensitivity...
+2026-02-25 14:41:28.504 | INFO     | __main__:main:788 - Total time: 46.41s
+2026-02-25 14:41:28.508 | INFO     | __main__:main:791 - Formatting output...
+2026-02-25 14:41:28.580 | INFO     | __main__:main:807 - Saved output to /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-25 14:42:11.050 | INFO     | __main__:<module>:79 - Hardware: 11 CPUs, 62.0GB RAM, budget 15.0GB
+2026-02-25 14:42:11.057 | INFO     | __main__:load_data:203 - Loading data from mini_data_out.json
+2026-02-25 14:42:11.141 | INFO     | __main__:load_data:208 - Loaded 3 examples
+2026-02-25 14:42:11.143 | INFO     | __main__:main:676 - Categories: {'cospectral': 3}
+2026-02-25 14:42:11.145 | INFO     | __main__:main:679 - Running sanity checks...
+2026-02-25 14:42:11.162 | INFO     | __main__:main:681 - Sanity checks: RWPE vs linear walk max diffs = {'cospectral_5v_canonical': 0.0, 'cospectral_6v_0': 0.0, 'cospectral_6v_1': 0.0}
+2026-02-25 14:42:11.164 | INFO     | __main__:main:682 - Sanity checks: row-stochastic = True
+2026-02-25 14:42:11.166 | INFO     | __main__:main:683 - Sanity checks: nonlinearity effect = {'cospectral_5v_canonical': 0.7383612839472671, 'cospectral_6v_0': 0.2608329861592877, 'cospectral_6v_1': 0.2715228440195402}
+2026-02-25 14:42:11.167 | INFO     | __main__:main:686 - Processing 3 pairs with 7 methods...
+2026-02-25 14:42:11.190 | INFO     | __main__:main:727 - Processing completed in 0.02s (6.9ms/pair)
+2026-02-25 14:42:11.192 | INFO     | __main__:main:738 - No NaN/Inf values found in distances
+2026-02-25 14:42:11.194 | INFO     | __main__:main:741 - Aggregating results...
+2026-02-25 14:42:11.245 | INFO     | __main__:main:747 -   RWPE_diag_K20: 3/3 = 1.0000
+2026-02-25 14:42:11.248 | INFO     | __main__:main:747 -   linear_walk_diag_T20: 3/3 = 1.0000
+2026-02-25 14:42:11.250 | INFO     | __main__:main:747 -   nRWPE_diag_tanh_T20: 3/3 = 1.0000
+2026-02-25 14:42:11.252 | INFO     | __main__:main:747 -   nRWPE_diag_softplus_T20: 3/3 = 1.0000
+2026-02-25 14:42:11.254 | INFO     | __main__:main:747 -   nRWPE_diag_relu_T20: 3/3 = 1.0000
+2026-02-25 14:42:11.256 | INFO     | __main__:main:747 -   nRWPE_offdiag_tanh_T20: 3/3 = 1.0000
+2026-02-25 14:42:11.258 | INFO     | __main__:main:747 -   nRWPE_diag_tanh_T50: 3/3 = 1.0000
+2026-02-25 14:42:11.260 | INFO     | __main__:main:750 - Computing head-to-head comparisons...
+2026-02-25 14:42:11.262 | INFO     | __main__:main:753 -   nRWPE_tanh_vs_RWPE: {'both_distinguish': 3, 'nRWPE_diag_tanh_T20_only': 0, 'RWPE_diag_K20_only': 0, 'neither': 0}
+2026-02-25 14:42:11.265 | INFO     | __main__:main:753 -   nRWPE_tanh_vs_linear_walk: {'both_distinguish': 3, 'nRWPE_diag_tanh_T20_only': 0, 'linear_walk_diag_T20_only': 0, 'neither': 0}
+2026-02-25 14:42:11.267 | INFO     | __main__:main:753 -   nRWPE_offdiag_vs_diag: {'both_distinguish': 3, 'nRWPE_offdiag_tanh_T20_only': 0, 'nRWPE_diag_tanh_T20_only': 0, 'neither': 0}
+2026-02-25 14:42:11.269 | INFO     | __main__:main:753 -   tanh_vs_softplus: {'both_distinguish': 3, 'nRWPE_diag_tanh_T20_only': 0, 'nRWPE_diag_softplus_T20_only': 0, 'neither': 0}
+2026-02-25 14:42:11.271 | INFO     | __main__:main:753 -   tanh_vs_relu: {'both_distinguish': 3, 'nRWPE_diag_tanh_T20_only': 0, 'nRWPE_diag_relu_T20_only': 0, 'neither': 0}
+2026-02-25 14:42:11.273 | INFO     | __main__:main:756 - Running equivariance verification...
+2026-02-25 14:42:11.392 | INFO     | __main__:main:760 - Equivariance test: max_error=0.00e+00, all_pass=True (0.1s)
+2026-02-25 14:42:11.394 | INFO     | __main__:main:764 - Analyzing convergence (T=20 vs T=50)...
+2026-02-25 14:42:11.398 | INFO     | __main__:main:766 - Convergence: T20 rate=1.0000, T50 rate=1.0000, diff=0.0000
+2026-02-25 14:42:11.405 | INFO     | __main__:main:771 - Analyzing cospectral pairs...
+2026-02-25 14:42:11.406 | INFO     | __main__:main:773 - Cospectral: nRWPE beats RWPE on 0 pairs, both fail on 0 pairs
+2026-02-25 14:42:11.408 | INFO     | __main__:main:777 - Analyzing threshold sensitivity...
+2026-02-25 14:42:11.410 | INFO     | __main__:main:788 - Total time: 0.35s
+2026-02-25 14:42:11.411 | INFO     | __main__:main:791 - Formatting output...
+2026-02-25 14:42:11.427 | INFO     | __main__:main:807 - Saved output to /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json
+2026-02-25 14:42:17.675 | INFO     | __main__:<module>:79 - Hardware: 11 CPUs, 62.0GB RAM, budget 15.0GB
+2026-02-25 14:42:17.682 | INFO     | __main__:load_data:203 - Loading data from full_data_out.json
+2026-02-25 14:42:17.760 | INFO     | __main__:load_data:208 - Loaded 525 examples
+2026-02-25 14:42:17.949 | INFO     | __main__:main:676 - Categories: {'BREC_4Vertex': 20, 'BREC_Basic': 60, 'BREC_CFI': 100, 'BREC_Distance_Regular': 20, 'BREC_Extension': 100, 'BREC_Regular': 50, 'BREC_Strongly_Regular': 50, 'CSL': 59, 'cospectral': 64, 'strongly_regular': 2}
+2026-02-25 14:42:17.951 | INFO     | __main__:main:679 - Running sanity checks...
+2026-02-25 14:42:17.956 | INFO     | __main__:main:681 - Sanity checks: RWPE vs linear walk max diffs = {'cospectral_5v_canonical': 0.0, 'cospectral_6v_0': 0.0, 'cospectral_6v_1': 0.0, 'cospectral_6v_2': 1.3877787807814457e-16, 'cospectral_6v_3': 0.0}
+2026-02-25 14:42:17.958 | INFO     | __main__:main:682 - Sanity checks: row-stochastic = True
+2026-02-25 14:42:17.959 | INFO     | __main__:main:683 - Sanity checks: nonlinearity effect = {'cospectral_5v_canonical': 0.7383612839472671, 'cospectral_6v_0': 0.2608329861592877, 'cospectral_6v_1': 0.2715228440195402, 'cospectral_6v_2': 0.3581752497183408, 'cospectral_6v_3': 0.12751373440832353}
+2026-02-25 14:42:17.961 | INFO     | __main__:main:686 - Processing 525 pairs with 7 methods...
+2026-02-25 14:42:17.963 | INFO     | __main__:main:691 - Using 10 workers for parallel processing
+2026-02-25 14:42:18.090 | INFO     | __main__:main:716 -   Processed 100/525 pairs
+2026-02-25 14:42:18.127 | INFO     | __main__:main:716 -   Processed 200/525 pairs
+2026-02-25 14:42:18.187 | INFO     | __main__:main:716 -   Processed 300/525 pairs
+2026-02-25 14:42:18.676 | INFO     | __main__:main:716 -   Processed 400/525 pairs
+2026-02-25 14:43:16.183 | INFO     | __main__:main:716 -   Processed 500/525 pairs
+2026-02-25 14:43:21.377 | INFO     | __main__:main:727 - Processing completed in 63.41s (120.8ms/pair)
+2026-02-25 14:43:21.387 | INFO     | __main__:main:738 - No NaN/Inf values found in distances
+2026-02-25 14:43:21.388 | INFO     | __main__:main:741 - Aggregating results...
+2026-02-25 14:43:21.509 | INFO     | __main__:main:747 -   RWPE_diag_K20: 345/525 = 0.6571
+2026-02-25 14:43:21.510 | INFO     | __main__:main:747 -   linear_walk_diag_T20: 344/525 = 0.6552
+2026-02-25 14:43:21.511 | INFO     | __main__:main:747 -   nRWPE_diag_tanh_T20: 345/525 = 0.6571
+2026-02-25 14:43:21.513 | INFO     | __main__:main:747 -   nRWPE_diag_softplus_T20: 342/525 = 0.6514
+2026-02-25 14:43:21.515 | INFO     | __main__:main:747 -   nRWPE_diag_relu_T20: 344/525 = 0.6552
+2026-02-25 14:43:21.516 | INFO     | __main__:main:747 -   nRWPE_offdiag_tanh_T20: 346/525 = 0.6590
+2026-02-25 14:43:21.517 | INFO     | __main__:main:747 -   nRWPE_diag_tanh_T50: 346/525 = 0.6590
+2026-02-25 14:43:21.519 | INFO     | __main__:main:750 - Computing head-to-head comparisons...
+2026-02-25 14:43:21.521 | INFO     | __main__:main:753 -   nRWPE_tanh_vs_RWPE: {'both_distinguish': 343, 'nRWPE_diag_tanh_T20_only': 2, 'RWPE_diag_K20_only': 2, 'neither': 178}
+2026-02-25 14:43:21.523 | INFO     | __main__:main:753 -   nRWPE_tanh_vs_linear_walk: {'both_distinguish': 343, 'nRWPE_diag_tanh_T20_only': 2, 'linear_walk_diag_T20_only': 1, 'neither': 179}
+2026-02-25 14:43:21.525 | INFO     | __main__:main:753 -   nRWPE_offdiag_vs_diag: {'both_distinguish': 344, 'nRWPE_offdiag_tanh_T20_only': 2, 'nRWPE_diag_tanh_T20_only': 1, 'neither': 178}
+2026-02-25 14:43:21.526 | INFO     | __main__:main:753 -   tanh_vs_softplus: {'both_distinguish': 341, 'nRWPE_diag_tanh_T20_only': 4, 'nRWPE_diag_softplus_T20_only': 1, 'neither': 179}
+2026-02-25 14:43:21.527 | INFO     | __main__:main:753 -   tanh_vs_relu: {'both_distinguish': 343, 'nRWPE_diag_tanh_T20_only': 2, 'nRWPE_diag_relu_T20_only': 1, 'neither': 179}
+2026-02-25 14:43:21.528 | INFO     | __main__:main:756 - Running equivariance verification...
+2026-02-25 14:43:23.177 | INFO     | __main__:main:760 - Equivariance test: max_error=8.33e-17, all_pass=True (1.6s)
+2026-02-25 14:43:23.178 | INFO     | __main__:main:764 - Analyzing convergence (T=20 vs T=50)...
+2026-02-25 14:43:23.182 | INFO     | __main__:main:766 - Convergence: T20 rate=0.6571, T50 rate=0.6590, diff=0.0019
+2026-02-25 14:43:23.183 | INFO     | __main__:main:771 - Analyzing cospectral pairs...
+2026-02-25 14:43:23.185 | INFO     | __main__:main:773 - Cospectral: nRWPE beats RWPE on 1 pairs, both fail on 80 pairs
+2026-02-25 14:43:23.186 | INFO     | __main__:main:777 - Analyzing threshold sensitivity...
+2026-02-25 14:43:23.199 | INFO     | __main__:main:788 - Total time: 65.52s
+2026-02-25 14:43:23.204 | INFO     | __main__:main:791 - Formatting output...
+2026-02-25 14:43:23.263 | INFO     | __main__:main:807 - Saved output to /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/method_out.json

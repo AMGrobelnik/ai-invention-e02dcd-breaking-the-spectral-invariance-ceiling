@@ -1,0 +1,112 @@
+14:59:05|INFO   |GPU: NVIDIA RTX A4500, VRAM: 21.2GB
+14:59:05|INFO   |CPUs: 11, RAM: 62.0GB, Device: cuda
+14:59:05|INFO   |============================================================
+14:59:05|INFO   |nRWPE Variants on ZINC-12k Experiment
+14:59:05|INFO   |============================================================
+14:59:05|INFO   |============================================================
+14:59:05|INFO   |MINI VALIDATION
+14:59:05|INFO   |============================================================
+14:59:05|INFO   |Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id3_it1__opus/mini_data_out.json
+14:59:05|INFO   |Loaded 3 examples
+14:59:05|INFO   |Precomputing PEs for 3 graphs with 1 workers
+14:59:05|INFO   |PE precomputation done in 0.1s
+14:59:05|INFO   |  rwpe: shape=(29, 20), OK
+14:59:05|INFO   |  nrwpe_diag: shape=(29, 20), OK
+14:59:05|INFO   |  nrwpe_multi: shape=(29, 60), OK
+14:59:05|INFO   |  abs_kwpe: shape=(29, 16), OK
+14:59:05|INFO   |  nrwpe_stats: shape=(29, 16), OK
+14:59:05|INFO   |  nrwpe_combined: shape=(29, 20), OK
+14:59:05|INFO   |  no_pe: shape=(29, 16), OK
+14:59:05|INFO   |  GIN forward pass OK for rwpe
+14:59:05|INFO   |  GIN forward pass OK for nrwpe_diag
+14:59:05|INFO   |  GIN forward pass OK for no_pe
+14:59:05|INFO   |  GPS forward pass OK for rwpe
+14:59:05|INFO   |  GPS forward pass OK for nrwpe_diag
+14:59:06|INFO   |  GIN_ZINC_v2 | rwpe | seed=42 | test_mae=1.4286 | val_mae=1.4286 | epoch=11 | time=0.4s
+14:59:06|INFO   |  Mini train rwpe: loss=1.4286, OK
+14:59:06|INFO   |  GIN_ZINC_v2 | nrwpe_diag | seed=42 | test_mae=1.4168 | val_mae=1.4168 | epoch=19 | time=0.3s
+14:59:06|INFO   |  Mini train nrwpe_diag: loss=1.4168, OK
+14:59:06|INFO   |MINI VALIDATION PASSED
+14:59:06|INFO   |============================================================
+14:59:06|INFO   |LOADING FULL DATASET
+14:59:06|INFO   |============================================================
+14:59:06|INFO   |Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id3_it1__opus/full_data_out.json
+14:59:07|INFO   |Loaded 12000 examples
+14:59:07|INFO   |Total examples: 12000
+14:59:07|INFO   |Fold distribution: {'train': 10000, 'val': 1000, 'test': 1000}
+14:59:07|INFO   |============================================================
+14:59:07|INFO   |PRECOMPUTING POSITIONAL ENCODINGS
+14:59:07|INFO   |============================================================
+14:59:07|INFO   |Precomputing PEs for 12000 graphs with 10 workers
+14:59:56|INFO   |  PE computed: 500/12000 (49.2s)
+15:00:40|INFO   |  PE computed: 1000/12000 (93.4s)
+15:01:29|INFO   |  PE computed: 1500/12000 (142.6s)
+15:02:17|INFO   |  PE computed: 2000/12000 (190.3s)
+15:03:06|INFO   |  PE computed: 2500/12000 (238.8s)
+15:03:49|INFO   |  PE computed: 3000/12000 (282.3s)
+15:04:35|INFO   |  PE computed: 3500/12000 (327.8s)
+15:05:22|INFO   |  PE computed: 4000/12000 (375.3s)
+15:06:09|INFO   |  PE computed: 4500/12000 (422.0s)
+15:06:57|INFO   |  PE computed: 5000/12000 (470.4s)
+15:07:46|INFO   |  PE computed: 5500/12000 (519.2s)
+15:08:34|INFO   |  PE computed: 6000/12000 (567.0s)
+15:09:19|INFO   |  PE computed: 6500/12000 (612.4s)
+15:10:05|INFO   |  PE computed: 7000/12000 (658.6s)
+15:10:50|INFO   |  PE computed: 7500/12000 (703.7s)
+15:11:37|INFO   |  PE computed: 8000/12000 (749.9s)
+15:12:24|INFO   |  PE computed: 8500/12000 (797.2s)
+15:13:09|INFO   |  PE computed: 9000/12000 (842.6s)
+15:13:53|INFO   |  PE computed: 9500/12000 (886.5s)
+15:14:41|INFO   |  PE computed: 10000/12000 (933.7s)
+15:15:27|INFO   |  PE computed: 10500/12000 (980.3s)
+15:16:13|INFO   |  PE computed: 11000/12000 (1026.7s)
+15:16:59|INFO   |  PE computed: 11500/12000 (1072.0s)
+15:17:44|INFO   |  PE computed: 12000/12000 (1117.6s)
+15:17:45|INFO   |PE precomputation done in 1117.8s
+15:17:46|INFO   |Saved PE cache to /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id1_it3__opus/precomputed_pes.pkl
+15:17:46|INFO   |============================================================
+15:17:46|INFO   |PE DIAGNOSTICS
+15:17:46|INFO   |============================================================
+15:17:46|INFO   |PE rwpe: mean=0.1173, std=0.1366, eff_rank=2.3, nan=0, inf=0
+15:17:46|INFO   |PE nrwpe_diag: mean=0.1404, std=0.0739, eff_rank=1.9, nan=0, inf=0
+15:17:46|INFO   |PE nrwpe_multi: mean=0.8615, std=1.0787, eff_rank=1.3, nan=0, inf=0
+15:17:46|INFO   |PE abs_kwpe: mean=-0.0000, std=0.1500, eff_rank=14.8, nan=0, inf=0
+15:17:47|INFO   |PE nrwpe_stats: mean=0.4638, std=0.5711, eff_rank=1.5, nan=0, inf=0
+15:17:47|INFO   |PE nrwpe_combined: mean=0.1658, std=0.1318, eff_rank=2.5, nan=0, inf=0
+/opt/conda/lib/python3.11/site-packages/numpy/lib/_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+/opt/conda/lib/python3.11/site-packages/numpy/lib/_function_base_impl.py:3046: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+15:17:47|INFO   |============================================================
+15:17:47|INFO   |TRAINING EXPERIMENTS
+15:17:47|INFO   |============================================================
+15:17:47|INFO   |--- Priority 1: GIN with core PE types ---
+15:17:47|INFO   |Running GIN + rwpe
+15:17:49|INFO   |  Train: 10000, Val: 1000, Test: 1000
+15:24:26|INFO   |  GIN_ZINC_v2 | rwpe | seed=42 | test_mae=0.1731 | val_mae=0.1929 | epoch=298 | time=397.4s
+15:30:55|INFO   |  GIN_ZINC_v2 | rwpe | seed=123 | test_mae=0.1710 | val_mae=0.2015 | epoch=246 | time=388.3s
+15:37:26|INFO   |  GIN_ZINC_v2 | rwpe | seed=456 | test_mae=0.1681 | val_mae=0.2049 | epoch=282 | time=390.8s
+15:37:26|INFO   |Elapsed total: 2301s (38.3min)
+15:37:26|INFO   |RWPE baseline OK: mean MAE=0.1708
+15:37:26|INFO   |Running GIN + nrwpe_diag
+15:37:27|INFO   |  Train: 10000, Val: 1000, Test: 1000
+15:44:08|INFO   |  GIN_ZINC_v2 | nrwpe_diag | seed=42 | test_mae=0.1853 | val_mae=0.2185 | epoch=297 | time=400.5s
+15:50:42|INFO   |  GIN_ZINC_v2 | nrwpe_diag | seed=123 | test_mae=0.1783 | val_mae=0.2290 | epoch=287 | time=394.1s
+15:57:35|INFO   |  GIN_ZINC_v2 | nrwpe_diag | seed=456 | test_mae=0.1840 | val_mae=0.2197 | epoch=291 | time=412.8s
+15:57:35|INFO   |Elapsed total: 3511s (58.5min)
+15:57:36|INFO   |Running GIN + nrwpe_multi
+15:57:37|INFO   |  Train: 10000, Val: 1000, Test: 1000
+16:04:35|INFO   |  GIN_ZINC_v2 | nrwpe_multi | seed=42 | test_mae=0.1937 | val_mae=0.2200 | epoch=284 | time=417.6s
+16:07:13|INFO   |  GIN_ZINC_v2 | nrwpe_multi | seed=123 | test_mae=0.3239 | val_mae=0.3418 | epoch=68 | time=157.9s
+16:10:18|INFO   |  GIN_ZINC_v2 | nrwpe_multi | seed=456 | test_mae=0.4418 | val_mae=0.4152 | epoch=91 | time=185.2s
+16:10:18|INFO   |Elapsed total: 4273s (71.2min)
+16:10:18|INFO   |Running GIN + nrwpe_combined
+16:10:20|INFO   |  Train: 10000, Val: 1000, Test: 1000
+16:13:15|INFO   |  GIN_ZINC_v2 | nrwpe_combined | seed=42 | test_mae=0.2443 | val_mae=0.2739 | epoch=82 | time=175.6s
+16:19:49|INFO   |  GIN_ZINC_v2 | nrwpe_combined | seed=123 | test_mae=0.1724 | val_mae=0.2047 | epoch=279 | time=393.4s
+16:26:36|INFO   |  GIN_ZINC_v2 | nrwpe_combined | seed=456 | test_mae=0.1694 | val_mae=0.2020 | epoch=282 | time=406.8s
+16:26:36|INFO   |Elapsed total: 5251s (87.5min)
+16:26:36|INFO   |Running GIN + no_pe
+16:26:38|INFO   |  Train: 10000, Val: 1000, Test: 1000
+16:32:40|INFO   |  GIN_ZINC_v2 | no_pe | seed=42 | test_mae=0.2573 | val_mae=0.2779 | epoch=247 | time=362.3s
+16:38:46|INFO   |  GIN_ZINC_v2 | no_pe | seed=123 | test_mae=0.2635 | val_mae=0.2845 | epoch=248 | time=365.8s

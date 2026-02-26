@@ -1,0 +1,882 @@
+{
+  "metadata": {
+    "evaluation_name": "Definitive Final Consolidation: All KW-PE Experiments",
+    "description": "Consolidates 9 experiments (4 expressiveness + 5 downstream ZINC) across 6 iterations into paper-ready assessment of nonlinear walk positional encodings.",
+    "expressiveness_hierarchy": {
+      "non_equivariant": [
+        {
+          "method": "KW-PE_tanh",
+          "experiment": "exp_id1_it2",
+          "equivariant": false,
+          "threshold": 1e-05,
+          "distinguished": 525,
+          "total": 525,
+          "discrimination_rate": 1.0,
+          "per_category": {
+            "cospectral": {
+              "distinguished": 64,
+              "total": 64,
+              "rate": 1.0
+            },
+            "CSL": {
+              "distinguished": 59,
+              "total": 59,
+              "rate": 1.0
+            },
+            "strongly_regular": {
+              "distinguished": 2,
+              "total": 2,
+              "rate": 1.0
+            },
+            "BREC_Basic": {
+              "distinguished": 60,
+              "total": 60,
+              "rate": 1.0
+            },
+            "BREC_Regular": {
+              "distinguished": 50,
+              "total": 50,
+              "rate": 1.0
+            },
+            "BREC_Extension": {
+              "distinguished": 100,
+              "total": 100,
+              "rate": 1.0
+            },
+            "BREC_CFI": {
+              "distinguished": 100,
+              "total": 100,
+              "rate": 1.0
+            },
+            "BREC_4Vertex": {
+              "distinguished": 20,
+              "total": 20,
+              "rate": 1.0
+            },
+            "BREC_Distance_Regular": {
+              "distinguished": 20,
+              "total": 20,
+              "rate": 1.0
+            },
+            "BREC_Strongly_Regular": {
+              "distinguished": 50,
+              "total": 50,
+              "rate": 1.0
+            }
+          }
+        },
+        {
+          "method": "KW-PE_softplus",
+          "experiment": "exp_id1_it2",
+          "equivariant": false,
+          "threshold": 1e-05,
+          "distinguished": 524,
+          "total": 525,
+          "discrimination_rate": 0.9981,
+          "per_category": {
+            "cospectral": {
+              "distinguished": 64,
+              "total": 64,
+              "rate": 1.0
+            },
+            "CSL": {
+              "distinguished": 59,
+              "total": 59,
+              "rate": 1.0
+            },
+            "strongly_regular": {
+              "distinguished": 2,
+              "total": 2,
+              "rate": 1.0
+            },
+            "BREC_Basic": {
+              "distinguished": 60,
+              "total": 60,
+              "rate": 1.0
+            },
+            "BREC_Regular": {
+              "distinguished": 50,
+              "total": 50,
+              "rate": 1.0
+            },
+            "BREC_Extension": {
+              "distinguished": 100,
+              "total": 100,
+              "rate": 1.0
+            },
+            "BREC_CFI": {
+              "distinguished": 99,
+              "total": 100,
+              "rate": 0.99
+            },
+            "BREC_4Vertex": {
+              "distinguished": 20,
+              "total": 20,
+              "rate": 1.0
+            },
+            "BREC_Distance_Regular": {
+              "distinguished": 20,
+              "total": 20,
+              "rate": 1.0
+            },
+            "BREC_Strongly_Regular": {
+              "distinguished": 50,
+              "total": 50,
+              "rate": 1.0
+            }
+          }
+        },
+        {
+          "method": "LapPE",
+          "experiment": "exp_id1_it2",
+          "equivariant": false,
+          "threshold": 1e-05,
+          "distinguished": 524,
+          "total": 525,
+          "discrimination_rate": 0.9981,
+          "per_category": {
+            "cospectral": {
+              "distinguished": 64,
+              "total": 64,
+              "rate": 1.0
+            },
+            "CSL": {
+              "distinguished": 59,
+              "total": 59,
+              "rate": 1.0
+            },
+            "strongly_regular": {
+              "distinguished": 2,
+              "total": 2,
+              "rate": 1.0
+            },
+            "BREC_Basic": {
+              "distinguished": 60,
+              "total": 60,
+              "rate": 1.0
+            },
+            "BREC_Regular": {
+              "distinguished": 50,
+              "total": 50,
+              "rate": 1.0
+            },
+            "BREC_Extension": {
+              "distinguished": 100,
+              "total": 100,
+              "rate": 1.0
+            },
+            "BREC_CFI": {
+              "distinguished": 99,
+              "total": 100,
+              "rate": 0.99
+            },
+            "BREC_4Vertex": {
+              "distinguished": 20,
+              "total": 20,
+              "rate": 1.0
+            },
+            "BREC_Distance_Regular": {
+              "distinguished": 20,
+              "total": 20,
+              "rate": 1.0
+            },
+            "BREC_Strongly_Regular": {
+              "distinguished": 50,
+              "total": 50,
+              "rate": 1.0
+            }
+          }
+        }
+      ],
+      "equivariant": [
+        {
+          "method": "nRWPE_offdiag_tanh_T20",
+          "experiment": "exp_id2_it3",
+          "equivariant": true,
+          "threshold": 1e-06,
+          "distinguished": 346,
+          "total": 525,
+          "discrimination_rate": 0.659047619047619,
+          "per_category": {
+            "cospectral": {
+              "distinguished": 64,
+              "total": 64,
+              "rate": 1.0
+            },
+            "CSL": {
+              "distinguished": 59,
+              "total": 59,
+              "rate": 1.0
+            },
+            "strongly_regular": {
+              "distinguished": 0,
+              "total": 2,
+              "rate": 0.0
+            },
+            "BREC_Basic": {
+              "distinguished": 60,
+              "total": 60,
+              "rate": 1.0
+            },
+            "BREC_Regular": {
+              "distinguished": 50,
+              "total": 50,
+              "rate": 1.0
+            },
+            "BREC_Extension": {
+              "distinguished": 100,
+              "total": 100,
+              "rate": 1.0
+            },
+            "BREC_CFI": {
+              "distinguished": 13,
+              "total": 100,
+              "rate": 0.13
+            },
+            "BREC_4Vertex": {
+              "distinguished": 0,
+              "total": 20,
+              "rate": 0.0
+            },
+            "BREC_Distance_Regular": {
+              "distinguished": 0,
+              "total": 20,
+              "rate": 0.0
+            },
+            "BREC_Strongly_Regular": {
+              "distinguished": 0,
+              "total": 50,
+              "rate": 0.0
+            }
+          }
+        },
+        {
+          "method": "nRWPE_diag_tanh_T50",
+          "experiment": "exp_id2_it3",
+          "equivariant": true,
+          "threshold": 1e-06,
+          "distinguished": 346,
+          "total": 525,
+          "discrimination_rate": 0.659047619047619,
+          "per_category": {
+            "cospectral": {
+              "distinguished": 64,
+              "total": 64,
+              "rate": 1.0
+            },
+            "CSL": {
+              "distinguished": 59,
+              "total": 59,
+              "rate": 1.0
+            },
+            "strongly_regular": {
+              "distinguished": 0,
+              "total": 2,
+              "rate": 0.0
+            },
+            "BREC_Basic": {
+              "distinguished": 60,
+              "total": 60,
+              "rate": 1.0
+            },
+            "BREC_Regular": {
+              "distinguished": 50,
+              "total": 50,
+              "rate": 1.0
+            },
+            "BREC_Extension": {
+              "distinguished": 100,
+              "total": 100,
+              "rate": 1.0
+            },
+            "BREC_CFI": {
+              "distinguished": 13,
+              "total": 100,
+              "rate": 0.13
+            },
+            "BREC_4Vertex": {
+              "distinguished": 0,
+              "total": 20,
+              "rate": 0.0
+            },
+            "BREC_Distance_Regular": {
+              "distinguished": 0,
+              "total": 20,
+              "rate": 0.0
+            },
+            "BREC_Strongly_Regular": {
+              "distinguished": 0,
+              "total": 50,
+              "rate": 0.0
+            }
+          }
+        },
+        {
+          "method": "RWPE_diag_K20",
+          "experiment": "exp_id2_it3",
+          "equivariant": true,
+          "threshold": 1e-06,
+          "distinguished": 345,
+          "total": 525,
+          "discrimination_rate": 0.6571428571428571,
+          "per_category": {
+            "cospectral": {
+              "distinguished": 64,
+              "total": 64,
+              "rate": 1.0
+            },
+            "CSL": {
+              "distinguished": 59,
+              "total": 59,
+              "rate": 1.0
+            },
+            "strongly_regular": {
+              "distinguished": 0,
+              "total": 2,
+              "rate": 0.0
+            },
+            "BREC_Basic": {
+              "distinguished": 60,
+              "total": 60,
+              "rate": 1.0
+            },
+            "BREC_Regular": {
+              "distinguished": 50,
+              "total": 50,
+              "rate": 1.0
+            },
+            "BREC_Extension": {
+              "distinguished": 100,
+              "total": 100,
+              "rate": 1.0
+            },
+            "BREC_CFI": {
+              "distinguished": 12,
+              "total": 100,
+              "rate": 0.12
+            },
+            "BREC_4Vertex": {
+              "distinguished": 0,
+              "total": 20,
+              "rate": 0.0
+            },
+            "BREC_Distance_Regular": {
+              "distinguished": 0,
+              "total": 20,
+              "rate": 0.0
+            },
+            "BREC_Strongly_Regular": {
+              "distinguished": 0,
+              "total": 50,
+              "rate": 0.0
+            }
+          }
+        }
+      ],
+      "best_non_equivariant": {
+        "method": "KW-PE_tanh",
+        "experiment": "exp_id1_it2",
+        "equivariant": false,
+        "threshold": 1e-05,
+        "distinguished": 525,
+        "total": 525,
+        "discrimination_rate": 1.0,
+        "per_category": {
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0
+          },
+          "CSL": {
+            "distinguished": 59,
+            "total": 59,
+            "rate": 1.0
+          },
+          "strongly_regular": {
+            "distinguished": 2,
+            "total": 2,
+            "rate": 1.0
+          },
+          "BREC_Basic": {
+            "distinguished": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "BREC_Regular": {
+            "distinguished": 50,
+            "total": 50,
+            "rate": 1.0
+          },
+          "BREC_Extension": {
+            "distinguished": 100,
+            "total": 100,
+            "rate": 1.0
+          },
+          "BREC_CFI": {
+            "distinguished": 100,
+            "total": 100,
+            "rate": 1.0
+          },
+          "BREC_4Vertex": {
+            "distinguished": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 20,
+            "total": 20,
+            "rate": 1.0
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 50,
+            "total": 50,
+            "rate": 1.0
+          }
+        }
+      },
+      "best_equivariant": {
+        "method": "nRWPE_offdiag_tanh_T20",
+        "experiment": "exp_id2_it3",
+        "equivariant": true,
+        "threshold": 1e-06,
+        "distinguished": 346,
+        "total": 525,
+        "discrimination_rate": 0.659047619047619,
+        "per_category": {
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0
+          },
+          "CSL": {
+            "distinguished": 59,
+            "total": 59,
+            "rate": 1.0
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0
+          },
+          "BREC_Basic": {
+            "distinguished": 60,
+            "total": 60,
+            "rate": 1.0
+          },
+          "BREC_Regular": {
+            "distinguished": 50,
+            "total": 50,
+            "rate": 1.0
+          },
+          "BREC_Extension": {
+            "distinguished": 100,
+            "total": 100,
+            "rate": 1.0
+          },
+          "BREC_CFI": {
+            "distinguished": 13,
+            "total": 100,
+            "rate": 0.13
+          },
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0
+          }
+        }
+      }
+    },
+    "downstream_table": {
+      "architectures": [
+        {
+          "architecture": "GIN_v1",
+          "experiment": "exp_id2_it2",
+          "description": "4-layer GIN, 128 hidden, PE_dim=16. Single seed.",
+          "entries": [
+            {
+              "pe_method": "GIN_(no_PE)",
+              "test_mae": 0.2849,
+              "best_val_mae": 0.2902,
+              "best_epoch": 228,
+              "n_seeds": 1,
+              "per_seed_maes": [
+                0.2849
+              ]
+            },
+            {
+              "pe_method": "GIN_plus_RWPE",
+              "test_mae": 0.1845,
+              "best_val_mae": 0.2034,
+              "best_epoch": 293,
+              "n_seeds": 1,
+              "per_seed_maes": [
+                0.1845
+              ]
+            },
+            {
+              "pe_method": "GIN_plus_LapPE",
+              "test_mae": 0.2394,
+              "best_val_mae": 0.2846,
+              "best_epoch": 186,
+              "n_seeds": 1,
+              "per_seed_maes": [
+                0.2394
+              ]
+            }
+          ]
+        },
+        {
+          "architecture": "GIN_v2",
+          "experiment": "exp_id1_it3",
+          "description": "4-layer GIN, 128 hidden, PE projection MLP. Collapsed runs (MAE>1.0) filtered.",
+          "entries": [
+            {
+              "pe_method": "rwpe",
+              "test_mae_mean": 0.17073333333333332,
+              "test_mae_std": 0.0025106440076867425,
+              "n_valid_seeds": 3,
+              "n_collapsed_seeds": 1,
+              "per_seed_maes": [
+                0.1731,
+                0.171,
+                0.1681
+              ],
+              "all_seed_maes": [
+                1.4286,
+                0.1731,
+                0.171
+              ]
+            },
+            {
+              "pe_method": "nrwpe_diag",
+              "test_mae_mean": 0.18253333333333333,
+              "test_mae_std": 0.003723349746308204,
+              "n_valid_seeds": 3,
+              "n_collapsed_seeds": 1,
+              "per_seed_maes": [
+                0.1853,
+                0.1783,
+                0.184
+              ],
+              "all_seed_maes": [
+                1.4168,
+                0.1853,
+                0.1783
+              ]
+            },
+            {
+              "pe_method": "nrwpe_multi",
+              "test_mae_mean": 0.31980000000000003,
+              "test_mae_std": 0.1241008057991567,
+              "n_valid_seeds": 3,
+              "n_collapsed_seeds": 0,
+              "per_seed_maes": [
+                0.1937,
+                0.3239,
+                0.4418
+              ],
+              "all_seed_maes": [
+                0.1937,
+                0.3239,
+                0.4418
+              ]
+            }
+          ]
+        },
+        {
+          "architecture": "GINEConv",
+          "experiment": "exp_id1_it5",
+          "description": "4-layer GINEConv, 128 hidden, edge-aware. 3 seeds.",
+          "entries": [
+            {
+              "pe_method": "rwpe_16",
+              "test_mae_mean": 0.09077142427364986,
+              "test_mae_std": 0.002367939096317479,
+              "n_valid_seeds": 3,
+              "per_seed_maes": [
+                0.09278734773397446,
+                0.08744770288467407,
+                0.09207922220230103
+              ]
+            },
+            {
+              "pe_method": "nrwpe_offdiag_16",
+              "test_mae_mean": 0.1715660591920217,
+              "test_mae_std": 0.0035311426914489906,
+              "n_valid_seeds": 3,
+              "per_seed_maes": [
+                0.1666974425315857,
+                0.17303813993930817,
+                0.1749625951051712
+              ]
+            },
+            {
+              "pe_method": "nrwpe_combined_16",
+              "test_mae_mean": 0.17158661782741547,
+              "test_mae_std": 0.0031250391744491166,
+              "n_valid_seeds": 3,
+              "per_seed_maes": [
+                0.17562782764434814,
+                0.17111529409885406,
+                0.1680167317390442
+              ]
+            }
+          ]
+        }
+      ],
+      "effect_sizes": [
+        {
+          "architecture": "GIN_v1",
+          "rwpe_method": "GIN_plus_RWPE",
+          "nrwpe_method": "GIN_plus_KW-PE",
+          "cohens_d": null,
+          "rwpe_mae_mean": 0.1845,
+          "nrwpe_mae_mean": 0.3354,
+          "nrwpe_worse": true,
+          "interpretation": "nRWPE worse"
+        },
+        {
+          "architecture": "GIN_v2",
+          "rwpe_method": "rwpe",
+          "nrwpe_method": "nrwpe_diag",
+          "cohens_d": 3.716,
+          "rwpe_mae_mean": 0.17073333333333332,
+          "nrwpe_mae_mean": 0.18253333333333333,
+          "nrwpe_worse": true,
+          "interpretation": "nRWPE worse"
+        },
+        {
+          "architecture": "GIN_v2",
+          "rwpe_method": "rwpe",
+          "nrwpe_method": "nrwpe_multi",
+          "cohens_d": 1.6984,
+          "rwpe_mae_mean": 0.17073333333333332,
+          "nrwpe_mae_mean": 0.31980000000000003,
+          "nrwpe_worse": true,
+          "interpretation": "nRWPE worse"
+        }
+      ],
+      "best_configuration": {
+        "architecture": "GINEConv",
+        "pe_method": "rwpe_16",
+        "test_mae_mean": 0.09077142427364986,
+        "n_seeds": 3
+      }
+    },
+    "expressiveness_utility_correlation": {
+      "spearman_rho": 0.4233,
+      "spearman_p_value": 0.1023,
+      "n_matched_pairs": 16,
+      "matched_pairs": [
+        {
+          "expressiveness_method": "nRWPE_offdiag_tanh_T20",
+          "downstream_method": "nrwpe_offdiag_16",
+          "architecture": "GINEConv",
+          "discrimination_count": 346,
+          "downstream_mae": 0.1715660591920217
+        },
+        {
+          "expressiveness_method": "nRWPE_offdiag_tanh_T20",
+          "downstream_method": "GPS_nRWPE_offdiag_8",
+          "architecture": "GPS",
+          "discrimination_count": 346,
+          "downstream_mae": 0.29589013159275057
+        },
+        {
+          "expressiveness_method": "RWPE_diag_K20",
+          "downstream_method": "rwpe",
+          "architecture": "GIN_v2",
+          "discrimination_count": 345,
+          "downstream_mae": 0.17073333333333332
+        }
+      ],
+      "equivariant_only": {
+        "spearman_rho": 0.4626,
+        "spearman_p_value": 0.1519,
+        "n_pairs": 11
+      },
+      "interpretation": "Spearman rho=0.423, p=0.102. Positive correlation (not significant at alpha=0.05). Higher expressiveness is NOT associated with better downstream performance."
+    },
+    "hypothesis_scorecard": {
+      "claims": [
+        {
+          "claim": "Breaks spectral invariance ceiling",
+          "claim_number": 1,
+          "score": 0.7,
+          "confidence_interval": [
+            0.55,
+            0.85
+          ],
+          "evidence_for": [
+            "KW-PE_tanh achieves 525/525 (100%) pair discrimination",
+            "RWPE baseline only achieves 345/525 (65.7%)"
+          ],
+          "evidence_against": [
+            "Equivariant nRWPE only achieves 346/525 - gain comes from EDMD, not nonlinear walk itself",
+            "LapPE also achieves 524/525 - KW-PE's EDMD may be doing similar non-equivariant processing"
+          ],
+          "definitive_assessment": "PARTIALLY CONFIRMED. KW-PE (with EDMD) achieves perfect discrimination, but the gain is attributable to the non-equivariant EDMD processing rather than the nonlinear walk dynamics alone. Equivariant n..."
+        },
+        {
+          "claim": "Produces sign-canonical positional encodings",
+          "claim_number": 2,
+          "score": 0.7,
+          "confidence_interval": [
+            0.6,
+            0.8
+          ],
+          "evidence_for": [
+            "Sign canonicality verified in exp_id1_it2 (KW-PE)",
+            "Equivariance test passes with max error 8.326672684688674e-17",
+            "nRWPE diagonal features are inherently sign-canonical (return probabilities ≥ 0)"
+          ],
+          "evidence_against": [],
+          "definitive_assessment": "CONFIRMED. Both KW-PE (via EDMD canonicalization) and nRWPE (via diagonal return probabilities) produce sign-canonical PEs. Verified experimentally with permutation equivariance tests."
+        },
+        {
+          "claim": "Distinguishes cospectral graphs that spectral methods cannot",
+          "claim_number": 3,
+          "score": 0.6,
+          "confidence_interval": [
+            0.45,
+            0.75
+          ],
+          "evidence_for": [
+            "KW-PE_tanh distinguishes 64/64 cospectral pairs",
+            "KW-PE_softplus distinguishes 64/64 cospectral pairs",
+            "RWPE only distinguishes 63/64 cospectral (exp_id1_it2)"
+          ],
+          "evidence_against": [
+            "In equivariant experiments, RWPE also distinguishes all 64 cospectral pairs",
+            "Equivariant nRWPE fails to distinguish any BREC_Strongly_Regular pairs",
+            "Expressiveness gains over RWPE are from EDMD (non-equivariant processing), not from nonlinear walk dynamics alone"
+          ],
+          "definitive_assessment": "PARTIALLY CONFIRMED. KW-PE (non-equivariant, EDMD-based) achieves 100% on BREC_CFI (vs RWPE's ~10%) and 100% on BREC_Strongly_Regular (vs equivariant 0%). However, equivariant nRWPE only matches RWPE'..."
+        }
+      ],
+      "overall_weighted_score": 0.45,
+      "total_weight": 6.0,
+      "scoring_method": "Weighted average, claim 5 (downstream) weighted 2x"
+    },
+    "contribution_statement": {
+      "contribution_statement": "This work investigates nonlinear random walk positional encodings (nRWPE/KW-PE) as alternatives to spectral PEs for graph neural networks. Theoretically, KW-PE with EDMD achieves perfect discriminatio...",
+      "venue_assessment": "workshop",
+      "venue_detail": "Mixed results suggest workshop paper at NeurIPS/ICML workshops on graph learning",
+      "claims_confirmed": 3,
+      "claims_partially_confirmed": 1,
+      "claims_disconfirmed": 1,
+      "strongest_aspects": [
+        {
+          "claim": "Breaks spectral invariance ceiling",
+          "score": 0.7,
+          "reason": "PARTIALLY CONFIRMED. KW-PE (with EDMD) achieves perfect discrimination, but the gain is attributable to the non-equivariant EDMD processing rather than the nonlinear walk dynamics alone. Equivariant n"
+        },
+        {
+          "claim": "Produces sign-canonical positional encodings",
+          "score": 0.7,
+          "reason": "CONFIRMED. Both KW-PE (via EDMD canonicalization) and nRWPE (via diagonal return probabilities) produce sign-canonical PEs. Verified experimentally with permutation equivariance tests."
+        },
+        {
+          "claim": "Avoids eigendecomposition bottleneck",
+          "score": 0.7,
+          "reason": "MOSTLY CONFIRMED for nRWPE. The equivariant nRWPE variants use only matrix-vector products, avoiding eigendecomposition. However, KW-PE (which achieves the best expressiveness) relies on EDMD, which i"
+        }
+      ],
+      "weakest_aspects": [
+        {
+          "claim": "Superior downstream performance on molecular property prediction",
+          "score": 0.0,
+          "reason": "DISCONFIRMED. RWPE wins 9/9 pairwise comparisons against nRWPE/KW-PE variants. No nonlinear walk PE variant consistently outperforms standard RWPE on ZINC-12k across any tested architecture (GIN_v1, G"
+        },
+        {
+          "claim": "Distinguishes cospectral graphs that spectral methods cannot",
+          "score": 0.6,
+          "reason": "PARTIALLY CONFIRMED. KW-PE (non-equivariant, EDMD-based) achieves 100% on BREC_CFI (vs RWPE's ~10%) and 100% on BREC_Strongly_Regular (vs equivariant 0%). However, equivariant nRWPE only matches RWPE'"
+        },
+        {
+          "claim": "Breaks spectral invariance ceiling",
+          "score": 0.7,
+          "reason": "PARTIALLY CONFIRMED. KW-PE (with EDMD) achieves perfect discrimination, but the gain is attributable to the non-equivariant EDMD processing rather than the nonlinear walk dynamics alone. Equivariant n"
+        }
+      ]
+    },
+    "summary_statistics": {
+      "total_experiments": 9,
+      "total_training_runs": 51,
+      "total_methods_tested": 55,
+      "best_expressiveness_non_equivariant": {
+        "method": "KW-PE_tanh",
+        "discrimination": "525/525"
+      },
+      "best_expressiveness_equivariant": {
+        "method": "nRWPE_offdiag_tanh_T20",
+        "discrimination": "346/525"
+      },
+      "best_downstream": {
+        "architecture": "GINEConv",
+        "pe_method": "rwpe_16",
+        "test_mae": 0.09077142427364986
+      },
+      "rwpe_vs_nrwpe_win_loss": {
+        "rwpe_wins": 9,
+        "nrwpe_wins": 0,
+        "summary": "RWPE wins 9 out of 9 pairwise comparisons"
+      }
+    }
+  },
+  "metrics_agg": {
+    "best_non_equivariant_discrimination_count": 525,
+    "best_non_equivariant_discrimination_rate": 1.0,
+    "best_equivariant_discrimination_count": 346,
+    "best_equivariant_discrimination_rate": 0.659047619047619,
+    "best_downstream_mae": 0.09077142427364986,
+    "expressiveness_utility_spearman_rho": 0.4233,
+    "expressiveness_utility_spearman_p": 0.1023,
+    "hypothesis_overall_score": 0.45,
+    "claim_1_score": 0.7,
+    "claim_2_score": 0.7,
+    "claim_3_score": 0.6,
+    "claim_4_score": 0.7,
+    "claim_5_score": 0.0,
+    "rwpe_wins": 9,
+    "nrwpe_wins": 0,
+    "total_experiments": 9,
+    "total_methods_tested": 55,
+    "total_training_runs": 51
+  },
+  "datasets": [
+    {
+      "dataset": "KW-PE_consolidated_evaluation",
+      "examples": [
+        {
+          "input": "Evaluate KW-PE Pipeline Expressiveness (non-equivariant) experiment (exp_id1_it2)",
+          "output": "{\"KW-PE_tanh\": {\"overall_rate\": 1.0, \"distinguished\": 525}, \"KW-PE_softplus\": {\"overall_rate\": 0.9981, \"distinguished\": 524}, \"RWPE\": {\"overall_rate\": 0.6876, \"distinguished\": 361}, \"LapPE\": {\"overall...",
+          "eval_expressiveness_type": 1,
+          "eval_is_downstream": 0
+        },
+        {
+          "input": "Evaluate KW-PE Foundational Properties (non-equivariant) experiment (exp_id3_it2)",
+          "output": "{\"sign_canonicality\": {\"summary\": {\"equivariance_pass_rate\": {\"tanh\": 0.1, \"softplus\": 0.7, \"relu\": 0.0}, \"sign_consistency_by_nonlinearity\": {\"tanh\": 1.0, \"softplus\": 1.0, \"relu\": 1.0}, \"equivariance...",
+          "eval_expressiveness_type": 1,
+          "eval_is_downstream": 0
+        },
+        {
+          "input": "Evaluate nRWPE-diag Discrimination (equivariant) experiment (exp_id2_it3)",
+          "output": "{\"RWPE_diag_K20\": {\"distinguished\": 345, \"total\": 525, \"rate\": 0.6571428571428571}, \"linear_walk_diag_T20\": {\"distinguished\": 344, \"total\": 525, \"rate\": 0.6552380952380953}, \"nRWPE_diag_tanh_T20\": {\"d...",
+          "eval_expressiveness_type": 1,
+          "eval_is_downstream": 0
+        }
+      ]
+    }
+  ]
+}

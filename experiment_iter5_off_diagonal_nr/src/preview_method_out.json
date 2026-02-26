@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "method_name": "nRWPE Off-Diagonal + Softplus on ZINC-12k",
+    "pe_configs": [
+      "rwpe_16",
+      "nrwpe_diag_softplus_16",
+      "nrwpe_diag_tanh_16"
+    ],
+    "model": "GINEConv (4 layers, 128 hidden, edge-aware)",
+    "architecture": {
+      "atom_emb_dim": 64,
+      "hidden_dim": 128,
+      "num_layers": 4,
+      "num_atom_types": 28,
+      "num_bond_types": 4,
+      "pooling": "add + mean concatenated"
+    },
+    "training": {
+      "lr": 0.001,
+      "lr_min": 1e-05,
+      "batch_size": 128,
+      "num_epochs": 250,
+      "patience": 40,
+      "grad_clip": 5.0,
+      "seeds": [
+        42,
+        123,
+        456
+      ],
+      "optimizer": "Adam",
+      "scheduler": "CosineAnnealingLR",
+      "loss": "L1Loss (MAE)"
+    },
+    "results_summary": [
+      {
+        "pe_type": "rwpe_16",
+        "test_mae_mean": 0.09077142427364986,
+        "test_mae_std": 0.002367939096317479,
+        "val_mae_mean": 0.1202615275979042,
+        "val_mae_std": 0.0036851460259468604,
+        "avg_best_epoch": 245.33333333333334,
+        "n_seeds": 3,
+        "test_maes": [
+          0.09278734773397446,
+          0.08744770288467407,
+          0.09207922220230103
+        ]
+      },
+      {
+        "pe_type": "nrwpe_offdiag_16",
+        "test_mae_mean": 0.1715660591920217,
+        "test_mae_std": 0.0035311426914489906,
+        "val_mae_mean": 0.1865764558315277,
+        "val_mae_std": 0.00400001364572992,
+        "avg_best_epoch": 222.33333333333334,
+        "n_seeds": 3,
+        "test_maes": [
+          0.1666974425315857,
+          0.17303813993930817,
+          0.1749625951051712
+        ]
+      },
+      {
+        "pe_type": "nrwpe_combined_16",
+        "test_mae_mean": 0.17158661782741547,
+        "test_mae_std": 0.0031250391744491166,
+        "val_mae_mean": 0.18300908307234445,
+        "val_mae_std": 0.0007414853914275777,
+        "avg_best_epoch": 233.66666666666666,
+        "n_seeds": 3,
+        "test_maes": [
+          0.17562782764434814,
+          0.17111529409885406,
+          0.1680167317390442
+        ]
+      }
+    ],
+    "analysis": {
+      "offdiag_vs_rwpe": {
+        "offdiag_wins": 423,
+        "rwpe_wins": 577,
+        "ties": 0,
+        "offdiag_mean_improvement": -0.07391012261994183
+      },
+      "softplus_vs_tanh": {
+        "softplus_wins": 427,
+        "tanh_wins": 573,
+        "softplus_mean_improvement": -0.054466874500736596
+      },
+      "combined_vs_individual": {
+        "combined_mae": 0.1756278208652511,
+        "offdiag_mae": 0.16669745789933949,
+        "softplus_diag_mae": 0.15680036391876637
+      }
+    },
+    "total_time_seconds": 2915.8285467624664
+  },
+  "datasets": [
+    {
+      "dataset": "ZINC-12k",
+      "examples": [
+        {
+          "input": "{\"edge_index\":[[0,1,1,2,2,2,3,3,4,4,5,5,5,6,6,7,7,8,8,8,9,10,10,10,11,11,12,12,12,13,13,14,14,15,15,15,16,16,16,16,17,18,19,19,19,20,20,21,21,21,22,23,23,24,24,25,25,26,26,27,27,27,28,28],[1,0,2,1,3,2...",
+          "output": "0.8350355625152588",
+          "metadata_fold": "train",
+          "metadata_task_type": "regression",
+          "metadata_row_index": 167621,
+          "metadata_num_nodes": 29,
+          "metadata_num_edges": 64,
+          "predict_rwpe_16": "0.8320831060409546",
+          "predict_nrwpe_offdiag_16": "0.8557770848274231",
+          "predict_nrwpe_combined_16": "0.8822925090789795",
+          "predict_nrwpe_diag_softplus_16": "0.8257792592048645",
+          "predict_nrwpe_diag_tanh_16": "0.8479401469230652",
+          "predict_no_pe": "0.8661043047904968"
+        },
+        {
+          "input": "{\"edge_index\":[[0,1,1,1,2,3,3,3,4,4,5,5,6,6,7,7,7,8,9,9,9,10,10,11,11,12,12,12,13,13,13,14,15,15,15,16,16,17,17,18,18,19,19,20,20,21,21,22,22,23,23,23,24,24,25,25],[1,0,2,3,1,1,4,23,3,5,4,6,5,7,6,8,9,...",
+          "output": "-2.193549156188965",
+          "metadata_fold": "train",
+          "metadata_task_type": "regression",
+          "metadata_row_index": 29184,
+          "metadata_num_nodes": 26,
+          "metadata_num_edges": 56,
+          "predict_rwpe_16": "-2.1598684787750244",
+          "predict_nrwpe_offdiag_16": "-2.1906180381774902",
+          "predict_nrwpe_combined_16": "-2.1128764152526855",
+          "predict_nrwpe_diag_softplus_16": "-2.1624183654785156",
+          "predict_nrwpe_diag_tanh_16": "-2.105257749557495",
+          "predict_no_pe": "-2.119508981704712"
+        },
+        {
+          "input": "{\"edge_index\":[[0,1,1,1,2,2,3,3,3,4,4,5,5,6,6,6,7,8,8,9,9,10,10,10,11,12,12,13,13,13,14,14,15,15],[1,0,2,10,1,3,2,4,9,3,5,4,6,5,7,8,6,6,9,3,8,1,11,12,10,10,13,12,14,15,13,15,13,14]],\"node_feat\":[0,2,0...",
+          "output": "1.8422303199768066",
+          "metadata_fold": "train",
+          "metadata_task_type": "regression",
+          "metadata_row_index": 6556,
+          "metadata_num_nodes": 16,
+          "metadata_num_edges": 34,
+          "predict_rwpe_16": "1.824211597442627",
+          "predict_nrwpe_offdiag_16": "1.8494751453399658",
+          "predict_nrwpe_combined_16": "1.8467934131622314",
+          "predict_nrwpe_diag_softplus_16": "1.8495112657546997",
+          "predict_nrwpe_diag_tanh_16": "1.8017029762268066",
+          "predict_no_pe": "1.7980079650878906"
+        }
+      ]
+    }
+  ]
+}

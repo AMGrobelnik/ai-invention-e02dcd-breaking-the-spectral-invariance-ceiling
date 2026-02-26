@@ -1,0 +1,569 @@
+{
+  "metadata": {
+    "evaluation_name": "Cross-Iteration Synthesis v2",
+    "description": "Definitive cross-iteration synthesis analyzing 7 experiments across 4 iterations. Produces unified expressiveness table, downstream consolidation, theoretical contribution assessment, hypothesis scorecard, and iteration 6 guidance.",
+    "experiments_analyzed": [
+      "exp_id1_it2 (KW-PE expressiveness, iter2)",
+      "exp_id2_it2 (ZINC KW-PE downstream, iter2)",
+      "exp_id3_it2 (KW-PE foundational properties, iter2)",
+      "exp_id2_it3 (nRWPE-diag expressiveness, iter3)",
+      "exp_id1_it3 (ZINC nRWPE downstream, iter3)",
+      "exp_id1_it4 (Gram matrix expressiveness, iter4)",
+      "exp_id2_it4 (GPS ZINC downstream, iter4)"
+    ],
+    "analysis_components": [
+      "Analysis 1: Unified Expressiveness Table",
+      "Analysis 2: Downstream ZINC Consolidation",
+      "Analysis 3: Theoretical Contribution Assessment",
+      "Analysis 4: Hypothesis Scorecard v2",
+      "Analysis 5: Iteration 6 Guidance"
+    ],
+    "discrepancy_resolution": {
+      "nRWPE_it2_full_EDMD_threshold_1e5": 429,
+      "nRWPE_it3_equivariant_diag_threshold_1e6": 345,
+      "difference": 84,
+      "explanation": "The discrepancy (429 vs 345) is explained by two factors: (1) threshold difference (1e-5 vs 1e-6), and (2) implementation difference (full EDMD row-sorted fingerprint vs equivariant sorted diagonal). At threshold 1e-8, the equivariant nRWPE_diag_tanh_T20 achieves 347/525. The non-equivariant EDMD method includes off-diagonal information from Koopman eigenfunctions, which captures more structure but breaks equivariance."
+    },
+    "cohens_d_detail": {
+      "rwpe_mean": 0.17073333333333332,
+      "rwpe_std": 0.0025106440076867425,
+      "rwpe_n": 3,
+      "rwpe_filtered_maes": [
+        0.1731,
+        0.171,
+        0.1681
+      ],
+      "nrwpe_diag_mean": 0.18253333333333333,
+      "nrwpe_diag_std": 0.003723349746308204,
+      "nrwpe_diag_n": 3,
+      "nrwpe_diag_filtered_maes": [
+        0.1853,
+        0.1783,
+        0.184
+      ],
+      "pooled_std": 0.0031754264805429456,
+      "cohens_d": 3.716036278056861,
+      "interpretation": "Large positive Cohen's d means nRWPE-diag has higher (worse) MAE than RWPE. d=3.72: nRWPE-diag is significantly worse than RWPE on ZINC downstream."
+    },
+    "spearman_correlation": {
+      "rho": 0.35909242322980395,
+      "p_value": 0.5528147466433505,
+      "n_points": 5,
+      "data_points": [
+        {
+          "method": "RWPE_diag",
+          "discrimination": 345,
+          "mae": 0.17073333333333332
+        },
+        {
+          "method": "nRWPE_diag_tanh",
+          "discrimination": 345,
+          "mae": 0.18253333333333333
+        },
+        {
+          "method": "KW-PE_tanh_EDMD",
+          "discrimination": 525,
+          "mae": 0.3354
+        },
+        {
+          "method": "LapPE",
+          "discrimination": 524,
+          "mae": 0.2394
+        },
+        {
+          "method": "no_PE",
+          "discrimination": 0,
+          "mae": 0.26039999999999996
+        }
+      ],
+      "interpretation": "Spearman rho=0.359 (p=0.553): Positive correlation means higher expressiveness is associated with WORSE downstream MAE. This contradicts the hypothesis that expressiveness predicts downstream utility."
+    },
+    "scorecard_verdict": "Overall hypothesis score: 0.48/1.00 [0.36, 0.62]. The hypothesis shows a mixed-result profile: strong on theoretical spectral invariance breaking and cospectral separation, but fails on the most important practical metric (downstream performance). Suitable for a theoretical contribution paper focusing on the spectral invariance insight, not a full methods paper claiming practical improvements.",
+    "top_recommendation": "Formal separation theorem",
+    "overall_strategy": "Focus iteration 6 on the formal separation theorem (rank 1). This is the strongest deliverable because: (a) the mathematical claim is provably true, (b) it requires no new experiments, (c) it's a genuine contribution to PE theory. As secondary priority, properly train GPS (rank 2) to rule out or confirm the downstream hypothesis. Avoid repeating Gram matrix or full EDMD downstream experiments."
+  },
+  "metrics_agg": {
+    "hypothesis_overall_score": 0.485,
+    "hypothesis_ci_lower": 0.36,
+    "hypothesis_ci_upper": 0.625,
+    "claim1_spectral_invariance": 0.7,
+    "claim2_sign_canonical": 0.5,
+    "claim3_cospectral_separation": 0.85,
+    "claim4_avoids_eigendecomp": 0.4,
+    "claim5_downstream_performance": 0.1,
+    "max_equivariant_discrimination": 346,
+    "max_nonequivariant_discrimination": 525,
+    "total_pairs": 525,
+    "best_nrwpe_zinc_mae": 0.1825,
+    "best_rwpe_zinc_mae": 0.1707,
+    "cohens_d_nrwpe_vs_rwpe": 3.716,
+    "spearman_disc_vs_mae": 0.3591,
+    "num_experiments_analyzed": 7,
+    "num_iterations_covered": 4,
+    "num_dead_ends_identified": 3,
+    "num_productive_paths": 4
+  },
+  "datasets": [
+    {
+      "dataset": "expressiveness_unified_table",
+      "examples": [
+        {
+          "input": "{\"method\": \"KW-PE_tanh\", \"source\": \"exp_id1_it2\", \"iteration\": 2, \"threshold\": 1e-05, \"equivariant\": false, \"implementation\": \"full_EDMD_row_sorted\"}",
+          "output": "{\"total_distinguished\": 525, \"total_pairs\": 525, \"rate\": 1.0, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:2/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_CFI:100/100, BREC_4Vertex:20/20, BREC_Distance_Regular:20/20, BREC_Strongly_Regular:50/50\"}",
+          "eval_discrimination_count": 525,
+          "eval_discrimination_rate": 1.0,
+          "predict_method": "KW-PE_tanh"
+        },
+        {
+          "input": "{\"method\": \"KW-PE_softplus\", \"source\": \"exp_id1_it2\", \"iteration\": 2, \"threshold\": 1e-05, \"equivariant\": false, \"implementation\": \"full_EDMD_row_sorted\"}",
+          "output": "{\"total_distinguished\": 524, \"total_pairs\": 525, \"rate\": 0.9981, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:2/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_CFI:99/100, BREC_4Vertex:20/20, BREC_Distance_Regular:20/20, BREC_Strongly_Regular:50/50\"}",
+          "eval_discrimination_count": 524,
+          "eval_discrimination_rate": 0.9981,
+          "predict_method": "KW-PE_softplus"
+        },
+        {
+          "input": "{\"method\": \"LapPE\", \"source\": \"exp_id1_it2\", \"iteration\": 2, \"threshold\": 1e-05, \"equivariant\": false, \"implementation\": \"standard\"}",
+          "output": "{\"total_distinguished\": 524, \"total_pairs\": 525, \"rate\": 0.9981, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:2/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_CFI:99/100, BREC_4Vertex:20/20, BREC_Distance_Regular:20/20, BREC_Strongly_Regular:50/50\"}",
+          "eval_discrimination_count": 524,
+          "eval_discrimination_rate": 0.9981,
+          "predict_method": "LapPE"
+        },
+        {
+          "input": "{\"method\": \"nRWPE_tanh\", \"source\": \"exp_id1_it2\", \"iteration\": 2, \"threshold\": 1e-05, \"equivariant\": false, \"implementation\": \"full_EDMD_fingerprint\"}",
+          "output": "{\"total_distinguished\": 429, \"total_pairs\": 525, \"rate\": 0.8171, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:2/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:94/100, BREC_CFI:13/100, BREC_4Vertex:18/20, BREC_Distance_Regular:20/20, BREC_Strongly_Regular:49/50\"}",
+          "eval_discrimination_count": 429,
+          "eval_discrimination_rate": 0.8171,
+          "predict_method": "nRWPE_tanh"
+        },
+        {
+          "input": "{\"method\": \"RWPE\", \"source\": \"exp_id1_it2\", \"iteration\": 2, \"threshold\": 1e-05, \"equivariant\": false, \"implementation\": \"standard\"}",
+          "output": "{\"total_distinguished\": 361, \"total_pairs\": 525, \"rate\": 0.6876, \"per_category\": \"cospectral:63/64, CSL:0/59, strongly_regular:2/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:94/100, BREC_CFI:10/100, BREC_4Vertex:19/20, BREC_Distance_Regular:13/20, BREC_Strongly_Regular:50/50\"}",
+          "eval_discrimination_count": 361,
+          "eval_discrimination_rate": 0.6876,
+          "predict_method": "RWPE"
+        },
+        {
+          "input": "{\"method\": \"nRWPE_diag_tanh_T50\", \"source\": \"exp_id2_it3\", \"iteration\": 3, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"equivariant_sorted_diagonal\"}",
+          "output": "{\"total_distinguished\": 346, \"total_pairs\": 525, \"rate\": 0.659047619047619, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:0/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_CFI:13/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 346,
+          "eval_discrimination_rate": 0.659,
+          "predict_method": "nRWPE_diag_tanh_T50"
+        },
+        {
+          "input": "{\"method\": \"nRWPE_offdiag_tanh_T20\", \"source\": \"exp_id2_it3\", \"iteration\": 3, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"equivariant_sorted_diagonal\"}",
+          "output": "{\"total_distinguished\": 346, \"total_pairs\": 525, \"rate\": 0.659047619047619, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:0/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_CFI:13/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 346,
+          "eval_discrimination_rate": 0.659,
+          "predict_method": "nRWPE_offdiag_tanh_T20"
+        },
+        {
+          "input": "{\"method\": \"RWPE_diag_K20\", \"source\": \"exp_id2_it3\", \"iteration\": 3, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"equivariant_sorted_diagonal\"}",
+          "output": "{\"total_distinguished\": 345, \"total_pairs\": 525, \"rate\": 0.6571428571428571, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:0/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_CFI:12/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 345,
+          "eval_discrimination_rate": 0.6571,
+          "predict_method": "RWPE_diag_K20"
+        },
+        {
+          "input": "{\"method\": \"RWPE_diag_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"equivariant_sorted_diagonal\"}",
+          "output": "{\"total_distinguished\": 345, \"total_pairs\": 525, \"rate\": 0.6571428571428571, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:0/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_CFI:12/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 345,
+          "eval_discrimination_rate": 0.6571,
+          "predict_method": "RWPE_diag_it4"
+        },
+        {
+          "input": "{\"method\": \"nRWPE_diag_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"equivariant_sorted_diagonal\"}",
+          "output": "{\"total_distinguished\": 345, \"total_pairs\": 525, \"rate\": 0.6571428571428571, \"per_category\": \"cospectral:64/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:22/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 345,
+          "eval_discrimination_rate": 0.6571,
+          "predict_method": "nRWPE_diag_it4"
+        },
+        {
+          "input": "{\"method\": \"nRWPE_diag_tanh_T20\", \"source\": \"exp_id2_it3\", \"iteration\": 3, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"equivariant_sorted_diagonal\"}",
+          "output": "{\"total_distinguished\": 345, \"total_pairs\": 525, \"rate\": 0.6571428571428571, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:0/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_CFI:12/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 345,
+          "eval_discrimination_rate": 0.6571,
+          "predict_method": "nRWPE_diag_tanh_T20"
+        },
+        {
+          "input": "{\"method\": \"linear_walk_diag_T20\", \"source\": \"exp_id2_it3\", \"iteration\": 3, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"equivariant_sorted_diagonal\"}",
+          "output": "{\"total_distinguished\": 344, \"total_pairs\": 525, \"rate\": 0.6552380952380953, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:0/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_CFI:11/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 344,
+          "eval_discrimination_rate": 0.6552,
+          "predict_method": "linear_walk_diag_T20"
+        },
+        {
+          "input": "{\"method\": \"nRWPE_diag_relu_T20\", \"source\": \"exp_id2_it3\", \"iteration\": 3, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"equivariant_sorted_diagonal\"}",
+          "output": "{\"total_distinguished\": 344, \"total_pairs\": 525, \"rate\": 0.6552380952380953, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:0/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_CFI:11/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 344,
+          "eval_discrimination_rate": 0.6552,
+          "predict_method": "nRWPE_diag_relu_T20"
+        },
+        {
+          "input": "{\"method\": \"nRWPE_diag_softplus_T20\", \"source\": \"exp_id2_it3\", \"iteration\": 3, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"equivariant_sorted_diagonal\"}",
+          "output": "{\"total_distinguished\": 342, \"total_pairs\": 525, \"rate\": 0.6514285714285715, \"per_category\": \"cospectral:64/64, CSL:59/59, strongly_regular:0/2, BREC_Basic:60/60, BREC_Regular:50/50, BREC_Extension:100/100, BREC_CFI:9/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 342,
+          "eval_discrimination_rate": 0.6514,
+          "predict_method": "nRWPE_diag_softplus_T20"
+        },
+        {
+          "input": "{\"method\": \"G_NL_nodestats_tanh_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 327, \"total_pairs\": 525, \"rate\": 0.6228571428571429, \"per_category\": \"cospectral:64/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:4/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 327,
+          "eval_discrimination_rate": 0.6229,
+          "predict_method": "G_NL_nodestats_tanh_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_diag_tanh_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 325, \"total_pairs\": 525, \"rate\": 0.6190476190476191, \"per_category\": \"cospectral:64/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:2/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 325,
+          "eval_discrimination_rate": 0.619,
+          "predict_method": "G_NL_diag_tanh_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_hybrid_tanh_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 325, \"total_pairs\": 525, \"rate\": 0.6190476190476191, \"per_category\": \"cospectral:64/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:2/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 325,
+          "eval_discrimination_rate": 0.619,
+          "predict_method": "G_NL_hybrid_tanh_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_diag_linear_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 324, \"total_pairs\": 525, \"rate\": 0.6171428571428571, \"per_category\": \"cospectral:64/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:1/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 324,
+          "eval_discrimination_rate": 0.6171,
+          "predict_method": "G_NL_diag_linear_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_diag_relu_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 324, \"total_pairs\": 525, \"rate\": 0.6171428571428571, \"per_category\": \"cospectral:64/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:1/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 324,
+          "eval_discrimination_rate": 0.6171,
+          "predict_method": "G_NL_diag_relu_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_diag_softplus_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 324, \"total_pairs\": 525, \"rate\": 0.6171428571428571, \"per_category\": \"cospectral:64/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:1/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 324,
+          "eval_discrimination_rate": 0.6171,
+          "predict_method": "G_NL_diag_softplus_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_eig_tanh_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 324, \"total_pairs\": 525, \"rate\": 0.6171428571428571, \"per_category\": \"cospectral:64/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:1/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 324,
+          "eval_discrimination_rate": 0.6171,
+          "predict_method": "G_NL_eig_tanh_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_hybrid_linear_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 324, \"total_pairs\": 525, \"rate\": 0.6171428571428571, \"per_category\": \"cospectral:64/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:1/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 324,
+          "eval_discrimination_rate": 0.6171,
+          "predict_method": "G_NL_hybrid_linear_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_hybrid_relu_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 324, \"total_pairs\": 525, \"rate\": 0.6171428571428571, \"per_category\": \"cospectral:64/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:1/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 324,
+          "eval_discrimination_rate": 0.6171,
+          "predict_method": "G_NL_hybrid_relu_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_hybrid_softplus_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 324, \"total_pairs\": 525, \"rate\": 0.6171428571428571, \"per_category\": \"cospectral:64/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:1/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 324,
+          "eval_discrimination_rate": 0.6171,
+          "predict_method": "G_NL_hybrid_softplus_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_eig_mild_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 323, \"total_pairs\": 525, \"rate\": 0.6152380952380953, \"per_category\": \"cospectral:64/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:0/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 323,
+          "eval_discrimination_rate": 0.6152,
+          "predict_method": "G_NL_eig_mild_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_eig_softplus_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 323, \"total_pairs\": 525, \"rate\": 0.6152380952380953, \"per_category\": \"cospectral:64/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:0/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 323,
+          "eval_discrimination_rate": 0.6152,
+          "predict_method": "G_NL_eig_softplus_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_eig_linear_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 316, \"total_pairs\": 525, \"rate\": 0.6019047619047619, \"per_category\": \"cospectral:57/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:0/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 316,
+          "eval_discrimination_rate": 0.6019,
+          "predict_method": "G_NL_eig_linear_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_eig_relu_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 316, \"total_pairs\": 525, \"rate\": 0.6019047619047619, \"per_category\": \"cospectral:57/64, CSL:58/59, strongly_regular:0/2, BREC_Basic:55/60, BREC_Regular:49/50, BREC_Extension:97/100, BREC_CFI:0/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 316,
+          "eval_discrimination_rate": 0.6019,
+          "predict_method": "G_NL_eig_relu_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_hybrid_mild_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 262, \"total_pairs\": 525, \"rate\": 0.4990476190476191, \"per_category\": \"cospectral:64/64, CSL:22/59, strongly_regular:0/2, BREC_Basic:51/60, BREC_Regular:46/50, BREC_Extension:79/100, BREC_CFI:0/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 262,
+          "eval_discrimination_rate": 0.499,
+          "predict_method": "G_NL_hybrid_mild_it4"
+        },
+        {
+          "input": "{\"method\": \"G_NL_diag_mild_it4\", \"source\": \"exp_id1_it4\", \"iteration\": 4, \"threshold\": 1e-06, \"equivariant\": true, \"implementation\": \"gram_matrix_equivariant\"}",
+          "output": "{\"total_distinguished\": 227, \"total_pairs\": 525, \"rate\": 0.43238095238095237, \"per_category\": \"cospectral:64/64, CSL:22/59, strongly_regular:0/2, BREC_Basic:42/60, BREC_Regular:41/50, BREC_Extension:58/100, BREC_CFI:0/100, BREC_4Vertex:0/20, BREC_Distance_Regular:0/20, BREC_Strongly_Regular:0/50\"}",
+          "eval_discrimination_count": 227,
+          "eval_discrimination_rate": 0.4324,
+          "predict_method": "G_NL_diag_mild_it4"
+        }
+      ]
+    },
+    {
+      "dataset": "zinc_downstream_consolidation",
+      "examples": [
+        {
+          "input": "{\"method\": \"GIN_rwpe\", \"source\": \"exp_id1_it3\", \"iteration\": 3, \"architecture\": \"GIN_v2\", \"n_seeds\": 4}",
+          "output": "{\"test_mae_mean\": 0.17073333333333332, \"test_mae_std\": 0.0025106440076867425, \"collapsed\": false, \"n_collapsed\": 1}",
+          "eval_test_mae": 0.170733,
+          "eval_is_collapsed": 0.0,
+          "predict_method": "GIN_rwpe"
+        },
+        {
+          "input": "{\"method\": \"GIN_nrwpe_diag\", \"source\": \"exp_id1_it3\", \"iteration\": 3, \"architecture\": \"GIN_v2\", \"n_seeds\": 4}",
+          "output": "{\"test_mae_mean\": 0.18253333333333333, \"test_mae_std\": 0.003723349746308204, \"collapsed\": false, \"n_collapsed\": 1}",
+          "eval_test_mae": 0.182533,
+          "eval_is_collapsed": 0.0,
+          "predict_method": "GIN_nrwpe_diag"
+        },
+        {
+          "input": "{\"method\": \"GIN_plus_RWPE\", \"source\": \"exp_id2_it2\", \"iteration\": 2, \"architecture\": \"GIN\", \"n_seeds\": 1}",
+          "output": "{\"test_mae_mean\": 0.1845, \"test_mae_std\": 0.0, \"collapsed\": false, \"n_collapsed\": 0}",
+          "eval_test_mae": 0.1845,
+          "eval_is_collapsed": 0.0,
+          "predict_method": "GIN_plus_RWPE"
+        },
+        {
+          "input": "{\"method\": \"GIN_nrwpe_combined\", \"source\": \"exp_id1_it3\", \"iteration\": 3, \"architecture\": \"GIN_v2\", \"n_seeds\": 3}",
+          "output": "{\"test_mae_mean\": 0.19536666666666666, \"test_mae_std\": 0.04240404854885124, \"collapsed\": false, \"n_collapsed\": 0}",
+          "eval_test_mae": 0.195367,
+          "eval_is_collapsed": 0.0,
+          "predict_method": "GIN_nrwpe_combined"
+        },
+        {
+          "input": "{\"method\": \"GIN_plus_LapPE\", \"source\": \"exp_id2_it2\", \"iteration\": 2, \"architecture\": \"GIN\", \"n_seeds\": 1}",
+          "output": "{\"test_mae_mean\": 0.2394, \"test_mae_std\": 0.0, \"collapsed\": false, \"n_collapsed\": 0}",
+          "eval_test_mae": 0.2394,
+          "eval_is_collapsed": 0.0,
+          "predict_method": "GIN_plus_LapPE"
+        },
+        {
+          "input": "{\"method\": \"GIN_no_pe\", \"source\": \"exp_id1_it3\", \"iteration\": 3, \"architecture\": \"GIN_v2\", \"n_seeds\": 2}",
+          "output": "{\"test_mae_mean\": 0.26039999999999996, \"test_mae_std\": 0.004384062043356622, \"collapsed\": false, \"n_collapsed\": 0}",
+          "eval_test_mae": 0.2604,
+          "eval_is_collapsed": 0.0,
+          "predict_method": "GIN_no_pe"
+        },
+        {
+          "input": "{\"method\": \"GIN_(no_PE)\", \"source\": \"exp_id2_it2\", \"iteration\": 2, \"architecture\": \"GIN\", \"n_seeds\": 1}",
+          "output": "{\"test_mae_mean\": 0.2849, \"test_mae_std\": 0.0, \"collapsed\": false, \"n_collapsed\": 0}",
+          "eval_test_mae": 0.2849,
+          "eval_is_collapsed": 0.0,
+          "predict_method": "GIN_(no_PE)"
+        },
+        {
+          "input": "{\"method\": \"GIN_nrwpe_multi\", \"source\": \"exp_id1_it3\", \"iteration\": 3, \"architecture\": \"GIN_v2\", \"n_seeds\": 3}",
+          "output": "{\"test_mae_mean\": 0.31980000000000003, \"test_mae_std\": 0.1241008057991567, \"collapsed\": false, \"n_collapsed\": 0}",
+          "eval_test_mae": 0.3198,
+          "eval_is_collapsed": 0.0,
+          "predict_method": "GIN_nrwpe_multi"
+        },
+        {
+          "input": "{\"method\": \"GIN_plus_KW-PE\", \"source\": \"exp_id2_it2\", \"iteration\": 2, \"architecture\": \"GIN\", \"n_seeds\": 1}",
+          "output": "{\"test_mae_mean\": 0.3354, \"test_mae_std\": 0.0, \"collapsed\": false, \"n_collapsed\": 0}",
+          "eval_test_mae": 0.3354,
+          "eval_is_collapsed": 0.0,
+          "predict_method": "GIN_plus_KW-PE"
+        },
+        {
+          "input": "{\"method\": \"GIN+RWPE-16\", \"source\": \"exp_id2_it4\", \"iteration\": 4, \"architecture\": \"GIN\", \"n_seeds\": 1}",
+          "output": "{\"test_mae_mean\": 1.403101, \"test_mae_std\": 0.0, \"collapsed\": true, \"n_collapsed\": 0}",
+          "eval_test_mae": 1.403101,
+          "eval_is_collapsed": 1.0,
+          "predict_method": "GIN+RWPE-16"
+        },
+        {
+          "input": "{\"method\": \"GPS+Gram-NL+edge\", \"source\": \"exp_id2_it4\", \"iteration\": 4, \"architecture\": \"GPS\", \"n_seeds\": 1}",
+          "output": "{\"test_mae_mean\": 2.449781, \"test_mae_std\": 0.0, \"collapsed\": true, \"n_collapsed\": 0}",
+          "eval_test_mae": 2.449781,
+          "eval_is_collapsed": 1.0,
+          "predict_method": "GPS+Gram-NL+edge"
+        },
+        {
+          "input": "{\"method\": \"GPS+combined\", \"source\": \"exp_id2_it4\", \"iteration\": 4, \"architecture\": \"GPS\", \"n_seeds\": 1}",
+          "output": "{\"test_mae_mean\": 3.278469, \"test_mae_std\": 0.0, \"collapsed\": true, \"n_collapsed\": 0}",
+          "eval_test_mae": 3.278469,
+          "eval_is_collapsed": 1.0,
+          "predict_method": "GPS+combined"
+        },
+        {
+          "input": "{\"method\": \"GPS+noPE\", \"source\": \"exp_id2_it4\", \"iteration\": 4, \"architecture\": \"GPS\", \"n_seeds\": 1}",
+          "output": "{\"test_mae_mean\": 4.140796, \"test_mae_std\": 0.0, \"collapsed\": true, \"n_collapsed\": 0}",
+          "eval_test_mae": 4.140796,
+          "eval_is_collapsed": 1.0,
+          "predict_method": "GPS+noPE"
+        },
+        {
+          "input": "{\"method\": \"GPS+nRWPE-softplus\", \"source\": \"exp_id2_it4\", \"iteration\": 4, \"architecture\": \"GPS\", \"n_seeds\": 1}",
+          "output": "{\"test_mae_mean\": 7.52545, \"test_mae_std\": 0.0, \"collapsed\": true, \"n_collapsed\": 0}",
+          "eval_test_mae": 7.52545,
+          "eval_is_collapsed": 1.0,
+          "predict_method": "GPS+nRWPE-softplus"
+        },
+        {
+          "input": "{\"method\": \"GPS+RWPE-16\", \"source\": \"exp_id2_it4\", \"iteration\": 4, \"architecture\": \"GPS\", \"n_seeds\": 1}",
+          "output": "{\"test_mae_mean\": 9.145545, \"test_mae_std\": 0.0, \"collapsed\": true, \"n_collapsed\": 0}",
+          "eval_test_mae": 9.145545,
+          "eval_is_collapsed": 1.0,
+          "predict_method": "GPS+RWPE-16"
+        }
+      ]
+    },
+    {
+      "dataset": "hypothesis_scorecard_v2",
+      "examples": [
+        {
+          "input": "{\"claim_id\": 1, \"claim\": \"Nonlinear walk features break spectral invariance\"}",
+          "output": "{\"score\": 0.7, \"confidence_interval\": [0.55, 0.85], \"assessment\": \"The theoretical claim is TRUE: raw nonlinear walk features break spectral invariance. But the PRACTICAL claim is WEAK: equivariant extraction cannot leverage this advantage.\"}",
+          "eval_claim_score": 0.7,
+          "eval_ci_lower": 0.55,
+          "eval_ci_upper": 0.85,
+          "predict_evidence_for": "[\"Raw nRWPE matrix is non-spectrally-invariant (tanh is transcendental)\", \"Full EDMD achieves 429/525 vs RWPE 345-361/525\", \"KW-PE with EDMD achieves 525/525\", \"All 64 cospectral pairs distinguished by all nonlinear methods\"]",
+          "predict_evidence_against": "[\"Equivariant sorted-diagonal extraction achieves same 345/525 as RWPE at threshold 1e-6\", \"Gram matrix features (equivariant) peak at 327/525, below RWPE\", \"The gain from raw features is lost in equivariant extraction\"]"
+        },
+        {
+          "input": "{\"claim_id\": 2, \"claim\": \"Nonlinear walk PEs are sign-canonical (no sign ambiguity)\"}",
+          "output": "{\"score\": 0.5, \"confidence_interval\": [0.35, 0.65], \"assessment\": \"Trivially true for diagonal extraction (both RWPE and nRWPE diag are sign-canonical). Not a distinguishing advantage. Full EDMD-based KW-PE does NOT have sign canonicity.\"}",
+          "eval_claim_score": 0.5,
+          "eval_ci_lower": 0.35,
+          "eval_ci_upper": 0.65,
+          "predict_evidence_for": "[\"Diagonal extraction is trivially sign-canonical (diag entries are real, unique)\", \"Equivariance verified (max error ~1e-16) across all experiments\", \"No sign flipping needed unlike LapPE eigenvectors\"]",
+          "predict_evidence_against": "[\"Full EDMD requires eigendecomposition of K matrix -> has sign issues\", \"The sign-canonicity advantage is trivial for diagonal features (RWPE is also sign-canonical)\", \"Only the full KW-PE (non-diagonal) would benefit from sign canonicity, but it's non-equivariant\"]"
+        },
+        {
+          "input": "{\"claim_id\": 3, \"claim\": \"Can separate cospectral graph pairs\"}",
+          "output": "{\"score\": 0.85, \"confidence_interval\": [0.75, 0.95], \"assessment\": \"Strongly supported: nonlinear walk features consistently separate cospectral pairs. But RWPE also separates most of them, so the marginal gain is small.\"}",
+          "eval_claim_score": 0.85,
+          "eval_ci_lower": 0.75,
+          "eval_ci_upper": 0.95,
+          "predict_evidence_for": "[\"All 64 cospectral pairs distinguished in every experiment\", \"5-node minimal cospectral pair shows clear tanh diagonal difference (0.2995)\", \"Even equivariant nRWPE-diag distinguishes all 64 cospectral pairs\", \"Multiple nonlinearities (tanh, softplus, ReLU) all succeed\"]",
+          "predict_evidence_against": "[\"RWPE_diag also distinguishes 63-64/64 cospectral pairs\", \"Cospectral pairs are the 'easiest' hard category (degree distributions differ)\", \"Strongly regular graphs (2 pairs) remain undistinguished by ALL methods\"]"
+        },
+        {
+          "input": "{\"claim_id\": 4, \"claim\": \"Avoids expensive eigendecomposition (O(n) per step vs O(n^3))\"}",
+          "output": "{\"score\": 0.4, \"confidence_interval\": [0.25, 0.55], \"assessment\": \"Partially true: the simplified nRWPE-diag avoids eigendecomposition but matches RWPE. The strong expressiveness results require EDMD (pseudo-eigendecomposition). RWPE itself also avoids eigendecomposition, so this is not a unique advantage.\"}",
+          "eval_claim_score": 0.4,
+          "eval_ci_lower": 0.25,
+          "eval_ci_upper": 0.55,
+          "predict_evidence_for": "[\"Simplified nRWPE-diag only needs matrix-vector products: O(E*T) per graph\", \"Computational cost scaling exponent 1.05 vs eigendecomp 1.74 (exp_id3_it2)\", \"PE computation time: RWPE ~0.12ms, nRWPE-diag similar order\"]",
+          "predict_evidence_against": "[\"Full KW-PE uses EDMD which involves pseudoinverse (effectively eigendecomp-like)\", \"The simplified nRWPE-diag that avoids eigendecomp achieves no gain over RWPE\", \"The strong results (525/525) come from KW-PE which DOES use eigendecomposition\", \"RWPE also avoids eigendecomp (just matrix powers of sparse matrix)\"]"
+        },
+        {
+          "input": "{\"claim_id\": 5, \"claim\": \"Superior downstream performance on molecular property prediction\"}",
+          "output": "{\"score\": 0.1, \"confidence_interval\": [0.0, 0.25], \"assessment\": \"Strongly refuted. RWPE outperforms all nonlinear walk variants across all experiments. The hypothesis that expressiveness translates to downstream performance is contradicted: methods with higher discrimination counts (KW-PE: 525/525) have worse ZINC MAE (0.3354).\"}",
+          "eval_claim_score": 0.1,
+          "eval_ci_lower": 0.0,
+          "eval_ci_upper": 0.25,
+          "predict_evidence_for": "[\"nrwpe_combined achieves 0.1954 vs RWPE 0.1707 (not better)\"]",
+          "predict_evidence_against": "[\"RWPE consistently outperforms all nRWPE variants on ZINC-12k\", \"Cohen's d for nRWPE-diag vs RWPE: 3.716036278056861 (nRWPE worse)\", \"KW-PE (EDMD) achieves 0.3354 MAE, much worse than RWPE 0.1845\", \"GPS experiment collapsed (all configs >2.0 MAE after 5 epochs)\", \"Gram matrix PEs not tested downstream but expressiveness is below RWPE\", \"Spearman rho: 0.35909242322980395 (positive = more expressive => worse downstream)\"]"
+        }
+      ]
+    },
+    {
+      "dataset": "theoretical_contribution_assessment",
+      "examples": [
+        {
+          "input": "{\"analysis_component\": \"mathematical_expansion\"}",
+          "output": "{\"RWPE_diagonal_entry\": \"RWPE[i,k] = (A_tilde^k)_{ii} = sum over all k-step walks returning to node i. For k=1: RWPE[i,1] = A_tilde_{ii} = sum_j A_{ij}/d_j (self-loop probability). For k=2: RWPE[i,2] = sum_j A_tilde_{ij} * A_tilde_{ji} = sum_j A_tilde_{ij}^2.\", \"nRWPE_diagonal_entry\": \"nRWPE[i,t] = diag(sigma(A_tilde * sigma(A_tilde * ... * sigma(A_tilde * x_0))))_i where x_0 = I (identity). For t=1: nRWPE[i,1] = sigma(A_tilde_{ii}). For t=2: nRWPE[i,2] = sigma(sum_j A_tilde_{ij} * sigma(A_tilde_{ji})). The nested nonlinearity sigma creates entry-level dependencies that differ from the linear sum in RWPE.\", \"key_difference\": \"At t=2: RWPE gives sum_j A_tilde_{ij}^2 (quadratic, symmetric in entries). nRWPE gives sigma(sum_j A_tilde_{ij} * sigma(A_tilde_{ji})) where the inner sigma introduces asymmetric nonlinear compression. With tanh, small entries are amplified relative to large ones, creating a different weighting of walk contributions.\", \"spectral_invariance_analysis\": \"Two graphs are cospectral when they share the same eigenvalues of the adjacency matrix (equivalently, the normalized adjacency). RWPE_diag = diag(A_tilde^k) depends only on the trace of A_tilde^k = sum of eigenvalues^k. For cospectral graphs, these traces are identical, so RWPE cannot distinguish them in theory. However, in practice RWPE_diag uses the FULL diagonal (not just trace), which can distinguish some cospectral pairs. nRWPE breaks the spectral invariance because sigma(sum_j A_tilde_{ij} * sigma(x_j)) is NOT a polynomial in the eigenvalues - it depends on the actual eigenvector structure.\"}",
+          "eval_component_completeness": 1.0,
+          "predict_finding": "{\"component\": \"mathematical_expansion\", \"status\": \"analyzed\"}"
+        },
+        {
+          "input": "{\"analysis_component\": \"minimal_cospectral_pair\"}",
+          "output": "{\"pair_id\": \"cospectral_5v_canonical\", \"n_nodes\": 5, \"graph_A\": \"Star K_{1,4}: center connected to 4 leaves\", \"graph_B\": \"C_4 + K_1: 4-cycle plus isolated vertex\", \"are_cospectral\": true, \"rwpe_distance\": 2.236, \"nrwpe_tanh_distance\": 0.9406, \"tanh_max_diag_difference\": 0.2995, \"interpretation\": \"Both graphs have the same eigenvalues {-1, -1, 0, 0, 2} for the adjacency matrix. RWPE distinguishes them because diag(A_tilde^k) differs (different degree distributions lead to different diagonal entries despite same eigenvalues). nRWPE with tanh also distinguishes them. The tanh max diagonal difference of 0.2995 confirms that the nonlinear walk produces different node features for the two graphs, but this specific pair is also distinguishable by RWPE_diag.\"}",
+          "eval_component_completeness": 1.0,
+          "predict_finding": "{\"component\": \"minimal_cospectral_pair\", \"status\": \"analyzed\"}"
+        },
+        {
+          "input": "{\"analysis_component\": \"epnn_analysis\"}",
+          "output": "{\"theorem\": \"EPNN (Equivariant Polynomial Neural Networks) establishes that polynomial-degree equivariant functions on graphs are bounded by the WL hierarchy. Specifically, k-order equivariant polynomial maps cannot distinguish graphs beyond k-WL.\", \"nrwpe_relation\": \"nRWPE with tanh is NOT polynomial (tanh is transcendental), so the EPNN theorem does not directly apply. The nonlinear walk X_{t+1} = sigma(A_tilde * X_t) with sigma=tanh generates a non-polynomial function of the adjacency matrix entries. This is why nRWPE CAN in principle break spectral invariance.\", \"critical_caveat\": \"However, the EQUIVARIANT extraction (sorted diagonal) collapses much of the distinguishing power. The raw nRWPE matrix X_t (before diagonal extraction) is non-spectrally-invariant and can distinguish more pairs. But extracting equivariant features (sorted diagonal) achieves the same 345/525 as RWPE, suggesting that the equivariant extraction is the bottleneck, not the feature generation.\"}",
+          "eval_component_completeness": 1.0,
+          "predict_finding": "{\"component\": \"epnn_analysis\", \"status\": \"analyzed\"}"
+        },
+        {
+          "input": "{\"analysis_component\": \"evidence_summary\"}",
+          "output": "{\"raw_nrwpe_breaks_spectral_invariance\": true, \"equivariant_nrwpe_gains_over_rwpe\": \"minimal (345 vs 345 at threshold 1e-6)\", \"full_edmd_gains\": \"significant (429/525 at threshold 1e-5) but non-equivariant\", \"kwpe_with_pca_achieves\": \"525/525 but uses full eigendecomposition-like EDMD\", \"gram_matrix_best\": \"327/525 (G_NL_nodestats_tanh), below RWPE baseline 345/525\"}",
+          "eval_component_completeness": 1.0,
+          "predict_finding": "{\"component\": \"evidence_summary\", \"status\": \"analyzed\"}"
+        },
+        {
+          "input": "{\"analysis_component\": \"main_finding\"}",
+          "output": "{\"finding\": \"The raw nRWPE features ARE non-spectrally-invariant (provable from the transcendental nature of tanh applied to adjacency powers). However, extracting this information equivariantly (sorted diagonal) does not provide practical gains over RWPE. The full EDMD pipeline (non-equivariant) captures 429/525 vs 345/525, confirming the theoretical insight but highlighting the equivariant extraction as the bottleneck.\"}",
+          "eval_component_completeness": 1.0,
+          "predict_finding": "{\"component\": \"main_finding\", \"status\": \"synthesized\"}"
+        }
+      ]
+    },
+    {
+      "dataset": "iteration_6_guidance",
+      "examples": [
+        {
+          "input": "{\"type\": \"dead_end\", \"approach\": \"Gram matrix equivariant features\"}",
+          "output": "{\"reason\": \"Best Gram method (G_NL_nodestats_tanh) achieves 327/525, below RWPE baseline 345/525. Equivariant Gram features lose too much information.\", \"evidence\": \"exp_id1_it4\"}",
+          "eval_recommendation_type": 0.0,
+          "predict_recommendation": "{\"verdict\": \"avoid\", \"approach\": \"Gram matrix equivariant features\"}"
+        },
+        {
+          "input": "{\"type\": \"dead_end\", \"approach\": \"Full EDMD for downstream tasks\"}",
+          "output": "{\"reason\": \"KW-PE achieves 525/525 expressiveness but 0.3354 ZINC MAE (2x worse than RWPE). High-dimensional EDMD features don't translate to downstream utility.\", \"evidence\": \"exp_id2_it2\"}",
+          "eval_recommendation_type": 0.0,
+          "predict_recommendation": "{\"verdict\": \"avoid\", \"approach\": \"Full EDMD for downstream tasks\"}"
+        },
+        {
+          "input": "{\"type\": \"dead_end\", \"approach\": \"GPS Graph Transformer with current PEs\"}",
+          "output": "{\"reason\": \"All GPS configs collapsed after 5 epochs (MAE > 2.0). GPS requires careful hyperparameter tuning and longer training that wasn't achieved.\", \"evidence\": \"exp_id2_it4\"}",
+          "eval_recommendation_type": 0.0,
+          "predict_recommendation": "{\"verdict\": \"avoid\", \"approach\": \"GPS Graph Transformer with current PEs\"}"
+        },
+        {
+          "input": "{\"type\": \"productive_path\", \"rank\": 1, \"approach\": \"Formal separation theorem\"}",
+          "output": "{\"description\": \"Prove that nRWPE (raw matrix, not equivariant extraction) separates specific graph families that RWPE cannot. Use the minimal 5-node cospectral pair as starting point. The transcendental nature of tanh provides the mathematical leverage for a clean theorem.\", \"risk\": \"low\", \"reward\": \"high\", \"estimated_effort\": \"1 iteration (theoretical + verification)\"}",
+          "eval_recommendation_type": 1.0,
+          "eval_recommendation_rank": 1.0,
+          "predict_recommendation": "{\"verdict\": \"pursue\", \"approach\": \"Formal separation theorem\", \"rank\": 1}"
+        },
+        {
+          "input": "{\"type\": \"productive_path\", \"rank\": 2, \"approach\": \"Properly-trained GPS with nRWPE PEs\"}",
+          "output": "{\"description\": \"The GPS experiment (exp_id2_it4) failed due to insufficient training (5 epochs). Re-run with proper hyperparameters: 300 epochs, learning rate warmup, gradient clipping. GPS may benefit more from nRWPE PEs than GIN due to attention mechanism.\", \"risk\": \"medium\", \"reward\": \"medium\", \"estimated_effort\": \"1 iteration (GPU training)\"}",
+          "eval_recommendation_type": 1.0,
+          "eval_recommendation_rank": 2.0,
+          "predict_recommendation": "{\"verdict\": \"pursue\", \"approach\": \"Properly-trained GPS with nRWPE PEs\", \"rank\": 2}"
+        },
+        {
+          "input": "{\"type\": \"productive_path\", \"rank\": 3, \"approach\": \"Learned nonlinearity (parametric sigma)\"}",
+          "output": "{\"description\": \"Replace fixed tanh with a learned nonlinearity (e.g., parametric tanh with learnable scale/shift, or small MLP). This could bridge the gap between expressiveness and downstream utility by learning task-relevant features.\", \"risk\": \"medium\", \"reward\": \"high\", \"estimated_effort\": \"1-2 iterations\"}",
+          "eval_recommendation_type": 1.0,
+          "eval_recommendation_rank": 3.0,
+          "predict_recommendation": "{\"verdict\": \"pursue\", \"approach\": \"Learned nonlinearity (parametric sigma)\", \"rank\": 3}"
+        },
+        {
+          "input": "{\"type\": \"productive_path\", \"rank\": 4, \"approach\": \"Non-equivariant EDMD with careful PE projection\"}",
+          "output": "{\"description\": \"Use the high-expressiveness EDMD features (429-525/525) but with learned projection layers to make them useful for downstream tasks. The current poor downstream performance may be due to poor integration, not poor features.\", \"risk\": \"medium-high\", \"reward\": \"medium\", \"estimated_effort\": \"1 iteration\"}",
+          "eval_recommendation_type": 1.0,
+          "eval_recommendation_rank": 4.0,
+          "predict_recommendation": "{\"verdict\": \"pursue\", \"approach\": \"Non-equivariant EDMD with careful PE projection\", \"rank\": 4}"
+        }
+      ]
+    }
+  ]
+}

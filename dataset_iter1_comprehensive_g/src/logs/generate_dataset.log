@@ -1,0 +1,114 @@
+2026-02-25 02:34:08.321 | INFO     | __main__:<module>:82 - Hardware: 4 CPUs, 32.0GB RAM, budget=8.6GB
+2026-02-25 02:34:08.322 | INFO     | __main__:main:796 - ============================================================
+2026-02-25 02:34:08.323 | INFO     | __main__:main:797 - Graph Expressiveness Benchmark Dataset Generation
+2026-02-25 02:34:08.324 | INFO     | __main__:main:798 - ============================================================
+2026-02-25 02:34:08.325 | INFO     | __main__:main:803 - 
+--- Family 1: Cospectral Non-Isomorphic Pairs ---
+2026-02-25 02:34:08.326 | INFO     | __main__:generate_cospectral_atlas_pairs:196 - Generating cospectral pairs from atlas (up to 7 vertices)
+2026-02-25 02:34:08.426 | INFO     | __main__:generate_cospectral_atlas_pairs:211 - Added canonical 5-vertex cospectral pair: K_{1,4} vs C_4 ∪ K_1
+2026-02-25 02:34:08.428 | INFO     | __main__:generate_cospectral_atlas_pairs:216 - Processing 33 graphs on 5 vertices
+2026-02-25 02:34:08.432 | INFO     | __main__:generate_cospectral_atlas_pairs:253 -   5 vertices: found 1 cospectral pairs in 0.0s
+2026-02-25 02:34:08.434 | INFO     | __main__:generate_cospectral_atlas_pairs:216 - Processing 155 graphs on 6 vertices
+2026-02-25 02:34:08.446 | INFO     | __main__:generate_cospectral_atlas_pairs:253 -   6 vertices: found 5 cospectral pairs in 0.0s
+2026-02-25 02:34:08.449 | INFO     | __main__:generate_cospectral_atlas_pairs:216 - Processing 1043 graphs on 7 vertices
+2026-02-25 02:34:08.527 | INFO     | __main__:generate_cospectral_atlas_pairs:253 -   7 vertices: found 58 cospectral pairs in 0.1s
+2026-02-25 02:34:08.529 | INFO     | __main__:generate_cospectral_atlas_pairs:255 - Total cospectral atlas pairs: 64
+2026-02-25 02:34:08.531 | INFO     | __main__:generate_godsil_mckay_pairs:261 - Generating Godsil-McKay switching pairs
+2026-02-25 02:34:08.688 | INFO     | __main__:generate_godsil_mckay_pairs:343 - Total Godsil-McKay pairs: 0
+2026-02-25 02:34:08.689 | INFO     | __main__:main:811 - 
+--- Family 2: Circular Skip Link (CSL) Graphs ---
+2026-02-25 02:34:08.691 | INFO     | __main__:generate_csl_pairs:361 - Generating CSL graph pairs
+2026-02-25 02:34:11.445 | INFO     | __main__:generate_csl_pairs:387 -   CSL n=41: 45 non-isomorphic pairs from 10 skip values
+2026-02-25 02:34:11.637 | INFO     | __main__:generate_csl_pairs:411 -   CSL n=16: 14 non-isomorphic pairs from 6 skip values
+2026-02-25 02:34:11.639 | INFO     | __main__:generate_csl_pairs:412 - Total CSL pairs: 59
+2026-02-25 02:34:11.640 | INFO     | __main__:main:816 - 
+--- Family 3: Strongly Regular Graph Pairs ---
+2026-02-25 02:34:11.642 | INFO     | __main__:generate_srg_pairs:525 - Generating strongly regular graph pairs
+2026-02-25 02:34:11.644 | INFO     | __main__:generate_srg_pairs:534 -   Shrikhande: 16 nodes, 48 edges
+2026-02-25 02:34:11.645 | INFO     | __main__:generate_srg_pairs:535 -   4x4 Rook:  16 nodes, 48 edges
+2026-02-25 02:34:11.652 | INFO     | __main__:generate_srg_pairs:546 -   Added Shrikhande vs 4x4 Rook pair
+2026-02-25 02:34:11.655 | INFO     | __main__:generate_srg_pairs:559 -   Chang graph 0: 28 nodes, 231 edges
+2026-02-25 02:34:11.657 | INFO     | __main__:generate_srg_pairs:559 -   Chang graph 1: 28 nodes, 183 edges
+2026-02-25 02:34:11.658 | INFO     | __main__:generate_srg_pairs:559 -   Chang graph 2: 28 nodes, 168 edges
+2026-02-25 02:34:11.692 | INFO     | __main__:generate_srg_pairs:595 -   Paley(5): 5 nodes, 10 edges, degree=4
+2026-02-25 02:34:11.693 | INFO     | __main__:generate_srg_pairs:595 -   Paley(13): 13 nodes, 78 edges, degree=12
+2026-02-25 02:34:11.694 | INFO     | __main__:generate_srg_pairs:595 -   Paley(17): 17 nodes, 136 edges, degree=16
+2026-02-25 02:34:11.695 | INFO     | __main__:generate_srg_pairs:599 - Total strongly regular pairs: 7
+2026-02-25 02:34:11.696 | INFO     | __main__:main:821 - 
+--- Family 4: BREC Benchmark Pairs ---
+2026-02-25 02:34:11.697 | INFO     | __main__:load_brec_pairs:611 - Loading BREC benchmark pairs from .npy files
+2026-02-25 02:34:11.709 | INFO     | __main__:load_brec_pairs:666 -   Loading basic.npy: shape=(120,), dtype=<U9
+2026-02-25 02:34:11.743 | INFO     | __main__:load_brec_pairs:784 -   basic.npy: loaded 60 pairs
+2026-02-25 02:34:11.749 | INFO     | __main__:load_brec_pairs:666 -   Loading regular.npy: shape=(50, 2), dtype=|S9
+2026-02-25 02:34:11.850 | INFO     | __main__:load_brec_pairs:784 -   regular.npy: loaded 50 pairs
+2026-02-25 02:34:11.855 | INFO     | __main__:load_brec_pairs:666 -   Loading str.npy: shape=(100,), dtype=<U101
+2026-02-25 02:37:06.313 | INFO     | __main__:load_brec_pairs:784 -   str.npy: loaded 50 pairs
+2026-02-25 02:37:06.372 | INFO     | __main__:load_brec_pairs:666 -   Loading extension.npy: shape=(100, 2), dtype=<U30
+2026-02-25 02:37:06.449 | INFO     | __main__:load_brec_pairs:784 -   extension.npy: loaded 100 pairs
+2026-02-25 02:37:06.457 | INFO     | __main__:load_brec_pairs:666 -   Loading cfi.npy: shape=(100, 2), dtype=|S3255
+2026-02-25 03:11:31.095 | INFO     | __main__:<module>:68 - Hardware: 4 CPUs, 32.0GB RAM, budget=8.6GB
+2026-02-25 03:11:31.097 | INFO     | __main__:main:475 - ============================================================
+2026-02-25 03:11:31.098 | INFO     | __main__:main:476 - Graph Expressiveness Benchmark Dataset Generation
+2026-02-25 03:11:31.100 | INFO     | __main__:main:477 - ============================================================
+2026-02-25 03:11:31.107 | INFO     | __main__:main:482 - 
+--- Family 1: Cospectral Pairs ---
+2026-02-25 03:11:31.108 | INFO     | __main__:generate_cospectral_pairs:166 - Generating cospectral pairs from atlas (5-7 vertices)
+2026-02-25 03:11:31.206 | INFO     | __main__:generate_cospectral_pairs:176 - Added canonical 5v pair: K_{1,4} vs C_4 ∪ K_1
+2026-02-25 03:11:31.208 | INFO     | __main__:generate_cospectral_pairs:181 - Processing 33 graphs on 5 vertices
+2026-02-25 03:11:31.212 | INFO     | __main__:generate_cospectral_pairs:205 -   5v: 1 pairs in 0.0s
+2026-02-25 03:11:31.214 | INFO     | __main__:generate_cospectral_pairs:181 - Processing 155 graphs on 6 vertices
+2026-02-25 03:11:31.226 | INFO     | __main__:generate_cospectral_pairs:205 -   6v: 5 pairs in 0.0s
+2026-02-25 03:11:31.230 | INFO     | __main__:generate_cospectral_pairs:181 - Processing 1043 graphs on 7 vertices
+2026-02-25 03:11:31.313 | INFO     | __main__:generate_cospectral_pairs:205 -   7v: 58 pairs in 0.1s
+2026-02-25 03:11:31.314 | INFO     | __main__:generate_cospectral_pairs:207 - Total cospectral pairs: 64
+2026-02-25 03:11:31.315 | INFO     | __main__:main:487 - 
+--- Family 2: CSL Graphs ---
+2026-02-25 03:11:31.316 | INFO     | __main__:generate_csl_pairs:223 - Generating CSL graph pairs
+2026-02-25 03:11:34.188 | INFO     | __main__:generate_csl_pairs:237 -   CSL n=41: 45 pairs
+2026-02-25 03:11:34.384 | INFO     | __main__:generate_csl_pairs:251 -   CSL n=16: 14 pairs
+2026-02-25 03:11:34.385 | INFO     | __main__:generate_csl_pairs:252 - Total CSL pairs: 59
+2026-02-25 03:11:34.386 | INFO     | __main__:main:492 - 
+--- Family 3: Strongly Regular Graphs ---
+2026-02-25 03:11:34.387 | INFO     | __main__:generate_srg_pairs:291 - Generating strongly regular graph pairs
+2026-02-25 03:11:34.389 | INFO     | __main__:generate_srg_pairs:298 -   Shrikhande: 16n, 48e
+2026-02-25 03:11:34.390 | INFO     | __main__:generate_srg_pairs:299 -   4x4 Rook:  16n, 48e
+2026-02-25 03:11:34.398 | INFO     | __main__:generate_srg_pairs:309 -   T(8): 28n, 168e
+2026-02-25 03:11:36.139 | INFO     | __main__:generate_srg_pairs:345 -   Found Chang graph: 28n, 168e
+2026-02-25 03:12:28.301 | INFO     | __main__:generate_srg_pairs:389 -   Paley(5): 5n, 10e
+2026-02-25 03:12:28.308 | INFO     | __main__:generate_srg_pairs:389 -   Paley(13): 13n, 78e
+2026-02-25 03:12:28.310 | INFO     | __main__:generate_srg_pairs:389 -   Paley(17): 17n, 136e
+2026-02-25 03:12:28.313 | INFO     | __main__:generate_srg_pairs:393 - Total SRG pairs: 2
+2026-02-25 03:12:28.314 | INFO     | __main__:main:497 - 
+--- Family 4: BREC Benchmark ---
+2026-02-25 03:12:28.315 | INFO     | __main__:load_brec_pairs:403 - Loading BREC benchmark pairs
+2026-02-25 03:12:28.327 | INFO     | __main__:load_brec_pairs:424 -   basic.npy: shape=(120,), dtype=<U9
+2026-02-25 03:12:28.349 | INFO     | __main__:load_brec_pairs:463 -   basic.npy: 60 pairs loaded
+2026-02-25 03:12:28.356 | INFO     | __main__:load_brec_pairs:424 -   regular.npy: shape=(50, 2), dtype=|S9
+2026-02-25 03:12:28.400 | INFO     | __main__:load_brec_pairs:463 -   regular.npy: 50 pairs loaded
+2026-02-25 03:12:28.413 | INFO     | __main__:load_brec_pairs:424 -   str.npy: shape=(100,), dtype=<U101
+2026-02-25 03:12:28.474 | INFO     | __main__:load_brec_pairs:463 -   str.npy: 50 pairs loaded
+2026-02-25 03:12:28.482 | INFO     | __main__:load_brec_pairs:424 -   extension.npy: shape=(100, 2), dtype=<U30
+2026-02-25 03:12:28.517 | INFO     | __main__:load_brec_pairs:463 -   extension.npy: 100 pairs loaded
+2026-02-25 03:12:28.524 | INFO     | __main__:load_brec_pairs:424 -   cfi.npy: shape=(100, 2), dtype=|S3255
+2026-02-25 03:12:28.719 | INFO     | __main__:load_brec_pairs:463 -   cfi.npy: 100 pairs loaded
+2026-02-25 03:12:28.729 | INFO     | __main__:load_brec_pairs:424 -   4vtx.npy: shape=(40,), dtype=<U330
+2026-02-25 03:12:28.779 | INFO     | __main__:load_brec_pairs:463 -   4vtx.npy: 20 pairs loaded
+2026-02-25 03:12:28.849 | INFO     | __main__:load_brec_pairs:424 -   dr.npy: shape=(40,), dtype=|S330
+2026-02-25 03:12:28.902 | INFO     | __main__:load_brec_pairs:463 -   dr.npy: 20 pairs loaded
+2026-02-25 03:12:28.908 | INFO     | __main__:load_brec_pairs:465 - Total BREC pairs: 400
+2026-02-25 03:12:28.910 | INFO     | __main__:main:502 - 
+============================================================
+2026-02-25 03:12:28.911 | INFO     | __main__:main:507 -   BREC_4Vertex: 20
+2026-02-25 03:12:28.912 | INFO     | __main__:main:507 -   BREC_Basic: 60
+2026-02-25 03:12:28.913 | INFO     | __main__:main:507 -   BREC_CFI: 100
+2026-02-25 03:12:28.914 | INFO     | __main__:main:507 -   BREC_Distance_Regular: 20
+2026-02-25 03:12:28.917 | INFO     | __main__:main:507 -   BREC_Extension: 100
+2026-02-25 03:12:28.918 | INFO     | __main__:main:507 -   BREC_Regular: 50
+2026-02-25 03:12:28.919 | INFO     | __main__:main:507 -   BREC_Strongly_Regular: 50
+2026-02-25 03:12:28.920 | INFO     | __main__:main:507 -   CSL: 59
+2026-02-25 03:12:28.922 | INFO     | __main__:main:507 -   cospectral: 64
+2026-02-25 03:12:28.923 | INFO     | __main__:main:507 -   strongly_regular: 2
+2026-02-25 03:12:28.925 | INFO     | __main__:main:508 -   TOTAL: 525 pairs
+2026-02-25 03:12:28.927 | INFO     | __main__:main:515 - All pairs verified non-isomorphic
+2026-02-25 03:12:28.998 | INFO     | __main__:main:539 - Saved to /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/data_out.json
+2026-02-25 03:12:28.999 | INFO     | __main__:main:540 - Time: 57.9s

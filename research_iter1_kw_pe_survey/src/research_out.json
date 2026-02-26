@@ -1,0 +1,169 @@
+{
+  "title": "KW-PE Survey",
+  "summary": "Comprehensive survey of spectral invariance theory (EPNN ceiling), Koopman/EDMD algorithms, Python library APIs, all baseline graph PE methods, cospectral graph test pairs, and related work positioning for Koopman Walk Positional Encodings. Key finding: no prior work combines nonlinear walk dynamics with Koopman decomposition for graph PE, establishing strong novelty. EPNN unifies all spectral invariant architectures below 3-WL; KW-PE's nonlinear cross-terms may break this ceiling.",
+  "question": "What is the exact formal definition of spectral invariance, how do EDMD algorithms extract Koopman eigenfunctions from trajectory data, and what are the precise formulations and known limitations of all major graph positional encoding baselines (RWPE, LapPE, SignNet, BasisNet, SPE, PEARL, RFP)?",
+  "answer": "## 1. The Spectral Invariance Ceiling\n\n### Formal Definition\nA GNN architecture is **spectral invariant** if its output remains unchanged under any orthogonal transformation of the eigenvector basis within each eigenspace of the graph matrix M [1]. For eigenvalue lambda_i with multiplicity J_i, the unique projection matrix P_i = sum_{j=1}^{J_i} z_{i,j} z_{i,j}^T is invariant to eigenvector choice [1]. The **eigenspace projection invariant** captures all spectral information as a multiset: P_M^G(u,v) = {{(lambda_1, P_1(u,v)), ..., (lambda_m, P_m(u,v))}} [1].\n\n### EPNN Architecture\nThe K-layer EPNN computes node representations: h_G^{(l+1)}(u) = g^{(l+1)}(h_G^{(l)}(u), {{(h_G^{(l)}(v), P_M^G(u,v)) : v in V_G}}) [1]. All nodes initialize identically. EPNN essentially unifies all prior spectral invariant architectures [1].\n\n### Main Theorem\nTheorem 4.3: EPWL is strictly bounded by PSWL (Subgraph WL) in distinguishing non-isomorphic graphs [1]. Corollary 4.5: EPWL < 3-WL for all standard graph matrices [1]. The hierarchy: RWPE <= LapPE <= SignNet <= BasisNet <= SPE <= EPNN <= PSWL < 3-WL [1].\n\n### What Must Be Violated\nTo break the spectral invariance ceiling, a method must depend on **individual eigenvector components** (e.g., v_j(i)), not just on eigenspace projection matrices P_i = V_i V_i^T. The projections are invariant under orthogonal rotation of V_i, so any method using only {(lambda_i, P_i)} cannot distinguish cospectral graphs that share projection matrices [1].\n\n## 2. What Spectral Invariant GNNs Can Count: Parallel Trees Only\n\n### Parallel Trees\nA **parallel edge** is a graph whose edges partition into simple paths sharing common endpoints (Definition 3.1) [2]. A **parallel tree** replaces each edge in a base tree T with a parallel edge (Definition 3.2) [2].\n\n### Main Theorem\nTheorem 3.3: Spectral invariant GNNs with d iterations characterize graphs with parallel tree depth <= d. Formally: chi_spec'^{(d)}(G) = chi_spec'^{(d)}(H) iff for all F with parallel tree depth <= d, hom(F,G) = hom(F,H) [2].\n\n### Counting Capabilities and Limitations\nCorollary 3.14: Spectral GNNs can count cycles and paths with <=7 vertices but cannot count 4-cliques [2]. Corollary 3.11: d+1 iterations strictly exceed d iterations, refuting Arvind et al.'s constant-convergence conjecture [2].\n\n### Implication for KW-PE\nIf KW-PE can count non-parallel-tree substructures (e.g., certain cycle configurations), it provably exceeds the spectral invariant ceiling [2].\n\n## 3. Koopman Operator Theory and EDMD Implementation Guide\n\n### Formal Definition\nFor discrete-time dynamics x_{t+1} = F(x_t), the Koopman operator K acts on observables g: (Kg)(x) = g(F(x)) [3, 4]. K is linear but infinite-dimensional. Eigenfunctions satisfy: K*phi = lambda*phi, meaning phi(F(x)) = lambda*phi(x) — eigenfunctions globally linearize the dynamics [3, 4].\n\n### Connection to Linearization\nFor a fixed point x*, Koopman eigenvalues match the eigenvalues of the Jacobian DF(x*), and principal eigenfunctions are approximately linear near x* [3, 4].\n\n### EDMD Algorithm (Step by Step)\n1. Choose dictionary {psi_1, ..., psi_K} (e.g., monomials, RBFs, thin-plate splines) [5]\n2. Given trajectory data {(x_t, x_{t+1})}, form: G_{ij} = (1/M) sum_t psi_i(x_t) psi_j(x_t) and A_{ij} = (1/M) sum_t psi_i(x_t) psi_j(x_{t+1}) [5]\n3. Solve K_EDMD = G^+ A (pseudoinverse) [5]\n4. Eigenvectors xi_j of K_EDMD give Koopman eigenfunction coefficients: phi_j(x) = sum_k xi_{jk} psi_k(x) [5]\n\n### Dictionary Selection\n- Hermite polynomials: best for normally distributed data [5]\n- RBFs with thin-plate splines: effective for irregular geometries, centers via k-means [5]\n- Polynomials up to degree d: explicit cross-terms, good for understanding mode coupling [5, 6]\n\n### Convergence\nAs M -> infinity, EDMD converges to Galerkin projection at rate O(M^{-1/2}) [5]. As N -> infinity (dictionary size), K_N converges to K in strong operator topology [7]. Accumulation points of spectra of K_N correspond to eigenvalues of the Koopman operator [7]. No assumptions on finite-dimensional invariant subspace required [7].\n\n### Key Insight: Nonlinear Mode Coupling\nWhen the dynamical system F is nonlinear, the Koopman eigenfunctions involve products of state-space eigenvector components. For example, for a system with quadratic nonlinearity, EDMD with monomial dictionary captures cross-terms like x_1*x_2 that create closed-form Koopman-invariant subspaces [6]. These cross-terms encode joint information about eigenvector components at different nodes — precisely what spectral invariant methods lose.\n\n## 4. Library APIs for EDMD Implementation\n\n### PyKoopman (Explicit Dictionary)\n```python\nimport pykoopman as pk\n# Polynomial observables\nobsv = pk.observables.Polynomial(degree=3)\n# RBF observables\nRBF = pk.observables.RadialBasisFunction(\n    rbf_type='thinplate', n_centers=10, centers=centers,\n    kernel_width=1.0, polyharmonic_coeff=1.0, include_state=True\n)\n# EDMD regressor\nEDMD = pk.regression.EDMD()\n# Fit model\nmodel = pk.Koopman(observables=obsv, regressor=EDMD)\nmodel.fit(X.T, y=Y.T)\n# Access eigenfunctions/eigenvalues\npsi = model.psi(x_col=x)\neigenvalues = np.real(np.diag(model.lamda))\n```\nAvailable observables: Identity, Polynomial, TimeDelay, RadialBasisFunction, RandomFourierFeatures, CustomObservable, ConcatObservables [8].\nAvailable regressors: DMD, EDMD, KDMD, NNDMD, DMDc, HAVOK [8].\n\n### PyDMD (Kernel-Based)\n```python\nfrom pydmd import EDMD\nedmd = EDMD(kernel_metric='poly',\n            kernel_params={'gamma': 1, 'coef0': 1, 'degree': 4},\n            svd_rank=15).fit(X, Y)\neigenvalues = edmd.eigs\neigenfunctions = edmd.eigenfunctions(xy_vec)\n```\nSupported kernels: poly, rbf, linear, sigmoid, laplacian, cosine [9].\n\n### Recommendation\nUse PyKoopman for explicit dictionary control (needed to understand which cross-terms matter). Use PyDMD for scalable kernel EDMD on larger graphs. For final implementation, a custom NumPy/PyTorch EDMD is likely needed for GPU acceleration and batch processing [8, 9].\n\n## 5. Baseline PE Methods: Formulations and Limitations\n\n### RWPE (Random Walk PE)\nFormulation: p_i^RWPE = [RW_{ii}, RW_{ii}^2, ..., RW_{ii}^k] where RW = AD^{-1} [10].\nSpectral Invariant: YES — RW^k_{ii} = sum_j lambda_j^k |v_j(i)|^2 depends on squared eigenvector components (eigenspace-invariant) [10, 1].\nSign Ambiguity: NO.\nEigendecomposition Required: NO.\nExpressiveness: <= EPNN < 3-WL [1].\n\n### LapPE (Laplacian PE)\nFormulation: p_i^LapPE = [v_1(i), v_2(i), ..., v_k(i)] where v_j are k smallest non-trivial Laplacian eigenvectors [11].\nSpectral Invariant: NOT inherently (uses raw eigenvectors), but sign/basis ambiguity limits effective power.\nSign Ambiguity: YES (v_j <-> -v_j).\nEigendecomposition Required: YES.\nExpressiveness: <= EPNN when combined with sign-invariant processing [1].\n\n### SignNet\nFormulation: f(v_1,...,v_k) = rho([phi(v_i) + phi(-v_i)]_{i=1}^k) — sum over sign flips [12].\nSpectral Invariant: YES (by construction).\nSign Ambiguity: RESOLVED (sign invariant).\nEigendecomposition Required: YES.\nExpressiveness: <= EPNN < 3-WL [1, 12].\n\n### BasisNet\nFormulation: f(V_1,...,V_l) = rho([IGN_{d_i}(V_i V_i^T)]_{i=1}^l) — uses projection matrices [12].\nSpectral Invariant: YES (P_i = V_i V_i^T is basis-invariant).\nBasis Ambiguity: RESOLVED.\nEigendecomposition Required: YES.\nExpressiveness: <= EPNN < 3-WL [1, 12].\n\n### SPE (Stable PE)\nFormulation: SPE(V, lambda) = rho(V diag(phi_1(lambda)) V^T, ..., V diag(phi_m(lambda)) V^T) [13].\nSpectral Invariant: YES (depends on eigenvalues and projections only).\nStability: YES — Lipschitz bound depends on eigengap gamma.\nEigendecomposition Required: YES.\nExpressiveness: Universal for basis-invariant functions, but <= EPNN < 3-WL [1, 13].\n\n### PEARL\nFormulation: P = rho[Phi(G, q^{(1)}), ..., Phi(G, q^{(M)})] where Phi is a GNN, q^{(m)} are random/basis initializations [14].\nSpectral Invariant: PARTIALLY — PEARL can universally approximate any continuous basis-invariant function (Theorem 3.1), but the random feature initialization MAY break symmetry beyond eigenspace projections [14]. The framework's expressiveness depends on the pooling function rho.\nEigendecomposition Required: NO (uses message-passing).\nComplexity: Linear in graph size.\nExpressiveness: Approximates equivariant eigenvector functions. Number of samples M independent of graph size [14].\n\n### RFP (Random Feature Propagation)\nFormulation: Start from random r in R^{n x k}, propagate a^{(p)} = S * a^{(p-1)} with periodic normalization N, concatenate trajectory t = r || a^{(1)} || ... || a^{(P)} [15].\nSpectral Invariant: Effectively YES — linear propagation converges to dominant eigenvectors [15].\nNonlinearity: NONE (propagation is linear; normalization is the only nonlinear step).\nEigendecomposition Required: NO.\nExpressiveness: Interpolates between random features and spectral PE [15].\nKey Limitation: No nonlinear mode coupling — trajectory converges to dominant eigenvectors [15].\n\n## 6. Cospectral Test Cases for Validation\n\n### Pair 1: {K_{1,4}, C_4 union K_1} — 5 vertices\nSpectrum: {-2, 0, 0, 0, 2} [16, 17]\nSmallest known cospectral pair (Collatz & Sinogowitz, 1957) [16].\nK_{1,4}: star graph (connected). C_4 union K_1: 4-cycle plus isolated vertex (disconnected).\n1-WL: Can distinguish (different degree sequences). Note: This pair is easily distinguishable by many methods due to different connectivity.\nUse: Initial sanity check only.\n\n### Pair 2: {K_4 box K_4 (4x4 Rook Graph), Shrikhande Graph} — 16 vertices\nParameters: srg(16, 6, 2, 2) [17, 18].\nSpectrum: 6^1, 2^6, (-2)^9 [17, 18].\nBoth are strongly regular with identical parameters. Neighborhoods differ: hexagon in Shrikhande vs two triangles in Rook [18].\n2-WL: FAILS to distinguish [18].\nUse: Hard test — discriminating this pair requires beyond-2-WL power.\n\n### Pair 3: {Hoffman Graph, Tesseract Graph} — 16 vertices\nAnother cospectral pair on 16 vertices [16].\nUse: Additional validation.\n\n### Godsil-McKay Switching\nSystematic construction: partition graph into classes X_1,...,X_m, Y where each vertex in X_i has fixed neighbor counts in X_j. Switch by replacing certain submatrices N by J-N [19]. Produces cospectral pairs programmatically.\n\n### BREC Benchmark\nBREC dataset contains 400 pairs of non-isomorphic graphs across four categories: Basic (60 pairs), Regular (140 pairs including strongly regular), Extension (100 pairs), and CFI (100 pairs). Regular category includes graphs indistinguishable up to 3-WL [20].\n\n## 7. Related Work and KW-PE Differentiation\n\n### DeepGraphDMD\nUses Koopman/DMD for TEMPORAL dynamics ON graphs (brain fMRI time series) [21]. Decomposes time-varying brain networks into spatiotemporal modes. NOT about graph topology or PE.\nKey Difference from KW-PE: KW-PE uses Koopman for SYNTHETIC dynamics DEFINED BY graph topology.\n\n### RDGNN (Reaction-Diffusion GNN)\nUses reaction-diffusion PDE as GNN LAYER design [22]. Nonlinearity creates Turing instabilities for pattern generation.\nKey Difference from KW-PE: RDGNN is a layer design, not a PE precomputation. KW-PE precomputes PEs from nonlinear dynamics.\n\n### Walk-based LLM Approach\nRecords anonymized random walk trajectories and processes with language models (DeBERTa, Llama 3) [23]. Stochastic, not spectral.\nKey Difference from KW-PE: KW-PE extracts compact Koopman modes for interpretable decomposition, not raw text trajectories.\n\n### Koopman + GNN Prior Work\nExisting work uses Koopman for: (a) accelerating GNN training [24], (b) spatiotemporal forecasting [25], (c) brain network analysis [21]. NO prior work applies Koopman operator to graph topology-defined dynamics for positional encoding [24, 25].\n\n### Novelty Assessment\nSearches for 'nonlinear walk positional encoding' and 'Koopman graph positional encoding' returned NO direct matches [26]. PEARL is the closest method — it uses nonlinear GNN processing of random features — but differs fundamentally: PEARL uses LEARNED nonlinear layers while KW-PE uses FIXED nonlinear dynamics + Koopman decomposition. This supports strong novelty claims for KW-PE.\n\n## 8. Implementation Recommendations\n\n- **Nonlinearity**: Start with tanh (odd symmetry preserving zero) and softplus (sign-breaking). Tanh preserves the symmetry structure of walks while introducing cross-terms.\n- **Dictionary**: Start with degree-2 polynomials for explicit cross-terms between eigenvector components, then RBFs for richer approximation.\n- **Library**: Custom NumPy EDMD for control and understanding, PyKoopman for validation, custom PyTorch for GPU batch processing.\n- **Cospectral Tests**: Start with {K_{1,4}, C_4 union K_1} for proof-of-concept, then {Rook, Shrikhande} for hard test.\n- **Trajectory Length**: Start with T=20-50 steps, d=10-20 Koopman modes.\n- **Validation**: Check linearity of extracted eigenfunctions via lambda^t*phi(x_0) vs phi(x_t).\n\n## 9. Open Questions and Risks\n\n1. PEARL may actually break spectral invariance through its nonlinear GNN processing of random features, potentially overlapping with KW-PE's theoretical advantages.\n2. EDMD convergence on graph walks requires sufficient trajectory diversity — unclear if a single random walk start point provides enough coverage.\n3. The Koopman operator for nonlinear walks on finite graphs may have a complex spectrum (not just point spectrum), complicating eigenfunction extraction.\n4. Dictionary closure: polynomial dictionaries may not close under the Koopman operator for the specific nonlinear walk dynamics used, leading to spurious eigenfunctions.\n5. Computational cost of EDMD per graph may limit scalability compared to PEARL's O(N) complexity.",
+  "sources": [
+    {
+      "index": 1,
+      "url": "https://arxiv.org/html/2406.04336v1",
+      "title": "On the Expressive Power of Spectral Invariant Graph Neural Networks (Zhang, Zhao, Maron, ICML 2024)",
+      "summary": "Introduces EPNN, the unified spectral invariant framework. Proves EPNN <= PSWL < 3-WL. Shows all spectral invariant architectures (SignNet, BasisNet, SPE, RWPE, LapPE) are bounded by EPNN."
+    },
+    {
+      "index": 2,
+      "url": "https://arxiv.org/html/2503.00485",
+      "title": "Homomorphism Expressivity of Spectral Invariant GNNs (ICLR 2025 Oral)",
+      "summary": "Proves spectral invariant GNNs can homomorphism-count exactly parallel trees. Establishes strict iteration depth hierarchy refuting Arvind et al.'s conjecture."
+    },
+    {
+      "index": 3,
+      "url": "https://fluids.ac.uk/files/meetings/KoopmanNotes.1575558616.pdf",
+      "title": "Notes on Koopman Operator Theory (Steven L. Brunton)",
+      "summary": "Tutorial on Koopman operator: formal definition, eigenfunction properties, connection to linearization, spectral decomposition."
+    },
+    {
+      "index": 4,
+      "url": "https://arxiv.org/pdf/2102.02522",
+      "title": "Koopman Operator Dynamical Models: Learning, Analysis and Control (Bevanda et al.)",
+      "summary": "Comprehensive review of Koopman operator theory covering data-driven representations, spectral properties, and connections to system linearization."
+    },
+    {
+      "index": 5,
+      "url": "https://ar5iv.labs.arxiv.org/html/1408.4408",
+      "title": "A Data-Driven Approximation of the Koopman Operator (Williams, Kevrekidis, Rowley, 2015)",
+      "summary": "Original EDMD paper: step-by-step algorithm, dictionary selection (polynomials, RBFs, thin-plate splines), convergence analysis O(M^{-1/2})."
+    },
+    {
+      "index": 6,
+      "url": "https://arxiv.org/pdf/1707.01146",
+      "title": "Data-driven Discovery of Koopman Eigenfunctions for Control (Kaiser et al., 2018)",
+      "summary": "KRONIC framework demonstrating polynomial cross-terms in EDMD, closure problems with monomial dictionaries, and sparsified EDMD for robust eigenfunction recovery."
+    },
+    {
+      "index": 7,
+      "url": "https://arxiv.org/pdf/1703.04680",
+      "title": "On Convergence of Extended Dynamic Mode Decomposition to the Koopman Operator (Korda & Mezic, 2018)",
+      "summary": "Proves EDMD convergence: K_N -> K in strong operator topology as N -> infinity. Spectral accumulation points correspond to Koopman eigenvalues. No finite-dimensional invariant subspace assumption needed."
+    },
+    {
+      "index": 8,
+      "url": "https://pykoopman.readthedocs.io/en/master/",
+      "title": "PyKoopman Documentation",
+      "summary": "Python library for Koopman operator learning with explicit dictionary support. Observables: Identity, Polynomial, TimeDelay, RBF, RandomFourierFeatures. Regressors: DMD, EDMD, KDMD, NNDMD."
+    },
+    {
+      "index": 9,
+      "url": "https://github.com/PyDMD/PyDMD/blob/master/tutorials/tutorial17/tutorial-17-edmd.py",
+      "title": "PyDMD EDMD Tutorial",
+      "summary": "Kernel-based EDMD implementation using implicit infinite-dimensional dictionary. Supports poly, rbf, linear, sigmoid, laplacian, cosine kernels."
+    },
+    {
+      "index": 10,
+      "url": "https://arxiv.org/pdf/2110.07875",
+      "title": "Graph Neural Networks with Learnable Structural and Positional Representations (Dwivedi et al., ICLR 2022)",
+      "summary": "Introduces RWPE: p_i = [RW_{ii}, ..., RW^k_{ii}] using diagonal entries of random walk matrix powers. No sign ambiguity, but spectral invariant."
+    },
+    {
+      "index": 11,
+      "url": "https://afloresep.github.io/posts/2024/10/laplacian_positional_encoding/",
+      "title": "Laplacian Positional Encoding Tutorial",
+      "summary": "LapPE formulation: p_i = [v_1(i), ..., v_k(i)] from k smallest Laplacian eigenvectors. Discusses sign ambiguity and eigenvector selection."
+    },
+    {
+      "index": 12,
+      "url": "https://ar5iv.labs.arxiv.org/html/2202.13013",
+      "title": "SignNet and BasisNet (Lim et al., ICML 2023)",
+      "summary": "SignNet: phi(v) + phi(-v) for sign invariance. BasisNet: IGN on projection matrices V_i V_i^T for basis invariance. Both spectral invariant, bounded by 3-WL."
+    },
+    {
+      "index": 13,
+      "url": "https://arxiv.org/html/2310.02579",
+      "title": "SPE: Stable and Expressive Positional Encoding",
+      "summary": "SPE formulation using learned eigenvalue-dependent functions on projection matrices. Lipschitz stability bound, universal for basis-invariant functions."
+    },
+    {
+      "index": 14,
+      "url": "https://arxiv.org/pdf/2502.01122",
+      "title": "PEARL: Learning Efficient Positional Encodings with Graph Neural Networks (ICLR 2025)",
+      "summary": "GNN-based PE using random/basis initialization. Nonlinear eigenvector mappings with linear complexity. Universal for basis-invariant functions (Theorem 3.1). Sample complexity independent of graph size."
+    },
+    {
+      "index": 15,
+      "url": "https://arxiv.org/pdf/2303.02918",
+      "title": "Graph Positional Encoding via Random Feature Propagation (Eliasof et al., ICML 2023)",
+      "summary": "RFP: linear propagation of random features with periodic normalization, concatenating trajectory. Converges to dominant eigenvectors. Interpolates between random features and spectral PE."
+    },
+    {
+      "index": 16,
+      "url": "https://mathworld.wolfram.com/CospectralGraphs.html",
+      "title": "Cospectral Graphs — Wolfram MathWorld",
+      "summary": "Catalog of cospectral graph pairs including smallest pair {K_{1,4}, C_4 union K_1} and named pairs (Hoffman/Tesseract, Rook/Shrikhande, Chang/Triangular)."
+    },
+    {
+      "index": 17,
+      "url": "https://en.wikipedia.org/wiki/Spectral_graph_theory",
+      "title": "Spectral Graph Theory — Wikipedia",
+      "summary": "Overview of spectral graph theory including cospectral graphs and Collatz-Sinogowitz 1957 first example."
+    },
+    {
+      "index": 18,
+      "url": "https://en.wikipedia.org/wiki/Shrikhande_graph",
+      "title": "Shrikhande Graph — Wikipedia",
+      "summary": "Shrikhande graph: srg(16,6,2,2), cospectral with K_4 box K_4. Vertex neighborhoods: hexagon vs two triangles. Spectrum: 6^1, 2^6, (-2)^9."
+    },
+    {
+      "index": 19,
+      "url": "https://cs.anu.edu.au/~Brendan.McKay/papers/GodsilMcKayCospectral.pdf",
+      "title": "Constructing Cospectral Graphs (Godsil & McKay, 1982)",
+      "summary": "Original Godsil-McKay switching construction for systematic cospectral pair generation via submatrix replacement."
+    },
+    {
+      "index": 20,
+      "url": "https://github.com/GraphPKU/BREC",
+      "title": "BREC: Better Random Expression Counting Dataset",
+      "summary": "400 pairs of non-isomorphic graphs for GNN expressiveness testing. Categories: Basic, Regular (including strongly regular), Extension, CFI. Up to 4-WL difficulty."
+    },
+    {
+      "index": 21,
+      "url": "https://arxiv.org/html/2306.03088",
+      "title": "DeepGraphDMD: Deep Graph Dynamic Mode Decomposition",
+      "summary": "Koopman/DMD for temporal brain fMRI dynamics on graphs. Decomposes time-varying networks into spatiotemporal modes. Not about graph topology PE."
+    },
+    {
+      "index": 22,
+      "url": "https://arxiv.org/html/2406.10871v1",
+      "title": "Graph Neural Reaction-Diffusion Models",
+      "summary": "Reaction-diffusion PDE as GNN layer design with Turing instabilities for pattern generation. Layer design, not PE precomputation."
+    },
+    {
+      "index": 23,
+      "url": "https://arxiv.org/html/2407.01214v1",
+      "title": "Revisiting Random Walks for Learning on Graphs",
+      "summary": "Anonymized random walk trajectories processed by language models (DeBERTa, Llama 3). Stochastic approach, no Koopman decomposition."
+    },
+    {
+      "index": 24,
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-82427-2_6",
+      "title": "GNN Node Classification Using Koopman Operator Theory on GPU",
+      "summary": "Uses Koopman operator to accelerate GNN training (treats weights as dynamical system). Not about graph PE."
+    },
+    {
+      "index": 25,
+      "url": "https://arxiv.org/html/2507.03855",
+      "title": "Transformer with Koopman-Enhanced Graph Convolutional Network for Spatiotemporal Dynamics Forecasting",
+      "summary": "Koopman + GCN for spatiotemporal forecasting. Combines spatial GCN structure with temporal Koopman operator. Not about static graph PE."
+    },
+    {
+      "index": 26,
+      "url": "https://arxiv.org/abs/2502.01122",
+      "title": "PEARL ICLR 2025 (novelty search context)",
+      "summary": "Search for 'nonlinear walk positional encoding' and 'Koopman graph positional encoding' returned no direct prior work, supporting KW-PE novelty claims."
+    }
+  ],
+  "follow_up_questions": [
+    "Does PEARL's use of nonlinear GNN processing with random feature initialization actually break spectral invariance in practice, and if so, does it achieve the same type of cross-term coupling that KW-PE targets through Koopman decomposition?",
+    "What is the optimal dictionary size and type for EDMD applied to nonlinear walks on graphs of varying sizes, and how does the computational cost scale compared to eigendecomposition-based methods?",
+    "Can the Koopman eigenfunctions extracted from nonlinear graph walks be shown to encode specific substructure counting capabilities (e.g., cycle counting beyond parallel trees) with formal guarantees?"
+  ]
+}

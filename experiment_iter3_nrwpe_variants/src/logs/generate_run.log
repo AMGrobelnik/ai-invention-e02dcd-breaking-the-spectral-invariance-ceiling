@@ -1,0 +1,45 @@
+2026-02-25 16:51:09.518 | INFO     | __main__:<module>:56 - GPU: NVIDIA RTX A4500
+2026-02-25 16:51:09.520 | INFO     | __main__:<module>:57 - CPUs: 11, RAM: 62.0GB, Device: cuda
+2026-02-25 16:51:09.529 | INFO     | __main__:main:262 - Parsed 16 cached results from log
+2026-02-25 16:51:09.530 | INFO     | __main__:load_dataset:101 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id3_it1__opus/full_data_out.json
+2026-02-25 16:51:09.778 | INFO     | __main__:load_dataset:104 - Loaded 12000 examples
+2026-02-25 16:51:09.779 | INFO     | __main__:main:266 - Loading cached PEs...
+2026-02-25 16:51:10.378 | INFO     | __main__:main:268 - Loaded 12000 cached PE results
+2026-02-25 16:51:11.200 | INFO     | __main__:main:285 - All seeds cached for GIN_ZINC_v2_rwpe
+2026-02-25 16:51:11.204 | INFO     | __main__:main:285 - All seeds cached for GIN_ZINC_v2_nrwpe_diag
+2026-02-25 16:51:11.205 | INFO     | __main__:main:285 - All seeds cached for GIN_ZINC_v2_nrwpe_multi
+2026-02-25 16:51:11.206 | INFO     | __main__:main:285 - All seeds cached for GIN_ZINC_v2_nrwpe_combined
+2026-02-25 16:51:11.206 | INFO     | __main__:main:293 - Need to run 1 seeds for GIN_ZINC_v2_no_pe: [456]
+2026-02-25 16:51:12.596 | INFO     | __main__:main:296 -   Train: 10000, Val: 1000, Test: 1000
+2026-02-25 16:51:43.555 | INFO     | __main__:<module>:56 - GPU: NVIDIA RTX A4500
+2026-02-25 16:51:43.557 | INFO     | __main__:<module>:57 - CPUs: 11, RAM: 62.0GB, Device: cuda
+2026-02-25 16:51:43.563 | INFO     | __main__:main:262 - Parsed 16 cached results from log
+2026-02-25 16:51:43.564 | INFO     | __main__:load_dataset:101 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id3_it1__opus/full_data_out.json
+2026-02-25 16:51:43.614 | INFO     | __main__:load_dataset:104 - Loaded 12000 examples
+2026-02-25 16:51:43.614 | INFO     | __main__:main:266 - Loading cached PEs...
+2026-02-25 16:51:43.961 | INFO     | __main__:main:268 - Loaded 12000 cached PE results
+2026-02-25 16:51:45.498 | INFO     | __main__:main:285 - All seeds cached for GIN_ZINC_v2_rwpe
+2026-02-25 16:51:45.503 | INFO     | __main__:main:285 - All seeds cached for GIN_ZINC_v2_nrwpe_diag
+2026-02-25 16:51:45.504 | INFO     | __main__:main:285 - All seeds cached for GIN_ZINC_v2_nrwpe_multi
+2026-02-25 16:51:45.505 | INFO     | __main__:main:285 - All seeds cached for GIN_ZINC_v2_nrwpe_combined
+2026-02-25 16:51:45.505 | INFO     | __main__:main:293 - Need to run 1 seeds for GIN_ZINC_v2_no_pe: [456]
+2026-02-25 16:51:46.883 | INFO     | __main__:main:296 -   Train: 10000, Val: 1000, Test: 1000
+2026-02-25 16:51:47.686 | INFO     | __main__:<module>:56 - GPU: NVIDIA RTX A4500
+2026-02-25 16:51:47.687 | INFO     | __main__:<module>:57 - CPUs: 11, RAM: 62.0GB, Device: cuda
+2026-02-25 16:51:47.695 | INFO     | __main__:main:262 - Parsed 16 cached results from log
+2026-02-25 16:51:47.696 | INFO     | __main__:load_dataset:101 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id3_it1__opus/full_data_out.json
+2026-02-25 16:51:47.762 | INFO     | __main__:load_dataset:104 - Loaded 12000 examples
+2026-02-25 16:51:47.763 | INFO     | __main__:main:266 - Loading cached PEs...
+2026-02-25 16:51:48.092 | INFO     | __main__:main:268 - Loaded 12000 cached PE results
+2026-02-25 16:51:49.595 | INFO     | __main__:main:285 - All seeds cached for GIN_ZINC_v2_rwpe
+2026-02-25 16:51:49.596 | INFO     | __main__:main:285 - All seeds cached for GIN_ZINC_v2_nrwpe_diag
+2026-02-25 16:51:49.598 | INFO     | __main__:main:285 - All seeds cached for GIN_ZINC_v2_nrwpe_multi
+2026-02-25 16:51:49.605 | INFO     | __main__:main:285 - All seeds cached for GIN_ZINC_v2_nrwpe_combined
+2026-02-25 16:51:49.606 | INFO     | __main__:main:293 - Need to run 1 seeds for GIN_ZINC_v2_no_pe: [456]
+2026-02-25 16:51:51.377 | INFO     | __main__:<module>:56 - GPU: NVIDIA RTX A4500
+2026-02-25 16:51:51.378 | INFO     | __main__:<module>:57 - CPUs: 11, RAM: 62.0GB, Device: cuda
+2026-02-25 16:51:51.384 | INFO     | __main__:main:262 - Parsed 16 cached results from log
+2026-02-25 16:51:51.385 | INFO     | __main__:load_dataset:101 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id3_it1__opus/full_data_out.json
+2026-02-25 16:51:51.433 | INFO     | __main__:load_dataset:104 - Loaded 12000 examples
+2026-02-25 16:51:51.434 | INFO     | __main__:main:266 - Loading cached PEs...
+2026-02-25 16:51:51.770 | INFO     | __main__:main:268 - Loaded 12000 cached PE results

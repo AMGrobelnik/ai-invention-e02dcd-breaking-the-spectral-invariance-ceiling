@@ -1,0 +1,529 @@
+2026-02-25 17:22:43.465 | INFO     | method:<module>:72 - Hardware: 4 CPUs, 32.0 GB RAM, budget=25.6 GB
+2026-02-25 17:22:48.881 | INFO     | method:<module>:72 - Hardware: 4 CPUs, 32.0 GB RAM, budget=25.6 GB
+2026-02-25 17:22:48.883 | INFO     | method:main:380 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/mini_data_out.json
+2026-02-25 17:22:48.892 | INFO     | method:main:384 - Loaded 3 examples
+2026-02-25 17:22:48.893 | INFO     | method:main:393 - Processing 3 pairs with 5 nonlinearities...
+2026-02-25 17:22:48.895 | INFO     | method:main:395 - Using 4 workers
+2026-02-25 17:22:48.911 | INFO     | method:main:413 -   [3/3] elapsed=0.0s
+2026-02-25 17:22:48.915 | INFO     | method:main:416 - Phase 1 complete in 0.0s
+2026-02-25 17:22:48.918 | INFO     | method:main:419 - Phase 2: Equivariance verification on 20 graphs...
+2026-02-25 17:22:48.931 | INFO     | method:main:436 - Equivariance: ALL PASSED
+2026-02-25 17:22:48.932 | DEBUG    | method:main:438 -   pair=0 n=5 passed=True gram_err=0.00e+00 eig_err=2.89e-15
+2026-02-25 17:22:48.933 | DEBUG    | method:main:438 -   pair=1 n=6 passed=True gram_err=0.00e+00 eig_err=0.00e+00
+2026-02-25 17:22:48.935 | DEBUG    | method:main:438 -   pair=2 n=6 passed=True gram_err=2.43e-15 eig_err=9.04e-15
+2026-02-25 17:22:48.936 | INFO     | method:main:442 - Phase 3: Aggregating results...
+2026-02-25 17:22:48.937 | INFO     | method:main:450 - Methods: ['G_NL_diag_linear', 'G_NL_diag_mild', 'G_NL_diag_relu', 'G_NL_diag_softplus', 'G_NL_diag_tanh', 'G_NL_eig_linear', 'G_NL_eig_mild', 'G_NL_eig_relu', 'G_NL_eig_softplus', 'G_NL_eig_tanh', 'G_NL_hybrid_linear', 'G_NL_hybrid_mild', 'G_NL_hybrid_relu', 'G_NL_hybrid_softplus', 'G_NL_hybrid_tanh', 'G_NL_nodestats_tanh', 'RWPE_diag', 'nRWPE_diag']
+2026-02-25 17:22:48.942 | INFO     | method:main:501 - === OVERALL RESULTS ===
+2026-02-25 17:22:48.943 | INFO     | method:main:504 -   G_NL_diag_linear              :   3/3 = 1.0000
+2026-02-25 17:22:48.945 | INFO     | method:main:504 -   G_NL_diag_mild                :   3/3 = 1.0000
+2026-02-25 17:22:48.947 | INFO     | method:main:504 -   G_NL_diag_relu                :   3/3 = 1.0000
+2026-02-25 17:22:48.948 | INFO     | method:main:504 -   G_NL_diag_softplus            :   3/3 = 1.0000
+2026-02-25 17:22:48.949 | INFO     | method:main:504 -   G_NL_diag_tanh                :   3/3 = 1.0000
+2026-02-25 17:22:48.951 | INFO     | method:main:504 -   G_NL_eig_linear               :   1/3 = 0.3333
+2026-02-25 17:22:48.952 | INFO     | method:main:504 -   G_NL_eig_mild                 :   3/3 = 1.0000
+2026-02-25 17:22:48.954 | INFO     | method:main:504 -   G_NL_eig_relu                 :   1/3 = 0.3333
+2026-02-25 17:22:48.956 | INFO     | method:main:504 -   G_NL_eig_softplus             :   3/3 = 1.0000
+2026-02-25 17:22:48.957 | INFO     | method:main:504 -   G_NL_eig_tanh                 :   3/3 = 1.0000
+2026-02-25 17:22:48.959 | INFO     | method:main:504 -   G_NL_hybrid_linear            :   3/3 = 1.0000
+2026-02-25 17:22:48.961 | INFO     | method:main:504 -   G_NL_hybrid_mild              :   3/3 = 1.0000
+2026-02-25 17:22:48.962 | INFO     | method:main:504 -   G_NL_hybrid_relu              :   3/3 = 1.0000
+2026-02-25 17:22:48.963 | INFO     | method:main:504 -   G_NL_hybrid_softplus          :   3/3 = 1.0000
+2026-02-25 17:22:48.964 | INFO     | method:main:504 -   G_NL_hybrid_tanh              :   3/3 = 1.0000
+2026-02-25 17:22:48.966 | INFO     | method:main:504 -   G_NL_nodestats_tanh           :   3/3 = 1.0000
+2026-02-25 17:22:48.967 | INFO     | method:main:504 -   RWPE_diag                     :   3/3 = 1.0000
+2026-02-25 17:22:48.968 | INFO     | method:main:504 -   nRWPE_diag                    :   3/3 = 1.0000
+2026-02-25 17:22:48.970 | INFO     | method:main:506 - === PER-CATEGORY RESULTS ===
+2026-02-25 17:22:48.972 | INFO     | method:main:508 -   --- cospectral (3 pairs) ---
+2026-02-25 17:22:48.973 | INFO     | method:main:511 -     G_NL_diag_linear              :   3/3 = 1.0000
+2026-02-25 17:22:48.975 | INFO     | method:main:511 -     G_NL_diag_mild                :   3/3 = 1.0000
+2026-02-25 17:22:48.978 | INFO     | method:main:511 -     G_NL_diag_relu                :   3/3 = 1.0000
+2026-02-25 17:22:48.979 | INFO     | method:main:511 -     G_NL_diag_softplus            :   3/3 = 1.0000
+2026-02-25 17:22:48.980 | INFO     | method:main:511 -     G_NL_diag_tanh                :   3/3 = 1.0000
+2026-02-25 17:22:48.981 | INFO     | method:main:511 -     G_NL_eig_linear               :   1/3 = 0.3333
+2026-02-25 17:22:48.983 | INFO     | method:main:511 -     G_NL_eig_mild                 :   3/3 = 1.0000
+2026-02-25 17:22:48.984 | INFO     | method:main:511 -     G_NL_eig_relu                 :   1/3 = 0.3333
+2026-02-25 17:22:48.985 | INFO     | method:main:511 -     G_NL_eig_softplus             :   3/3 = 1.0000
+2026-02-25 17:22:48.986 | INFO     | method:main:511 -     G_NL_eig_tanh                 :   3/3 = 1.0000
+2026-02-25 17:22:48.989 | INFO     | method:main:511 -     G_NL_hybrid_linear            :   3/3 = 1.0000
+2026-02-25 17:22:48.991 | INFO     | method:main:511 -     G_NL_hybrid_mild              :   3/3 = 1.0000
+2026-02-25 17:22:48.993 | INFO     | method:main:511 -     G_NL_hybrid_relu              :   3/3 = 1.0000
+2026-02-25 17:22:48.994 | INFO     | method:main:511 -     G_NL_hybrid_softplus          :   3/3 = 1.0000
+2026-02-25 17:22:48.996 | INFO     | method:main:511 -     G_NL_hybrid_tanh              :   3/3 = 1.0000
+2026-02-25 17:22:48.997 | INFO     | method:main:511 -     G_NL_nodestats_tanh           :   3/3 = 1.0000
+2026-02-25 17:22:48.998 | INFO     | method:main:511 -     RWPE_diag                     :   3/3 = 1.0000
+2026-02-25 17:22:49.008 | INFO     | method:main:511 -     nRWPE_diag                    :   3/3 = 1.0000
+2026-02-25 17:22:49.011 | INFO     | method:main:514 - Phase 4: Hard pair diagnostics...
+2026-02-25 17:22:49.016 | INFO     | method:main:573 - Collected 3 hard pair diagnostics
+2026-02-25 17:22:49.018 | INFO     | method:main:576 - Phase 5: Trajectory length ablation for G_NL_eig_tanh...
+2026-02-25 17:22:49.019 | INFO     | method:main:580 -   T=5...
+2026-02-25 17:22:49.033 | INFO     | method:main:606 -     T=5: 3/3 = 1.0000
+2026-02-25 17:22:49.035 | INFO     | method:main:580 -   T=10...
+2026-02-25 17:22:49.044 | INFO     | method:main:606 -     T=10: 3/3 = 1.0000
+2026-02-25 17:22:49.046 | INFO     | method:main:580 -   T=15...
+2026-02-25 17:22:49.054 | INFO     | method:main:606 -     T=15: 3/3 = 1.0000
+2026-02-25 17:22:49.055 | INFO     | method:main:580 -   T=20...
+2026-02-25 17:22:49.066 | INFO     | method:main:606 -     T=20: 3/3 = 1.0000
+2026-02-25 17:22:49.067 | INFO     | method:main:580 -   T=30...
+2026-02-25 17:22:49.075 | INFO     | method:main:606 -     T=30: 3/3 = 1.0000
+2026-02-25 17:22:49.078 | INFO     | method:main:580 -   T=50...
+2026-02-25 17:22:49.086 | INFO     | method:main:606 -     T=50: 3/3 = 1.0000
+2026-02-25 17:22:49.089 | INFO     | method:main:609 - Total runtime: 0.2s
+2026-02-25 17:22:49.090 | INFO     | method:main:612 - Building output JSON...
+2026-02-25 17:22:49.111 | INFO     | method:main:674 - Output written to /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/method_out.json
+2026-02-25 17:22:49.114 | INFO     | method:main:675 - Output size: 0.02 MB
+2026-02-25 17:22:49.116 | INFO     | method:main:678 - === SUMMARY ===
+2026-02-25 17:22:49.117 | INFO     | method:main:680 - Best method: G_NL_diag_linear (3/3)
+2026-02-25 17:22:49.118 | INFO     | method:main:681 - RWPE baseline: 3/3
+2026-02-25 17:22:49.120 | INFO     | method:main:682 - nRWPE baseline: 3/3
+2026-02-25 17:22:58.243 | INFO     | __main__:<module>:72 - Hardware: 4 CPUs, 32.0 GB RAM, budget=25.6 GB
+2026-02-25 17:22:58.245 | INFO     | __main__:main:380 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-25 17:22:58.280 | INFO     | __main__:main:384 - Loaded 525 examples
+2026-02-25 17:22:58.282 | INFO     | __main__:main:388 - Limiting to first 10 examples
+2026-02-25 17:22:58.283 | INFO     | __main__:main:393 - Processing 10 pairs with 5 nonlinearities...
+2026-02-25 17:22:58.285 | INFO     | __main__:main:395 - Using 4 workers
+2026-02-25 17:22:58.309 | INFO     | __main__:main:413 -   [10/10] elapsed=0.1s
+2026-02-25 17:22:58.315 | INFO     | __main__:main:416 - Phase 1 complete in 0.1s
+2026-02-25 17:22:58.316 | INFO     | __main__:main:419 - Phase 2: Equivariance verification on 20 graphs...
+2026-02-25 17:22:58.335 | INFO     | __main__:main:436 - Equivariance: ALL PASSED
+2026-02-25 17:22:58.336 | DEBUG    | __main__:main:438 -   pair=0 n=5 passed=True gram_err=0.00e+00 eig_err=2.89e-15
+2026-02-25 17:22:58.338 | DEBUG    | __main__:main:438 -   pair=1 n=6 passed=True gram_err=0.00e+00 eig_err=0.00e+00
+2026-02-25 17:22:58.340 | DEBUG    | __main__:main:438 -   pair=2 n=6 passed=True gram_err=2.43e-15 eig_err=9.04e-15
+2026-02-25 17:22:58.341 | DEBUG    | __main__:main:438 -   pair=3 n=6 passed=True gram_err=3.20e-15 eig_err=5.45e-15
+2026-02-25 17:22:58.342 | DEBUG    | __main__:main:438 -   pair=4 n=6 passed=True gram_err=6.28e-15 eig_err=7.74e-15
+2026-02-25 17:22:58.343 | DEBUG    | __main__:main:438 -   pair=5 n=6 passed=True gram_err=4.35e-15 eig_err=1.10e-14
+2026-02-25 17:22:58.344 | DEBUG    | __main__:main:438 -   pair=6 n=7 passed=True gram_err=0.00e+00 eig_err=0.00e+00
+2026-02-25 17:22:58.346 | DEBUG    | __main__:main:438 -   pair=7 n=7 passed=True gram_err=2.43e-15 eig_err=9.87e-15
+2026-02-25 17:22:58.347 | DEBUG    | __main__:main:438 -   pair=8 n=7 passed=True gram_err=3.08e-15 eig_err=7.57e-15
+2026-02-25 17:22:58.348 | DEBUG    | __main__:main:438 -   pair=9 n=7 passed=True gram_err=3.08e-15 eig_err=7.57e-15
+2026-02-25 17:22:58.349 | INFO     | __main__:main:442 - Phase 3: Aggregating results...
+2026-02-25 17:22:58.350 | INFO     | __main__:main:450 - Methods: ['G_NL_diag_linear', 'G_NL_diag_mild', 'G_NL_diag_relu', 'G_NL_diag_softplus', 'G_NL_diag_tanh', 'G_NL_eig_linear', 'G_NL_eig_mild', 'G_NL_eig_relu', 'G_NL_eig_softplus', 'G_NL_eig_tanh', 'G_NL_hybrid_linear', 'G_NL_hybrid_mild', 'G_NL_hybrid_relu', 'G_NL_hybrid_softplus', 'G_NL_hybrid_tanh', 'G_NL_nodestats_tanh', 'RWPE_diag', 'nRWPE_diag']
+2026-02-25 17:22:58.358 | INFO     | __main__:main:501 - === OVERALL RESULTS ===
+2026-02-25 17:22:58.359 | INFO     | __main__:main:504 -   G_NL_diag_linear              :  10/10 = 1.0000
+2026-02-25 17:22:58.361 | INFO     | __main__:main:504 -   G_NL_diag_mild                :  10/10 = 1.0000
+2026-02-25 17:22:58.362 | INFO     | __main__:main:504 -   G_NL_diag_relu                :  10/10 = 1.0000
+2026-02-25 17:22:58.363 | INFO     | __main__:main:504 -   G_NL_diag_softplus            :  10/10 = 1.0000
+2026-02-25 17:22:58.364 | INFO     | __main__:main:504 -   G_NL_diag_tanh                :  10/10 = 1.0000
+2026-02-25 17:22:58.365 | INFO     | __main__:main:504 -   G_NL_eig_linear               :   7/10 = 0.7000
+2026-02-25 17:22:58.366 | INFO     | __main__:main:504 -   G_NL_eig_mild                 :  10/10 = 1.0000
+2026-02-25 17:22:58.367 | INFO     | __main__:main:504 -   G_NL_eig_relu                 :   7/10 = 0.7000
+2026-02-25 17:22:58.368 | INFO     | __main__:main:504 -   G_NL_eig_softplus             :  10/10 = 1.0000
+2026-02-25 17:22:58.369 | INFO     | __main__:main:504 -   G_NL_eig_tanh                 :  10/10 = 1.0000
+2026-02-25 17:22:58.371 | INFO     | __main__:main:504 -   G_NL_hybrid_linear            :  10/10 = 1.0000
+2026-02-25 17:22:58.373 | INFO     | __main__:main:504 -   G_NL_hybrid_mild              :  10/10 = 1.0000
+2026-02-25 17:22:58.375 | INFO     | __main__:main:504 -   G_NL_hybrid_relu              :  10/10 = 1.0000
+2026-02-25 17:22:58.375 | INFO     | __main__:main:504 -   G_NL_hybrid_softplus          :  10/10 = 1.0000
+2026-02-25 17:22:58.377 | INFO     | __main__:main:504 -   G_NL_hybrid_tanh              :  10/10 = 1.0000
+2026-02-25 17:22:58.378 | INFO     | __main__:main:504 -   G_NL_nodestats_tanh           :  10/10 = 1.0000
+2026-02-25 17:22:58.380 | INFO     | __main__:main:504 -   RWPE_diag                     :  10/10 = 1.0000
+2026-02-25 17:22:58.381 | INFO     | __main__:main:504 -   nRWPE_diag                    :  10/10 = 1.0000
+2026-02-25 17:22:58.383 | INFO     | __main__:main:506 - === PER-CATEGORY RESULTS ===
+2026-02-25 17:22:58.384 | INFO     | __main__:main:508 -   --- cospectral (10 pairs) ---
+2026-02-25 17:22:58.386 | INFO     | __main__:main:511 -     G_NL_diag_linear              :  10/10 = 1.0000
+2026-02-25 17:22:58.387 | INFO     | __main__:main:511 -     G_NL_diag_mild                :  10/10 = 1.0000
+2026-02-25 17:22:58.389 | INFO     | __main__:main:511 -     G_NL_diag_relu                :  10/10 = 1.0000
+2026-02-25 17:22:58.390 | INFO     | __main__:main:511 -     G_NL_diag_softplus            :  10/10 = 1.0000
+2026-02-25 17:22:58.391 | INFO     | __main__:main:511 -     G_NL_diag_tanh                :  10/10 = 1.0000
+2026-02-25 17:22:58.393 | INFO     | __main__:main:511 -     G_NL_eig_linear               :   7/10 = 0.7000
+2026-02-25 17:22:58.394 | INFO     | __main__:main:511 -     G_NL_eig_mild                 :  10/10 = 1.0000
+2026-02-25 17:22:58.396 | INFO     | __main__:main:511 -     G_NL_eig_relu                 :   7/10 = 0.7000
+2026-02-25 17:22:58.397 | INFO     | __main__:main:511 -     G_NL_eig_softplus             :  10/10 = 1.0000
+2026-02-25 17:22:58.405 | INFO     | __main__:main:511 -     G_NL_eig_tanh                 :  10/10 = 1.0000
+2026-02-25 17:22:58.407 | INFO     | __main__:main:511 -     G_NL_hybrid_linear            :  10/10 = 1.0000
+2026-02-25 17:22:58.411 | INFO     | __main__:main:511 -     G_NL_hybrid_mild              :  10/10 = 1.0000
+2026-02-25 17:22:58.412 | INFO     | __main__:main:511 -     G_NL_hybrid_relu              :  10/10 = 1.0000
+2026-02-25 17:22:58.414 | INFO     | __main__:main:511 -     G_NL_hybrid_softplus          :  10/10 = 1.0000
+2026-02-25 17:22:58.416 | INFO     | __main__:main:511 -     G_NL_hybrid_tanh              :  10/10 = 1.0000
+2026-02-25 17:22:58.418 | INFO     | __main__:main:511 -     G_NL_nodestats_tanh           :  10/10 = 1.0000
+2026-02-25 17:22:58.419 | INFO     | __main__:main:511 -     RWPE_diag                     :  10/10 = 1.0000
+2026-02-25 17:22:58.420 | INFO     | __main__:main:511 -     nRWPE_diag                    :  10/10 = 1.0000
+2026-02-25 17:22:58.421 | INFO     | __main__:main:514 - Phase 4: Hard pair diagnostics...
+2026-02-25 17:22:58.432 | INFO     | __main__:main:573 - Collected 10 hard pair diagnostics
+2026-02-25 17:22:58.434 | INFO     | __main__:main:576 - Phase 5: Trajectory length ablation for G_NL_eig_tanh...
+2026-02-25 17:22:58.436 | INFO     | __main__:main:580 -   T=5...
+2026-02-25 17:22:58.448 | INFO     | __main__:main:606 -     T=5: 10/10 = 1.0000
+2026-02-25 17:22:58.449 | INFO     | __main__:main:580 -   T=10...
+2026-02-25 17:22:58.458 | INFO     | __main__:main:606 -     T=10: 10/10 = 1.0000
+2026-02-25 17:22:58.460 | INFO     | __main__:main:580 -   T=15...
+2026-02-25 17:22:58.469 | INFO     | __main__:main:606 -     T=15: 10/10 = 1.0000
+2026-02-25 17:22:58.470 | INFO     | __main__:main:580 -   T=20...
+2026-02-25 17:22:58.479 | INFO     | __main__:main:606 -     T=20: 10/10 = 1.0000
+2026-02-25 17:22:58.481 | INFO     | __main__:main:580 -   T=30...
+2026-02-25 17:22:58.490 | INFO     | __main__:main:606 -     T=30: 10/10 = 1.0000
+2026-02-25 17:22:58.492 | INFO     | __main__:main:580 -   T=50...
+2026-02-25 17:22:58.505 | INFO     | __main__:main:606 -     T=50: 10/10 = 1.0000
+2026-02-25 17:22:58.507 | INFO     | __main__:main:609 - Total runtime: 0.3s
+2026-02-25 17:22:58.508 | INFO     | __main__:main:612 - Building output JSON...
+2026-02-25 17:22:58.522 | INFO     | __main__:main:674 - Output written to /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/method_out.json
+2026-02-25 17:22:58.525 | INFO     | __main__:main:675 - Output size: 0.05 MB
+2026-02-25 17:22:58.526 | INFO     | __main__:main:678 - === SUMMARY ===
+2026-02-25 17:22:58.528 | INFO     | __main__:main:680 - Best method: G_NL_diag_linear (10/10)
+2026-02-25 17:22:58.528 | INFO     | __main__:main:681 - RWPE baseline: 10/10
+2026-02-25 17:22:58.530 | INFO     | __main__:main:682 - nRWPE baseline: 10/10
+2026-02-25 17:23:01.982 | INFO     | __main__:<module>:72 - Hardware: 4 CPUs, 32.0 GB RAM, budget=25.6 GB
+2026-02-25 17:23:01.984 | INFO     | __main__:main:380 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-25 17:23:02.006 | INFO     | __main__:main:384 - Loaded 525 examples
+2026-02-25 17:23:02.008 | INFO     | __main__:main:388 - Limiting to first 50 examples
+2026-02-25 17:23:02.010 | INFO     | __main__:main:393 - Processing 50 pairs with 5 nonlinearities...
+2026-02-25 17:23:02.011 | INFO     | __main__:main:395 - Using 4 workers
+2026-02-25 17:23:02.078 | INFO     | __main__:main:413 -   [50/50] elapsed=0.1s
+2026-02-25 17:23:02.085 | INFO     | __main__:main:416 - Phase 1 complete in 0.1s
+2026-02-25 17:23:02.086 | INFO     | __main__:main:419 - Phase 2: Equivariance verification on 20 graphs...
+2026-02-25 17:23:02.114 | INFO     | __main__:main:436 - Equivariance: ALL PASSED
+2026-02-25 17:23:02.116 | DEBUG    | __main__:main:438 -   pair=0 n=5 passed=True gram_err=0.00e+00 eig_err=2.89e-15
+2026-02-25 17:23:02.117 | DEBUG    | __main__:main:438 -   pair=1 n=6 passed=True gram_err=0.00e+00 eig_err=0.00e+00
+2026-02-25 17:23:02.119 | DEBUG    | __main__:main:438 -   pair=2 n=6 passed=True gram_err=2.43e-15 eig_err=9.04e-15
+2026-02-25 17:23:02.121 | DEBUG    | __main__:main:438 -   pair=3 n=6 passed=True gram_err=3.20e-15 eig_err=5.45e-15
+2026-02-25 17:23:02.122 | DEBUG    | __main__:main:438 -   pair=4 n=6 passed=True gram_err=6.28e-15 eig_err=7.74e-15
+2026-02-25 17:23:02.124 | DEBUG    | __main__:main:438 -   pair=5 n=6 passed=True gram_err=4.35e-15 eig_err=1.10e-14
+2026-02-25 17:23:02.125 | DEBUG    | __main__:main:438 -   pair=6 n=7 passed=True gram_err=0.00e+00 eig_err=0.00e+00
+2026-02-25 17:23:02.127 | DEBUG    | __main__:main:438 -   pair=7 n=7 passed=True gram_err=2.43e-15 eig_err=9.87e-15
+2026-02-25 17:23:02.128 | DEBUG    | __main__:main:438 -   pair=8 n=7 passed=True gram_err=3.08e-15 eig_err=7.57e-15
+2026-02-25 17:23:02.130 | DEBUG    | __main__:main:438 -   pair=9 n=7 passed=True gram_err=3.08e-15 eig_err=7.57e-15
+2026-02-25 17:23:02.131 | DEBUG    | __main__:main:438 -   pair=10 n=7 passed=True gram_err=0.00e+00 eig_err=1.11e-15
+2026-02-25 17:23:02.132 | DEBUG    | __main__:main:438 -   pair=11 n=7 passed=True gram_err=7.79e-15 eig_err=7.79e-15
+2026-02-25 17:23:02.133 | DEBUG    | __main__:main:438 -   pair=12 n=7 passed=True gram_err=0.00e+00 eig_err=1.15e-14
+2026-02-25 17:23:02.134 | DEBUG    | __main__:main:438 -   pair=13 n=7 passed=True gram_err=3.97e-15 eig_err=8.36e-15
+2026-02-25 17:23:02.135 | DEBUG    | __main__:main:438 -   pair=14 n=7 passed=True gram_err=7.76e-15 eig_err=1.13e-14
+2026-02-25 17:23:02.136 | DEBUG    | __main__:main:438 -   pair=15 n=7 passed=True gram_err=2.51e-15 eig_err=1.09e-14
+2026-02-25 17:23:02.138 | DEBUG    | __main__:main:438 -   pair=16 n=7 passed=True gram_err=7.20e-15 eig_err=1.78e-14
+2026-02-25 17:23:02.139 | DEBUG    | __main__:main:438 -   pair=17 n=7 passed=True gram_err=3.66e-15 eig_err=7.07e-15
+2026-02-25 17:23:02.140 | DEBUG    | __main__:main:438 -   pair=18 n=7 passed=True gram_err=3.61e-15 eig_err=1.21e-14
+2026-02-25 17:23:02.141 | DEBUG    | __main__:main:438 -   pair=19 n=7 passed=True gram_err=4.37e-15 eig_err=1.15e-14
+2026-02-25 17:23:02.142 | INFO     | __main__:main:442 - Phase 3: Aggregating results...
+2026-02-25 17:23:02.143 | INFO     | __main__:main:450 - Methods: ['G_NL_diag_linear', 'G_NL_diag_mild', 'G_NL_diag_relu', 'G_NL_diag_softplus', 'G_NL_diag_tanh', 'G_NL_eig_linear', 'G_NL_eig_mild', 'G_NL_eig_relu', 'G_NL_eig_softplus', 'G_NL_eig_tanh', 'G_NL_hybrid_linear', 'G_NL_hybrid_mild', 'G_NL_hybrid_relu', 'G_NL_hybrid_softplus', 'G_NL_hybrid_tanh', 'G_NL_nodestats_tanh', 'RWPE_diag', 'nRWPE_diag']
+2026-02-25 17:23:02.154 | INFO     | __main__:main:501 - === OVERALL RESULTS ===
+2026-02-25 17:23:02.156 | INFO     | __main__:main:504 -   G_NL_diag_linear              :  50/50 = 1.0000
+2026-02-25 17:23:02.158 | INFO     | __main__:main:504 -   G_NL_diag_mild                :  50/50 = 1.0000
+2026-02-25 17:23:02.160 | INFO     | __main__:main:504 -   G_NL_diag_relu                :  50/50 = 1.0000
+2026-02-25 17:23:02.162 | INFO     | __main__:main:504 -   G_NL_diag_softplus            :  50/50 = 1.0000
+2026-02-25 17:23:02.164 | INFO     | __main__:main:504 -   G_NL_diag_tanh                :  50/50 = 1.0000
+2026-02-25 17:23:02.165 | INFO     | __main__:main:504 -   G_NL_eig_linear               :  43/50 = 0.8600
+2026-02-25 17:23:02.167 | INFO     | __main__:main:504 -   G_NL_eig_mild                 :  50/50 = 1.0000
+2026-02-25 17:23:02.169 | INFO     | __main__:main:504 -   G_NL_eig_relu                 :  43/50 = 0.8600
+2026-02-25 17:23:02.171 | INFO     | __main__:main:504 -   G_NL_eig_softplus             :  50/50 = 1.0000
+2026-02-25 17:23:02.172 | INFO     | __main__:main:504 -   G_NL_eig_tanh                 :  50/50 = 1.0000
+2026-02-25 17:23:02.174 | INFO     | __main__:main:504 -   G_NL_hybrid_linear            :  50/50 = 1.0000
+2026-02-25 17:23:02.175 | INFO     | __main__:main:504 -   G_NL_hybrid_mild              :  50/50 = 1.0000
+2026-02-25 17:23:02.176 | INFO     | __main__:main:504 -   G_NL_hybrid_relu              :  50/50 = 1.0000
+2026-02-25 17:23:02.178 | INFO     | __main__:main:504 -   G_NL_hybrid_softplus          :  50/50 = 1.0000
+2026-02-25 17:23:02.179 | INFO     | __main__:main:504 -   G_NL_hybrid_tanh              :  50/50 = 1.0000
+2026-02-25 17:23:02.180 | INFO     | __main__:main:504 -   G_NL_nodestats_tanh           :  50/50 = 1.0000
+2026-02-25 17:23:02.182 | INFO     | __main__:main:504 -   RWPE_diag                     :  50/50 = 1.0000
+2026-02-25 17:23:02.183 | INFO     | __main__:main:504 -   nRWPE_diag                    :  50/50 = 1.0000
+2026-02-25 17:23:02.185 | INFO     | __main__:main:506 - === PER-CATEGORY RESULTS ===
+2026-02-25 17:23:02.186 | INFO     | __main__:main:508 -   --- cospectral (50 pairs) ---
+2026-02-25 17:23:02.188 | INFO     | __main__:main:511 -     G_NL_diag_linear              :  50/50 = 1.0000
+2026-02-25 17:23:02.189 | INFO     | __main__:main:511 -     G_NL_diag_mild                :  50/50 = 1.0000
+2026-02-25 17:23:02.190 | INFO     | __main__:main:511 -     G_NL_diag_relu                :  50/50 = 1.0000
+2026-02-25 17:23:02.192 | INFO     | __main__:main:511 -     G_NL_diag_softplus            :  50/50 = 1.0000
+2026-02-25 17:23:02.193 | INFO     | __main__:main:511 -     G_NL_diag_tanh                :  50/50 = 1.0000
+2026-02-25 17:23:02.195 | INFO     | __main__:main:511 -     G_NL_eig_linear               :  43/50 = 0.8600
+2026-02-25 17:23:02.196 | INFO     | __main__:main:511 -     G_NL_eig_mild                 :  50/50 = 1.0000
+2026-02-25 17:23:02.197 | INFO     | __main__:main:511 -     G_NL_eig_relu                 :  43/50 = 0.8600
+2026-02-25 17:23:02.198 | INFO     | __main__:main:511 -     G_NL_eig_softplus             :  50/50 = 1.0000
+2026-02-25 17:23:02.206 | INFO     | __main__:main:511 -     G_NL_eig_tanh                 :  50/50 = 1.0000
+2026-02-25 17:23:02.208 | INFO     | __main__:main:511 -     G_NL_hybrid_linear            :  50/50 = 1.0000
+2026-02-25 17:23:02.210 | INFO     | __main__:main:511 -     G_NL_hybrid_mild              :  50/50 = 1.0000
+2026-02-25 17:23:02.211 | INFO     | __main__:main:511 -     G_NL_hybrid_relu              :  50/50 = 1.0000
+2026-02-25 17:23:02.213 | INFO     | __main__:main:511 -     G_NL_hybrid_softplus          :  50/50 = 1.0000
+2026-02-25 17:23:02.214 | INFO     | __main__:main:511 -     G_NL_hybrid_tanh              :  50/50 = 1.0000
+2026-02-25 17:23:02.216 | INFO     | __main__:main:511 -     G_NL_nodestats_tanh           :  50/50 = 1.0000
+2026-02-25 17:23:02.217 | INFO     | __main__:main:511 -     RWPE_diag                     :  50/50 = 1.0000
+2026-02-25 17:23:02.217 | INFO     | __main__:main:511 -     nRWPE_diag                    :  50/50 = 1.0000
+2026-02-25 17:23:02.219 | INFO     | __main__:main:514 - Phase 4: Hard pair diagnostics...
+2026-02-25 17:23:02.234 | INFO     | __main__:main:573 - Collected 15 hard pair diagnostics
+2026-02-25 17:23:02.236 | INFO     | __main__:main:576 - Phase 5: Trajectory length ablation for G_NL_eig_tanh...
+2026-02-25 17:23:02.238 | INFO     | __main__:main:580 -   T=5...
+2026-02-25 17:23:02.256 | INFO     | __main__:main:606 -     T=5: 50/50 = 1.0000
+2026-02-25 17:23:02.258 | INFO     | __main__:main:580 -   T=10...
+2026-02-25 17:23:02.271 | INFO     | __main__:main:606 -     T=10: 50/50 = 1.0000
+2026-02-25 17:23:02.272 | INFO     | __main__:main:580 -   T=15...
+2026-02-25 17:23:02.287 | INFO     | __main__:main:606 -     T=15: 50/50 = 1.0000
+2026-02-25 17:23:02.288 | INFO     | __main__:main:580 -   T=20...
+2026-02-25 17:23:02.305 | INFO     | __main__:main:606 -     T=20: 50/50 = 1.0000
+2026-02-25 17:23:02.307 | INFO     | __main__:main:580 -   T=30...
+2026-02-25 17:23:02.323 | INFO     | __main__:main:606 -     T=30: 50/50 = 1.0000
+2026-02-25 17:23:02.325 | INFO     | __main__:main:580 -   T=50...
+2026-02-25 17:23:02.343 | INFO     | __main__:main:606 -     T=50: 50/50 = 1.0000
+2026-02-25 17:23:02.345 | INFO     | __main__:main:609 - Total runtime: 0.4s
+2026-02-25 17:23:02.346 | INFO     | __main__:main:612 - Building output JSON...
+2026-02-25 17:23:02.362 | INFO     | __main__:main:674 - Output written to /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/method_out.json
+2026-02-25 17:23:02.365 | INFO     | __main__:main:675 - Output size: 0.19 MB
+2026-02-25 17:23:02.366 | INFO     | __main__:main:678 - === SUMMARY ===
+2026-02-25 17:23:02.367 | INFO     | __main__:main:680 - Best method: G_NL_diag_linear (50/50)
+2026-02-25 17:23:02.368 | INFO     | __main__:main:681 - RWPE baseline: 50/50
+2026-02-25 17:23:02.369 | INFO     | __main__:main:682 - nRWPE baseline: 50/50
+2026-02-25 17:23:10.052 | INFO     | __main__:<module>:72 - Hardware: 4 CPUs, 32.0 GB RAM, budget=25.6 GB
+2026-02-25 17:23:10.053 | INFO     | __main__:main:380 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-25 17:23:10.075 | INFO     | __main__:main:384 - Loaded 525 examples
+2026-02-25 17:23:10.077 | INFO     | __main__:main:393 - Processing 525 pairs with 5 nonlinearities...
+2026-02-25 17:23:10.078 | INFO     | __main__:main:395 - Using 4 workers
+2026-02-25 17:23:10.148 | INFO     | __main__:main:413 -   [50/525] elapsed=0.1s
+2026-02-25 17:23:10.319 | INFO     | __main__:main:413 -   [100/525] elapsed=0.3s
+2026-02-25 17:23:10.419 | INFO     | __main__:main:413 -   [150/525] elapsed=0.4s
+2026-02-25 17:23:10.485 | INFO     | __main__:main:413 -   [200/525] elapsed=0.4s
+2026-02-25 17:23:10.573 | INFO     | __main__:main:413 -   [250/525] elapsed=0.5s
+2026-02-25 17:23:10.699 | INFO     | __main__:main:413 -   [300/525] elapsed=0.6s
+2026-02-25 17:23:10.765 | INFO     | __main__:main:413 -   [350/525] elapsed=0.7s
+2026-02-25 17:23:11.370 | INFO     | __main__:main:413 -   [400/525] elapsed=1.3s
+2026-02-25 17:23:21.637 | INFO     | __main__:main:413 -   [450/525] elapsed=11.6s
+2026-02-25 17:25:08.506 | INFO     | __main__:main:413 -   [500/525] elapsed=118.5s
+2026-02-25 17:25:10.953 | INFO     | __main__:main:413 -   [525/525] elapsed=120.9s
+2026-02-25 17:25:10.965 | INFO     | __main__:main:416 - Phase 1 complete in 120.9s
+2026-02-25 17:25:10.968 | INFO     | __main__:main:419 - Phase 2: Equivariance verification on 20 graphs...
+2026-02-25 17:25:11.000 | INFO     | __main__:main:436 - Equivariance: ALL PASSED
+2026-02-25 17:25:11.013 | DEBUG    | __main__:main:438 -   pair=0 n=5 passed=True gram_err=0.00e+00 eig_err=2.89e-15
+2026-02-25 17:25:11.015 | DEBUG    | __main__:main:438 -   pair=1 n=6 passed=True gram_err=0.00e+00 eig_err=0.00e+00
+2026-02-25 17:25:11.017 | DEBUG    | __main__:main:438 -   pair=2 n=6 passed=True gram_err=2.43e-15 eig_err=9.04e-15
+2026-02-25 17:25:11.018 | DEBUG    | __main__:main:438 -   pair=3 n=6 passed=True gram_err=3.20e-15 eig_err=5.45e-15
+2026-02-25 17:25:11.020 | DEBUG    | __main__:main:438 -   pair=4 n=6 passed=True gram_err=6.28e-15 eig_err=7.74e-15
+2026-02-25 17:25:11.021 | DEBUG    | __main__:main:438 -   pair=5 n=6 passed=True gram_err=4.35e-15 eig_err=1.10e-14
+2026-02-25 17:25:11.022 | DEBUG    | __main__:main:438 -   pair=6 n=7 passed=True gram_err=0.00e+00 eig_err=0.00e+00
+2026-02-25 17:25:11.023 | DEBUG    | __main__:main:438 -   pair=7 n=7 passed=True gram_err=2.43e-15 eig_err=9.87e-15
+2026-02-25 17:25:11.025 | DEBUG    | __main__:main:438 -   pair=8 n=7 passed=True gram_err=3.08e-15 eig_err=7.57e-15
+2026-02-25 17:25:11.026 | DEBUG    | __main__:main:438 -   pair=9 n=7 passed=True gram_err=3.08e-15 eig_err=7.57e-15
+2026-02-25 17:25:11.027 | DEBUG    | __main__:main:438 -   pair=10 n=7 passed=True gram_err=0.00e+00 eig_err=1.11e-15
+2026-02-25 17:25:11.028 | DEBUG    | __main__:main:438 -   pair=11 n=7 passed=True gram_err=7.79e-15 eig_err=7.79e-15
+2026-02-25 17:25:11.029 | DEBUG    | __main__:main:438 -   pair=12 n=7 passed=True gram_err=0.00e+00 eig_err=1.15e-14
+2026-02-25 17:25:11.031 | DEBUG    | __main__:main:438 -   pair=13 n=7 passed=True gram_err=3.97e-15 eig_err=8.36e-15
+2026-02-25 17:25:11.033 | DEBUG    | __main__:main:438 -   pair=14 n=7 passed=True gram_err=7.76e-15 eig_err=1.13e-14
+2026-02-25 17:25:11.034 | DEBUG    | __main__:main:438 -   pair=15 n=7 passed=True gram_err=2.51e-15 eig_err=1.09e-14
+2026-02-25 17:25:11.036 | DEBUG    | __main__:main:438 -   pair=16 n=7 passed=True gram_err=7.20e-15 eig_err=1.78e-14
+2026-02-25 17:25:11.037 | DEBUG    | __main__:main:438 -   pair=17 n=7 passed=True gram_err=3.66e-15 eig_err=7.07e-15
+2026-02-25 17:25:11.038 | DEBUG    | __main__:main:438 -   pair=18 n=7 passed=True gram_err=3.61e-15 eig_err=1.21e-14
+2026-02-25 17:25:11.039 | DEBUG    | __main__:main:438 -   pair=19 n=7 passed=True gram_err=4.37e-15 eig_err=1.15e-14
+2026-02-25 17:25:11.040 | INFO     | __main__:main:442 - Phase 3: Aggregating results...
+2026-02-25 17:25:11.042 | INFO     | __main__:main:450 - Methods: ['G_NL_diag_linear', 'G_NL_diag_mild', 'G_NL_diag_relu', 'G_NL_diag_softplus', 'G_NL_diag_tanh', 'G_NL_eig_linear', 'G_NL_eig_mild', 'G_NL_eig_relu', 'G_NL_eig_softplus', 'G_NL_eig_tanh', 'G_NL_hybrid_linear', 'G_NL_hybrid_mild', 'G_NL_hybrid_relu', 'G_NL_hybrid_softplus', 'G_NL_hybrid_tanh', 'G_NL_nodestats_tanh', 'RWPE_diag', 'nRWPE_diag']
+2026-02-25 17:25:11.071 | INFO     | __main__:main:501 - === OVERALL RESULTS ===
+2026-02-25 17:25:11.073 | INFO     | __main__:main:504 -   G_NL_diag_linear              : 324/525 = 0.6171
+2026-02-25 17:25:11.075 | INFO     | __main__:main:504 -   G_NL_diag_mild                : 227/525 = 0.4324
+2026-02-25 17:25:11.076 | INFO     | __main__:main:504 -   G_NL_diag_relu                : 324/525 = 0.6171
+2026-02-25 17:25:11.077 | INFO     | __main__:main:504 -   G_NL_diag_softplus            : 324/525 = 0.6171
+2026-02-25 17:25:11.078 | INFO     | __main__:main:504 -   G_NL_diag_tanh                : 325/525 = 0.6190
+2026-02-25 17:25:11.080 | INFO     | __main__:main:504 -   G_NL_eig_linear               : 316/525 = 0.6019
+2026-02-25 17:25:11.081 | INFO     | __main__:main:504 -   G_NL_eig_mild                 : 323/525 = 0.6152
+2026-02-25 17:25:11.082 | INFO     | __main__:main:504 -   G_NL_eig_relu                 : 316/525 = 0.6019
+2026-02-25 17:25:11.084 | INFO     | __main__:main:504 -   G_NL_eig_softplus             : 323/525 = 0.6152
+2026-02-25 17:25:11.085 | INFO     | __main__:main:504 -   G_NL_eig_tanh                 : 324/525 = 0.6171
+2026-02-25 17:25:11.087 | INFO     | __main__:main:504 -   G_NL_hybrid_linear            : 324/525 = 0.6171
+2026-02-25 17:25:11.088 | INFO     | __main__:main:504 -   G_NL_hybrid_mild              : 262/525 = 0.4990
+2026-02-25 17:25:11.089 | INFO     | __main__:main:504 -   G_NL_hybrid_relu              : 324/525 = 0.6171
+2026-02-25 17:25:11.090 | INFO     | __main__:main:504 -   G_NL_hybrid_softplus          : 324/525 = 0.6171
+2026-02-25 17:25:11.091 | INFO     | __main__:main:504 -   G_NL_hybrid_tanh              : 325/525 = 0.6190
+2026-02-25 17:25:11.092 | INFO     | __main__:main:504 -   G_NL_nodestats_tanh           : 327/525 = 0.6229
+2026-02-25 17:25:11.093 | INFO     | __main__:main:504 -   RWPE_diag                     : 345/525 = 0.6571
+2026-02-25 17:25:11.095 | INFO     | __main__:main:504 -   nRWPE_diag                    : 345/525 = 0.6571
+2026-02-25 17:25:11.096 | INFO     | __main__:main:506 - === PER-CATEGORY RESULTS ===
+2026-02-25 17:25:11.097 | INFO     | __main__:main:508 -   --- BREC_4Vertex (20 pairs) ---
+2026-02-25 17:25:11.105 | INFO     | __main__:main:511 -     G_NL_diag_linear              :   0/20 = 0.0000
+2026-02-25 17:25:11.106 | INFO     | __main__:main:511 -     G_NL_diag_mild                :   0/20 = 0.0000
+2026-02-25 17:25:11.108 | INFO     | __main__:main:511 -     G_NL_diag_relu                :   0/20 = 0.0000
+2026-02-25 17:25:11.110 | INFO     | __main__:main:511 -     G_NL_diag_softplus            :   0/20 = 0.0000
+2026-02-25 17:25:11.112 | INFO     | __main__:main:511 -     G_NL_diag_tanh                :   0/20 = 0.0000
+2026-02-25 17:25:11.113 | INFO     | __main__:main:511 -     G_NL_eig_linear               :   0/20 = 0.0000
+2026-02-25 17:25:11.114 | INFO     | __main__:main:511 -     G_NL_eig_mild                 :   0/20 = 0.0000
+2026-02-25 17:25:11.115 | INFO     | __main__:main:511 -     G_NL_eig_relu                 :   0/20 = 0.0000
+2026-02-25 17:25:11.116 | INFO     | __main__:main:511 -     G_NL_eig_softplus             :   0/20 = 0.0000
+2026-02-25 17:25:11.118 | INFO     | __main__:main:511 -     G_NL_eig_tanh                 :   0/20 = 0.0000
+2026-02-25 17:25:11.119 | INFO     | __main__:main:511 -     G_NL_hybrid_linear            :   0/20 = 0.0000
+2026-02-25 17:25:11.120 | INFO     | __main__:main:511 -     G_NL_hybrid_mild              :   0/20 = 0.0000
+2026-02-25 17:25:11.121 | INFO     | __main__:main:511 -     G_NL_hybrid_relu              :   0/20 = 0.0000
+2026-02-25 17:25:11.123 | INFO     | __main__:main:511 -     G_NL_hybrid_softplus          :   0/20 = 0.0000
+2026-02-25 17:25:11.125 | INFO     | __main__:main:511 -     G_NL_hybrid_tanh              :   0/20 = 0.0000
+2026-02-25 17:25:11.126 | INFO     | __main__:main:511 -     G_NL_nodestats_tanh           :   0/20 = 0.0000
+2026-02-25 17:25:11.127 | INFO     | __main__:main:511 -     RWPE_diag                     :   0/20 = 0.0000
+2026-02-25 17:25:11.129 | INFO     | __main__:main:511 -     nRWPE_diag                    :   0/20 = 0.0000
+2026-02-25 17:25:11.130 | INFO     | __main__:main:508 -   --- BREC_Basic (60 pairs) ---
+2026-02-25 17:25:11.132 | INFO     | __main__:main:511 -     G_NL_diag_linear              :  55/60 = 0.9167
+2026-02-25 17:25:11.135 | INFO     | __main__:main:511 -     G_NL_diag_mild                :  42/60 = 0.7000
+2026-02-25 17:25:11.136 | INFO     | __main__:main:511 -     G_NL_diag_relu                :  55/60 = 0.9167
+2026-02-25 17:25:11.137 | INFO     | __main__:main:511 -     G_NL_diag_softplus            :  55/60 = 0.9167
+2026-02-25 17:25:11.140 | INFO     | __main__:main:511 -     G_NL_diag_tanh                :  55/60 = 0.9167
+2026-02-25 17:25:11.141 | INFO     | __main__:main:511 -     G_NL_eig_linear               :  55/60 = 0.9167
+2026-02-25 17:25:11.142 | INFO     | __main__:main:511 -     G_NL_eig_mild                 :  55/60 = 0.9167
+2026-02-25 17:25:11.144 | INFO     | __main__:main:511 -     G_NL_eig_relu                 :  55/60 = 0.9167
+2026-02-25 17:25:11.145 | INFO     | __main__:main:511 -     G_NL_eig_softplus             :  55/60 = 0.9167
+2026-02-25 17:25:11.147 | INFO     | __main__:main:511 -     G_NL_eig_tanh                 :  55/60 = 0.9167
+2026-02-25 17:25:11.150 | INFO     | __main__:main:511 -     G_NL_hybrid_linear            :  55/60 = 0.9167
+2026-02-25 17:25:11.151 | INFO     | __main__:main:511 -     G_NL_hybrid_mild              :  51/60 = 0.8500
+2026-02-25 17:25:11.153 | INFO     | __main__:main:511 -     G_NL_hybrid_relu              :  55/60 = 0.9167
+2026-02-25 17:25:11.154 | INFO     | __main__:main:511 -     G_NL_hybrid_softplus          :  55/60 = 0.9167
+2026-02-25 17:25:11.155 | INFO     | __main__:main:511 -     G_NL_hybrid_tanh              :  55/60 = 0.9167
+2026-02-25 17:25:11.158 | INFO     | __main__:main:511 -     G_NL_nodestats_tanh           :  55/60 = 0.9167
+2026-02-25 17:25:11.160 | INFO     | __main__:main:511 -     RWPE_diag                     :  60/60 = 1.0000
+2026-02-25 17:25:11.162 | INFO     | __main__:main:511 -     nRWPE_diag                    :  55/60 = 0.9167
+2026-02-25 17:25:11.164 | INFO     | __main__:main:508 -   --- BREC_CFI (100 pairs) ---
+2026-02-25 17:25:11.165 | INFO     | __main__:main:511 -     G_NL_diag_linear              :   1/100 = 0.0100
+2026-02-25 17:25:11.167 | INFO     | __main__:main:511 -     G_NL_diag_mild                :   0/100 = 0.0000
+2026-02-25 17:25:11.169 | INFO     | __main__:main:511 -     G_NL_diag_relu                :   1/100 = 0.0100
+2026-02-25 17:25:11.171 | INFO     | __main__:main:511 -     G_NL_diag_softplus            :   1/100 = 0.0100
+2026-02-25 17:25:11.173 | INFO     | __main__:main:511 -     G_NL_diag_tanh                :   2/100 = 0.0200
+2026-02-25 17:25:11.174 | INFO     | __main__:main:511 -     G_NL_eig_linear               :   0/100 = 0.0000
+2026-02-25 17:25:11.175 | INFO     | __main__:main:511 -     G_NL_eig_mild                 :   0/100 = 0.0000
+2026-02-25 17:25:11.177 | INFO     | __main__:main:511 -     G_NL_eig_relu                 :   0/100 = 0.0000
+2026-02-25 17:25:11.178 | INFO     | __main__:main:511 -     G_NL_eig_softplus             :   0/100 = 0.0000
+2026-02-25 17:25:11.180 | INFO     | __main__:main:511 -     G_NL_eig_tanh                 :   1/100 = 0.0100
+2026-02-25 17:25:11.180 | INFO     | __main__:main:511 -     G_NL_hybrid_linear            :   1/100 = 0.0100
+2026-02-25 17:25:11.181 | INFO     | __main__:main:511 -     G_NL_hybrid_mild              :   0/100 = 0.0000
+2026-02-25 17:25:11.183 | INFO     | __main__:main:511 -     G_NL_hybrid_relu              :   1/100 = 0.0100
+2026-02-25 17:25:11.185 | INFO     | __main__:main:511 -     G_NL_hybrid_softplus          :   1/100 = 0.0100
+2026-02-25 17:25:11.186 | INFO     | __main__:main:511 -     G_NL_hybrid_tanh              :   2/100 = 0.0200
+2026-02-25 17:25:11.189 | INFO     | __main__:main:511 -     G_NL_nodestats_tanh           :   4/100 = 0.0400
+2026-02-25 17:25:11.190 | INFO     | __main__:main:511 -     RWPE_diag                     :  12/100 = 0.1200
+2026-02-25 17:25:11.192 | INFO     | __main__:main:511 -     nRWPE_diag                    :  22/100 = 0.2200
+2026-02-25 17:25:11.193 | INFO     | __main__:main:508 -   --- BREC_Distance_Regular (20 pairs) ---
+2026-02-25 17:25:11.194 | INFO     | __main__:main:511 -     G_NL_diag_linear              :   0/20 = 0.0000
+2026-02-25 17:25:11.197 | INFO     | __main__:main:511 -     G_NL_diag_mild                :   0/20 = 0.0000
+2026-02-25 17:25:11.198 | INFO     | __main__:main:511 -     G_NL_diag_relu                :   0/20 = 0.0000
+2026-02-25 17:25:11.207 | INFO     | __main__:main:511 -     G_NL_diag_softplus            :   0/20 = 0.0000
+2026-02-25 17:25:11.208 | INFO     | __main__:main:511 -     G_NL_diag_tanh                :   0/20 = 0.0000
+2026-02-25 17:25:11.210 | INFO     | __main__:main:511 -     G_NL_eig_linear               :   0/20 = 0.0000
+2026-02-25 17:25:11.212 | INFO     | __main__:main:511 -     G_NL_eig_mild                 :   0/20 = 0.0000
+2026-02-25 17:25:11.214 | INFO     | __main__:main:511 -     G_NL_eig_relu                 :   0/20 = 0.0000
+2026-02-25 17:25:11.217 | INFO     | __main__:main:511 -     G_NL_eig_softplus             :   0/20 = 0.0000
+2026-02-25 17:25:11.219 | INFO     | __main__:main:511 -     G_NL_eig_tanh                 :   0/20 = 0.0000
+2026-02-25 17:25:11.220 | INFO     | __main__:main:511 -     G_NL_hybrid_linear            :   0/20 = 0.0000
+2026-02-25 17:25:11.223 | INFO     | __main__:main:511 -     G_NL_hybrid_mild              :   0/20 = 0.0000
+2026-02-25 17:25:11.225 | INFO     | __main__:main:511 -     G_NL_hybrid_relu              :   0/20 = 0.0000
+2026-02-25 17:25:11.226 | INFO     | __main__:main:511 -     G_NL_hybrid_softplus          :   0/20 = 0.0000
+2026-02-25 17:25:11.227 | INFO     | __main__:main:511 -     G_NL_hybrid_tanh              :   0/20 = 0.0000
+2026-02-25 17:25:11.228 | INFO     | __main__:main:511 -     G_NL_nodestats_tanh           :   0/20 = 0.0000
+2026-02-25 17:25:11.232 | INFO     | __main__:main:511 -     RWPE_diag                     :   0/20 = 0.0000
+2026-02-25 17:25:11.233 | INFO     | __main__:main:511 -     nRWPE_diag                    :   0/20 = 0.0000
+2026-02-25 17:25:11.235 | INFO     | __main__:main:508 -   --- BREC_Extension (100 pairs) ---
+2026-02-25 17:25:11.236 | INFO     | __main__:main:511 -     G_NL_diag_linear              :  97/100 = 0.9700
+2026-02-25 17:25:11.237 | INFO     | __main__:main:511 -     G_NL_diag_mild                :  58/100 = 0.5800
+2026-02-25 17:25:11.240 | INFO     | __main__:main:511 -     G_NL_diag_relu                :  97/100 = 0.9700
+2026-02-25 17:25:11.241 | INFO     | __main__:main:511 -     G_NL_diag_softplus            :  97/100 = 0.9700
+2026-02-25 17:25:11.242 | INFO     | __main__:main:511 -     G_NL_diag_tanh                :  97/100 = 0.9700
+2026-02-25 17:25:11.243 | INFO     | __main__:main:511 -     G_NL_eig_linear               :  97/100 = 0.9700
+2026-02-25 17:25:11.245 | INFO     | __main__:main:511 -     G_NL_eig_mild                 :  97/100 = 0.9700
+2026-02-25 17:25:11.247 | INFO     | __main__:main:511 -     G_NL_eig_relu                 :  97/100 = 0.9700
+2026-02-25 17:25:11.247 | INFO     | __main__:main:511 -     G_NL_eig_softplus             :  97/100 = 0.9700
+2026-02-25 17:25:11.248 | INFO     | __main__:main:511 -     G_NL_eig_tanh                 :  97/100 = 0.9700
+2026-02-25 17:25:11.250 | INFO     | __main__:main:511 -     G_NL_hybrid_linear            :  97/100 = 0.9700
+2026-02-25 17:25:11.251 | INFO     | __main__:main:511 -     G_NL_hybrid_mild              :  79/100 = 0.7900
+2026-02-25 17:25:11.252 | INFO     | __main__:main:511 -     G_NL_hybrid_relu              :  97/100 = 0.9700
+2026-02-25 17:25:11.253 | INFO     | __main__:main:511 -     G_NL_hybrid_softplus          :  97/100 = 0.9700
+2026-02-25 17:25:11.255 | INFO     | __main__:main:511 -     G_NL_hybrid_tanh              :  97/100 = 0.9700
+2026-02-25 17:25:11.256 | INFO     | __main__:main:511 -     G_NL_nodestats_tanh           :  97/100 = 0.9700
+2026-02-25 17:25:11.257 | INFO     | __main__:main:511 -     RWPE_diag                     : 100/100 = 1.0000
+2026-02-25 17:25:11.258 | INFO     | __main__:main:511 -     nRWPE_diag                    :  97/100 = 0.9700
+2026-02-25 17:25:11.261 | INFO     | __main__:main:508 -   --- BREC_Regular (50 pairs) ---
+2026-02-25 17:25:11.262 | INFO     | __main__:main:511 -     G_NL_diag_linear              :  49/50 = 0.9800
+2026-02-25 17:25:11.263 | INFO     | __main__:main:511 -     G_NL_diag_mild                :  41/50 = 0.8200
+2026-02-25 17:25:11.265 | INFO     | __main__:main:511 -     G_NL_diag_relu                :  49/50 = 0.9800
+2026-02-25 17:25:11.266 | INFO     | __main__:main:511 -     G_NL_diag_softplus            :  49/50 = 0.9800
+2026-02-25 17:25:11.268 | INFO     | __main__:main:511 -     G_NL_diag_tanh                :  49/50 = 0.9800
+2026-02-25 17:25:11.270 | INFO     | __main__:main:511 -     G_NL_eig_linear               :  49/50 = 0.9800
+2026-02-25 17:25:11.271 | INFO     | __main__:main:511 -     G_NL_eig_mild                 :  49/50 = 0.9800
+2026-02-25 17:25:11.272 | INFO     | __main__:main:511 -     G_NL_eig_relu                 :  49/50 = 0.9800
+2026-02-25 17:25:11.273 | INFO     | __main__:main:511 -     G_NL_eig_softplus             :  49/50 = 0.9800
+2026-02-25 17:25:11.274 | INFO     | __main__:main:511 -     G_NL_eig_tanh                 :  49/50 = 0.9800
+2026-02-25 17:25:11.276 | INFO     | __main__:main:511 -     G_NL_hybrid_linear            :  49/50 = 0.9800
+2026-02-25 17:25:11.277 | INFO     | __main__:main:511 -     G_NL_hybrid_mild              :  46/50 = 0.9200
+2026-02-25 17:25:11.278 | INFO     | __main__:main:511 -     G_NL_hybrid_relu              :  49/50 = 0.9800
+2026-02-25 17:25:11.281 | INFO     | __main__:main:511 -     G_NL_hybrid_softplus          :  49/50 = 0.9800
+2026-02-25 17:25:11.282 | INFO     | __main__:main:511 -     G_NL_hybrid_tanh              :  49/50 = 0.9800
+2026-02-25 17:25:11.283 | INFO     | __main__:main:511 -     G_NL_nodestats_tanh           :  49/50 = 0.9800
+2026-02-25 17:25:11.285 | INFO     | __main__:main:511 -     RWPE_diag                     :  50/50 = 1.0000
+2026-02-25 17:25:11.286 | INFO     | __main__:main:511 -     nRWPE_diag                    :  49/50 = 0.9800
+2026-02-25 17:25:11.288 | INFO     | __main__:main:508 -   --- BREC_Strongly_Regular (50 pairs) ---
+2026-02-25 17:25:11.290 | INFO     | __main__:main:511 -     G_NL_diag_linear              :   0/50 = 0.0000
+2026-02-25 17:25:11.291 | INFO     | __main__:main:511 -     G_NL_diag_mild                :   0/50 = 0.0000
+2026-02-25 17:25:11.293 | INFO     | __main__:main:511 -     G_NL_diag_relu                :   0/50 = 0.0000
+2026-02-25 17:25:11.295 | INFO     | __main__:main:511 -     G_NL_diag_softplus            :   0/50 = 0.0000
+2026-02-25 17:25:11.296 | INFO     | __main__:main:511 -     G_NL_diag_tanh                :   0/50 = 0.0000
+2026-02-25 17:25:11.297 | INFO     | __main__:main:511 -     G_NL_eig_linear               :   0/50 = 0.0000
+2026-02-25 17:25:11.300 | INFO     | __main__:main:511 -     G_NL_eig_mild                 :   0/50 = 0.0000
+2026-02-25 17:25:11.308 | INFO     | __main__:main:511 -     G_NL_eig_relu                 :   0/50 = 0.0000
+2026-02-25 17:25:11.310 | INFO     | __main__:main:511 -     G_NL_eig_softplus             :   0/50 = 0.0000
+2026-02-25 17:25:11.311 | INFO     | __main__:main:511 -     G_NL_eig_tanh                 :   0/50 = 0.0000
+2026-02-25 17:25:11.314 | INFO     | __main__:main:511 -     G_NL_hybrid_linear            :   0/50 = 0.0000
+2026-02-25 17:25:11.316 | INFO     | __main__:main:511 -     G_NL_hybrid_mild              :   0/50 = 0.0000
+2026-02-25 17:25:11.317 | INFO     | __main__:main:511 -     G_NL_hybrid_relu              :   0/50 = 0.0000
+2026-02-25 17:25:11.318 | INFO     | __main__:main:511 -     G_NL_hybrid_softplus          :   0/50 = 0.0000
+2026-02-25 17:25:11.320 | INFO     | __main__:main:511 -     G_NL_hybrid_tanh              :   0/50 = 0.0000
+2026-02-25 17:25:11.321 | INFO     | __main__:main:511 -     G_NL_nodestats_tanh           :   0/50 = 0.0000
+2026-02-25 17:25:11.323 | INFO     | __main__:main:511 -     RWPE_diag                     :   0/50 = 0.0000
+2026-02-25 17:25:11.324 | INFO     | __main__:main:511 -     nRWPE_diag                    :   0/50 = 0.0000
+2026-02-25 17:25:11.325 | INFO     | __main__:main:508 -   --- CSL (59 pairs) ---
+2026-02-25 17:25:11.327 | INFO     | __main__:main:511 -     G_NL_diag_linear              :  58/59 = 0.9831
+2026-02-25 17:25:11.329 | INFO     | __main__:main:511 -     G_NL_diag_mild                :  22/59 = 0.3729
+2026-02-25 17:25:11.330 | INFO     | __main__:main:511 -     G_NL_diag_relu                :  58/59 = 0.9831
+2026-02-25 17:25:11.331 | INFO     | __main__:main:511 -     G_NL_diag_softplus            :  58/59 = 0.9831
+2026-02-25 17:25:11.333 | INFO     | __main__:main:511 -     G_NL_diag_tanh                :  58/59 = 0.9831
+2026-02-25 17:25:11.335 | INFO     | __main__:main:511 -     G_NL_eig_linear               :  58/59 = 0.9831
+2026-02-25 17:25:11.336 | INFO     | __main__:main:511 -     G_NL_eig_mild                 :  58/59 = 0.9831
+2026-02-25 17:25:11.337 | INFO     | __main__:main:511 -     G_NL_eig_relu                 :  58/59 = 0.9831
+2026-02-25 17:25:11.339 | INFO     | __main__:main:511 -     G_NL_eig_softplus             :  58/59 = 0.9831
+2026-02-25 17:25:11.341 | INFO     | __main__:main:511 -     G_NL_eig_tanh                 :  58/59 = 0.9831
+2026-02-25 17:25:11.342 | INFO     | __main__:main:511 -     G_NL_hybrid_linear            :  58/59 = 0.9831
+2026-02-25 17:25:11.343 | INFO     | __main__:main:511 -     G_NL_hybrid_mild              :  22/59 = 0.3729
+2026-02-25 17:25:11.345 | INFO     | __main__:main:511 -     G_NL_hybrid_relu              :  58/59 = 0.9831
+2026-02-25 17:25:11.346 | INFO     | __main__:main:511 -     G_NL_hybrid_softplus          :  58/59 = 0.9831
+2026-02-25 17:25:11.347 | INFO     | __main__:main:511 -     G_NL_hybrid_tanh              :  58/59 = 0.9831
+2026-02-25 17:25:11.348 | INFO     | __main__:main:511 -     G_NL_nodestats_tanh           :  58/59 = 0.9831
+2026-02-25 17:25:11.351 | INFO     | __main__:main:511 -     RWPE_diag                     :  59/59 = 1.0000
+2026-02-25 17:25:11.352 | INFO     | __main__:main:511 -     nRWPE_diag                    :  58/59 = 0.9831
+2026-02-25 17:25:11.353 | INFO     | __main__:main:508 -   --- cospectral (64 pairs) ---
+2026-02-25 17:25:11.356 | INFO     | __main__:main:511 -     G_NL_diag_linear              :  64/64 = 1.0000
+2026-02-25 17:25:11.357 | INFO     | __main__:main:511 -     G_NL_diag_mild                :  64/64 = 1.0000
+2026-02-25 17:25:11.358 | INFO     | __main__:main:511 -     G_NL_diag_relu                :  64/64 = 1.0000
+2026-02-25 17:25:11.360 | INFO     | __main__:main:511 -     G_NL_diag_softplus            :  64/64 = 1.0000
+2026-02-25 17:25:11.362 | INFO     | __main__:main:511 -     G_NL_diag_tanh                :  64/64 = 1.0000
+2026-02-25 17:25:11.363 | INFO     | __main__:main:511 -     G_NL_eig_linear               :  57/64 = 0.8906
+2026-02-25 17:25:11.364 | INFO     | __main__:main:511 -     G_NL_eig_mild                 :  64/64 = 1.0000
+2026-02-25 17:25:11.366 | INFO     | __main__:main:511 -     G_NL_eig_relu                 :  57/64 = 0.8906
+2026-02-25 17:25:11.367 | INFO     | __main__:main:511 -     G_NL_eig_softplus             :  64/64 = 1.0000
+2026-02-25 17:25:11.368 | INFO     | __main__:main:511 -     G_NL_eig_tanh                 :  64/64 = 1.0000
+2026-02-25 17:25:11.370 | INFO     | __main__:main:511 -     G_NL_hybrid_linear            :  64/64 = 1.0000
+2026-02-25 17:25:11.371 | INFO     | __main__:main:511 -     G_NL_hybrid_mild              :  64/64 = 1.0000
+2026-02-25 17:25:11.372 | INFO     | __main__:main:511 -     G_NL_hybrid_relu              :  64/64 = 1.0000
+2026-02-25 17:25:11.373 | INFO     | __main__:main:511 -     G_NL_hybrid_softplus          :  64/64 = 1.0000
+2026-02-25 17:25:11.374 | INFO     | __main__:main:511 -     G_NL_hybrid_tanh              :  64/64 = 1.0000
+2026-02-25 17:25:11.376 | INFO     | __main__:main:511 -     G_NL_nodestats_tanh           :  64/64 = 1.0000
+2026-02-25 17:25:11.377 | INFO     | __main__:main:511 -     RWPE_diag                     :  64/64 = 1.0000
+2026-02-25 17:25:11.401 | INFO     | __main__:main:511 -     nRWPE_diag                    :  64/64 = 1.0000
+2026-02-25 17:25:11.432 | INFO     | __main__:main:508 -   --- strongly_regular (2 pairs) ---
+2026-02-25 17:25:11.436 | INFO     | __main__:main:511 -     G_NL_diag_linear              :   0/2 = 0.0000
+2026-02-25 17:25:11.438 | INFO     | __main__:main:511 -     G_NL_diag_mild                :   0/2 = 0.0000
+2026-02-25 17:25:11.440 | INFO     | __main__:main:511 -     G_NL_diag_relu                :   0/2 = 0.0000
+2026-02-25 17:25:11.441 | INFO     | __main__:main:511 -     G_NL_diag_softplus            :   0/2 = 0.0000
+2026-02-25 17:25:11.447 | INFO     | __main__:main:511 -     G_NL_diag_tanh                :   0/2 = 0.0000
+2026-02-25 17:25:11.449 | INFO     | __main__:main:511 -     G_NL_eig_linear               :   0/2 = 0.0000
+2026-02-25 17:25:11.450 | INFO     | __main__:main:511 -     G_NL_eig_mild                 :   0/2 = 0.0000
+2026-02-25 17:25:11.451 | INFO     | __main__:main:511 -     G_NL_eig_relu                 :   0/2 = 0.0000
+2026-02-25 17:25:11.452 | INFO     | __main__:main:511 -     G_NL_eig_softplus             :   0/2 = 0.0000
+2026-02-25 17:25:11.453 | INFO     | __main__:main:511 -     G_NL_eig_tanh                 :   0/2 = 0.0000
+2026-02-25 17:25:11.455 | INFO     | __main__:main:511 -     G_NL_hybrid_linear            :   0/2 = 0.0000
+2026-02-25 17:25:11.456 | INFO     | __main__:main:511 -     G_NL_hybrid_mild              :   0/2 = 0.0000
+2026-02-25 17:25:11.458 | INFO     | __main__:main:511 -     G_NL_hybrid_relu              :   0/2 = 0.0000
+2026-02-25 17:25:11.459 | INFO     | __main__:main:511 -     G_NL_hybrid_softplus          :   0/2 = 0.0000
+2026-02-25 17:25:11.461 | INFO     | __main__:main:511 -     G_NL_hybrid_tanh              :   0/2 = 0.0000
+2026-02-25 17:25:11.462 | INFO     | __main__:main:511 -     G_NL_nodestats_tanh           :   0/2 = 0.0000
+2026-02-25 17:25:11.465 | INFO     | __main__:main:511 -     RWPE_diag                     :   0/2 = 0.0000
+2026-02-25 17:25:11.466 | INFO     | __main__:main:511 -     nRWPE_diag                    :   0/2 = 0.0000
+2026-02-25 17:25:11.467 | INFO     | __main__:main:514 - Phase 4: Hard pair diagnostics...
+2026-02-25 17:25:11.527 | INFO     | __main__:main:573 - Collected 16 hard pair diagnostics
+2026-02-25 17:25:11.528 | INFO     | __main__:main:576 - Phase 5: Trajectory length ablation for G_NL_eig_tanh...
+2026-02-25 17:25:11.530 | INFO     | __main__:main:580 -   T=5...
+2026-02-25 17:25:15.927 | INFO     | __main__:main:606 -     T=5: 323/525 = 0.6152
+2026-02-25 17:25:15.928 | INFO     | __main__:main:580 -   T=10...
+2026-02-25 17:25:24.263 | INFO     | __main__:main:606 -     T=10: 324/525 = 0.6171
+2026-02-25 17:25:24.265 | INFO     | __main__:main:580 -   T=15...
+2026-02-25 17:25:35.481 | INFO     | __main__:main:606 -     T=15: 324/525 = 0.6171
+2026-02-25 17:25:35.483 | INFO     | __main__:main:580 -   T=20...
+2026-02-25 17:25:50.311 | INFO     | __main__:main:606 -     T=20: 324/525 = 0.6171
+2026-02-25 17:25:50.314 | INFO     | __main__:main:580 -   T=30...
+2026-02-25 17:26:09.204 | INFO     | __main__:main:606 -     T=30: 324/525 = 0.6171
+2026-02-25 17:26:09.206 | INFO     | __main__:main:580 -   T=50...
+2026-02-25 17:26:38.614 | INFO     | __main__:main:606 -     T=50: 324/525 = 0.6171
+2026-02-25 17:26:38.618 | INFO     | __main__:main:609 - Total runtime: 208.6s
+2026-02-25 17:26:38.619 | INFO     | __main__:main:612 - Building output JSON...
+2026-02-25 17:26:38.694 | INFO     | __main__:main:674 - Output written to /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/method_out.json
+2026-02-25 17:26:38.696 | INFO     | __main__:main:675 - Output size: 9.21 MB
+2026-02-25 17:26:38.697 | INFO     | __main__:main:678 - === SUMMARY ===
+2026-02-25 17:26:38.705 | INFO     | __main__:main:680 - Best method: RWPE_diag (345/525)
+2026-02-25 17:26:38.706 | INFO     | __main__:main:681 - RWPE baseline: 345/525
+2026-02-25 17:26:38.708 | INFO     | __main__:main:682 - nRWPE baseline: 345/525

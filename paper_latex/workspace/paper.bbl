@@ -1,0 +1,186 @@
+\begin{thebibliography}{23}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Dwivedi and Bresson(2021)]{DwivediBresson2021}
+Vijay~Prakash Dwivedi and Xavier Bresson.
+\newblock A generalization of transformer networks to graphs.
+\newblock \emph{CoRR}, abs/2012.09699, 2021.
+\newblock AAAI Workshop on Deep Learning on Graphs (DLG-AAAI).
+
+\bibitem[Dwivedi et~al.(2022)Dwivedi, Luu, Laurent, Bengio, and
+  Bresson]{Dwivedi2022}
+Vijay~Prakash Dwivedi, Anh~Tuan Luu, Thomas Laurent, Yoshua Bengio, and Xavier
+  Bresson.
+\newblock Graph neural networks with learnable structural and positional
+  representations.
+\newblock In \emph{10th International Conference on Learning Representations,
+  {ICLR} 2022}, 2022.
+
+\bibitem[Dwivedi et~al.(2023)Dwivedi, Joshi, Luu, Laurent, Bengio, and
+  Bresson]{Dwivedi2023bench}
+Vijay~Prakash Dwivedi, Chaitanya~K. Joshi, Anh~Tuan Luu, Thomas Laurent, Yoshua
+  Bengio, and Xavier Bresson.
+\newblock Benchmarking graph neural networks.
+\newblock \emph{Journal of Machine Learning Research}, 24\penalty0
+  (43):\penalty0 1--48, 2023.
+\newblock URL \url{https://jmlr.org/papers/v24/22-0567.html}.
+
+\bibitem[Eliasof et~al.(2023)Eliasof, Frasca, Bevilacqua, Treister, Chechik,
+  and Maron]{Eliasof2023}
+Moshe Eliasof, Fabrizio Frasca, Beatrice Bevilacqua, Eran Treister, Gal
+  Chechik, and Haggai Maron.
+\newblock Graph positional encoding via random feature propagation.
+\newblock In \emph{Proceedings of the 40th International Conference on Machine
+  Learning, {ICML} 2023}, volume 202 of \emph{Proceedings of Machine Learning
+  Research}, pages 9202--9223. {PMLR}, 2023.
+\newblock URL \url{https://proceedings.mlr.press/v202/eliasof23a.html}.
+
+\bibitem[Eliasof et~al.(2024)Eliasof, Haber, and Treister]{Eliasof2024}
+Moshe Eliasof, Eldad Haber, and Eran Treister.
+\newblock Graph neural reaction diffusion models.
+\newblock \emph{{SIAM} Journal on Scientific Computing}, 2024.
+\newblock \doi{10.1137/23M1576700}.
+
+\bibitem[Gai et~al.(2025)Gai, Du, Zhang, Maron, and Wang]{Gai2025}
+Jingchu Gai, Yiheng Du, Bohang Zhang, Haggai Maron, and Liwei Wang.
+\newblock Homomorphism expressivity of spectral invariant graph neural
+  networks.
+\newblock In \emph{13th International Conference on Learning Representations,
+  {ICLR} 2025 (Oral)}, 2025.
+
+\bibitem[Gilmer et~al.(2017)Gilmer, Schoenholz, Riley, Vinyals, and
+  Dahl]{Gilmer2017}
+Justin Gilmer, Samuel~S. Schoenholz, Patrick~F. Riley, Oriol Vinyals, and
+  George~E. Dahl.
+\newblock Neural message passing for quantum chemistry.
+\newblock In \emph{Proceedings of the 34th International Conference on Machine
+  Learning, {ICML} 2017, Sydney, NSW, Australia, 6-11 August 2017}, volume~70
+  of \emph{Proceedings of Machine Learning Research}, pages 1263--1272. {PMLR},
+  2017.
+\newblock URL \url{http://proceedings.mlr.press/v70/gilmer17a.html}.
+
+\bibitem[He et~al.(2025)He, Maskey, Geerts, and Bronstein]{He2025pearl}
+Emily He, Sohir Maskey, Floris Geerts, and Michael Bronstein.
+\newblock {PEARL}: Learning efficient positional encodings with graph neural
+  networks.
+\newblock In \emph{13th International Conference on Learning Representations,
+  {ICLR} 2025}, 2025.
+
+\bibitem[Koopman(1931)]{Koopman1931}
+Bernard~O. Koopman.
+\newblock Hamiltonian systems and transformation in {H}ilbert space.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 17\penalty0
+  (5):\penalty0 315--318, 1931.
+
+\bibitem[Kreuzer et~al.(2021)Kreuzer, Beaini, Hamilton, L\'{e}tourneau, and
+  Tossou]{Kreuzer2021}
+Devin Kreuzer, Dominique Beaini, William~L. Hamilton, Vincent L\'{e}tourneau,
+  and Prudencio Tossou.
+\newblock Rethinking graph transformers with spectral attention.
+\newblock In \emph{Advances in Neural Information Processing Systems 34,
+  {NeurIPS} 2021}, pages 21618--21629, 2021.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper/2021/hash/b4fd1d2cb085390fbbadae65e07876a7-Abstract.html}.
+
+\bibitem[Lim et~al.(2022)Lim, Robinson, Zhao, Smidt, Sra, Maron, and
+  Jegelka]{Lim2022}
+Derek Lim, Joshua Robinson, Lingxiao Zhao, Tess Smidt, Suvrit Sra, Haggai
+  Maron, and Stefanie Jegelka.
+\newblock Sign and basis invariant networks for spectral graph representation
+  learning.
+\newblock In \emph{Proceedings of the 39th International Conference on Machine
+  Learning, {ICML} 2022}, 2022.
+
+\bibitem[Meusel and Granitzer(2024)]{Meusel2024}
+Jonas Meusel and Michael Granitzer.
+\newblock {GNN} node classification using koopman operator theory on {GPU}.
+\newblock In \emph{European Conference on Machine Learning and Principles of
+  Knowledge Discovery in Databases, {ECML-PKDD} 2024}, 2024.
+
+\bibitem[Morris et~al.(2019)Morris, Ritzert, Fey, Hamilton, Lenssen, Rattan,
+  and Grohe]{Morris2019}
+Christopher Morris, Martin Ritzert, Matthias Fey, William~L. Hamilton, Jan~Eric
+  Lenssen, Gaurav Rattan, and Martin Grohe.
+\newblock Weisfeiler and leman go neural: Higher-order graph neural networks.
+\newblock In \emph{The Thirty-Third {AAAI} Conference on Artificial
+  Intelligence, {AAAI} 2019, Honolulu, Hawaii, USA, January 27 - February 1,
+  2019}, pages 4602--4609. {AAAI} Press, 2019.
+\newblock \doi{10.1609/aaai.v33i01.33014602}.
+
+\bibitem[Ramp\'{a}\v{s}ek et~al.(2022)Ramp\'{a}\v{s}ek, Galkin, Dwivedi, Luu,
+  Wolf, and Beaini]{Rampasek2022}
+Ladislav Ramp\'{a}\v{s}ek, Michael Galkin, Vijay~Prakash Dwivedi, Anh~Tuan Luu,
+  Guy Wolf, and Dominique Beaini.
+\newblock Recipe for a general, powerful, scalable graph transformer.
+\newblock In \emph{Advances in Neural Information Processing Systems 35,
+  {NeurIPS} 2022}, 2022.
+
+\bibitem[Sturma et~al.(2023)Sturma, Massei, and Stoll]{Sturma2023}
+Nils Sturma, Stefano Massei, and Martin Stoll.
+\newblock {DeepGraphDMD}: Interpretable spatio-temporal decomposition of
+  non-linear functional brain network dynamics.
+\newblock \emph{CoRR}, abs/2306.03088, 2023.
+
+\bibitem[Toenshoff et~al.(2024)Toenshoff, Ritzert, Sch\"{u}tze, and
+  Grohe]{Toenshoff2024}
+Jan Toenshoff, Martin Ritzert, Hinrich Sch\"{u}tze, and Martin Grohe.
+\newblock Revisiting random walks for learning on graphs.
+\newblock \emph{CoRR}, abs/2407.01214, 2024.
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
+  Kaiser, and Polosukhin]{Vaswani2017}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N. Gomez, Lukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock In \emph{Advances in Neural Information Processing Systems 30,
+  {NeurIPS} 2017}, pages 5998--6008, 2017.
+
+\bibitem[Wang et~al.(2023)Wang, Yin, Zhang, and Li]{Wang2023spe}
+Haorui Wang, Haoteng Yin, Muhan Zhang, and Pan Li.
+\newblock Equivariant and stable positional encoding for more powerful graph
+  neural networks.
+\newblock In \emph{11th International Conference on Learning Representations,
+  {ICLR} 2023}, 2023.
+
+\bibitem[Wang and Zhang(2024)]{Wang2024brec}
+Yanbo Wang and Muhan Zhang.
+\newblock An empirical study of realized {GNN} expressiveness.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning, {ICML} 2024}, 2024.
+
+\bibitem[Williams et~al.(2015)Williams, Kevrekidis, and Rowley]{Williams2015}
+Matthew~O. Williams, Ioannis~G. Kevrekidis, and Clarence~W. Rowley.
+\newblock A data-driven approximation of the koopman operator: Extending
+  dynamic mode decomposition.
+\newblock \emph{Journal of Nonlinear Science}, 25\penalty0 (6):\penalty0
+  1307--1346, 2015.
+\newblock \doi{10.1007/s00332-015-9258-5}.
+
+\bibitem[Xu et~al.(2019)Xu, Hu, Leskovec, and Jegelka]{Xu2019}
+Keyulu Xu, Weihua Hu, Jure Leskovec, and Stefanie Jegelka.
+\newblock How powerful are graph neural networks?
+\newblock In \emph{7th International Conference on Learning Representations,
+  {ICLR} 2019, New Orleans, LA, USA, May 6-9, 2019}. OpenReview.net, 2019.
+\newblock URL \url{https://openreview.net/forum?id=ryGs6iA5Km}.
+
+\bibitem[Ying et~al.(2021)Ying, Cai, Luo, Zheng, Ke, He, Shen, and
+  Liu]{Ying2021}
+Chengxuan Ying, Tianle Cai, Shengjie Luo, Shuxin Zheng, Guolin Ke, Di~He,
+  Yanming Shen, and Tie-Yan Liu.
+\newblock Do transformers really perform badly for graph representation?
+\newblock In \emph{Advances in Neural Information Processing Systems 34,
+  {NeurIPS} 2021}, 2021.
+\newblock URL \url{https://proceedings.neurips.cc/paper/2021}.
+
+\bibitem[Zhang et~al.(2024)Zhang, Zhao, and Maron]{Zhang2024}
+Bohang Zhang, Lingxiao Zhao, and Haggai Maron.
+\newblock On the expressive power of spectral invariant graph neural networks.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning, {ICML} 2024}, 2024.
+\newblock URL \url{https://proceedings.mlr.press/v235/zhang24ck.html}.
+
+\end{thebibliography}

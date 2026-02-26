@@ -1,0 +1,119 @@
+2026-02-25 02:31:14.999 | INFO     | __main__:<module>:58 - Hardware: 4 CPUs, 32.0GB RAM
+2026-02-25 02:31:15.022 | INFO     | __main__:<module>:68 - RAM budget: 4.3GB, CPU limit: 3600s
+2026-02-25 02:31:15.024 | INFO     | __main__:main:268 - === Preparing ZINC-12k benchmark dataset ===
+2026-02-25 02:31:15.025 | INFO     | __main__:main:271 - Step 1: Loading split indices
+2026-02-25 02:31:15.033 | INFO     | __main__:load_index_file:83 - Loaded 10000 indices from train.index
+2026-02-25 02:31:15.038 | INFO     | __main__:load_index_file:83 - Loaded 1000 indices from val.index
+2026-02-25 02:31:15.041 | INFO     | __main__:load_index_file:83 - Loaded 1000 indices from test.index
+2026-02-25 02:31:15.042 | INFO     | __main__:main:282 - Step 2: Loading full ZINC training data
+2026-02-25 02:31:15.043 | INFO     | __main__:load_full_split:91 - Loading /opt/ai-inventor/temp/datasets/full_graphs-datasets_ZINC_train.json ...
+2026-02-25 02:31:25.450 | INFO     | __main__:load_full_split:93 - Loaded 220011 graphs from train
+2026-02-25 02:31:25.452 | INFO     | __main__:main:287 - Max index: 219998, Full train size: 220011
+2026-02-25 02:31:25.455 | INFO     | __main__:main:291 - Step 3: Applying subset indices
+2026-02-25 02:31:25.499 | INFO     | __main__:main:296 - Converted 10000 train graphs
+2026-02-25 02:31:25.510 | INFO     | __main__:main:300 - Converted 1000 val graphs
+2026-02-25 02:31:25.516 | INFO     | __main__:main:304 - Converted 1000 test graphs
+2026-02-25 02:31:26.019 | INFO     | __main__:main:310 - Total converted: 12000 graphs
+2026-02-25 02:31:26.020 | INFO     | __main__:main:313 - Step 4: Validating dataset
+2026-02-25 02:31:26.021 | INFO     | __main__:validate_dataset:140 - === Validating dataset ===
+2026-02-25 02:31:26.024 | INFO     | __main__:validate_dataset:145 - Split counts: {'train': 10000, 'val': 1000, 'test': 1000}
+2026-02-25 02:31:26.086 | INFO     | __main__:validate_dataset:204 - Node features unique values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+2026-02-25 02:31:26.087 | INFO     | __main__:validate_dataset:205 - Edge attr unique values: [1, 2, 3]
+2026-02-25 02:31:26.088 | INFO     | __main__:validate_dataset:206 - Num nodes: min=7, max=37, avg=23.2
+2026-02-25 02:31:26.089 | INFO     | __main__:validate_dataset:207 - Target y: min=-42.037, max=4.232, mean=0.001, std=2.047
+2026-02-25 02:31:26.091 | INFO     | __main__:validate_dataset:208 - Total graphs: 12000
+2026-02-25 02:31:26.091 | WARNING  | __main__:validate_dataset:214 - Min y -42.037 unexpectedly low
+2026-02-25 02:31:26.093 | INFO     | __main__:validate_dataset:228 - Undirected check (100 graphs): 5064 bidirectional, 0 unidirectional
+2026-02-25 02:31:26.095 | INFO     | __main__:validate_dataset:236 - ✓ Validation PASSED
+2026-02-25 02:31:26.098 | INFO     | __main__:main:320 - Step 5: Creating mini and preview subsets
+2026-02-25 02:31:26.101 | INFO     | __main__:create_subsets:260 - Mini subset: 600 rows (500+50+50)
+2026-02-25 02:31:26.108 | INFO     | __main__:create_subsets:261 - Preview subset: 30 rows (25+3+2)
+2026-02-25 02:31:26.109 | INFO     | __main__:main:324 - Step 6: Writing output files
+2026-02-25 02:31:26.227 | INFO     | __main__:main:328 - Wrote data_out.json (12000 rows)
+2026-02-25 02:31:26.268 | INFO     | __main__:main:332 - Wrote data_out_mini.json (600 rows)
+2026-02-25 02:31:26.281 | INFO     | __main__:main:336 - Wrote data_out_preview.json (30 rows)
+2026-02-25 02:31:26.283 | INFO     | __main__:main:341 -   data_out.json: 6.1 MB
+2026-02-25 02:31:26.285 | INFO     | __main__:main:341 -   data_out_mini.json: 1.4 MB
+2026-02-25 02:31:26.287 | INFO     | __main__:main:341 -   data_out_preview.json: 0.1 MB
+2026-02-25 02:31:26.289 | INFO     | __main__:main:343 - === Done! ===
+2026-02-25 02:32:40.445 | INFO     | __main__:<module>:58 - Hardware: 4 CPUs, 32.0GB RAM
+2026-02-25 02:32:40.463 | INFO     | __main__:<module>:68 - RAM budget: 4.3GB, CPU limit: 3600s
+2026-02-25 02:32:40.465 | INFO     | __main__:main:268 - === Preparing ZINC-12k benchmark dataset ===
+2026-02-25 02:32:40.466 | INFO     | __main__:main:271 - Step 1: Loading split indices
+2026-02-25 02:32:40.474 | INFO     | __main__:load_index_file:83 - Loaded 10000 indices from train.index
+2026-02-25 02:32:40.481 | INFO     | __main__:load_index_file:83 - Loaded 1000 indices from val.index
+2026-02-25 02:32:40.486 | INFO     | __main__:load_index_file:83 - Loaded 1000 indices from test.index
+2026-02-25 02:32:40.488 | INFO     | __main__:main:286 - Step 2: Loading and subsetting each split
+2026-02-25 02:32:40.490 | INFO     | __main__:load_full_split:91 - Loading /opt/ai-inventor/temp/datasets/full_graphs-datasets_ZINC_train.json ...
+2026-02-25 02:32:50.794 | INFO     | __main__:load_full_split:93 - Loaded 220011 graphs from train
+2026-02-25 02:32:50.836 | INFO     | __main__:main:291 - Converted 10000 train graphs
+2026-02-25 02:32:51.329 | INFO     | __main__:load_full_split:91 - Loading /opt/ai-inventor/temp/datasets/full_graphs-datasets_ZINC_validation.json ...
+2026-02-25 02:32:52.956 | INFO     | __main__:load_full_split:93 - Loaded 24445 graphs from validation
+2026-02-25 02:32:52.962 | INFO     | __main__:main:300 - Converted 1000 val graphs
+2026-02-25 02:32:53.071 | INFO     | __main__:load_full_split:91 - Loading /opt/ai-inventor/temp/datasets/full_graphs-datasets_ZINC_test.json ...
+2026-02-25 02:32:53.460 | INFO     | __main__:load_full_split:93 - Loaded 5000 graphs from test
+2026-02-25 02:32:53.467 | INFO     | __main__:main:309 - Converted 1000 test graphs
+2026-02-25 02:32:53.538 | INFO     | __main__:main:313 - Total converted: 12000 graphs
+2026-02-25 02:32:53.540 | INFO     | __main__:main:316 - Step 4: Validating dataset
+2026-02-25 02:32:53.541 | INFO     | __main__:validate_dataset:140 - === Validating dataset ===
+2026-02-25 02:32:53.544 | INFO     | __main__:validate_dataset:145 - Split counts: {'train': 10000, 'val': 1000, 'test': 1000}
+2026-02-25 02:32:53.592 | INFO     | __main__:validate_dataset:204 - Node features unique values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+2026-02-25 02:32:53.594 | INFO     | __main__:validate_dataset:205 - Edge attr unique values: [1, 2, 3]
+2026-02-25 02:32:53.596 | INFO     | __main__:validate_dataset:206 - Num nodes: min=9, max=37, avg=23.2
+2026-02-25 02:32:53.597 | INFO     | __main__:validate_dataset:207 - Target y: min=-42.037, max=3.805, mean=0.016, std=2.009
+2026-02-25 02:32:53.599 | INFO     | __main__:validate_dataset:208 - Total graphs: 12000
+2026-02-25 02:32:53.606 | WARNING  | __main__:validate_dataset:214 - Min y -42.037 unexpectedly low
+2026-02-25 02:32:53.608 | INFO     | __main__:validate_dataset:228 - Undirected check (100 graphs): 5064 bidirectional, 0 unidirectional
+2026-02-25 02:32:53.609 | INFO     | __main__:validate_dataset:236 - ✓ Validation PASSED
+2026-02-25 02:32:53.612 | INFO     | __main__:main:323 - Step 5: Creating mini and preview subsets
+2026-02-25 02:32:53.616 | INFO     | __main__:create_subsets:260 - Mini subset: 600 rows (500+50+50)
+2026-02-25 02:32:53.618 | INFO     | __main__:create_subsets:261 - Preview subset: 30 rows (25+3+2)
+2026-02-25 02:32:53.619 | INFO     | __main__:main:327 - Step 6: Writing output files
+2026-02-25 02:32:53.737 | INFO     | __main__:main:331 - Wrote data_out.json (12000 rows)
+2026-02-25 02:32:53.780 | INFO     | __main__:main:335 - Wrote data_out_mini.json (600 rows)
+2026-02-25 02:32:53.792 | INFO     | __main__:main:339 - Wrote data_out_preview.json (30 rows)
+2026-02-25 02:32:53.794 | INFO     | __main__:main:344 -   data_out.json: 6.1 MB
+2026-02-25 02:32:53.796 | INFO     | __main__:main:344 -   data_out_mini.json: 1.4 MB
+2026-02-25 02:32:53.798 | INFO     | __main__:main:344 -   data_out_preview.json: 0.1 MB
+2026-02-25 02:32:53.799 | INFO     | __main__:main:346 - === Done! ===
+2026-02-25 02:34:26.128 | INFO     | __main__:<module>:58 - Hardware: 4 CPUs, 32.0GB RAM
+2026-02-25 02:34:26.138 | INFO     | __main__:<module>:68 - RAM budget: 4.3GB, CPU limit: 3600s
+2026-02-25 02:34:26.139 | INFO     | __main__:main:268 - === Preparing ZINC-12k benchmark dataset ===
+2026-02-25 02:34:26.141 | INFO     | __main__:main:271 - Step 1: Loading split indices
+2026-02-25 02:34:26.151 | INFO     | __main__:load_index_file:83 - Loaded 10000 indices from train.index
+2026-02-25 02:34:26.156 | INFO     | __main__:load_index_file:83 - Loaded 1000 indices from val.index
+2026-02-25 02:34:26.189 | INFO     | __main__:load_index_file:83 - Loaded 1000 indices from test.index
+2026-02-25 02:34:26.191 | INFO     | __main__:main:286 - Step 2: Loading and subsetting each split
+2026-02-25 02:34:26.192 | INFO     | __main__:load_full_split:91 - Loading /opt/ai-inventor/temp/datasets/full_graphs-datasets_ZINC_train.json ...
+2026-02-25 02:34:36.997 | INFO     | __main__:load_full_split:93 - Loaded 220011 graphs from train
+2026-02-25 02:34:37.040 | INFO     | __main__:main:291 - Converted 10000 train graphs
+2026-02-25 02:34:37.564 | INFO     | __main__:load_full_split:91 - Loading /opt/ai-inventor/temp/datasets/full_graphs-datasets_ZINC_validation.json ...
+2026-02-25 02:34:39.283 | INFO     | __main__:load_full_split:93 - Loaded 24445 graphs from validation
+2026-02-25 02:34:39.289 | INFO     | __main__:main:300 - Converted 1000 val graphs
+2026-02-25 02:34:39.399 | INFO     | __main__:load_full_split:91 - Loading /opt/ai-inventor/temp/datasets/full_graphs-datasets_ZINC_test.json ...
+2026-02-25 02:34:39.812 | INFO     | __main__:load_full_split:93 - Loaded 5000 graphs from test
+2026-02-25 02:34:39.819 | INFO     | __main__:main:309 - Converted 1000 test graphs
+2026-02-25 02:34:39.891 | INFO     | __main__:main:313 - Total converted: 12000 graphs
+2026-02-25 02:34:39.893 | INFO     | __main__:main:316 - Step 4: Validating dataset
+2026-02-25 02:34:39.895 | INFO     | __main__:validate_dataset:140 - === Validating dataset ===
+2026-02-25 02:34:39.898 | INFO     | __main__:validate_dataset:145 - Split counts: {'train': 10000, 'val': 1000, 'test': 1000}
+2026-02-25 02:34:39.958 | INFO     | __main__:validate_dataset:204 - Node features unique values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+2026-02-25 02:34:39.960 | INFO     | __main__:validate_dataset:205 - Edge attr unique values: [1, 2, 3]
+2026-02-25 02:34:39.963 | INFO     | __main__:validate_dataset:206 - Num nodes: min=9, max=37, avg=23.2
+2026-02-25 02:34:39.965 | INFO     | __main__:validate_dataset:207 - Target y: min=-42.037, max=3.805, mean=0.016, std=2.009
+2026-02-25 02:34:39.966 | INFO     | __main__:validate_dataset:208 - Total graphs: 12000
+2026-02-25 02:34:39.967 | WARNING  | __main__:validate_dataset:214 - Min y -42.037 unexpectedly low
+2026-02-25 02:34:39.969 | INFO     | __main__:validate_dataset:228 - Undirected check (100 graphs): 5064 bidirectional, 0 unidirectional
+2026-02-25 02:34:39.972 | INFO     | __main__:validate_dataset:236 - ✓ Validation PASSED
+2026-02-25 02:34:39.974 | INFO     | __main__:main:323 - Step 5: Creating mini and preview subsets
+2026-02-25 02:34:39.979 | INFO     | __main__:create_subsets:260 - Mini subset: 600 rows (500+50+50)
+2026-02-25 02:34:39.981 | INFO     | __main__:create_subsets:261 - Preview subset: 30 rows (25+3+2)
+2026-02-25 02:34:39.983 | INFO     | __main__:main:327 - Step 6: Converting to exp_sel_data_out schema format
+2026-02-25 02:34:40.123 | INFO     | __main__:main:351 - Step 7: Writing output files
+2026-02-25 02:34:40.206 | INFO     | __main__:main:355 - Wrote data_out.json (12000 examples)
+2026-02-25 02:34:40.259 | INFO     | __main__:main:359 - Wrote data_out_mini.json (600 examples)
+2026-02-25 02:34:40.272 | INFO     | __main__:main:363 - Wrote data_out_preview.json (30 examples)
+2026-02-25 02:34:40.274 | INFO     | __main__:main:368 -   data_out.json: 6.3 MB
+2026-02-25 02:34:40.277 | INFO     | __main__:main:368 -   data_out_mini.json: 0.3 MB
+2026-02-25 02:34:40.279 | INFO     | __main__:main:368 -   data_out_preview.json: 0.0 MB
+2026-02-25 02:34:40.281 | INFO     | __main__:main:370 - === Done! ===

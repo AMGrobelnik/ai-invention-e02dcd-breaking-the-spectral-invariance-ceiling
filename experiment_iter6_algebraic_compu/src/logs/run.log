@@ -1,0 +1,333 @@
+2026-02-26 11:34:22.651 | INFO     | method:<module>:66 - Hardware: 4 CPUs, 32.0 GB RAM, No GPU
+2026-02-26 11:34:22.653 | INFO     | method:<module>:71 - RAM budget: 22.4 GB (virtual limit: 67.2 GB)
+2026-02-26 11:34:30.433 | INFO     | method:<module>:66 - Hardware: 4 CPUs, 32.0 GB RAM, No GPU
+2026-02-26 11:34:30.435 | INFO     | method:<module>:71 - RAM budget: 22.4 GB (virtual limit: 67.2 GB)
+2026-02-26 11:34:30.436 | INFO     | method:main:689 - Loading data from mini_data_out.json
+2026-02-26 11:34:30.440 | INFO     | method:main:692 - Loaded 3 graph pairs
+2026-02-26 11:34:30.441 | INFO     | method:main:696 - Category counts: {'cospectral': 3}
+2026-02-26 11:34:30.442 | INFO     | method:main:701 - ============================================================
+2026-02-26 11:34:30.443 | INFO     | method:main:702 - PHASE 1: Numerical survey on all 525 graph pairs
+2026-02-26 11:34:30.445 | INFO     | method:main:703 - ============================================================
+2026-02-26 11:34:30.446 | INFO     | method:main:711 - Processing 3 pairs with 3 workers
+2026-02-26 11:34:30.458 | INFO     | method:main:722 -   Processed 3/3 pairs (0.0s)
+2026-02-26 11:34:30.462 | INFO     | method:main:727 - Phase 1 completed in 0.0s
+2026-02-26 11:34:30.463 | INFO     | method:main:731 - Valid results: 3 / 3
+2026-02-26 11:34:30.464 | INFO     | method:main:815 - RWPE distinguishes: 3/3
+2026-02-26 11:34:30.466 | INFO     | method:main:816 - nRWPE(tanh) distinguishes: 3/3
+2026-02-26 11:34:30.467 | INFO     | method:main:817 - Off-diag nRWPE distinguishes: 3/3
+2026-02-26 11:34:30.468 | INFO     | method:main:818 - nRWPE-only pairs: 0
+2026-02-26 11:34:30.469 | INFO     | method:main:819 - RWPE-only pairs: 0
+2026-02-26 11:34:30.471 | INFO     | method:main:820 - Neither: 0
+2026-02-26 11:34:30.472 | INFO     | method:main:825 - ============================================================
+2026-02-26 11:34:30.473 | INFO     | method:main:826 - PHASE 2: Symbolic analysis on K_{1,4} vs C_4 ∪ K_1
+2026-02-26 11:34:30.473 | INFO     | method:main:827 - ============================================================
+2026-02-26 11:34:30.583 | INFO     | method:symbolic_analysis_k14_c4k1:311 - Starting symbolic analysis on K_{1,4} vs C_4 ∪ K_1
+2026-02-26 11:34:30.597 | INFO     | method:symbolic_analysis_k14_c4k1:339 - Cospectrality verified: True
+2026-02-26 11:34:30.602 | INFO     | method:symbolic_analysis_k14_c4k1:367 - RWPE diag k=2 match: False
+2026-02-26 11:34:30.621 | INFO     | method:symbolic_analysis_k14_c4k1:445 - Symbolic analysis completed
+2026-02-26 11:34:30.622 | INFO     | method:main:835 - Symbolic analysis completed in 0.1s
+2026-02-26 11:34:30.623 | INFO     | method:main:840 - ============================================================
+2026-02-26 11:34:30.624 | INFO     | method:main:841 - PHASE 3: Taylor expansion theory
+2026-02-26 11:34:30.626 | INFO     | method:main:842 - ============================================================
+2026-02-26 11:34:30.627 | INFO     | method:main:848 - ============================================================
+2026-02-26 11:34:30.628 | INFO     | method:main:849 - PHASE 4: nRWPE-only pair analysis
+2026-02-26 11:34:30.629 | INFO     | method:main:850 - ============================================================
+2026-02-26 11:34:30.630 | INFO     | method:main:867 - No nRWPE-only pairs found among all pairs
+2026-02-26 11:34:30.631 | INFO     | method:main:889 - ============================================================
+2026-02-26 11:34:30.632 | INFO     | method:main:890 - PHASE 5: SRG analysis (Rook vs Shrikhande)
+2026-02-26 11:34:30.633 | INFO     | method:main:891 - ============================================================
+2026-02-26 11:34:30.634 | INFO     | method:srg_analysis:523 - Starting SRG analysis: Rook vs Shrikhande
+2026-02-26 11:34:30.641 | INFO     | method:srg_analysis:601 - Computing EDMD on SRG pair...
+2026-02-26 11:34:30.837 | INFO     | method:srg_analysis:623 - SRG analysis complete. Off-diag distinguishes: True
+2026-02-26 11:34:30.838 | INFO     | method:main:899 - SRG analysis completed in 0.2s
+2026-02-26 11:34:30.839 | INFO     | method:main:904 - ============================================================
+2026-02-26 11:34:30.841 | INFO     | method:main:905 - PHASE 6: EDMD analysis on small graph pairs
+2026-02-26 11:34:30.842 | INFO     | method:main:906 - ============================================================
+2026-02-26 11:34:30.844 | INFO     | method:main:912 - EDMD analysis on 3 small pairs (n<=30)
+2026-02-26 11:34:30.857 | INFO     | method:main:924 -   EDMD: 3/3 (0.0s)
+2026-02-26 11:34:30.862 | INFO     | method:main:937 - EDMD analysis completed in 0.0s
+2026-02-26 11:34:30.863 | INFO     | method:main:938 - EDMD distinguishes: 3/3 pairs
+2026-02-26 11:34:30.864 | INFO     | method:main:944 - ============================================================
+2026-02-26 11:34:30.865 | INFO     | method:main:945 - Compiling final output (total time: 0.4s)
+2026-02-26 11:34:30.866 | INFO     | method:main:946 - ============================================================
+2026-02-26 11:34:30.876 | INFO     | method:main:1057 - Saved output to /workspace/runs/run__20260226_110200/3_invention_loop/iter_6/gen_art/exp_id1_it6__opus/method_out.json
+2026-02-26 11:34:30.878 | INFO     | method:main:1061 - Output file size: 0.02 MB
+2026-02-26 11:34:30.878 | INFO     | method:main:1063 - ============================================================
+2026-02-26 11:34:30.879 | INFO     | method:main:1064 - EXPERIMENT COMPLETE
+2026-02-26 11:34:30.881 | INFO     | method:main:1065 - ============================================================
+2026-02-26 11:34:30.882 | INFO     | method:main:1067 -   1. nRWPE IS spectrally invariant, correcting the original hypothesis claim
+2026-02-26 11:34:30.883 | INFO     | method:main:1067 -   2. nRWPE captures entrywise-power invariants S_{2p}(i) beyond RWPE's matrix-power diagonals
+2026-02-26 11:34:30.884 | INFO     | method:main:1067 -   3. nRWPE-only pairs found: 0 (pairs where nRWPE distinguishes but RWPE does not)
+2026-02-26 11:34:30.885 | INFO     | method:main:1067 -   4. RWPE distinguishes 3/3 pairs
+2026-02-26 11:34:30.886 | INFO     | method:main:1067 -   5. nRWPE(tanh) distinguishes 3/3 pairs
+2026-02-26 11:34:30.887 | INFO     | method:main:1067 -   6. Off-diagonal nRWPE distinguishes 3/3 pairs
+2026-02-26 11:34:30.888 | INFO     | method:main:1067 -   7. EDMD distinguishes 3/3 analyzed pairs
+2026-02-26 11:34:30.889 | INFO     | method:main:1067 -   8. SRG pairs (Rook vs Shrikhande) defeat both RWPE and nRWPE via equitable partition collapse
+2026-02-26 11:34:30.890 | INFO     | method:main:1067 -   9. Total computation time: 0.4s
+2026-02-26 11:35:04.424 | INFO     | method:<module>:67 - Hardware: 4 CPUs, 32.0 GB RAM, No GPU
+2026-02-26 11:35:04.426 | INFO     | method:<module>:72 - RAM budget: 22.4 GB (virtual limit: 67.2 GB)
+2026-02-26 11:35:04.427 | INFO     | method:main:694 - Loading data from test_10_data.json
+2026-02-26 11:35:04.432 | INFO     | method:main:697 - Loaded 10 graph pairs
+2026-02-26 11:35:04.433 | INFO     | method:main:701 - Category counts: {'cospectral': 10}
+2026-02-26 11:35:04.434 | INFO     | method:main:706 - ============================================================
+2026-02-26 11:35:04.436 | INFO     | method:main:707 - PHASE 1: Numerical survey on all 525 graph pairs
+2026-02-26 11:35:04.437 | INFO     | method:main:708 - ============================================================
+2026-02-26 11:35:04.438 | INFO     | method:main:716 - Processing 10 pairs with 3 workers
+2026-02-26 11:35:04.475 | INFO     | method:main:727 -   Processed 10/10 pairs (0.0s)
+2026-02-26 11:35:04.481 | INFO     | method:main:732 - Phase 1 completed in 0.1s
+2026-02-26 11:35:04.483 | INFO     | method:main:736 - Valid results: 10 / 10
+2026-02-26 11:35:04.484 | INFO     | method:main:820 - RWPE distinguishes: 10/10
+2026-02-26 11:35:04.486 | INFO     | method:main:821 - nRWPE(tanh) distinguishes: 10/10
+2026-02-26 11:35:04.487 | INFO     | method:main:822 - Off-diag nRWPE distinguishes: 10/10
+2026-02-26 11:35:04.489 | INFO     | method:main:823 - nRWPE-only pairs: 0
+2026-02-26 11:35:04.491 | INFO     | method:main:824 - RWPE-only pairs: 0
+2026-02-26 11:35:04.492 | INFO     | method:main:825 - Neither: 0
+2026-02-26 11:35:04.494 | INFO     | method:main:830 - ============================================================
+2026-02-26 11:35:04.495 | INFO     | method:main:831 - PHASE 2: Symbolic analysis on K_{1,4} vs C_4 ∪ K_1
+2026-02-26 11:35:04.497 | INFO     | method:main:832 - ============================================================
+2026-02-26 11:35:04.701 | INFO     | method:symbolic_analysis_k14_c4k1:316 - Starting symbolic analysis on K_{1,4} vs C_4 ∪ K_1
+2026-02-26 11:35:04.720 | INFO     | method:symbolic_analysis_k14_c4k1:344 - Cospectrality verified: True
+2026-02-26 11:35:04.725 | INFO     | method:symbolic_analysis_k14_c4k1:372 - RWPE diag k=2 match: False
+2026-02-26 11:35:04.740 | INFO     | method:symbolic_analysis_k14_c4k1:450 - Symbolic analysis completed
+2026-02-26 11:35:04.742 | INFO     | method:main:840 - Symbolic analysis completed in 0.2s
+2026-02-26 11:35:04.744 | INFO     | method:main:845 - ============================================================
+2026-02-26 11:35:04.746 | INFO     | method:main:846 - PHASE 3: Taylor expansion theory
+2026-02-26 11:35:04.748 | INFO     | method:main:847 - ============================================================
+2026-02-26 11:35:04.750 | INFO     | method:main:853 - ============================================================
+2026-02-26 11:35:04.751 | INFO     | method:main:854 - PHASE 4: nRWPE-only pair analysis
+2026-02-26 11:35:04.753 | INFO     | method:main:855 - ============================================================
+2026-02-26 11:35:04.755 | INFO     | method:main:872 - No nRWPE-only pairs found among all pairs
+2026-02-26 11:35:04.756 | INFO     | method:main:894 - ============================================================
+2026-02-26 11:35:04.758 | INFO     | method:main:895 - PHASE 5: SRG analysis (Rook vs Shrikhande)
+2026-02-26 11:35:04.760 | INFO     | method:main:896 - ============================================================
+2026-02-26 11:35:04.761 | INFO     | method:srg_analysis:528 - Starting SRG analysis: Rook vs Shrikhande
+2026-02-26 11:35:04.798 | INFO     | method:srg_analysis:606 - Computing EDMD on SRG pair...
+2026-02-26 11:35:05.009 | INFO     | method:srg_analysis:628 - SRG analysis complete. Off-diag distinguishes: True
+2026-02-26 11:35:05.011 | INFO     | method:main:904 - SRG analysis completed in 0.2s
+2026-02-26 11:35:05.012 | INFO     | method:main:909 - ============================================================
+2026-02-26 11:35:05.014 | INFO     | method:main:910 - PHASE 6: EDMD analysis on small graph pairs
+2026-02-26 11:35:05.015 | INFO     | method:main:911 - ============================================================
+2026-02-26 11:35:05.016 | INFO     | method:main:917 - EDMD analysis on 10 small pairs (n<=30)
+2026-02-26 11:35:05.035 | INFO     | method:main:929 -   EDMD: 10/10 (0.0s)
+2026-02-26 11:35:05.041 | INFO     | method:main:942 - EDMD analysis completed in 0.0s
+2026-02-26 11:35:05.043 | INFO     | method:main:943 - EDMD distinguishes: 10/10 pairs
+2026-02-26 11:35:05.044 | INFO     | method:main:949 - ============================================================
+2026-02-26 11:35:05.046 | INFO     | method:main:950 - Compiling final output (total time: 0.6s)
+2026-02-26 11:35:05.048 | INFO     | method:main:951 - ============================================================
+2026-02-26 11:35:05.066 | INFO     | method:main:1062 - Saved output to /workspace/runs/run__20260226_110200/3_invention_loop/iter_6/gen_art/exp_id1_it6__opus/method_out.json
+2026-02-26 11:35:05.068 | INFO     | method:main:1066 - Output file size: 0.03 MB
+2026-02-26 11:35:05.069 | INFO     | method:main:1068 - ============================================================
+2026-02-26 11:35:05.071 | INFO     | method:main:1069 - EXPERIMENT COMPLETE
+2026-02-26 11:35:05.072 | INFO     | method:main:1070 - ============================================================
+2026-02-26 11:35:05.073 | INFO     | method:main:1072 -   1. nRWPE IS spectrally invariant, correcting the original hypothesis claim
+2026-02-26 11:35:05.074 | INFO     | method:main:1072 -   2. nRWPE captures entrywise-power invariants S_{2p}(i) beyond RWPE's matrix-power diagonals
+2026-02-26 11:35:05.076 | INFO     | method:main:1072 -   3. nRWPE-only pairs found: 0 (pairs where nRWPE distinguishes but RWPE does not)
+2026-02-26 11:35:05.077 | INFO     | method:main:1072 -   4. RWPE distinguishes 10/10 pairs
+2026-02-26 11:35:05.078 | INFO     | method:main:1072 -   5. nRWPE(tanh) distinguishes 10/10 pairs
+2026-02-26 11:35:05.079 | INFO     | method:main:1072 -   6. Off-diagonal nRWPE distinguishes 10/10 pairs
+2026-02-26 11:35:05.080 | INFO     | method:main:1072 -   7. EDMD distinguishes 10/10 analyzed pairs
+2026-02-26 11:35:05.082 | INFO     | method:main:1072 -   8. SRG pairs (Rook vs Shrikhande) defeat both RWPE and nRWPE via equitable partition collapse
+2026-02-26 11:35:05.083 | INFO     | method:main:1072 -   9. Total computation time: 0.6s
+2026-02-26 11:35:10.960 | INFO     | method:<module>:67 - Hardware: 4 CPUs, 32.0 GB RAM, No GPU
+2026-02-26 11:35:10.961 | INFO     | method:<module>:72 - RAM budget: 22.4 GB (virtual limit: 67.2 GB)
+2026-02-26 11:35:10.962 | INFO     | method:main:694 - Loading data from test_50_data.json
+2026-02-26 11:35:10.967 | INFO     | method:main:697 - Loaded 50 graph pairs
+2026-02-26 11:35:10.968 | INFO     | method:main:701 - Category counts: {'cospectral': 50}
+2026-02-26 11:35:10.970 | INFO     | method:main:706 - ============================================================
+2026-02-26 11:35:10.971 | INFO     | method:main:707 - PHASE 1: Numerical survey on all 525 graph pairs
+2026-02-26 11:35:10.972 | INFO     | method:main:708 - ============================================================
+2026-02-26 11:35:10.973 | INFO     | method:main:716 - Processing 50 pairs with 3 workers
+2026-02-26 11:35:11.144 | INFO     | method:main:727 -   Processed 50/50 pairs (0.2s)
+2026-02-26 11:35:11.148 | INFO     | method:main:732 - Phase 1 completed in 0.2s
+2026-02-26 11:35:11.149 | INFO     | method:main:736 - Valid results: 50 / 50
+2026-02-26 11:35:11.151 | INFO     | method:main:820 - RWPE distinguishes: 50/50
+2026-02-26 11:35:11.152 | INFO     | method:main:821 - nRWPE(tanh) distinguishes: 50/50
+2026-02-26 11:35:11.153 | INFO     | method:main:822 - Off-diag nRWPE distinguishes: 50/50
+2026-02-26 11:35:11.154 | INFO     | method:main:823 - nRWPE-only pairs: 0
+2026-02-26 11:35:11.155 | INFO     | method:main:824 - RWPE-only pairs: 0
+2026-02-26 11:35:11.156 | INFO     | method:main:825 - Neither: 0
+2026-02-26 11:35:11.157 | INFO     | method:main:830 - ============================================================
+2026-02-26 11:35:11.158 | INFO     | method:main:831 - PHASE 2: Symbolic analysis on K_{1,4} vs C_4 ∪ K_1
+2026-02-26 11:35:11.159 | INFO     | method:main:832 - ============================================================
+2026-02-26 11:35:11.339 | INFO     | method:symbolic_analysis_k14_c4k1:316 - Starting symbolic analysis on K_{1,4} vs C_4 ∪ K_1
+2026-02-26 11:35:11.354 | INFO     | method:symbolic_analysis_k14_c4k1:344 - Cospectrality verified: True
+2026-02-26 11:35:11.358 | INFO     | method:symbolic_analysis_k14_c4k1:372 - RWPE diag k=2 match: False
+2026-02-26 11:35:11.373 | INFO     | method:symbolic_analysis_k14_c4k1:450 - Symbolic analysis completed
+2026-02-26 11:35:11.375 | INFO     | method:main:840 - Symbolic analysis completed in 0.2s
+2026-02-26 11:35:11.376 | INFO     | method:main:845 - ============================================================
+2026-02-26 11:35:11.378 | INFO     | method:main:846 - PHASE 3: Taylor expansion theory
+2026-02-26 11:35:11.379 | INFO     | method:main:847 - ============================================================
+2026-02-26 11:35:11.380 | INFO     | method:main:853 - ============================================================
+2026-02-26 11:35:11.382 | INFO     | method:main:854 - PHASE 4: nRWPE-only pair analysis
+2026-02-26 11:35:11.382 | INFO     | method:main:855 - ============================================================
+2026-02-26 11:35:11.384 | INFO     | method:main:872 - No nRWPE-only pairs found among all pairs
+2026-02-26 11:35:11.384 | INFO     | method:main:894 - ============================================================
+2026-02-26 11:35:11.386 | INFO     | method:main:895 - PHASE 5: SRG analysis (Rook vs Shrikhande)
+2026-02-26 11:35:11.387 | INFO     | method:main:896 - ============================================================
+2026-02-26 11:35:11.388 | INFO     | method:srg_analysis:528 - Starting SRG analysis: Rook vs Shrikhande
+2026-02-26 11:35:11.416 | INFO     | method:srg_analysis:606 - Computing EDMD on SRG pair...
+2026-02-26 11:35:11.616 | INFO     | method:srg_analysis:628 - SRG analysis complete. Off-diag distinguishes: True
+2026-02-26 11:35:11.617 | INFO     | method:main:904 - SRG analysis completed in 0.2s
+2026-02-26 11:35:11.618 | INFO     | method:main:909 - ============================================================
+2026-02-26 11:35:11.620 | INFO     | method:main:910 - PHASE 6: EDMD analysis on small graph pairs
+2026-02-26 11:35:11.621 | INFO     | method:main:911 - ============================================================
+2026-02-26 11:35:11.623 | INFO     | method:main:917 - EDMD analysis on 50 small pairs (n<=30)
+2026-02-26 11:35:11.704 | INFO     | method:main:929 -   EDMD: 50/50 (0.1s)
+2026-02-26 11:35:11.711 | INFO     | method:main:942 - EDMD analysis completed in 0.1s
+2026-02-26 11:35:11.713 | INFO     | method:main:943 - EDMD distinguishes: 50/50 pairs
+2026-02-26 11:35:11.714 | INFO     | method:main:949 - ============================================================
+2026-02-26 11:35:11.715 | INFO     | method:main:950 - Compiling final output (total time: 0.8s)
+2026-02-26 11:35:11.716 | INFO     | method:main:951 - ============================================================
+2026-02-26 11:35:11.733 | INFO     | method:main:1062 - Saved output to /workspace/runs/run__20260226_110200/3_invention_loop/iter_6/gen_art/exp_id1_it6__opus/method_out.json
+2026-02-26 11:35:11.735 | INFO     | method:main:1066 - Output file size: 0.11 MB
+2026-02-26 11:35:11.736 | INFO     | method:main:1068 - ============================================================
+2026-02-26 11:35:11.737 | INFO     | method:main:1069 - EXPERIMENT COMPLETE
+2026-02-26 11:35:11.738 | INFO     | method:main:1070 - ============================================================
+2026-02-26 11:35:11.739 | INFO     | method:main:1072 -   1. nRWPE IS spectrally invariant, correcting the original hypothesis claim
+2026-02-26 11:35:11.741 | INFO     | method:main:1072 -   2. nRWPE captures entrywise-power invariants S_{2p}(i) beyond RWPE's matrix-power diagonals
+2026-02-26 11:35:11.742 | INFO     | method:main:1072 -   3. nRWPE-only pairs found: 0 (pairs where nRWPE distinguishes but RWPE does not)
+2026-02-26 11:35:11.743 | INFO     | method:main:1072 -   4. RWPE distinguishes 50/50 pairs
+2026-02-26 11:35:11.744 | INFO     | method:main:1072 -   5. nRWPE(tanh) distinguishes 50/50 pairs
+2026-02-26 11:35:11.745 | INFO     | method:main:1072 -   6. Off-diagonal nRWPE distinguishes 50/50 pairs
+2026-02-26 11:35:11.746 | INFO     | method:main:1072 -   7. EDMD distinguishes 50/50 analyzed pairs
+2026-02-26 11:35:11.748 | INFO     | method:main:1072 -   8. SRG pairs (Rook vs Shrikhande) defeat both RWPE and nRWPE via equitable partition collapse
+2026-02-26 11:35:11.748 | INFO     | method:main:1072 -   9. Total computation time: 0.8s
+2026-02-26 11:35:32.188 | INFO     | __main__:<module>:67 - Hardware: 4 CPUs, 32.0 GB RAM, No GPU
+2026-02-26 11:35:32.190 | INFO     | __main__:<module>:72 - RAM budget: 22.4 GB (virtual limit: 67.2 GB)
+2026-02-26 11:35:32.192 | INFO     | __main__:main:694 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-26 11:35:32.219 | INFO     | __main__:main:697 - Loaded 525 graph pairs
+2026-02-26 11:35:32.221 | INFO     | __main__:main:701 - Category counts: {'cospectral': 64, 'CSL': 59, 'strongly_regular': 2, 'BREC_Basic': 60, 'BREC_Regular': 50, 'BREC_Strongly_Regular': 50, 'BREC_Extension': 100, 'BREC_CFI': 100, 'BREC_4Vertex': 20, 'BREC_Distance_Regular': 20}
+2026-02-26 11:35:32.223 | INFO     | __main__:main:706 - ============================================================
+2026-02-26 11:35:32.224 | INFO     | __main__:main:707 - PHASE 1: Numerical survey on all 525 graph pairs
+2026-02-26 11:35:32.225 | INFO     | __main__:main:708 - ============================================================
+2026-02-26 11:35:32.226 | INFO     | __main__:main:716 - Processing 525 pairs with 3 workers
+2026-02-26 11:35:32.402 | INFO     | __main__:main:727 -   Processed 50/525 pairs (0.2s)
+2026-02-26 11:35:33.184 | INFO     | __main__:main:727 -   Processed 100/525 pairs (1.0s)
+2026-02-26 11:35:33.593 | INFO     | __main__:main:727 -   Processed 150/525 pairs (1.4s)
+2026-02-26 11:35:33.827 | INFO     | __main__:main:727 -   Processed 200/525 pairs (1.6s)
+2026-02-26 11:35:34.170 | INFO     | __main__:main:727 -   Processed 250/525 pairs (2.0s)
+2026-02-26 11:35:34.762 | INFO     | __main__:main:727 -   Processed 300/525 pairs (2.6s)
+2026-02-26 11:35:34.998 | INFO     | __main__:main:727 -   Processed 350/525 pairs (2.8s)
+2026-02-26 11:35:36.305 | INFO     | __main__:main:727 -   Processed 400/525 pairs (4.1s)
+2026-02-26 11:35:38.206 | INFO     | __main__:main:727 -   Processed 450/525 pairs (6.0s)
+2026-02-26 11:35:44.497 | INFO     | __main__:main:727 -   Processed 500/525 pairs (12.3s)
+2026-02-26 11:35:45.041 | INFO     | __main__:main:727 -   Processed 525/525 pairs (12.8s)
+2026-02-26 11:35:45.048 | INFO     | __main__:main:732 - Phase 1 completed in 12.9s
+2026-02-26 11:35:45.049 | INFO     | __main__:main:736 - Valid results: 525 / 525
+2026-02-26 11:35:45.051 | INFO     | __main__:main:820 - RWPE distinguishes: 342/525
+2026-02-26 11:35:45.052 | INFO     | __main__:main:821 - nRWPE(tanh) distinguishes: 349/525
+2026-02-26 11:35:45.053 | INFO     | __main__:main:822 - Off-diag nRWPE distinguishes: 525/525
+2026-02-26 11:35:45.054 | INFO     | __main__:main:823 - nRWPE-only pairs: 9
+2026-02-26 11:35:45.054 | INFO     | __main__:main:824 - RWPE-only pairs: 0
+2026-02-26 11:35:45.056 | INFO     | __main__:main:825 - Neither: 174
+2026-02-26 11:35:45.057 | INFO     | __main__:main:830 - ============================================================
+2026-02-26 11:35:45.057 | INFO     | __main__:main:831 - PHASE 2: Symbolic analysis on K_{1,4} vs C_4 ∪ K_1
+2026-02-26 11:35:45.058 | INFO     | __main__:main:832 - ============================================================
+2026-02-26 11:35:45.176 | INFO     | __main__:symbolic_analysis_k14_c4k1:316 - Starting symbolic analysis on K_{1,4} vs C_4 ∪ K_1
+2026-02-26 11:35:45.191 | INFO     | __main__:symbolic_analysis_k14_c4k1:344 - Cospectrality verified: True
+2026-02-26 11:35:45.195 | INFO     | __main__:symbolic_analysis_k14_c4k1:372 - RWPE diag k=2 match: False
+2026-02-26 11:35:45.209 | INFO     | __main__:symbolic_analysis_k14_c4k1:450 - Symbolic analysis completed
+2026-02-26 11:35:45.210 | INFO     | __main__:main:840 - Symbolic analysis completed in 0.2s
+2026-02-26 11:35:45.212 | INFO     | __main__:main:845 - ============================================================
+2026-02-26 11:35:45.213 | INFO     | __main__:main:846 - PHASE 3: Taylor expansion theory
+2026-02-26 11:35:45.214 | INFO     | __main__:main:847 - ============================================================
+2026-02-26 11:35:45.215 | INFO     | __main__:main:853 - ============================================================
+2026-02-26 11:35:45.216 | INFO     | __main__:main:854 - PHASE 4: nRWPE-only pair analysis
+2026-02-26 11:35:45.217 | INFO     | __main__:main:855 - ============================================================
+2026-02-26 11:35:45.218 | INFO     | __main__:main:858 - Found 9 nRWPE-only pairs!
+2026-02-26 11:35:45.219 | INFO     | __main__:main:870 - Best nRWPE-only pair: brec_cfi_12 (38 nodes)
+2026-02-26 11:35:45.221 | INFO     | __main__:main:894 - ============================================================
+2026-02-26 11:35:45.223 | INFO     | __main__:main:895 - PHASE 5: SRG analysis (Rook vs Shrikhande)
+2026-02-26 11:35:45.223 | INFO     | __main__:main:896 - ============================================================
+2026-02-26 11:35:45.225 | INFO     | __main__:srg_analysis:528 - Starting SRG analysis: Rook vs Shrikhande
+2026-02-26 11:35:45.243 | INFO     | __main__:srg_analysis:606 - Computing EDMD on SRG pair...
+2026-02-26 11:35:45.442 | INFO     | __main__:srg_analysis:628 - SRG analysis complete. Off-diag distinguishes: True
+2026-02-26 11:35:45.443 | INFO     | __main__:main:904 - SRG analysis completed in 0.2s
+2026-02-26 11:35:45.444 | INFO     | __main__:main:909 - ============================================================
+2026-02-26 11:35:45.445 | INFO     | __main__:main:910 - PHASE 6: EDMD analysis on small graph pairs
+2026-02-26 11:35:45.446 | INFO     | __main__:main:911 - ============================================================
+2026-02-26 11:35:45.447 | INFO     | __main__:main:917 - EDMD analysis on 329 small pairs (n<=30)
+2026-02-26 11:35:45.534 | INFO     | __main__:main:929 -   EDMD: 50/329 (0.1s)
+2026-02-26 11:37:13.518 | INFO     | __main__:main:929 -   EDMD: 100/329 (88.1s)
+2026-02-26 11:37:15.683 | INFO     | __main__:main:929 -   EDMD: 150/329 (90.2s)
+2026-02-26 11:45:44.099 | INFO     | __main__:main:929 -   EDMD: 200/329 (598.7s)
+2026-02-26 11:56:08.845 | INFO     | __main__:<module>:67 - Hardware: 4 CPUs, 32.0 GB RAM, No GPU
+2026-02-26 11:56:08.851 | INFO     | __main__:<module>:72 - RAM budget: 22.4 GB (virtual limit: 67.2 GB)
+2026-02-26 11:56:08.852 | INFO     | __main__:main:694 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-26 11:56:08.888 | INFO     | __main__:main:697 - Loaded 525 graph pairs
+2026-02-26 11:56:08.889 | INFO     | __main__:main:701 - Category counts: {'cospectral': 64, 'CSL': 59, 'strongly_regular': 2, 'BREC_Basic': 60, 'BREC_Regular': 50, 'BREC_Strongly_Regular': 50, 'BREC_Extension': 100, 'BREC_CFI': 100, 'BREC_4Vertex': 20, 'BREC_Distance_Regular': 20}
+2026-02-26 11:56:08.891 | INFO     | __main__:main:706 - ============================================================
+2026-02-26 11:56:08.892 | INFO     | __main__:main:707 - PHASE 1: Numerical survey on all 525 graph pairs
+2026-02-26 11:56:08.893 | INFO     | __main__:main:708 - ============================================================
+2026-02-26 11:56:08.894 | INFO     | __main__:main:716 - Processing 525 pairs with 3 workers
+2026-02-26 11:56:09.092 | INFO     | __main__:main:727 -   Processed 50/525 pairs (0.2s)
+2026-02-26 11:56:09.846 | INFO     | __main__:main:727 -   Processed 100/525 pairs (1.0s)
+2026-02-26 11:56:10.275 | INFO     | __main__:main:727 -   Processed 150/525 pairs (1.4s)
+2026-02-26 11:56:10.508 | INFO     | __main__:main:727 -   Processed 200/525 pairs (1.7s)
+2026-02-26 11:56:10.858 | INFO     | __main__:main:727 -   Processed 250/525 pairs (2.0s)
+2026-02-26 11:56:11.446 | INFO     | __main__:main:727 -   Processed 300/525 pairs (2.6s)
+2026-02-26 11:56:11.680 | INFO     | __main__:main:727 -   Processed 350/525 pairs (2.8s)
+2026-02-26 11:56:12.840 | INFO     | __main__:main:727 -   Processed 400/525 pairs (4.0s)
+2026-02-26 11:56:14.653 | INFO     | __main__:main:727 -   Processed 450/525 pairs (5.8s)
+2026-02-26 11:56:21.931 | INFO     | __main__:main:727 -   Processed 500/525 pairs (13.1s)
+2026-02-26 11:56:22.491 | INFO     | __main__:main:727 -   Processed 525/525 pairs (13.6s)
+2026-02-26 11:56:22.497 | INFO     | __main__:main:732 - Phase 1 completed in 13.6s
+2026-02-26 11:56:22.499 | INFO     | __main__:main:736 - Valid results: 525 / 525
+2026-02-26 11:56:22.502 | INFO     | __main__:main:820 - RWPE distinguishes: 342/525
+2026-02-26 11:56:22.508 | INFO     | __main__:main:821 - nRWPE(tanh) distinguishes: 349/525
+2026-02-26 11:56:22.509 | INFO     | __main__:main:822 - Off-diag nRWPE distinguishes: 525/525
+2026-02-26 11:56:22.510 | INFO     | __main__:main:823 - nRWPE-only pairs: 9
+2026-02-26 11:56:22.511 | INFO     | __main__:main:824 - RWPE-only pairs: 0
+2026-02-26 11:56:22.512 | INFO     | __main__:main:825 - Neither: 174
+2026-02-26 11:56:22.513 | INFO     | __main__:main:830 - ============================================================
+2026-02-26 11:56:22.514 | INFO     | __main__:main:831 - PHASE 2: Symbolic analysis on K_{1,4} vs C_4 ∪ K_1
+2026-02-26 11:56:22.515 | INFO     | __main__:main:832 - ============================================================
+2026-02-26 11:56:22.635 | INFO     | __main__:symbolic_analysis_k14_c4k1:316 - Starting symbolic analysis on K_{1,4} vs C_4 ∪ K_1
+2026-02-26 11:56:22.649 | INFO     | __main__:symbolic_analysis_k14_c4k1:344 - Cospectrality verified: True
+2026-02-26 11:56:22.654 | INFO     | __main__:symbolic_analysis_k14_c4k1:372 - RWPE diag k=2 match: False
+2026-02-26 11:56:22.668 | INFO     | __main__:symbolic_analysis_k14_c4k1:450 - Symbolic analysis completed
+2026-02-26 11:56:22.669 | INFO     | __main__:main:840 - Symbolic analysis completed in 0.2s
+2026-02-26 11:56:22.670 | INFO     | __main__:main:845 - ============================================================
+2026-02-26 11:56:22.671 | INFO     | __main__:main:846 - PHASE 3: Taylor expansion theory
+2026-02-26 11:56:22.672 | INFO     | __main__:main:847 - ============================================================
+2026-02-26 11:56:22.673 | INFO     | __main__:main:853 - ============================================================
+2026-02-26 11:56:22.673 | INFO     | __main__:main:854 - PHASE 4: nRWPE-only pair analysis
+2026-02-26 11:56:22.674 | INFO     | __main__:main:855 - ============================================================
+2026-02-26 11:56:22.675 | INFO     | __main__:main:858 - Found 9 nRWPE-only pairs!
+2026-02-26 11:56:22.676 | INFO     | __main__:main:870 - Best nRWPE-only pair: brec_cfi_12 (38 nodes)
+2026-02-26 11:56:22.677 | INFO     | __main__:main:894 - ============================================================
+2026-02-26 11:56:22.678 | INFO     | __main__:main:895 - PHASE 5: SRG analysis (Rook vs Shrikhande)
+2026-02-26 11:56:22.679 | INFO     | __main__:main:896 - ============================================================
+2026-02-26 11:56:22.679 | INFO     | __main__:srg_analysis:528 - Starting SRG analysis: Rook vs Shrikhande
+2026-02-26 11:56:22.699 | INFO     | __main__:srg_analysis:606 - Computing EDMD on SRG pair...
+2026-02-26 11:56:22.898 | INFO     | __main__:srg_analysis:628 - SRG analysis complete. Off-diag distinguishes: True
+2026-02-26 11:56:22.900 | INFO     | __main__:main:904 - SRG analysis completed in 0.2s
+2026-02-26 11:56:22.907 | INFO     | __main__:main:909 - ============================================================
+2026-02-26 11:56:22.908 | INFO     | __main__:main:910 - PHASE 6: EDMD analysis on small graph pairs
+2026-02-26 11:56:22.910 | INFO     | __main__:main:911 - ============================================================
+2026-02-26 11:56:22.912 | INFO     | __main__:main:917 - EDMD analysis on 288 small pairs (n<=16)
+2026-02-26 11:56:23.019 | INFO     | __main__:main:929 -   EDMD: 50/288 (0.1s)
+2026-02-26 11:57:53.051 | INFO     | __main__:main:929 -   EDMD: 100/288 (90.1s)
+2026-02-26 11:57:53.778 | INFO     | __main__:main:929 -   EDMD: 150/288 (90.9s)
+2026-02-26 11:57:54.812 | INFO     | __main__:main:929 -   EDMD: 200/288 (91.9s)
+2026-02-26 11:57:56.896 | INFO     | __main__:main:929 -   EDMD: 250/288 (94.0s)
+2026-02-26 11:58:22.317 | INFO     | __main__:main:929 -   EDMD: 288/288 (119.4s)
+2026-02-26 11:58:22.323 | INFO     | __main__:main:942 - EDMD analysis completed in 119.4s
+2026-02-26 11:58:22.324 | INFO     | __main__:main:943 - EDMD distinguishes: 286/288 pairs
+2026-02-26 11:58:22.326 | INFO     | __main__:main:949 - ============================================================
+2026-02-26 11:58:22.327 | INFO     | __main__:main:950 - Compiling final output (total time: 133.5s)
+2026-02-26 11:58:22.328 | INFO     | __main__:main:951 - ============================================================
+2026-02-26 11:58:22.390 | INFO     | __main__:main:1062 - Saved output to /workspace/runs/run__20260226_110200/3_invention_loop/iter_6/gen_art/exp_id1_it6__opus/method_out.json
+2026-02-26 11:58:22.393 | INFO     | __main__:main:1066 - Output file size: 8.53 MB
+2026-02-26 11:58:22.393 | INFO     | __main__:main:1068 - ============================================================
+2026-02-26 11:58:22.394 | INFO     | __main__:main:1069 - EXPERIMENT COMPLETE
+2026-02-26 11:58:22.395 | INFO     | __main__:main:1070 - ============================================================
+2026-02-26 11:58:22.397 | INFO     | __main__:main:1072 -   1. nRWPE IS spectrally invariant, correcting the original hypothesis claim
+2026-02-26 11:58:22.398 | INFO     | __main__:main:1072 -   2. nRWPE captures entrywise-power invariants S_{2p}(i) beyond RWPE's matrix-power diagonals
+2026-02-26 11:58:22.399 | INFO     | __main__:main:1072 -   3. nRWPE-only pairs found: 9 (pairs where nRWPE distinguishes but RWPE does not)
+2026-02-26 11:58:22.400 | INFO     | __main__:main:1072 -   4. RWPE distinguishes 342/525 pairs
+2026-02-26 11:58:22.408 | INFO     | __main__:main:1072 -   5. nRWPE(tanh) distinguishes 349/525 pairs
+2026-02-26 11:58:22.409 | INFO     | __main__:main:1072 -   6. Off-diagonal nRWPE distinguishes 525/525 pairs
+2026-02-26 11:58:22.410 | INFO     | __main__:main:1072 -   7. EDMD distinguishes 286/288 analyzed pairs
+2026-02-26 11:58:22.412 | INFO     | __main__:main:1072 -   8. SRG pairs (Rook vs Shrikhande) defeat both RWPE and nRWPE via equitable partition collapse
+2026-02-26 11:58:22.413 | INFO     | __main__:main:1072 -   9. Total computation time: 133.5s

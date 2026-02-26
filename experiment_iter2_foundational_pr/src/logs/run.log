@@ -1,0 +1,333 @@
+2026-02-25 03:45:17.387 | INFO     | method:<module>:80 - Hardware: 4 CPUs, 32.0 GB RAM, budget=22.4 GB
+2026-02-25 03:45:28.443 | INFO     | method:<module>:80 - Hardware: 4 CPUs, 32.0 GB RAM, budget=22.4 GB
+2026-02-25 03:45:28.444 | INFO     | method:main:1362 - ======================================================================
+2026-02-25 03:45:28.445 | INFO     | method:main:1363 - KW-PE Foundational Property Analysis — Starting
+2026-02-25 03:45:28.446 | INFO     | method:main:1364 - ======================================================================
+2026-02-25 03:45:28.448 | INFO     | method:load_dataset:126 - Loading data from mini_data_out.json
+2026-02-25 03:45:28.452 | INFO     | method:load_dataset:131 - Loaded 3 examples
+2026-02-25 03:45:28.453 | INFO     | method:select_representative_graphs:187 - Selected 6 representative graphs across 1 categories
+2026-02-25 03:45:28.454 | INFO     | method:main:1371 - ==================================================
+2026-02-25 03:45:28.455 | INFO     | method:main:1372 - PHASE 1: Convergence Analysis
+2026-02-25 03:45:28.457 | INFO     | method:run_convergence_analysis:706 - Starting convergence analysis...
+2026-02-25 03:45:28.491 | INFO     | method:run_convergence_analysis:760 - Convergence analysis done in 0.0s (18 results)
+2026-02-25 03:45:28.502 | INFO     | method:main:1377 - ==================================================
+2026-02-25 03:45:28.508 | INFO     | method:main:1378 - PHASE 2: Sign Canonicality Analysis
+2026-02-25 03:45:28.509 | INFO     | method:run_sign_canonicality:897 - Starting sign canonicality analysis...
+2026-02-25 03:45:28.838 | INFO     | method:run_sign_canonicality:953 - Sign canonicality analysis done in 0.3s (9 results)
+2026-02-25 03:45:28.848 | INFO     | method:main:1383 - ==================================================
+2026-02-25 03:45:28.850 | INFO     | method:main:1384 - PHASE 3: Computational Cost Benchmarking
+2026-02-25 03:45:28.914 | INFO     | method:generate_synthetic_graphs:1004 - Generated 4 synthetic graphs for benchmarking
+2026-02-25 03:45:28.916 | INFO     | method:run_computational_benchmark:1073 - Starting computational benchmarking...
+2026-02-25 03:45:42.826 | INFO     | method:run_computational_benchmark:1147 - Computational benchmarking done in 13.9s
+2026-02-25 03:45:42.847 | INFO     | method:main:1390 - ==================================================
+2026-02-25 03:45:42.848 | INFO     | method:main:1391 - PHASE 4: EDMD Stability Analysis
+2026-02-25 03:45:42.849 | INFO     | method:run_stability_analysis:1252 - Starting EDMD stability analysis...
+2026-02-25 03:45:42.990 | INFO     | method:run_stability_analysis:1314 - Stability analysis done in 0.1s (6 results)
+2026-02-25 03:45:43.004 | INFO     | method:main:1396 - ==================================================
+2026-02-25 03:45:43.009 | INFO     | method:main:1397 - PHASE 5: Distinguishing Test on ALL pairs
+2026-02-25 03:45:43.044 | INFO     | method:main:1447 - Distinguishing test done in 0.0s
+2026-02-25 03:45:43.045 | INFO     | method:main:1479 - Results: KW-PE distinguished 3/3, RWPE distinguished 3/3
+2026-02-25 03:45:43.045 | INFO     | method:main:1481 - Cospectral: KW-PE 3/3, RWPE 3/3
+2026-02-25 03:45:43.046 | INFO     | method:main:1485 - ==================================================
+2026-02-25 03:45:43.047 | INFO     | method:main:1486 - PHASE 6: Assembling output
+2026-02-25 03:45:43.063 | INFO     | method:main:1597 - Saved /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/method_out.json (0.1 MB)
+2026-02-25 03:45:43.064 | INFO     | method:main:1600 - ======================================================================
+2026-02-25 03:45:43.065 | INFO     | method:main:1601 - KW-PE Foundational Property Analysis — COMPLETE (14.6s)
+2026-02-25 03:45:43.066 | INFO     | method:main:1602 -   Pairs processed: 3/3
+2026-02-25 03:45:43.067 | INFO     | method:main:1603 -   KW-PE distinguished: 3
+2026-02-25 03:45:43.068 | INFO     | method:main:1604 -   RWPE distinguished: 3
+2026-02-25 03:45:43.069 | INFO     | method:main:1605 - ======================================================================
+2026-02-25 03:45:54.353 | INFO     | method:<module>:80 - Hardware: 4 CPUs, 32.0 GB RAM, budget=22.4 GB
+2026-02-25 03:45:54.355 | INFO     | method:main:1362 - ======================================================================
+2026-02-25 03:45:54.357 | INFO     | method:main:1363 - KW-PE Foundational Property Analysis — Starting
+2026-02-25 03:45:54.358 | INFO     | method:main:1364 - ======================================================================
+2026-02-25 03:45:54.360 | INFO     | method:load_dataset:126 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-25 03:45:54.380 | INFO     | method:load_dataset:131 - Loaded 10 examples
+2026-02-25 03:45:54.382 | INFO     | method:select_representative_graphs:187 - Selected 6 representative graphs across 1 categories
+2026-02-25 03:45:54.383 | INFO     | method:main:1371 - ==================================================
+2026-02-25 03:45:54.385 | INFO     | method:main:1372 - PHASE 1: Convergence Analysis
+2026-02-25 03:45:54.386 | INFO     | method:run_convergence_analysis:706 - Starting convergence analysis...
+2026-02-25 03:45:54.435 | INFO     | method:run_convergence_analysis:760 - Convergence analysis done in 0.0s (18 results)
+2026-02-25 03:45:54.446 | INFO     | method:main:1377 - ==================================================
+2026-02-25 03:45:54.448 | INFO     | method:main:1378 - PHASE 2: Sign Canonicality Analysis
+2026-02-25 03:45:54.449 | INFO     | method:run_sign_canonicality:897 - Starting sign canonicality analysis...
+2026-02-25 03:45:56.462 | INFO     | method:run_sign_canonicality:953 - Sign canonicality analysis done in 2.0s (30 results)
+2026-02-25 03:45:56.471 | INFO     | method:main:1383 - ==================================================
+2026-02-25 03:45:56.472 | INFO     | method:main:1384 - PHASE 3: Computational Cost Benchmarking
+2026-02-25 03:45:56.540 | INFO     | method:generate_synthetic_graphs:1004 - Generated 6 synthetic graphs for benchmarking
+2026-02-25 03:45:56.541 | INFO     | method:run_computational_benchmark:1073 - Starting computational benchmarking...
+2026-02-25 03:47:06.405 | INFO     | method:run_computational_benchmark:1147 - Computational benchmarking done in 69.9s
+2026-02-25 03:47:06.433 | INFO     | method:main:1390 - ==================================================
+2026-02-25 03:47:06.434 | INFO     | method:main:1391 - PHASE 4: EDMD Stability Analysis
+2026-02-25 03:47:06.436 | INFO     | method:run_stability_analysis:1252 - Starting EDMD stability analysis...
+2026-02-25 03:47:06.649 | INFO     | method:run_stability_analysis:1314 - Stability analysis done in 0.2s (6 results)
+2026-02-25 03:47:06.680 | INFO     | method:main:1396 - ==================================================
+2026-02-25 03:47:06.682 | INFO     | method:main:1397 - PHASE 5: Distinguishing Test on ALL pairs
+2026-02-25 03:47:06.759 | INFO     | method:main:1447 - Distinguishing test done in 0.1s
+2026-02-25 03:47:06.760 | INFO     | method:main:1479 - Results: KW-PE distinguished 10/10, RWPE distinguished 10/10
+2026-02-25 03:47:06.761 | INFO     | method:main:1481 - Cospectral: KW-PE 10/10, RWPE 10/10
+2026-02-25 03:47:06.762 | INFO     | method:main:1485 - ==================================================
+2026-02-25 03:47:06.763 | INFO     | method:main:1486 - PHASE 6: Assembling output
+2026-02-25 03:47:06.780 | INFO     | method:main:1597 - Saved /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/method_out.json (0.1 MB)
+2026-02-25 03:47:06.781 | INFO     | method:main:1600 - ======================================================================
+2026-02-25 03:47:06.782 | INFO     | method:main:1601 - KW-PE Foundational Property Analysis — COMPLETE (72.4s)
+2026-02-25 03:47:06.783 | INFO     | method:main:1602 -   Pairs processed: 10/10
+2026-02-25 03:47:06.784 | INFO     | method:main:1603 -   KW-PE distinguished: 10
+2026-02-25 03:47:06.786 | INFO     | method:main:1604 -   RWPE distinguished: 10
+2026-02-25 03:47:06.788 | INFO     | method:main:1605 - ======================================================================
+2026-02-25 03:48:44.722 | INFO     | method:<module>:80 - Hardware: 4 CPUs, 32.0 GB RAM, budget=22.4 GB
+2026-02-25 03:49:03.068 | INFO     | method:<module>:80 - Hardware: 4 CPUs, 32.0 GB RAM, budget=22.4 GB
+2026-02-25 03:49:03.069 | INFO     | method:main:1396 - ======================================================================
+2026-02-25 03:49:03.071 | INFO     | method:main:1397 - KW-PE Foundational Property Analysis — Starting
+2026-02-25 03:49:03.072 | INFO     | method:main:1398 - ======================================================================
+2026-02-25 03:49:03.073 | INFO     | method:load_dataset:126 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-25 03:49:03.110 | INFO     | method:load_dataset:131 - Loaded 50 examples
+2026-02-25 03:49:03.112 | INFO     | method:select_representative_graphs:187 - Selected 6 representative graphs across 1 categories
+2026-02-25 03:49:03.113 | INFO     | method:main:1405 - ==================================================
+2026-02-25 03:49:03.114 | INFO     | method:main:1406 - PHASE 1: Convergence Analysis
+2026-02-25 03:49:03.115 | INFO     | method:run_convergence_analysis:740 - Starting convergence analysis...
+2026-02-25 03:49:03.165 | INFO     | method:run_convergence_analysis:794 - Convergence analysis done in 0.0s (18 results)
+2026-02-25 03:49:03.179 | INFO     | method:main:1411 - ==================================================
+2026-02-25 03:49:03.180 | INFO     | method:main:1412 - PHASE 2: Sign Canonicality Analysis
+2026-02-25 03:49:03.181 | INFO     | method:run_sign_canonicality:931 - Starting sign canonicality analysis...
+2026-02-25 03:49:04.252 | INFO     | method:run_sign_canonicality:987 - Sign canonicality analysis done in 1.1s (30 results)
+2026-02-25 03:49:04.261 | INFO     | method:main:1417 - ==================================================
+2026-02-25 03:49:04.263 | INFO     | method:main:1418 - PHASE 3: Computational Cost Benchmarking
+2026-02-25 03:49:04.342 | INFO     | method:generate_synthetic_graphs:1038 - Generated 8 synthetic graphs for benchmarking
+2026-02-25 03:49:04.343 | INFO     | method:run_computational_benchmark:1107 - Starting computational benchmarking...
+2026-02-25 03:49:17.294 | INFO     | method:run_computational_benchmark:1181 - Computational benchmarking done in 12.9s
+2026-02-25 03:49:17.361 | INFO     | method:main:1424 - ==================================================
+2026-02-25 03:49:17.362 | INFO     | method:main:1425 - PHASE 4: EDMD Stability Analysis
+2026-02-25 03:49:17.363 | INFO     | method:run_stability_analysis:1286 - Starting EDMD stability analysis...
+2026-02-25 03:49:17.507 | INFO     | method:run_stability_analysis:1348 - Stability analysis done in 0.1s (6 results)
+2026-02-25 03:49:17.524 | INFO     | method:main:1430 - ==================================================
+2026-02-25 03:49:17.526 | INFO     | method:main:1431 - PHASE 5: Distinguishing Test on ALL pairs
+2026-02-25 03:49:17.638 | INFO     | method:main:1475 -   Processed 50/50 pairs...
+2026-02-25 03:49:17.645 | INFO     | method:main:1481 - Distinguishing test done in 0.1s
+2026-02-25 03:49:17.646 | INFO     | method:main:1513 - Results: KW-PE distinguished 50/50, RWPE distinguished 50/50
+2026-02-25 03:49:17.647 | INFO     | method:main:1515 - Cospectral: KW-PE 50/50, RWPE 50/50
+2026-02-25 03:49:17.648 | INFO     | method:main:1519 - ==================================================
+2026-02-25 03:49:17.649 | INFO     | method:main:1520 - PHASE 6: Assembling output
+2026-02-25 03:49:17.669 | INFO     | method:main:1631 - Saved /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/method_out.json (0.2 MB)
+2026-02-25 03:49:17.670 | INFO     | method:main:1634 - ======================================================================
+2026-02-25 03:49:17.671 | INFO     | method:main:1635 - KW-PE Foundational Property Analysis — COMPLETE (14.6s)
+2026-02-25 03:49:17.672 | INFO     | method:main:1636 -   Pairs processed: 50/50
+2026-02-25 03:49:17.673 | INFO     | method:main:1637 -   KW-PE distinguished: 50
+2026-02-25 03:49:17.675 | INFO     | method:main:1638 -   RWPE distinguished: 50
+2026-02-25 03:49:17.677 | INFO     | method:main:1639 - ======================================================================
+2026-02-25 03:49:31.755 | INFO     | method:<module>:80 - Hardware: 4 CPUs, 32.0 GB RAM, budget=22.4 GB
+2026-02-25 03:49:31.757 | INFO     | method:main:1396 - ======================================================================
+2026-02-25 03:49:31.758 | INFO     | method:main:1397 - KW-PE Foundational Property Analysis — Starting
+2026-02-25 03:49:31.759 | INFO     | method:main:1398 - ======================================================================
+2026-02-25 03:49:31.761 | INFO     | method:load_dataset:126 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-25 03:49:31.780 | INFO     | method:load_dataset:131 - Loaded 200 examples
+2026-02-25 03:49:31.800 | INFO     | method:select_representative_graphs:187 - Selected 28 representative graphs across 5 categories
+2026-02-25 03:49:31.807 | INFO     | method:main:1405 - ==================================================
+2026-02-25 03:49:31.809 | INFO     | method:main:1406 - PHASE 1: Convergence Analysis
+2026-02-25 03:49:31.812 | INFO     | method:run_convergence_analysis:740 - Starting convergence analysis...
+2026-02-25 03:49:32.194 | INFO     | method:run_convergence_analysis:794 - Convergence analysis done in 0.4s (60 results)
+2026-02-25 03:49:32.210 | INFO     | method:main:1411 - ==================================================
+2026-02-25 03:49:32.212 | INFO     | method:main:1412 - PHASE 2: Sign Canonicality Analysis
+2026-02-25 03:49:32.213 | INFO     | method:run_sign_canonicality:931 - Starting sign canonicality analysis...
+2026-02-25 03:49:33.614 | INFO     | method:run_sign_canonicality:987 - Sign canonicality analysis done in 1.4s (30 results)
+2026-02-25 03:49:33.626 | INFO     | method:main:1417 - ==================================================
+2026-02-25 03:49:33.627 | INFO     | method:main:1418 - PHASE 3: Computational Cost Benchmarking
+2026-02-25 03:49:33.736 | INFO     | method:generate_synthetic_graphs:1038 - Generated 10 synthetic graphs for benchmarking
+2026-02-25 03:49:33.737 | INFO     | method:run_computational_benchmark:1107 - Starting computational benchmarking...
+2026-02-25 03:50:08.433 | INFO     | method:run_computational_benchmark:1181 - Computational benchmarking done in 34.7s
+2026-02-25 03:50:08.546 | INFO     | method:main:1424 - ==================================================
+2026-02-25 03:50:08.547 | INFO     | method:main:1425 - PHASE 4: EDMD Stability Analysis
+2026-02-25 03:50:08.548 | INFO     | method:run_stability_analysis:1286 - Starting EDMD stability analysis...
+2026-02-25 03:55:38.841 | INFO     | method:run_stability_analysis:1348 - Stability analysis done in 330.3s (15 results)
+2026-02-25 03:55:38.860 | INFO     | method:main:1430 - ==================================================
+2026-02-25 03:55:38.863 | INFO     | method:main:1431 - PHASE 5: Distinguishing Test on ALL pairs
+2026-02-25 03:55:39.013 | INFO     | method:main:1475 -   Processed 50/200 pairs...
+2026-02-25 04:04:46.378 | INFO     | method:main:1475 -   Processed 100/200 pairs...
+2026-02-25 04:06:59.839 | INFO     | method:main:1475 -   Processed 150/200 pairs...
+2026-02-25 04:07:02.246 | INFO     | method:main:1475 -   Processed 200/200 pairs...
+2026-02-25 04:07:02.266 | INFO     | method:main:1481 - Distinguishing test done in 683.4s
+2026-02-25 04:07:02.268 | INFO     | method:main:1513 - Results: KW-PE distinguished 200/200, RWPE distinguished 198/200
+2026-02-25 04:07:02.269 | INFO     | method:main:1515 - Cospectral: KW-PE 66/66, RWPE 64/66
+2026-02-25 04:07:02.270 | INFO     | method:main:1519 - ==================================================
+2026-02-25 04:07:02.272 | INFO     | method:main:1520 - PHASE 6: Assembling output
+2026-02-25 04:07:02.308 | INFO     | method:main:1631 - Saved /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/method_out.json (1.2 MB)
+2026-02-25 04:07:02.309 | INFO     | method:main:1634 - ======================================================================
+2026-02-25 04:07:02.310 | INFO     | method:main:1635 - KW-PE Foundational Property Analysis — COMPLETE (1050.6s)
+2026-02-25 04:07:02.311 | INFO     | method:main:1636 -   Pairs processed: 200/200
+2026-02-25 04:07:02.313 | INFO     | method:main:1637 -   KW-PE distinguished: 200
+2026-02-25 04:07:02.314 | INFO     | method:main:1638 -   RWPE distinguished: 198
+2026-02-25 04:07:02.315 | INFO     | method:main:1639 - ======================================================================
+2026-02-25 04:09:37.199 | INFO     | method:<module>:80 - Hardware: 4 CPUs, 32.0 GB RAM, budget=22.4 GB
+2026-02-25 04:10:12.827 | INFO     | method:<module>:80 - Hardware: 4 CPUs, 32.0 GB RAM, budget=22.4 GB
+2026-02-25 04:21:16.739 | INFO     | method:<module>:80 - Hardware: 4 CPUs, 32.0 GB RAM, budget=22.4 GB
+2026-02-25 04:21:16.741 | INFO     | method:main:1387 - ======================================================================
+2026-02-25 04:21:16.742 | INFO     | method:main:1388 - KW-PE Foundational Property Analysis — Starting
+2026-02-25 04:21:16.743 | INFO     | method:main:1389 - ======================================================================
+2026-02-25 04:21:16.744 | INFO     | method:load_dataset:126 - Loading data from mini_data_out.json
+2026-02-25 04:21:16.756 | INFO     | method:load_dataset:131 - Loaded 3 examples
+2026-02-25 04:21:16.757 | INFO     | method:select_representative_graphs:187 - Selected 6 representative graphs across 1 categories
+2026-02-25 04:21:16.758 | INFO     | method:main:1396 - ==================================================
+2026-02-25 04:21:16.759 | INFO     | method:main:1397 - PHASE 1: Convergence Analysis
+2026-02-25 04:21:16.760 | INFO     | method:run_convergence_analysis:740 - Starting convergence analysis...
+2026-02-25 04:21:16.793 | INFO     | method:run_convergence_analysis:791 - Convergence analysis done in 0.0s (18 results)
+2026-02-25 04:21:16.803 | INFO     | method:main:1402 - ==================================================
+2026-02-25 04:21:16.807 | INFO     | method:main:1403 - PHASE 2: Sign Canonicality Analysis
+2026-02-25 04:21:16.808 | INFO     | method:run_sign_canonicality:928 - Starting sign canonicality analysis...
+2026-02-25 04:21:16.949 | INFO     | method:run_sign_canonicality:981 - Sign canonicality analysis done in 0.1s (9 results)
+2026-02-25 04:21:16.957 | INFO     | method:main:1408 - ==================================================
+2026-02-25 04:21:16.958 | INFO     | method:main:1409 - PHASE 3: Computational Cost Benchmarking
+2026-02-25 04:21:17.021 | INFO     | method:generate_synthetic_graphs:1032 - Generated 4 synthetic graphs for benchmarking
+2026-02-25 04:21:17.023 | INFO     | method:run_computational_benchmark:1101 - Starting computational benchmarking...
+2026-02-25 04:21:19.414 | INFO     | method:run_computational_benchmark:1175 - Computational benchmarking done in 2.4s
+2026-02-25 04:21:19.432 | INFO     | method:main:1415 - ==================================================
+2026-02-25 04:21:19.434 | INFO     | method:main:1416 - PHASE 4: EDMD Stability Analysis
+2026-02-25 04:21:19.435 | INFO     | method:run_stability_analysis:1280 - Starting EDMD stability analysis...
+2026-02-25 04:21:19.546 | INFO     | method:run_stability_analysis:1339 - Stability analysis done in 0.1s (6 results)
+2026-02-25 04:21:19.554 | INFO     | method:main:1421 - ==================================================
+2026-02-25 04:21:19.555 | INFO     | method:main:1422 - PHASE 5: Distinguishing Test on ALL pairs
+2026-02-25 04:21:19.568 | INFO     | method:main:1462 - Distinguishing test done in 0.0s
+2026-02-25 04:21:19.569 | INFO     | method:main:1494 - Results: KW-PE distinguished 3/3, RWPE distinguished 3/3
+2026-02-25 04:21:19.571 | INFO     | method:main:1496 - Cospectral: KW-PE 3/3, RWPE 3/3
+2026-02-25 04:21:19.572 | INFO     | method:main:1500 - ==================================================
+2026-02-25 04:21:19.573 | INFO     | method:main:1501 - PHASE 6: Assembling output
+2026-02-25 04:21:19.589 | INFO     | method:main:1612 - Saved /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/method_out.json (0.1 MB)
+2026-02-25 04:21:19.590 | INFO     | method:main:1615 - ======================================================================
+2026-02-25 04:21:19.591 | INFO     | method:main:1616 - KW-PE Foundational Property Analysis — COMPLETE (2.8s)
+2026-02-25 04:21:19.592 | INFO     | method:main:1617 -   Pairs processed: 3/3
+2026-02-25 04:21:19.593 | INFO     | method:main:1618 -   KW-PE distinguished: 3
+2026-02-25 04:21:19.594 | INFO     | method:main:1619 -   RWPE distinguished: 3
+2026-02-25 04:21:19.596 | INFO     | method:main:1620 - ======================================================================
+2026-02-25 04:21:26.140 | INFO     | method:<module>:80 - Hardware: 4 CPUs, 32.0 GB RAM, budget=22.4 GB
+2026-02-25 04:21:26.142 | INFO     | method:main:1387 - ======================================================================
+2026-02-25 04:21:26.143 | INFO     | method:main:1388 - KW-PE Foundational Property Analysis — Starting
+2026-02-25 04:21:26.144 | INFO     | method:main:1389 - ======================================================================
+2026-02-25 04:21:26.146 | INFO     | method:load_dataset:126 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-25 04:21:26.198 | INFO     | method:load_dataset:131 - Loaded 525 examples
+2026-02-25 04:21:26.333 | INFO     | method:select_representative_graphs:187 - Selected 58 representative graphs across 10 categories
+2026-02-25 04:21:26.334 | INFO     | method:main:1396 - ==================================================
+2026-02-25 04:21:26.336 | INFO     | method:main:1397 - PHASE 1: Convergence Analysis
+2026-02-25 04:21:26.337 | INFO     | method:run_convergence_analysis:740 - Starting convergence analysis...
+2026-02-25 04:21:27.162 | INFO     | method:run_convergence_analysis:791 - Convergence analysis done in 0.8s (60 results)
+2026-02-25 04:21:27.187 | INFO     | method:main:1402 - ==================================================
+2026-02-25 04:21:27.188 | INFO     | method:main:1403 - PHASE 2: Sign Canonicality Analysis
+2026-02-25 04:21:27.189 | INFO     | method:run_sign_canonicality:928 - Starting sign canonicality analysis...
+2026-02-25 04:21:31.810 | INFO     | method:run_sign_canonicality:981 - Sign canonicality analysis done in 4.6s (30 results)
+2026-02-25 04:21:31.835 | INFO     | method:main:1408 - ==================================================
+2026-02-25 04:21:31.837 | INFO     | method:main:1409 - PHASE 3: Computational Cost Benchmarking
+2026-02-25 04:21:31.934 | INFO     | method:generate_synthetic_graphs:1032 - Generated 10 synthetic graphs for benchmarking
+2026-02-25 04:21:31.935 | INFO     | method:run_computational_benchmark:1101 - Starting computational benchmarking...
+2026-02-25 04:22:00.249 | INFO     | method:run_computational_benchmark:1175 - Computational benchmarking done in 28.3s
+2026-02-25 04:22:00.356 | INFO     | method:main:1415 - ==================================================
+2026-02-25 04:22:00.357 | INFO     | method:main:1416 - PHASE 4: EDMD Stability Analysis
+2026-02-25 04:22:00.359 | INFO     | method:run_stability_analysis:1280 - Starting EDMD stability analysis...
+2026-02-25 04:22:17.180 | INFO     | method:run_stability_analysis:1339 - Stability analysis done in 16.8s (15 results)
+2026-02-25 04:22:17.220 | INFO     | method:main:1421 - ==================================================
+2026-02-25 04:22:17.222 | INFO     | method:main:1422 - PHASE 5: Distinguishing Test on ALL pairs
+2026-02-25 04:22:17.450 | INFO     | method:main:1456 -   Processed 50/525 pairs...
+2026-02-25 04:22:43.608 | INFO     | method:main:1456 -   Processed 100/525 pairs...
+2026-02-25 04:22:50.790 | INFO     | method:main:1456 -   Processed 150/525 pairs...
+2026-02-25 04:22:51.315 | INFO     | method:main:1456 -   Processed 200/525 pairs...
+2026-02-25 04:22:53.698 | INFO     | method:main:1456 -   Processed 250/525 pairs...
+2026-02-25 04:23:06.984 | INFO     | method:main:1456 -   Processed 300/525 pairs...
+2026-02-25 04:23:07.485 | INFO     | method:main:1456 -   Processed 350/525 pairs...
+2026-02-25 04:23:31.239 | INFO     | method:main:1456 -   Processed 400/525 pairs...
+2026-02-25 04:24:53.137 | INFO     | method:main:1456 -   Processed 450/525 pairs...
+2026-02-25 04:26:24.069 | INFO     | method:main:1456 -   Processed 500/525 pairs...
+2026-02-25 04:26:48.498 | INFO     | method:main:1462 - Distinguishing test done in 271.3s
+2026-02-25 04:26:48.500 | INFO     | method:main:1494 - Results: KW-PE distinguished 525/525, RWPE distinguished 338/525
+2026-02-25 04:26:48.507 | INFO     | method:main:1496 - Cospectral: KW-PE 148/148, RWPE 66/148
+2026-02-25 04:26:48.508 | INFO     | method:main:1500 - ==================================================
+2026-02-25 04:26:48.509 | INFO     | method:main:1501 - PHASE 6: Assembling output
+2026-02-25 04:26:48.570 | INFO     | method:main:1612 - Saved /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/method_out.json (8.6 MB)
+2026-02-25 04:26:48.571 | INFO     | method:main:1615 - ======================================================================
+2026-02-25 04:26:48.572 | INFO     | method:main:1616 - KW-PE Foundational Property Analysis — COMPLETE (322.4s)
+2026-02-25 04:26:48.573 | INFO     | method:main:1617 -   Pairs processed: 525/525
+2026-02-25 04:26:48.574 | INFO     | method:main:1618 -   KW-PE distinguished: 525
+2026-02-25 04:26:48.576 | INFO     | method:main:1619 -   RWPE distinguished: 338
+2026-02-25 04:26:48.577 | INFO     | method:main:1620 - ======================================================================
+2026-02-25 04:28:39.300 | INFO     | method:<module>:80 - Hardware: 4 CPUs, 32.0 GB RAM, budget=22.4 GB
+2026-02-25 04:28:39.308 | INFO     | method:main:1387 - ======================================================================
+2026-02-25 04:28:39.309 | INFO     | method:main:1388 - KW-PE Foundational Property Analysis — Starting
+2026-02-25 04:28:39.310 | INFO     | method:main:1389 - ======================================================================
+2026-02-25 04:28:39.311 | INFO     | method:load_dataset:126 - Loading data from mini_data_out.json
+2026-02-25 04:28:39.316 | INFO     | method:load_dataset:131 - Loaded 3 examples
+2026-02-25 04:28:39.317 | INFO     | method:select_representative_graphs:187 - Selected 6 representative graphs across 1 categories
+2026-02-25 04:28:39.318 | INFO     | method:main:1396 - ==================================================
+2026-02-25 04:28:39.319 | INFO     | method:main:1397 - PHASE 1: Convergence Analysis
+2026-02-25 04:28:39.321 | INFO     | method:run_convergence_analysis:740 - Starting convergence analysis...
+2026-02-25 04:28:39.354 | INFO     | method:run_convergence_analysis:791 - Convergence analysis done in 0.0s (18 results)
+2026-02-25 04:28:39.363 | INFO     | method:main:1402 - ==================================================
+2026-02-25 04:28:39.364 | INFO     | method:main:1403 - PHASE 2: Sign Canonicality Analysis
+2026-02-25 04:28:39.365 | INFO     | method:run_sign_canonicality:928 - Starting sign canonicality analysis...
+2026-02-25 04:28:39.508 | INFO     | method:run_sign_canonicality:981 - Sign canonicality analysis done in 0.1s (9 results)
+2026-02-25 04:28:39.517 | INFO     | method:main:1408 - ==================================================
+2026-02-25 04:28:39.518 | INFO     | method:main:1409 - PHASE 3: Computational Cost Benchmarking
+2026-02-25 04:28:39.577 | INFO     | method:generate_synthetic_graphs:1032 - Generated 4 synthetic graphs for benchmarking
+2026-02-25 04:28:39.578 | INFO     | method:run_computational_benchmark:1101 - Starting computational benchmarking...
+2026-02-25 04:28:41.461 | INFO     | method:run_computational_benchmark:1175 - Computational benchmarking done in 1.9s
+2026-02-25 04:28:41.478 | INFO     | method:main:1415 - ==================================================
+2026-02-25 04:28:41.480 | INFO     | method:main:1416 - PHASE 4: EDMD Stability Analysis
+2026-02-25 04:28:41.481 | INFO     | method:run_stability_analysis:1280 - Starting EDMD stability analysis...
+2026-02-25 04:28:41.568 | INFO     | method:run_stability_analysis:1339 - Stability analysis done in 0.1s (6 results)
+2026-02-25 04:28:41.583 | INFO     | method:main:1421 - ==================================================
+2026-02-25 04:28:41.584 | INFO     | method:main:1422 - PHASE 5: Distinguishing Test on ALL pairs
+2026-02-25 04:28:41.596 | INFO     | method:main:1462 - Distinguishing test done in 0.0s
+2026-02-25 04:28:41.598 | INFO     | method:main:1494 - Results: KW-PE distinguished 3/3, RWPE distinguished 3/3
+2026-02-25 04:28:41.599 | INFO     | method:main:1496 - Cospectral: KW-PE 3/3, RWPE 3/3
+2026-02-25 04:28:41.606 | INFO     | method:main:1500 - ==================================================
+2026-02-25 04:28:41.608 | INFO     | method:main:1501 - PHASE 6: Assembling output
+2026-02-25 04:28:41.623 | INFO     | method:main:1612 - Saved /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/method_out.json (0.1 MB)
+2026-02-25 04:28:41.624 | INFO     | method:main:1615 - ======================================================================
+2026-02-25 04:28:41.626 | INFO     | method:main:1616 - KW-PE Foundational Property Analysis — COMPLETE (2.3s)
+2026-02-25 04:28:41.627 | INFO     | method:main:1617 -   Pairs processed: 3/3
+2026-02-25 04:28:41.628 | INFO     | method:main:1618 -   KW-PE distinguished: 3
+2026-02-25 04:28:41.629 | INFO     | method:main:1619 -   RWPE distinguished: 3
+2026-02-25 04:28:41.631 | INFO     | method:main:1620 - ======================================================================
+2026-02-25 04:28:54.750 | INFO     | method:<module>:80 - Hardware: 4 CPUs, 32.0 GB RAM, budget=22.4 GB
+2026-02-25 04:28:54.751 | INFO     | method:main:1387 - ======================================================================
+2026-02-25 04:28:54.752 | INFO     | method:main:1388 - KW-PE Foundational Property Analysis — Starting
+2026-02-25 04:28:54.754 | INFO     | method:main:1389 - ======================================================================
+2026-02-25 04:28:54.754 | INFO     | method:load_dataset:126 - Loading data from /workspace/runs/run__20260225_014759/3_invention_loop/iter_1/gen_art/data_id2_it1__opus/full_data_out.json
+2026-02-25 04:28:54.789 | INFO     | method:load_dataset:131 - Loaded 525 examples
+2026-02-25 04:28:54.898 | INFO     | method:select_representative_graphs:187 - Selected 58 representative graphs across 10 categories
+2026-02-25 04:28:54.899 | INFO     | method:main:1396 - ==================================================
+2026-02-25 04:28:54.907 | INFO     | method:main:1397 - PHASE 1: Convergence Analysis
+2026-02-25 04:28:54.908 | INFO     | method:run_convergence_analysis:740 - Starting convergence analysis...
+2026-02-25 04:28:55.727 | INFO     | method:run_convergence_analysis:791 - Convergence analysis done in 0.8s (60 results)
+2026-02-25 04:28:55.753 | INFO     | method:main:1402 - ==================================================
+2026-02-25 04:28:55.754 | INFO     | method:main:1403 - PHASE 2: Sign Canonicality Analysis
+2026-02-25 04:28:55.755 | INFO     | method:run_sign_canonicality:928 - Starting sign canonicality analysis...
+2026-02-25 04:29:00.351 | INFO     | method:run_sign_canonicality:981 - Sign canonicality analysis done in 4.6s (30 results)
+2026-02-25 04:29:00.376 | INFO     | method:main:1408 - ==================================================
+2026-02-25 04:29:00.377 | INFO     | method:main:1409 - PHASE 3: Computational Cost Benchmarking
+2026-02-25 04:29:00.470 | INFO     | method:generate_synthetic_graphs:1032 - Generated 10 synthetic graphs for benchmarking
+2026-02-25 04:29:00.472 | INFO     | method:run_computational_benchmark:1101 - Starting computational benchmarking...
+2026-02-25 04:29:29.093 | INFO     | method:run_computational_benchmark:1175 - Computational benchmarking done in 28.6s
+2026-02-25 04:29:29.197 | INFO     | method:main:1415 - ==================================================
+2026-02-25 04:29:29.198 | INFO     | method:main:1416 - PHASE 4: EDMD Stability Analysis
+2026-02-25 04:29:29.199 | INFO     | method:run_stability_analysis:1280 - Starting EDMD stability analysis...
+2026-02-25 04:29:46.125 | INFO     | method:run_stability_analysis:1339 - Stability analysis done in 16.9s (15 results)
+2026-02-25 04:29:46.166 | INFO     | method:main:1421 - ==================================================
+2026-02-25 04:29:46.167 | INFO     | method:main:1422 - PHASE 5: Distinguishing Test on ALL pairs
+2026-02-25 04:29:46.396 | INFO     | method:main:1456 -   Processed 50/525 pairs...
+2026-02-25 04:30:11.435 | INFO     | method:main:1456 -   Processed 100/525 pairs...
+2026-02-25 04:30:18.428 | INFO     | method:main:1456 -   Processed 150/525 pairs...
+2026-02-25 04:30:18.928 | INFO     | method:main:1456 -   Processed 200/525 pairs...
+2026-02-25 04:30:21.256 | INFO     | method:main:1456 -   Processed 250/525 pairs...
+2026-02-25 04:30:33.554 | INFO     | method:main:1456 -   Processed 300/525 pairs...
+2026-02-25 04:30:34.046 | INFO     | method:main:1456 -   Processed 350/525 pairs...
+2026-02-25 04:30:56.481 | INFO     | method:main:1456 -   Processed 400/525 pairs...
+2026-02-25 04:32:21.177 | INFO     | method:main:1456 -   Processed 450/525 pairs...
+2026-02-25 04:33:55.395 | INFO     | method:main:1456 -   Processed 500/525 pairs...
+2026-02-25 04:34:20.400 | INFO     | method:main:1462 - Distinguishing test done in 274.2s
+2026-02-25 04:34:20.408 | INFO     | method:main:1494 - Results: KW-PE distinguished 525/525, RWPE distinguished 338/525
+2026-02-25 04:34:20.410 | INFO     | method:main:1496 - Cospectral: KW-PE 148/148, RWPE 66/148
+2026-02-25 04:34:20.412 | INFO     | method:main:1500 - ==================================================
+2026-02-25 04:34:20.413 | INFO     | method:main:1501 - PHASE 6: Assembling output
+2026-02-25 04:34:20.484 | INFO     | method:main:1612 - Saved /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/method_out.json (8.6 MB)
+2026-02-25 04:34:20.486 | INFO     | method:main:1615 - ======================================================================
+2026-02-25 04:34:20.487 | INFO     | method:main:1616 - KW-PE Foundational Property Analysis — COMPLETE (325.7s)
+2026-02-25 04:34:20.488 | INFO     | method:main:1617 -   Pairs processed: 525/525
+2026-02-25 04:34:20.489 | INFO     | method:main:1618 -   KW-PE distinguished: 525
+2026-02-25 04:34:20.491 | INFO     | method:main:1619 -   RWPE distinguished: 338
+2026-02-25 04:34:20.492 | INFO     | method:main:1620 - ======================================================================

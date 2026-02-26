@@ -1,0 +1,164 @@
+{
+  "rwpe_16_seed42": {
+    "test_mae": 0.09278734773397446,
+    "val_mae": 0.12518970668315887,
+    "best_epoch": 249,
+    "param_count": 278145,
+    "elapsed_seconds": 225.80006861686707,
+    "pe_config": "rwpe_16",
+    "seed": 42
+  },
+  "nrwpe_offdiag_16_seed42": {
+    "test_mae": 0.1666974425315857,
+    "val_mae": 0.18762078881263733,
+    "best_epoch": 249,
+    "param_count": 278145,
+    "elapsed_seconds": 225.78823280334473,
+    "pe_config": "nrwpe_offdiag_16",
+    "seed": 42
+  },
+  "nrwpe_combined_16_seed42": {
+    "test_mae": 0.17562782764434814,
+    "val_mae": 0.18213190138339996,
+    "best_epoch": 235,
+    "param_count": 278145,
+    "elapsed_seconds": 226.65717697143555,
+    "pe_config": "nrwpe_combined_16",
+    "seed": 42
+  },
+  "nrwpe_diag_softplus_16_seed42": {
+    "test_mae": 0.15680037438869476,
+    "val_mae": 0.1722201108932495,
+    "best_epoch": 235,
+    "param_count": 278145,
+    "elapsed_seconds": 226.32063722610474,
+    "pe_config": "nrwpe_diag_softplus_16",
+    "seed": 42
+  },
+  "nrwpe_diag_tanh_16_seed42": {
+    "test_mae": 0.10233348608016968,
+    "val_mae": 0.1203090101480484,
+    "best_epoch": 243,
+    "param_count": 278145,
+    "elapsed_seconds": 227.18574261665344,
+    "pe_config": "nrwpe_diag_tanh_16",
+    "seed": 42
+  },
+  "rwpe_16_seed123": {
+    "test_mae": 0.08744770288467407,
+    "val_mae": 0.1163293644785881,
+    "best_epoch": 244,
+    "param_count": 278145,
+    "elapsed_seconds": 226.64415907859802,
+    "pe_config": "rwpe_16",
+    "seed": 123
+  },
+  "nrwpe_offdiag_16_seed123": {
+    "test_mae": 0.17303813993930817,
+    "val_mae": 0.18123950064182281,
+    "best_epoch": 211,
+    "param_count": 278145,
+    "elapsed_seconds": 227.31220126152039,
+    "pe_config": "nrwpe_offdiag_16",
+    "seed": 123
+  },
+  "nrwpe_combined_16_seed123": {
+    "test_mae": 0.17111529409885406,
+    "val_mae": 0.18295006453990936,
+    "best_epoch": 221,
+    "param_count": 278145,
+    "elapsed_seconds": 225.43404412269592,
+    "pe_config": "nrwpe_combined_16",
+    "seed": 123
+  },
+  "nrwpe_diag_softplus_16_seed123": {
+    "test_mae": 0.17742855846881866,
+    "val_mae": 0.1833137720823288,
+    "best_epoch": 233,
+    "param_count": 278145,
+    "elapsed_seconds": 229.02065062522888,
+    "pe_config": "nrwpe_diag_softplus_16",
+    "seed": 123
+  },
+  "nrwpe_diag_tanh_16_seed123": {
+    "test_mae": 0.10069740563631058,
+    "val_mae": 0.13447612524032593,
+    "best_epoch": 230,
+    "param_count": 278145,
+    "elapsed_seconds": 227.58654832839966,
+    "pe_config": "nrwpe_diag_tanh_16",
+    "seed": 123
+  },
+  "rwpe_16_seed456": {
+    "test_mae": 0.09207922220230103,
+    "val_mae": 0.11926551163196564,
+    "best_epoch": 243,
+    "param_count": 278145,
+    "elapsed_seconds": 377.3029887676239,
+    "pe_config": "rwpe_16",
+    "seed": 456
+  },
+  "nrwpe_offdiag_16_seed456": {
+    "test_mae": 0.1749625951051712,
+    "val_mae": 0.19086907804012299,
+    "best_epoch": 207,
+    "param_count": 278145,
+    "elapsed_seconds": 362.0728659629822,
+    "pe_config": "nrwpe_offdiag_16",
+    "seed": 456
+  },
+  "nrwpe_combined_16_seed456": {
+    "test_mae": 0.1680167317390442,
+    "val_mae": 0.18394528329372406,
+    "best_epoch": 245,
+    "param_count": 278145,
+    "elapsed_seconds": 388.86817169189453,
+    "pe_config": "nrwpe_combined_16",
+    "seed": 456
+  },
+  "nrwpe_diag_softplus_16_seed456": {
+    "test_mae": 0.15661053359508514,
+    "val_mae": 0.17827996611595154,
+    "best_epoch": 243,
+    "param_count": 278145,
+    "elapsed_seconds": 369.03154253959656,
+    "pe_config": "nrwpe_diag_softplus_16",
+    "seed": 456
+  },
+  "nrwpe_diag_tanh_16_seed456": {
+    "test_mae": 0.10488741844892502,
+    "val_mae": 0.12533317506313324,
+    "best_epoch": 226,
+    "param_count": 278145,
+    "elapsed_seconds": 383.79311060905457,
+    "pe_config": "nrwpe_diag_tanh_16",
+    "seed": 456
+  },
+  "no_pe_seed42": {
+    "test_mae": 0.1903073489665985,
+    "val_mae": 0.18820975720882416,
+    "best_epoch": 202,
+    "param_count": 242817,
+    "elapsed_seconds": 339.17582535743713,
+    "pe_config": "no_pe",
+    "seed": 42
+  },
+  "no_pe_seed123": {
+    "test_mae": 0.181182861328125,
+    "val_mae": 0.18616043031215668,
+    "best_epoch": 244,
+    "param_count": 242817,
+    "elapsed_seconds": 331.32458543777466,
+    "pe_config": "no_pe",
+    "seed": 123
+  },
+  "no_pe_seed456": {
+    "test_mae": 0.20195108652114868,
+    "val_mae": 0.19997575879096985,
+    "best_epoch": 236,
+    "param_count": 242817,
+    "elapsed_seconds": 360.86760234832764,
+    "pe_config": "no_pe",
+    "seed": 456
+  }
+}

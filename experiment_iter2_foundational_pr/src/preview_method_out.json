@@ -1,0 +1,3442 @@
+{
+  "metadata": {
+    "title": "KW-PE Foundational Property Analysis",
+    "method_name": "Koopman Walk Positional Encoding (KW-PE)",
+    "description": "Comprehensive analysis of KW-PE properties: convergence, sign canonicality, computational cost, EDMD stability, and graph distinguishing capability.",
+    "parameters": {
+      "T": 50,
+      "d": 16,
+      "dictionary_degree": 2,
+      "regularization": 1e-08,
+      "nonlinearity": "tanh",
+      "projection_dim": 50
+    },
+    "convergence_analysis": {
+      "summary": {
+        "total_graphs_tested": 20,
+        "nonlinearities": [
+          "tanh",
+          "softplus",
+          "relu"
+        ],
+        "trajectory_length": 200,
+        "overall_convergence_rate_by_nonlinearity": {
+          "tanh": 0.8099999999999999,
+          "softplus": 0.01,
+          "relu": 0.8099999999999999
+        },
+        "mean_convergence_time_by_nonlinearity": {
+          "tanh": 196.58857142857144,
+          "softplus": 200.0,
+          "relu": 94.87428571428573
+        },
+        "attractor_type_distribution": {
+          "tanh": {
+            "no_convergence": 45,
+            "fixed_point": 2,
+            "slow_decay": 215
+          },
+          "softplus": {
+            "no_convergence": 261,
+            "slow_decay": 1
+          },
+          "relu": {
+            "limit_cycle_period_2": 85,
+            "fixed_point": 157,
+            "no_convergence": 20
+          }
+        }
+      },
+      "theoretical_jacobian_analysis": {
+        "mean_spectral_radius": 0.9970862291299124,
+        "max_spectral_radius": 0.9995339645929634,
+        "min_spectral_radius": 0.9937442748199814,
+        "fraction_contractive": 0.05
+      },
+      "per_graph_results": {
+        "cospectral_5v_canonical_graph_A": {
+          "tanh": {
+            "num_nodes": 5,
+            "nodes_tested": 5,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 5
+            },
+            "final_diffs_mean": 0.15172994769030765,
+            "final_diffs_max": 0.1539588022685685,
+            "sample_trajectory_diffs": [
+              1.3616934560084697,
+              1.1764520101373221,
+              1.0080467334529326
+            ],
+            "jacobian_spectral_radius": 0.9985262146976798
+          },
+          "softplus": {
+            "num_nodes": 5,
+            "nodes_tested": 5,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 5
+            },
+            "final_diffs_mean": 0.01574576715781758,
+            "final_diffs_max": 0.023514083347491815,
+            "sample_trajectory_diffs": [
+              1.972172035405623,
+              1.400584125784366,
+              0.9374211126218199
+            ]
+          },
+          "relu": {
+            "num_nodes": 5,
+            "nodes_tested": 5,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "limit_cycle_period_2": 5
+            },
+            "final_diffs_mean": 0.8485281374238571,
+            "final_diffs_max": 1.4142135623730951,
+            "sample_trajectory_diffs": [
+              1.4142135623730951,
+              1.4142135623730951,
+              1.4142135623730951
+            ]
+          }
+        },
+        "cospectral_5v_canonical_graph_B": {
+          "tanh": {
+            "num_nodes": 5,
+            "nodes_tested": 5,
+            "fraction_converged": 0.2,
+            "mean_convergence_time": 160.2,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 4,
+              "fixed_point": 1
+            },
+            "final_diffs_mean": 0.13652064906561182,
+            "final_diffs_max": 0.17065081133201476,
+            "sample_trajectory_diffs": [
+              1.1946148057295058,
+              0.8944390106238881,
+              0.8390113592666639
+            ],
+            "jacobian_spectral_radius": 0.9963795847500162
+          },
+          "softplus": {
+            "num_nodes": 5,
+            "nodes_tested": 5,
+            "fraction_converged": 0.2,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 4,
+              "slow_decay": 1
+            },
+            "final_diffs_mean": 0.011491840974460425,
+            "final_diffs_max": 0.011871030462555823,
+            "sample_trajectory_diffs": [
+              1.7183470612345861,
+              0.8683156805930851,
+              0.6328905661092239
+            ]
+          },
+          "relu": {
+            "num_nodes": 5,
+            "nodes_tested": 5,
+            "fraction_converged": 0.2,
+            "mean_convergence_time": 160.2,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "limit_cycle_period_2": 4,
+              "fixed_point": 1
+            },
+            "final_diffs_mean": 0.8000000000000353,
+            "final_diffs_max": 1.0000000000000442,
+            "sample_trajectory_diffs": [
+              1.224744871391589,
+              1.0000000000000002,
+              1.0000000000000004
+            ]
+          }
+        },
+        "cospectral_7v_25_graph_A": {
+          "tanh": {
+            "num_nodes": 7,
+            "nodes_tested": 7,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 171.57142857142858,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 6,
+              "fixed_point": 1
+            },
+            "final_diffs_mean": 0.00029722697815918894,
+            "final_diffs_max": 0.0003871503542063525,
+            "sample_trajectory_diffs": [
+              1.162119688941522,
+              0.5356295168759038,
+              0.25198031010941285
+            ],
+            "jacobian_spectral_radius": 0.9937442748199814
+          },
+          "softplus": {
+            "num_nodes": 7,
+            "nodes_tested": 7,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 7
+            },
+            "final_diffs_mean": 0.013581341997807523,
+            "final_diffs_max": 0.013592011070654303,
+            "sample_trajectory_diffs": [
+              1.9968786348650345,
+              0.9741019975038557,
+              0.6683848855371713
+            ]
+          },
+          "relu": {
+            "num_nodes": 7,
+            "nodes_tested": 7,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 29.285714285714285,
+            "median_convergence_time": 34.0,
+            "attractor_types": {
+              "fixed_point": 7
+            },
+            "final_diffs_mean": 0.0,
+            "final_diffs_max": 0.0,
+            "sample_trajectory_diffs": [
+              1.1726039399558574,
+              0.5659615711335886,
+              0.2803806007019744
+            ]
+          }
+        },
+        "cospectral_7v_25_graph_B": {
+          "tanh": {
+            "num_nodes": 7,
+            "nodes_tested": 7,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 7
+            },
+            "final_diffs_mean": 0.0003003534364819476,
+            "final_diffs_max": 0.00038340142526327984,
+            "sample_trajectory_diffs": [
+              1.1884594142500673,
+              0.672187168810198,
+              0.39449180665583394
+            ],
+            "jacobian_spectral_radius": 0.9937849188047954
+          },
+          "softplus": {
+            "num_nodes": 7,
+            "nodes_tested": 7,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 7
+            },
+            "final_diffs_mean": 0.018455234730974605,
+            "final_diffs_max": 0.018460050282734317,
+            "sample_trajectory_diffs": [
+              2.021662265453898,
+              1.0651735126407225,
+              0.7261556089551708
+            ]
+          },
+          "relu": {
+            "num_nodes": 7,
+            "nodes_tested": 7,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 49.42857142857143,
+            "median_convergence_time": 52.0,
+            "attractor_types": {
+              "fixed_point": 7
+            },
+            "final_diffs_mean": 3.6371167831565066e-17,
+            "final_diffs_max": 6.049187461416408e-17,
+            "sample_trajectory_diffs": [
+              1.20761472884912,
+              0.7306532465312575,
+              0.4530351922496382
+            ]
+          }
+        },
+        "cospectral_7v_57_graph_A": {
+          "tanh": {
+            "num_nodes": 7,
+            "nodes_tested": 7,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 7
+            },
+            "final_diffs_mean": 0.0003457930315125826,
+            "final_diffs_max": 0.00036758784866721767,
+            "sample_trajectory_diffs": [
+              1.0896718395163452,
+              0.5322722200590835,
+              0.3085035236518798
+            ],
+            "jacobian_spectral_radius": 0.9959755234384253
+          },
+          "softplus": {
+            "num_nodes": 7,
+            "nodes_tested": 7,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 7
+            },
+            "final_diffs_mean": 0.014604595272465989,
+            "final_diffs_max": 0.01460824138841525,
+            "sample_trajectory_diffs": [
+              1.872954431937287,
+              1.0386400396296547,
+              0.7421897893842045
+            ]
+          },
+          "relu": {
+            "num_nodes": 7,
+            "nodes_tested": 7,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 43.857142857142854,
+            "median_convergence_time": 43.0,
+            "attractor_types": {
+              "fixed_point": 7
+            },
+            "final_diffs_mean": 0.0,
+            "final_diffs_max": 0.0,
+            "sample_trajectory_diffs": [
+              1.0954451150103324,
+              0.5513619500836089,
+              0.3229860678109816
+            ]
+          }
+        },
+        "cospectral_7v_57_graph_B": {
+          "tanh": {
+            "num_nodes": 7,
+            "nodes_tested": 7,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 7
+            },
+            "final_diffs_mean": 0.000345155165223262,
+            "final_diffs_max": 0.00038890490956183663,
+            "sample_trajectory_diffs": [
+              1.0870111169008152,
+              0.3313351798508886,
+              0.14478851440045817
+            ],
+            "jacobian_spectral_radius": 0.9946539799098597
+          },
+          "softplus": {
+            "num_nodes": 7,
+            "nodes_tested": 7,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 7
+            },
+            "final_diffs_mean": 0.014255528785075588,
+            "final_diffs_max": 0.014257650315349613,
+            "sample_trajectory_diffs": [
+              1.9129041375304312,
+              1.0138709507104189,
+              0.7311014244218499
+            ]
+          },
+          "relu": {
+            "num_nodes": 7,
+            "nodes_tested": 7,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 39.714285714285715,
+            "median_convergence_time": 40.0,
+            "attractor_types": {
+              "fixed_point": 7
+            },
+            "final_diffs_mean": 0.0,
+            "final_diffs_max": 0.0,
+            "sample_trajectory_diffs": [
+              1.0897247358851685,
+              0.3378598904213928,
+              0.14985967909417755
+            ]
+          }
+        },
+        "csl_16_2_3_graph_A": {
+          "tanh": {
+            "num_nodes": 16,
+            "nodes_tested": 16,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 16
+            },
+            "final_diffs_mean": 0.00016272688972896604,
+            "final_diffs_max": 0.00016272688972896604,
+            "sample_trajectory_diffs": [
+              1.1135262030030941,
+              0.43894296163949237,
+              0.21471560080496838
+            ],
+            "jacobian_spectral_radius": 0.9975459973727872
+          },
+          "softplus": {
+            "num_nodes": 16,
+            "nodes_tested": 16,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 16
+            },
+            "final_diffs_mean": 0.019943383237496448,
+            "final_diffs_max": 0.019943383237496448,
+            "sample_trajectory_diffs": [
+              2.8474278756691502,
+              1.5948375217694588,
+              1.1314974655621766
+            ]
+          },
+          "relu": {
+            "num_nodes": 16,
+            "nodes_tested": 16,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 100.0,
+            "median_convergence_time": 100.0,
+            "attractor_types": {
+              "fixed_point": 16
+            },
+            "final_diffs_mean": 0.0,
+            "final_diffs_max": 0.0,
+            "sample_trajectory_diffs": [
+              1.118033988749895,
+              0.45069390943299864,
+              0.22426093897511443
+            ]
+          }
+        },
+        "csl_16_2_3_graph_B": {
+          "tanh": {
+            "num_nodes": 16,
+            "nodes_tested": 16,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 16
+            },
+            "final_diffs_mean": 0.2825617416009634,
+            "final_diffs_max": 0.2825617416009634,
+            "sample_trajectory_diffs": [
+              1.1135262030030941,
+              0.633067550233818,
+              0.5423754267911383
+            ],
+            "jacobian_spectral_radius": 0.9975142766023035
+          },
+          "softplus": {
+            "num_nodes": 16,
+            "nodes_tested": 16,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 16
+            },
+            "final_diffs_mean": 0.020132388365097516,
+            "final_diffs_max": 0.020132388365097516,
+            "sample_trajectory_diffs": [
+              2.8474278756691502,
+              1.607479760600368,
+              1.142992562348835
+            ]
+          },
+          "relu": {
+            "num_nodes": 16,
+            "nodes_tested": 16,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "limit_cycle_period_2": 16
+            },
+            "final_diffs_mean": 0.5000000000000001,
+            "final_diffs_max": 0.5000000000000001,
+            "sample_trajectory_diffs": [
+              1.118033988749895,
+              0.649519052838329,
+              0.5625
+            ]
+          }
+        },
+        "csl_41_3_13_graph_A": {
+          "tanh": {
+            "num_nodes": 41,
+            "nodes_tested": 20,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 20
+            },
+            "final_diffs_mean": 0.019543921235594525,
+            "final_diffs_max": 0.019543921235594543,
+            "sample_trajectory_diffs": [
+              1.1135262030030941,
+              0.633067550233818,
+              0.5398016685231058
+            ],
+            "jacobian_spectral_radius": 0.9995339645929634
+          },
+          "softplus": {
+            "num_nodes": 41,
+            "nodes_tested": 20,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 20
+            },
+            "final_diffs_mean": 0.03193184076879342,
+            "final_diffs_max": 0.03193184076879387,
+            "sample_trajectory_diffs": [
+              4.4854398730885645,
+              2.5872842959498965,
+              1.837178525478629
+            ]
+          },
+          "relu": {
+            "num_nodes": 41,
+            "nodes_tested": 20,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 20
+            },
+            "final_diffs_mean": 0.02339728576329646,
+            "final_diffs_max": 0.023397285763296496,
+            "sample_trajectory_diffs": [
+              1.118033988749895,
+              0.649519052838329,
+              0.5598897770990287
+            ]
+          }
+        },
+        "csl_41_3_13_graph_B": {
+          "tanh": {
+            "num_nodes": 41,
+            "nodes_tested": 20,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 20
+            },
+            "final_diffs_mean": 2.4802457751739627e-05,
+            "final_diffs_max": 2.4802457751743144e-05,
+            "sample_trajectory_diffs": [
+              1.1135262030030941,
+              0.6098814631393018,
+              0.4310561232826202
+            ],
+            "jacobian_spectral_radius": 0.999487242825287
+          },
+          "softplus": {
+            "num_nodes": 41,
+            "nodes_tested": 20,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 20
+            },
+            "final_diffs_mean": 0.03193162581787896,
+            "final_diffs_max": 0.03193162581788006,
+            "sample_trajectory_diffs": [
+              4.4854398730885645,
+              2.58633836911738,
+              1.8340934691465076
+            ]
+          },
+          "relu": {
+            "num_nodes": 41,
+            "nodes_tested": 20,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "limit_cycle_period_2": 20
+            },
+            "final_diffs_mean": 2.8986059121154296e-09,
+            "final_diffs_max": 2.8986059156381354e-09,
+            "sample_trajectory_diffs": [
+              1.118033988749895,
+              0.625,
+              0.44633927678392815
+            ]
+          }
+        },
+        "csl_41_13_16_graph_A": {
+          "tanh": {
+            "num_nodes": 41,
+            "nodes_tested": 20,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 20
+            },
+            "final_diffs_mean": 2.4802457751739627e-05,
+            "final_diffs_max": 2.4802457751743144e-05,
+            "sample_trajectory_diffs": [
+              1.1135262030030941,
+              0.6098814631393018,
+              0.4310561232826202
+            ],
+            "jacobian_spectral_radius": 0.999487242825287
+          },
+          "softplus": {
+            "num_nodes": 41,
+            "nodes_tested": 20,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 20
+            },
+            "final_diffs_mean": 0.03193162581787896,
+            "final_diffs_max": 0.03193162581788006,
+            "sample_trajectory_diffs": [
+              4.4854398730885645,
+              2.58633836911738,
+              1.8340934691465076
+            ]
+          },
+          "relu": {
+            "num_nodes": 41,
+            "nodes_tested": 20,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "limit_cycle_period_2": 20
+            },
+            "final_diffs_mean": 2.8986059121154296e-09,
+            "final_diffs_max": 2.8986059156381354e-09,
+            "sample_trajectory_diffs": [
+              1.118033988749895,
+              0.625,
+              0.44633927678392815
+            ]
+          }
+        },
+        "csl_41_13_16_graph_B": {
+          "tanh": {
+            "num_nodes": 41,
+            "nodes_tested": 20,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 20
+            },
+            "final_diffs_mean": 2.482943530694348e-05,
+            "final_diffs_max": 2.4829435306945718e-05,
+            "sample_trajectory_diffs": [
+              1.1135262030030941,
+              0.6098814631393018,
+              0.4722456606396914
+            ],
+            "jacobian_spectral_radius": 0.9994868713115952
+          },
+          "softplus": {
+            "num_nodes": 41,
+            "nodes_tested": 20,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 20
+            },
+            "final_diffs_mean": 0.03193162606715976,
+            "final_diffs_max": 0.03193162606716054,
+            "sample_trajectory_diffs": [
+              4.4854398730885645,
+              2.58633836911738,
+              1.8351143708023792
+            ]
+          },
+          "relu": {
+            "num_nodes": 41,
+            "nodes_tested": 20,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "limit_cycle_period_2": 20
+            },
+            "final_diffs_mean": 1.2691659686376164e-08,
+            "final_diffs_max": 1.2691659702189664e-08,
+            "sample_trajectory_diffs": [
+              1.118033988749895,
+              0.625,
+              0.4881406047441659
+            ]
+          }
+        },
+        "srg_shrikhande_vs_rook_graph_A": {
+          "tanh": {
+            "num_nodes": 16,
+            "nodes_tested": 16,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 16
+            },
+            "final_diffs_mean": 0.00017070575570335422,
+            "final_diffs_max": 0.00017070575570335422,
+            "sample_trajectory_diffs": [
+              1.0787159662698529,
+              0.3560848950698031,
+              0.11730218332040962
+            ],
+            "jacobian_spectral_radius": 0.9974666373530963
+          },
+          "softplus": {
+            "num_nodes": 16,
+            "nodes_tested": 16,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 16
+            },
+            "final_diffs_mean": 0.01994357696986171,
+            "final_diffs_max": 0.01994357696986171,
+            "sample_trajectory_diffs": [
+              2.840449939296524,
+              1.5891978873243964,
+              1.129817647016205
+            ]
+          },
+          "relu": {
+            "num_nodes": 16,
+            "nodes_tested": 16,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 22.0,
+            "median_convergence_time": 22.0,
+            "attractor_types": {
+              "fixed_point": 16
+            },
+            "final_diffs_mean": 0.0,
+            "final_diffs_max": 0.0,
+            "sample_trajectory_diffs": [
+              1.0801234497346432,
+              0.3600411499115478,
+              0.12001371663718259
+            ]
+          }
+        },
+        "srg_shrikhande_vs_rook_graph_B": {
+          "tanh": {
+            "num_nodes": 16,
+            "nodes_tested": 16,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 16
+            },
+            "final_diffs_mean": 0.00017070575570335422,
+            "final_diffs_max": 0.00017070575570335422,
+            "sample_trajectory_diffs": [
+              1.0787159662698529,
+              0.3560848950698031,
+              0.11730218332040962
+            ],
+            "jacobian_spectral_radius": 0.9974666373530963
+          },
+          "softplus": {
+            "num_nodes": 16,
+            "nodes_tested": 16,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 16
+            },
+            "final_diffs_mean": 0.01994357696986171,
+            "final_diffs_max": 0.01994357696986171,
+            "sample_trajectory_diffs": [
+              2.840449939296524,
+              1.5891978873243964,
+              1.129817647016205
+            ]
+          },
+          "relu": {
+            "num_nodes": 16,
+            "nodes_tested": 16,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 22.0,
+            "median_convergence_time": 22.0,
+            "attractor_types": {
+              "fixed_point": 16
+            },
+            "final_diffs_mean": 0.0,
+            "final_diffs_max": 0.0,
+            "sample_trajectory_diffs": [
+              1.0801234497346432,
+              0.3600411499115478,
+              0.12001371663718258
+            ]
+          }
+        },
+        "srg_T8_vs_chang0_graph_A": {
+          "tanh": {
+            "num_nodes": 28,
+            "nodes_tested": 20,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 20
+            },
+            "final_diffs_mean": 6.318860031939924e-05,
+            "final_diffs_max": 6.318860031939924e-05,
+            "sample_trajectory_diffs": [
+              1.040648376539432,
+              0.19788035882700383,
+              0.0458193817553564
+            ],
+            "jacobian_spectral_radius": 0.9989145309636458
+          },
+          "softplus": {
+            "num_nodes": 28,
+            "nodes_tested": 20,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 20
+            },
+            "final_diffs_mean": 0.02638674533334821,
+            "final_diffs_max": 0.026386745333348213,
+            "sample_trajectory_diffs": [
+              3.714254134249243,
+              2.1161245091844223,
+              1.5063097272365118
+            ]
+          },
+          "relu": {
+            "num_nodes": 28,
+            "nodes_tested": 20,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 20.0,
+            "median_convergence_time": 20.0,
+            "attractor_types": {
+              "fixed_point": 20
+            },
+            "final_diffs_mean": 0.0,
+            "final_diffs_max": 0.0,
+            "sample_trajectory_diffs": [
+              1.0408329997330663,
+              0.19837301190396806,
+              0.04606423319938055
+            ]
+          }
+        },
+        "srg_T8_vs_chang0_graph_B": {
+          "tanh": {
+            "num_nodes": 28,
+            "nodes_tested": 20,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 20
+            },
+            "final_diffs_mean": 6.318860031939924e-05,
+            "final_diffs_max": 6.318860031939924e-05,
+            "sample_trajectory_diffs": [
+              1.040648376539432,
+              0.19788035882700383,
+              0.0458193817553564
+            ],
+            "jacobian_spectral_radius": 0.9989145309636458
+          },
+          "softplus": {
+            "num_nodes": 28,
+            "nodes_tested": 20,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 20
+            },
+            "final_diffs_mean": 0.026386745333346878,
+            "final_diffs_max": 0.026386745333346878,
+            "sample_trajectory_diffs": [
+              3.714254134249243,
+              2.1161245091844223,
+              1.5063097272365118
+            ]
+          },
+          "relu": {
+            "num_nodes": 28,
+            "nodes_tested": 20,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 20.0,
+            "median_convergence_time": 20.0,
+            "attractor_types": {
+              "fixed_point": 20
+            },
+            "final_diffs_mean": 0.0,
+            "final_diffs_max": 0.0,
+            "sample_trajectory_diffs": [
+              1.0408329997330663,
+              0.19837301190396806,
+              0.04606423319938055
+            ]
+          }
+        },
+        "brec_basic_0_graph_A": {
+          "tanh": {
+            "num_nodes": 10,
+            "nodes_tested": 10,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 10
+            },
+            "final_diffs_mean": 0.00029096628577240474,
+            "final_diffs_max": 0.0003213791914321679,
+            "sample_trajectory_diffs": [
+              1.0906129092058297,
+              0.42863659169797974,
+              0.19228258103591697
+            ],
+            "jacobian_spectral_radius": 0.996235192976833
+          },
+          "softplus": {
+            "num_nodes": 10,
+            "nodes_tested": 10,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 10
+            },
+            "final_diffs_mean": 0.016110886490130795,
+            "final_diffs_max": 0.01611191646105553,
+            "sample_trajectory_diffs": [
+              2.2622848469419057,
+              1.2479845749836778,
+              0.8871406165698634
+            ]
+          },
+          "relu": {
+            "num_nodes": 10,
+            "nodes_tested": 10,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 38.2,
+            "median_convergence_time": 38.5,
+            "attractor_types": {
+              "fixed_point": 10
+            },
+            "final_diffs_mean": 1.038518545263806e-17,
+            "final_diffs_max": 5.1925927263190304e-17,
+            "sample_trajectory_diffs": [
+              1.0935416468216168,
+              0.43728301497449584,
+              0.19851165520068184
+            ]
+          }
+        },
+        "brec_basic_0_graph_B": {
+          "tanh": {
+            "num_nodes": 10,
+            "nodes_tested": 10,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 10
+            },
+            "final_diffs_mean": 0.00029063800134026564,
+            "final_diffs_max": 0.0003213791914321755,
+            "sample_trajectory_diffs": [
+              1.0915613037538558,
+              0.45886625284310245,
+              0.24949581446517566
+            ],
+            "jacobian_spectral_radius": 0.9958126927962376
+          },
+          "softplus": {
+            "num_nodes": 10,
+            "nodes_tested": 10,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 10
+            },
+            "final_diffs_mean": 0.016110881010612095,
+            "final_diffs_max": 0.016111904908521223,
+            "sample_trajectory_diffs": [
+              2.278554808416365,
+              1.250618748252218,
+              0.8858741162454365
+            ]
+          },
+          "relu": {
+            "num_nodes": 10,
+            "nodes_tested": 10,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 41.4,
+            "median_convergence_time": 42.0,
+            "attractor_types": {
+              "fixed_point": 10
+            },
+            "final_diffs_mean": 0.0,
+            "final_diffs_max": 0.0,
+            "sample_trajectory_diffs": [
+              1.0939226054281295,
+              0.4669830276874612,
+              0.2567987970586737
+            ]
+          }
+        },
+        "brec_basic_29_graph_A": {
+          "tanh": {
+            "num_nodes": 10,
+            "nodes_tested": 10,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 10
+            },
+            "final_diffs_mean": 0.000284326003795783,
+            "final_diffs_max": 0.0003780532662064105,
+            "sample_trajectory_diffs": [
+              1.0880551276623482,
+              0.4260728205221792,
+              0.2622496542848748
+            ],
+            "jacobian_spectral_radius": 0.9953971341203569
+          },
+          "softplus": {
+            "num_nodes": 10,
+            "nodes_tested": 10,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 10
+            },
+            "final_diffs_mean": 0.01705188336801227,
+            "final_diffs_max": 0.01705348515391114,
+            "sample_trajectory_diffs": [
+              2.274729283687118,
+              1.2212398418175505,
+              0.8825104288239523
+            ]
+          },
+          "relu": {
+            "num_nodes": 10,
+            "nodes_tested": 10,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 60.4,
+            "median_convergence_time": 62.0,
+            "attractor_types": {
+              "fixed_point": 10
+            },
+            "final_diffs_mean": 1.1102230246251566e-17,
+            "final_diffs_max": 5.551115123125783e-17,
+            "sample_trajectory_diffs": [
+              1.090216230190795,
+              0.43333228675959434,
+              0.2699710526900493
+            ]
+          }
+        },
+        "brec_basic_29_graph_B": {
+          "tanh": {
+            "num_nodes": 10,
+            "nodes_tested": 10,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "slow_decay": 10
+            },
+            "final_diffs_mean": 0.0002853224863030402,
+            "final_diffs_max": 0.00037805326620638565,
+            "sample_trajectory_diffs": [
+              1.0880551276623482,
+              0.4260728205221792,
+              0.2622496542848748
+            ],
+            "jacobian_spectral_radius": 0.9953971341203567
+          },
+          "softplus": {
+            "num_nodes": 10,
+            "nodes_tested": 10,
+            "fraction_converged": 0.0,
+            "mean_convergence_time": 200.0,
+            "median_convergence_time": 200.0,
+            "attractor_types": {
+              "no_convergence": 10
+            },
+            "final_diffs_mean": 0.017051896950011143,
+            "final_diffs_max": 0.0170535009105882,
+            "sample_trajectory_diffs": [
+              2.274729283687118,
+              1.2212398418175505,
+              0.8825104288239523
+            ]
+          },
+          "relu": {
+            "num_nodes": 10,
+            "nodes_tested": 10,
+            "fraction_converged": 1.0,
+            "mean_convergence_time": 51.0,
+            "median_convergence_time": 51.0,
+            "attractor_types": {
+              "fixed_point": 10
+            },
+            "final_diffs_mean": 3.9252311467094376e-18,
+            "final_diffs_max": 1.962615573354719e-17,
+            "sample_trajectory_diffs": [
+              1.090216230190795,
+              0.43333228675959434,
+              0.2699710526900493
+            ]
+          }
+        }
+      }
+    },
+    "sign_canonicality": {
+      "summary": {
+        "equivariance_pass_rate": {
+          "tanh": 0.1,
+          "softplus": 0.7,
+          "relu": 0.0
+        },
+        "sign_consistency_by_nonlinearity": {
+          "tanh": 1.0,
+          "softplus": 1.0,
+          "relu": 1.0
+        },
+        "equivariance_corr_by_nonlinearity": {
+          "tanh": 0.6163367323009807,
+          "softplus": 0.9688751402879076,
+          "relu": 0.6582393447904099
+        }
+      },
+      "per_graph_results": {
+        "cospectral_5v_canonical_A": {
+          "tanh": {
+            "equivariance_mean_corr": 0.894655689608625,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          },
+          "softplus": {
+            "equivariance_mean_corr": 1.0,
+            "equivariance_passed": true,
+            "sign_canonical_fraction": 1.0
+          },
+          "relu": {
+            "equivariance_mean_corr": 0.8727868495915395,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          }
+        },
+        "cospectral_6v_0_A": {
+          "tanh": {
+            "equivariance_mean_corr": 0.5605146980636496,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          },
+          "softplus": {
+            "equivariance_mean_corr": 0.9999999999999944,
+            "equivariance_passed": true,
+            "sign_canonical_fraction": 1.0
+          },
+          "relu": {
+            "equivariance_mean_corr": 0.47870695501881166,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          }
+        },
+        "cospectral_6v_1_A": {
+          "tanh": {
+            "equivariance_mean_corr": 0.5407660358533373,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          },
+          "softplus": {
+            "equivariance_mean_corr": 0.9999999999887407,
+            "equivariance_passed": true,
+            "sign_canonical_fraction": 1.0
+          },
+          "relu": {
+            "equivariance_mean_corr": 0.6739677242273899,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          }
+        },
+        "cospectral_6v_2_A": {
+          "tanh": {
+            "equivariance_mean_corr": 0.5111111111112342,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          },
+          "softplus": {
+            "equivariance_mean_corr": 0.9999999999999996,
+            "equivariance_passed": true,
+            "sign_canonical_fraction": 1.0
+          },
+          "relu": {
+            "equivariance_mean_corr": 0.3444444444444789,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          }
+        },
+        "cospectral_6v_3_A": {
+          "tanh": {
+            "equivariance_mean_corr": 0.6105287742502602,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          },
+          "softplus": {
+            "equivariance_mean_corr": 0.7931816727981964,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          },
+          "relu": {
+            "equivariance_mean_corr": 0.7518820797641156,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          }
+        },
+        "cospectral_6v_4_A": {
+          "tanh": {
+            "equivariance_mean_corr": 0.948428999382572,
+            "equivariance_passed": true,
+            "sign_canonical_fraction": 1.0
+          },
+          "softplus": {
+            "equivariance_mean_corr": 0.942811095168506,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          },
+          "relu": {
+            "equivariance_mean_corr": 0.9340172246037315,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          }
+        },
+        "cospectral_7v_0_A": {
+          "tanh": {
+            "equivariance_mean_corr": 0.5318233241324337,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          },
+          "softplus": {
+            "equivariance_mean_corr": 0.9978340211418886,
+            "equivariance_passed": true,
+            "sign_canonical_fraction": 1.0
+          },
+          "relu": {
+            "equivariance_mean_corr": 0.5093458503193261,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          }
+        },
+        "cospectral_7v_1_A": {
+          "tanh": {
+            "equivariance_mean_corr": 0.6036339287029033,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          },
+          "softplus": {
+            "equivariance_mean_corr": 0.9549246138460294,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          },
+          "relu": {
+            "equivariance_mean_corr": 0.7220042246965266,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          }
+        },
+        "cospectral_7v_2_A": {
+          "tanh": {
+            "equivariance_mean_corr": 0.4809523809523963,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          },
+          "softplus": {
+            "equivariance_mean_corr": 0.9999999999678596,
+            "equivariance_passed": true,
+            "sign_canonical_fraction": 1.0
+          },
+          "relu": {
+            "equivariance_mean_corr": 0.6476190476190896,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          }
+        },
+        "cospectral_7v_3_A": {
+          "tanh": {
+            "equivariance_mean_corr": 0.4809523809523963,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          },
+          "softplus": {
+            "equivariance_mean_corr": 0.9999999999678596,
+            "equivariance_passed": true,
+            "sign_canonical_fraction": 1.0
+          },
+          "relu": {
+            "equivariance_mean_corr": 0.6476190476190896,
+            "equivariance_passed": false,
+            "sign_canonical_fraction": 1.0
+          }
+        }
+      }
+    },
+    "computational_cost": {
+      "summary": {
+        "sizes_tested": [
+          10,
+          50,
+          100
+        ],
+        "kwpe_scaling_exponent": 1.0472512152461586,
+        "eigendecomp_scaling_exponent": 1.7392215224938137,
+        "crossover_point_n": -1
+      },
+      "per_size_results": {
+        "10": {
+          "erdos_renyi": {
+            "kwpe_walk_time_ms": 2.9422950465232134,
+            "kwpe_edmd_time_ms": 1.4217669377103448,
+            "kwpe_total_time_ms": 4.853144055232406,
+            "eigendecomp_full_time_ms": 0.026160036213696003,
+            "eigendecomp_partial_time_ms": 0.236480962485075,
+            "speedup_vs_full": 0.005295237665243036,
+            "speedup_vs_partial": 0.048294684897569315,
+            "kwpe_dict_degree": 2,
+            "dictionary_dim": 65
+          },
+          "barabasi_albert": {
+            "kwpe_walk_time_ms": 2.943194005638361,
+            "kwpe_edmd_time_ms": 1.3744169846177101,
+            "kwpe_total_time_ms": 4.862403962761164,
+            "eigendecomp_full_time_ms": 0.022329972125589848,
+            "eigendecomp_partial_time_ms": 0.2220309106633067,
+            "speedup_vs_full": 0.0045907952034754795,
+            "speedup_vs_partial": 0.045673272372079,
+            "kwpe_dict_degree": 2,
+            "dictionary_dim": 65
+          }
+        },
+        "50": {
+          "erdos_renyi": {
+            "kwpe_walk_time_ms": 15.461307018995285,
+            "kwpe_edmd_time_ms": 938.6980440467596,
+            "kwpe_total_time_ms": 961.1956049920991,
+            "eigendecomp_full_time_ms": 0.2728009130805731,
+            "eigendecomp_partial_time_ms": 1.8891890067607164,
+            "speedup_vs_full": 0.00028444098400170163,
+            "speedup_vs_partial": 0.001954228163179096,
+            "kwpe_dict_degree": 2,
+            "dictionary_dim": 1325
+          },
+          "barabasi_albert": {
+            "kwpe_walk_time_ms": 15.587478061206639,
+            "kwpe_edmd_time_ms": 909.1404259670526,
+            "kwpe_total_time_ms": 931.7652489989996,
+            "eigendecomp_full_time_ms": 0.2724509686231613,
+            "eigendecomp_partial_time_ms": 2.631002920679748,
+            "speedup_vs_full": 0.0002924030155834389,
+            "speedup_vs_partial": 0.002826215817410562,
+            "kwpe_dict_degree": 2,
+            "dictionary_dim": 1325
+          }
+        },
+        "100": {
+          "erdos_renyi": {
+            "kwpe_walk_time_ms": 26.453770929947495,
+            "kwpe_edmd_time_ms": 928.0638110358268,
+            "kwpe_total_time_ms": 969.4383969763294,
+            "eigendecomp_full_time_ms": 0.8046739967539907,
+            "eigendecomp_partial_time_ms": 3.1413460383191705,
+            "speedup_vs_full": 0.0008344979002412092,
+            "speedup_vs_partial": 0.0032577748050554092,
+            "kwpe_dict_degree": 2,
+            "dictionary_dim": 1325
+          },
+          "barabasi_albert": {
+            "kwpe_walk_time_ms": 27.041795081458986,
+            "kwpe_edmd_time_ms": 922.2070410614833,
+            "kwpe_total_time_ms": 964.9409040575847,
+            "eigendecomp_full_time_ms": 0.7996140047907829,
+            "eigendecomp_partial_time_ms": 5.922609008848667,
+            "speedup_vs_full": 0.0008286662959652754,
+            "speedup_vs_partial": 0.006137794536374244,
+            "kwpe_dict_degree": 2,
+            "dictionary_dim": 1325
+          }
+        },
+        "500": {
+          "erdos_renyi": {
+            "kwpe_walk_time_ms": 125.78514707274735,
+            "kwpe_edmd_time_ms": 950.7029840024188,
+            "kwpe_total_time_ms": 1120.7877899287269,
+            "eigendecomp_full_time_ms": 16.509342938661575,
+            "eigendecomp_partial_time_ms": 10.49260189756751,
+            "speedup_vs_full": 0.014626359258468603,
+            "speedup_vs_partial": 0.009426919713914128,
+            "kwpe_dict_degree": 2,
+            "dictionary_dim": 1325
+          },
+          "barabasi_albert": {
+            "kwpe_walk_time_ms": 155.0071919336915,
+            "kwpe_edmd_time_ms": 859.0689970878884,
+            "kwpe_total_time_ms": 1066.6405910160393,
+            "eigendecomp_full_time_ms": 16.171570983715355,
+            "eigendecomp_partial_time_ms": 38.10101991984993,
+            "speedup_vs_full": 0.015161218427203265,
+            "speedup_vs_partial": 0.03593413281427073,
+            "kwpe_dict_degree": 2,
+            "dictionary_dim": 1325
+          }
+        },
+        "1000": {
+          "erdos_renyi": {
+            "kwpe_walk_time_ms": 304.66001702006906,
+            "kwpe_edmd_time_ms": 982.9273439245299,
+            "kwpe_total_time_ms": 1389.3625780474395,
+            "eigendecomp_full_time_ms": 78.86231294833124,
+            "eigendecomp_partial_time_ms": 93.35139498580247,
+            "speedup_vs_full": 0.058106358989144714,
+            "speedup_vs_partial": 0.06760513869848313,
+            "kwpe_dict_degree": 2,
+            "dictionary_dim": 1325
+          },
+          "barabasi_albert": {
+            "kwpe_walk_time_ms": 300.3933859290555,
+            "kwpe_edmd_time_ms": 897.4636479979381,
+            "kwpe_total_time_ms": 1286.7132859537378,
+            "eigendecomp_full_time_ms": 73.06969398632646,
+            "eigendecomp_partial_time_ms": 93.36433501448482,
+            "speedup_vs_full": 0.056568036325252466,
+            "speedup_vs_partial": 0.07256032562474188,
+            "kwpe_dict_degree": 2,
+            "dictionary_dim": 1325
+          }
+        }
+      }
+    },
+    "edmd_stability": {
+      "summary": {
+        "recommended_regularization": 1e-08,
+        "recommended_trajectory_length": 50,
+        "eigenfunction_drift_acceptable_T_threshold": 50,
+        "condition_number_growth_rate": "polynomial in dictionary degree"
+      },
+      "condition_numbers": {
+        "deg1_T10_reg0.0": {
+          "mean": 8.705445311495021,
+          "median": 9.199229264324638,
+          "max": 9.651141949489055
+        },
+        "deg1_T10_reg1e-12": {
+          "mean": 8.705445311495021,
+          "median": 9.199229264324638,
+          "max": 9.651141949489055
+        },
+        "deg1_T10_reg1e-08": {
+          "mean": 8.705445311495021,
+          "median": 9.199229264324638,
+          "max": 9.651141949489055
+        },
+        "deg1_T10_reg0.0001": {
+          "mean": 8.705445311495021,
+          "median": 9.199229264324638,
+          "max": 9.651141949489055
+        },
+        "deg1_T20_reg0.0": {
+          "mean": 16.450579693750335,
+          "median": 17.266949122858687,
+          "max": 19.217189224354037
+        },
+        "deg1_T20_reg1e-12": {
+          "mean": 16.450579693750335,
+          "median": 17.266949122858687,
+          "max": 19.217189224354037
+        },
+        "deg1_T20_reg1e-08": {
+          "mean": 16.450579693750335,
+          "median": 17.266949122858687,
+          "max": 19.217189224354037
+        },
+        "deg1_T20_reg0.0001": {
+          "mean": 16.450579693750335,
+          "median": 17.266949122858687,
+          "max": 19.217189224354037
+        },
+        "deg1_T50_reg0.0": {
+          "mean": 37.2667950749478,
+          "median": 41.23532944354411,
+          "max": 47.44428849526357
+        },
+        "deg1_T50_reg1e-12": {
+          "mean": 37.2667950749478,
+          "median": 41.23532944354411,
+          "max": 47.44428849526357
+        },
+        "deg1_T50_reg1e-08": {
+          "mean": 37.2667950749478,
+          "median": 41.23532944354411,
+          "max": 47.44428849526357
+        },
+        "deg1_T50_reg0.0001": {
+          "mean": 37.2667950749478,
+          "median": 41.23532944354411,
+          "max": 47.44428849526357
+        },
+        "deg1_T100_reg0.0": {
+          "mean": 67.58316265788243,
+          "median": 78.01527203375498,
+          "max": 92.99398492177815
+        },
+        "deg1_T100_reg1e-12": {
+          "mean": 67.58316265788243,
+          "median": 78.01527203375498,
+          "max": 92.99398492177815
+        },
+        "deg1_T100_reg1e-08": {
+          "mean": 67.58316265788243,
+          "median": 78.01527203375498,
+          "max": 92.99398492177815
+        },
+        "deg1_T100_reg0.0001": {
+          "mean": 67.58316265788243,
+          "median": 78.01527203375498,
+          "max": 92.99398492177815
+        },
+        "deg2_T10_reg0.0": {
+          "mean": 1.6208470104863975e+35,
+          "median": 1.4874699820290808e+20,
+          "max": 9.928436232261173e+35
+        },
+        "deg2_T10_reg1e-12": {
+          "mean": 1.6208470104863975e+35,
+          "median": 1.4874699820290808e+20,
+          "max": 9.928436232261173e+35
+        },
+        "deg2_T10_reg1e-08": {
+          "mean": 1.6208470104863975e+35,
+          "median": 1.4874699820290808e+20,
+          "max": 9.928436232261173e+35
+        },
+        "deg2_T10_reg0.0001": {
+          "mean": 1.6208470104863975e+35,
+          "median": 1.4874699820290808e+20,
+          "max": 9.928436232261173e+35
+        },
+        "deg2_T20_reg0.0": {
+          "mean": 8.52395785423676e+34,
+          "median": 3.19633620531963e+20,
+          "max": 6.760840254739112e+35
+        },
+        "deg2_T20_reg1e-12": {
+          "mean": 8.52395785423676e+34,
+          "median": 3.19633620531963e+20,
+          "max": 6.760840254739112e+35
+        },
+        "deg2_T20_reg1e-08": {
+          "mean": 8.52395785423676e+34,
+          "median": 3.19633620531963e+20,
+          "max": 6.760840254739112e+35
+        },
+        "deg2_T20_reg0.0001": {
+          "mean": 8.52395785423676e+34,
+          "median": 3.19633620531963e+20,
+          "max": 6.760840254739112e+35
+        },
+        "deg2_T50_reg0.0": {
+          "mean": 1.2900858791685171e+34,
+          "median": 4.9477802247247784e+20,
+          "max": 6.139448052374252e+34
+        },
+        "deg2_T50_reg1e-12": {
+          "mean": 1.2900858791685171e+34,
+          "median": 4.9477802247247784e+20,
+          "max": 6.139448052374252e+34
+        },
+        "deg2_T50_reg1e-08": {
+          "mean": 1.2900858791685171e+34,
+          "median": 4.9477802247247784e+20,
+          "max": 6.139448052374252e+34
+        },
+        "deg2_T50_reg0.0001": {
+          "mean": 1.2900858791685171e+34,
+          "median": 4.9477802247247784e+20,
+          "max": 6.139448052374252e+34
+        },
+        "deg2_T100_reg0.0": {
+          "mean": 6.034301651165223e+36,
+          "median": 9.359631833735296e+20,
+          "max": 4.825265109030068e+37
+        },
+        "deg2_T100_reg1e-12": {
+          "mean": 6.034301651165223e+36,
+          "median": 9.359631833735296e+20,
+          "max": 4.825265109030068e+37
+        },
+        "deg2_T100_reg1e-08": {
+          "mean": 6.034301651165223e+36,
+          "median": 9.359631833735296e+20,
+          "max": 4.825265109030068e+37
+        },
+        "deg2_T100_reg0.0001": {
+          "mean": 6.034301651165223e+36,
+          "median": 9.359631833735296e+20,
+          "max": 4.825265109030068e+37
+        }
+      },
+      "eigenfunction_drift": {
+        "10": {
+          "mean_across_graphs": 0.32026465517853764,
+          "max_across_graphs": 0.7058914028050816
+        },
+        "20": {
+          "mean_across_graphs": 0.33122670568157775,
+          "max_across_graphs": 0.6721039705684733
+        },
+        "50": {
+          "mean_across_graphs": 0.3080985885096272,
+          "max_across_graphs": 0.8293692180965995
+        },
+        "100": {
+          "mean_across_graphs": 0.32065063728071974,
+          "max_across_graphs": 0.7955139786038028
+        }
+      },
+      "per_graph_results": {
+        "cospectral_5v_canonical_graph_A": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 5.843259178124766,
+            "deg1_T10_reg1e-12": 5.843259178124766,
+            "deg1_T10_reg1e-08": 5.843259178124766,
+            "deg1_T10_reg0.0001": 5.843259178124766,
+            "deg1_T20_reg0.0": 8.608996757402315,
+            "deg1_T20_reg1e-12": 8.608996757402315,
+            "deg1_T20_reg1e-08": 8.608996757402315,
+            "deg1_T20_reg0.0001": 8.608996757402315,
+            "deg1_T50_reg0.0": 13.048002265817072,
+            "deg1_T50_reg1e-12": 13.048002265817072,
+            "deg1_T50_reg1e-08": 13.048002265817072,
+            "deg1_T50_reg0.0001": 13.048002265817072,
+            "deg1_T100_reg0.0": 16.795803439465548,
+            "deg1_T100_reg1e-12": 16.795803439465548,
+            "deg1_T100_reg1e-08": 16.795803439465548,
+            "deg1_T100_reg0.0001": 16.795803439465548,
+            "deg2_T10_reg0.0": 3.038339851630002e+35,
+            "deg2_T10_reg1e-12": 3.038339851630002e+35,
+            "deg2_T10_reg1e-08": 3.038339851630002e+35,
+            "deg2_T10_reg0.0001": 3.038339851630002e+35,
+            "deg2_T20_reg0.0": 5.832602865028027e+33,
+            "deg2_T20_reg1e-12": 5.832602865028027e+33,
+            "deg2_T20_reg1e-08": 5.832602865028027e+33,
+            "deg2_T20_reg0.0001": 5.832602865028027e+33,
+            "deg2_T50_reg0.0": 4.181238980973628e+34,
+            "deg2_T50_reg1e-12": 4.181238980973628e+34,
+            "deg2_T50_reg1e-08": 4.181238980973628e+34,
+            "deg2_T50_reg0.0001": 4.181238980973628e+34,
+            "deg2_T100_reg0.0": 2.1762119021102717e+34,
+            "deg2_T100_reg1e-12": 2.1762119021102717e+34,
+            "deg2_T100_reg1e-08": 2.1762119021102717e+34,
+            "deg2_T100_reg0.0001": 2.1762119021102717e+34
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.36289531219405313,
+              "max_drift": 0.95380934460562,
+              "per_eigenfunction_drift": [
+                0.0,
+                1.1102230246251565e-16,
+                1.1102230246251565e-16
+              ]
+            },
+            "20": {
+              "mean_drift": 0.23328420876056294,
+              "max_drift": 0.8588825181032601,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                1.1102230246251565e-16
+              ]
+            },
+            "50": {
+              "mean_drift": 2.2408314474808844e-08,
+              "max_drift": 4.858162561127699e-08,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "100": {
+              "mean_drift": 6.4680986539000784e-09,
+              "max_drift": 1.4453103713840676e-08,
+              "per_eigenfunction_drift": [
+                0.0,
+                1.1102230246251565e-16,
+                0.0
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  0.7142452987496141,
+                  0.714245298749614,
+                  -1.160526415934182e-31
+                ],
+                [
+                  0.34994772938757424,
+                  -0.3499477293875743,
+                  -0.5
+                ],
+                [
+                  0.3499477293875736,
+                  -0.3499477293875737,
+                  0.8333333333333334
+                ]
+              ],
+              "dictionary_dim": 5,
+              "condition_number": 13.048002265817072
+            },
+            "2": {
+              "pe_sample_values": [
+                [
+                  0.2299307050637251,
+                  -0.2299307050637246,
+                  -0.4644214982203745
+                ],
+                [
+                  -0.19581023625823524,
+                  -0.1958102362582349,
+                  0.07344127202692387
+                ],
+                [
+                  -0.1958102362582349,
+                  -0.19581023625823468,
+                  0.07344127202692421
+                ]
+              ],
+              "dictionary_dim": 20,
+              "condition_number": 4.181238980973628e+34
+            }
+          }
+        },
+        "cospectral_5v_canonical_graph_B": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 6.172113218879062,
+            "deg1_T10_reg1e-12": 6.172113218879062,
+            "deg1_T10_reg1e-08": 6.172113218879062,
+            "deg1_T10_reg0.0001": 6.172113218879062,
+            "deg1_T20_reg0.0": 9.131430046977979,
+            "deg1_T20_reg1e-12": 9.131430046977979,
+            "deg1_T20_reg1e-08": 9.131430046977979,
+            "deg1_T20_reg0.0001": 9.131430046977979,
+            "deg1_T50_reg0.0": 13.763105410371422,
+            "deg1_T50_reg1e-12": 13.763105410371422,
+            "deg1_T50_reg1e-08": 13.763105410371422,
+            "deg1_T50_reg0.0001": 13.763105410371422,
+            "deg1_T100_reg0.0": 17.59764045849994,
+            "deg1_T100_reg1e-12": 17.59764045849994,
+            "deg1_T100_reg1e-08": 17.59764045849994,
+            "deg1_T100_reg0.0001": 17.59764045849994,
+            "deg2_T10_reg0.0": Infinity,
+            "deg2_T10_reg1e-12": Infinity,
+            "deg2_T10_reg1e-08": Infinity,
+            "deg2_T10_reg0.0001": Infinity,
+            "deg2_T20_reg0.0": Infinity,
+            "deg2_T20_reg1e-12": Infinity,
+            "deg2_T20_reg1e-08": Infinity,
+            "deg2_T20_reg0.0001": Infinity,
+            "deg2_T50_reg0.0": Infinity,
+            "deg2_T50_reg1e-12": Infinity,
+            "deg2_T50_reg1e-08": Infinity,
+            "deg2_T50_reg0.0001": Infinity,
+            "deg2_T100_reg0.0": Infinity,
+            "deg2_T100_reg1e-12": Infinity,
+            "deg2_T100_reg1e-08": Infinity,
+            "deg2_T100_reg0.0001": Infinity
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.28818397464453777,
+              "max_drift": 0.9999999999999986,
+              "per_eigenfunction_drift": [
+                0.9999999999999946,
+                0.9999999999999986,
+                0.0
+              ]
+            },
+            "20": {
+              "mean_drift": 0.42278261708221493,
+              "max_drift": 0.999999999999999,
+              "per_eigenfunction_drift": [
+                0.9999999999999974,
+                0.9999999999999961,
+                0.999999999999999
+              ]
+            },
+            "50": {
+              "mean_drift": 0.10224321501445999,
+              "max_drift": 0.5843337614130848,
+              "per_eigenfunction_drift": [
+                0.0,
+                2.220446049250313e-16,
+                0.0
+              ]
+            },
+            "100": {
+              "mean_drift": 0.5065512931854506,
+              "max_drift": 0.9999999999999973,
+              "per_eigenfunction_drift": [
+                0.999999999999992,
+                0.9999999999999939,
+                0.9999999999999962
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  -0.5000000000000001,
+                  0.5,
+                  0.33685308566974714
+                ],
+                [
+                  0.49999999999999967,
+                  0.4999999999999997,
+                  -0.6217153678933552
+                ],
+                [
+                  -0.49999999999999994,
+                  0.4999999999999999,
+                  -0.33685308566974725
+                ]
+              ],
+              "dictionary_dim": 5,
+              "condition_number": 13.763105410371422
+            },
+            "2": {
+              "pe_sample_values": [
+                [
+                  0.16250907458813357,
+                  -0.16250907458813155,
+                  0.16141660794483215
+                ],
+                [
+                  0.1625090745881342,
+                  0.16250907458813202,
+                  -0.1614166079448319
+                ],
+                [
+                  0.16250907458813368,
+                  -0.16250907458813152,
+                  0.1614166079448322
+                ]
+              ],
+              "dictionary_dim": 20,
+              "condition_number": Infinity
+            }
+          }
+        },
+        "cospectral_7v_25_graph_A": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 8.673448217896656,
+            "deg1_T10_reg1e-12": 8.673448217896656,
+            "deg1_T10_reg1e-08": 8.673448217896656,
+            "deg1_T10_reg0.0001": 8.673448217896656,
+            "deg1_T20_reg0.0": 15.873908007295999,
+            "deg1_T20_reg1e-12": 15.873908007295999,
+            "deg1_T20_reg1e-08": 15.873908007295999,
+            "deg1_T20_reg0.0001": 15.873908007295999,
+            "deg1_T50_reg0.0": 32.46069408838423,
+            "deg1_T50_reg1e-12": 32.46069408838423,
+            "deg1_T50_reg1e-08": 32.46069408838423,
+            "deg1_T50_reg0.0001": 32.46069408838423,
+            "deg1_T100_reg0.0": 51.370653153641896,
+            "deg1_T100_reg1e-12": 51.370653153641896,
+            "deg1_T100_reg1e-08": 51.370653153641896,
+            "deg1_T100_reg0.0001": 51.370653153641896,
+            "deg2_T10_reg0.0": Infinity,
+            "deg2_T10_reg1e-12": Infinity,
+            "deg2_T10_reg1e-08": Infinity,
+            "deg2_T10_reg0.0001": Infinity,
+            "deg2_T20_reg0.0": Infinity,
+            "deg2_T20_reg1e-12": Infinity,
+            "deg2_T20_reg1e-08": Infinity,
+            "deg2_T20_reg0.0001": Infinity,
+            "deg2_T50_reg0.0": Infinity,
+            "deg2_T50_reg1e-12": Infinity,
+            "deg2_T50_reg1e-08": Infinity,
+            "deg2_T50_reg0.0001": Infinity,
+            "deg2_T100_reg0.0": Infinity,
+            "deg2_T100_reg1e-12": Infinity,
+            "deg2_T100_reg1e-08": Infinity,
+            "deg2_T100_reg0.0001": Infinity
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.21690967525750154,
+              "max_drift": 0.9461645785493186,
+              "per_eigenfunction_drift": [
+                6.878704136292768e-07,
+                1.1380926078219389e-06,
+                9.888785457157212e-09
+              ]
+            },
+            "20": {
+              "mean_drift": 0.21409084854492705,
+              "max_drift": 0.9999999504404576,
+              "per_eigenfunction_drift": [
+                2.6889730320167615e-07,
+                4.2211036532791013e-07,
+                1.2461733311930345e-08
+              ]
+            },
+            "50": {
+              "mean_drift": 0.09242536175547891,
+              "max_drift": 0.886308583853178,
+              "per_eigenfunction_drift": [
+                1.293913992617135e-07,
+                3.53503710082137e-07,
+                1.2647840552659773e-08
+              ]
+            },
+            "100": {
+              "mean_drift": 0.023216506923273435,
+              "max_drift": 0.17774198137518749,
+              "per_eigenfunction_drift": [
+                1.1073844796705146e-07,
+                1.993570561964475e-07,
+                8.622925595780373e-09
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  -0.47262677655834623,
+                  0.5417548023199583,
+                  0.30387411875677234
+                ],
+                [
+                  -0.47262677655834506,
+                  0.06847580397919456,
+                  -0.6677177173891936
+                ],
+                [
+                  -0.3315980449480961,
+                  -0.4277153934704031,
+                  0.25502081728503856
+                ]
+              ],
+              "dictionary_dim": 7,
+              "condition_number": 32.46069408838423
+            },
+            "2": {
+              "pe_sample_values": [
+                [
+                  0.14343513521818863,
+                  -0.07221833879355724,
+                  -0.08747960351255343
+                ],
+                [
+                  0.14343513521815301,
+                  -0.07221833879356754,
+                  -0.08747960368531713
+                ],
+                [
+                  0.12646181233048187,
+                  -0.0191681860144554,
+                  0.1791668554691447
+                ]
+              ],
+              "dictionary_dim": 35,
+              "condition_number": Infinity
+            }
+          }
+        },
+        "cospectral_7v_25_graph_B": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 8.45004945024668,
+            "deg1_T10_reg1e-12": 8.45004945024668,
+            "deg1_T10_reg1e-08": 8.45004945024668,
+            "deg1_T10_reg0.0001": 8.45004945024668,
+            "deg1_T20_reg0.0": 15.449711962609834,
+            "deg1_T20_reg1e-12": 15.449711962609834,
+            "deg1_T20_reg1e-08": 15.449711962609834,
+            "deg1_T20_reg0.0001": 15.449711962609834,
+            "deg1_T50_reg0.0": 31.741233502245418,
+            "deg1_T50_reg1e-12": 31.741233502245418,
+            "deg1_T50_reg1e-08": 31.741233502245418,
+            "deg1_T50_reg0.0001": 31.741233502245418,
+            "deg1_T100_reg0.0": 50.69643204442876,
+            "deg1_T100_reg1e-12": 50.69643204442876,
+            "deg1_T100_reg1e-08": 50.69643204442876,
+            "deg1_T100_reg0.0001": 50.69643204442876,
+            "deg2_T10_reg0.0": 9.096659435052919e+17,
+            "deg2_T10_reg1e-12": 9.096659435052919e+17,
+            "deg2_T10_reg1e-08": 9.096659435052919e+17,
+            "deg2_T10_reg0.0001": 9.096659435052919e+17,
+            "deg2_T20_reg0.0": 2.855168757049747e+18,
+            "deg2_T20_reg1e-12": 2.855168757049747e+18,
+            "deg2_T20_reg1e-08": 2.855168757049747e+18,
+            "deg2_T20_reg0.0001": 2.855168757049747e+18,
+            "deg2_T50_reg0.0": 1.2373499622061727e+18,
+            "deg2_T50_reg1e-12": 1.2373499622061727e+18,
+            "deg2_T50_reg1e-08": 1.2373499622061727e+18,
+            "deg2_T50_reg0.0001": 1.2373499622061727e+18,
+            "deg2_T100_reg0.0": 6.646171503597085e+18,
+            "deg2_T100_reg1e-12": 6.646171503597085e+18,
+            "deg2_T100_reg1e-08": 6.646171503597085e+18,
+            "deg2_T100_reg0.0001": 6.646171503597085e+18
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.18303972475900068,
+              "max_drift": 0.8459957945718011,
+              "per_eigenfunction_drift": [
+                6.562939258714096e-07,
+                1.1150911261026408e-07,
+                0.48803494056446195
+              ]
+            },
+            "20": {
+              "mean_drift": 0.3028389358464669,
+              "max_drift": 0.9131151562223094,
+              "per_eigenfunction_drift": [
+                1.9598515355045976e-07,
+                1.8543113489144503e-08,
+                0.0034051461759300183
+              ]
+            },
+            "50": {
+              "mean_drift": 0.004389677021395366,
+              "max_drift": 0.033661152766435,
+              "per_eigenfunction_drift": [
+                3.211358323707003e-08,
+                1.4469709874731507e-09,
+                0.001853982173617097
+              ]
+            },
+            "100": {
+              "mean_drift": 0.06384771164788122,
+              "max_drift": 0.29878007520507677,
+              "per_eigenfunction_drift": [
+                2.2078857742080515e-08,
+                5.854789986159403e-10,
+                0.1160524449393926
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  0.47342271311692163,
+                  0.15772749391332802,
+                  0.15772749391332802
+                ],
+                [
+                  0.4734227131169189,
+                  -0.4879192143468816,
+                  -0.4879192143468816
+                ],
+                [
+                  0.41452209089911946,
+                  7.116368735374312e-15,
+                  7.116368735374312e-15
+                ]
+              ],
+              "dictionary_dim": 7,
+              "condition_number": 31.741233502245418
+            },
+            "2": {
+              "pe_sample_values": [
+                [
+                  -0.12306566727563167,
+                  -0.07325555571960636,
+                  -0.09691923698853705
+                ],
+                [
+                  -0.12306566727568563,
+                  -0.07325555571959314,
+                  0.1332288339191853
+                ],
+                [
+                  -0.12107959487263505,
+                  -0.052769862664985,
+                  1.9820112868258663e-13
+                ]
+              ],
+              "dictionary_dim": 35,
+              "condition_number": 1.2373499622061727e+18
+            }
+          }
+        },
+        "cospectral_7v_57_graph_A": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 9.207890719105087,
+            "deg1_T10_reg1e-12": 9.207890719105087,
+            "deg1_T10_reg1e-08": 9.207890719105087,
+            "deg1_T10_reg0.0001": 9.207890719105087,
+            "deg1_T20_reg0.0": 17.266949122858687,
+            "deg1_T20_reg1e-12": 17.266949122858687,
+            "deg1_T20_reg1e-08": 17.266949122858687,
+            "deg1_T20_reg0.0001": 17.266949122858687,
+            "deg1_T50_reg0.0": 36.86955771460479,
+            "deg1_T50_reg1e-12": 36.86955771460479,
+            "deg1_T50_reg1e-08": 36.86955771460479,
+            "deg1_T50_reg0.0001": 36.86955771460479,
+            "deg1_T100_reg0.0": 60.55024341079034,
+            "deg1_T100_reg1e-12": 60.55024341079034,
+            "deg1_T100_reg1e-08": 60.55024341079034,
+            "deg1_T100_reg0.0001": 60.55024341079034,
+            "deg2_T10_reg0.0": 9.928436232261173e+35,
+            "deg2_T10_reg1e-12": 9.928436232261173e+35,
+            "deg2_T10_reg1e-08": 9.928436232261173e+35,
+            "deg2_T10_reg0.0001": 9.928436232261173e+35,
+            "deg2_T20_reg0.0": 6.760840254739112e+35,
+            "deg2_T20_reg1e-12": 6.760840254739112e+35,
+            "deg2_T20_reg1e-08": 6.760840254739112e+35,
+            "deg2_T20_reg0.0001": 6.760840254739112e+35,
+            "deg2_T50_reg0.0": 6.139448052374252e+34,
+            "deg2_T50_reg1e-12": 6.139448052374252e+34,
+            "deg2_T50_reg1e-08": 6.139448052374252e+34,
+            "deg2_T50_reg0.0001": 6.139448052374252e+34,
+            "deg2_T100_reg0.0": 4.825265109030068e+37,
+            "deg2_T100_reg1e-12": 4.825265109030068e+37,
+            "deg2_T100_reg1e-08": 4.825265109030068e+37,
+            "deg2_T100_reg0.0001": 4.825265109030068e+37
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.15545083795533093,
+              "max_drift": 0.5617981312308837,
+              "per_eigenfunction_drift": [
+                2.651322694724456e-08,
+                2.2928859921833578e-09,
+                1.0961784291385612e-07
+              ]
+            },
+            "20": {
+              "mean_drift": 0.17709121543475964,
+              "max_drift": 0.8374850768786332,
+              "per_eigenfunction_drift": [
+                2.236659302212729e-09,
+                1.39731803905363e-09,
+                9.506371667633573e-08
+              ]
+            },
+            "50": {
+              "mean_drift": 0.21160194141548094,
+              "max_drift": 0.7306999082806083,
+              "per_eigenfunction_drift": [
+                3.3394154108634666e-10,
+                1.776911950912563e-12,
+                7.435293047919345e-08
+              ]
+            },
+            "100": {
+              "mean_drift": 0.23176718167745225,
+              "max_drift": 0.9710731943467181,
+              "per_eigenfunction_drift": [
+                1.7771816240852445e-09,
+                2.3239965507571014e-11,
+                5.2022076646451865e-08
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  0.24509971393817642,
+                  0.5552933169761843,
+                  8.232880488528266e-16
+                ],
+                [
+                  0.3964730908740487,
+                  0.17780367134498776,
+                  -0.19927876703442762
+                ],
+                [
+                  0.39647309087404975,
+                  0.17780367134499026,
+                  -0.05494713947350142
+                ]
+              ],
+              "dictionary_dim": 7,
+              "condition_number": 36.86955771460479
+            },
+            "2": {
+              "pe_sample_values": [
+                [
+                  -0.0944630424114349,
+                  0.00412832722756222,
+                  -0.20765786212938453
+                ],
+                [
+                  -0.11706704258433266,
+                  0.04989464596171472,
+                  -0.04433270655966287
+                ],
+                [
+                  -0.11706704258432823,
+                  0.04989464596171947,
+                  -0.04433270655990774
+                ]
+              ],
+              "dictionary_dim": 35,
+              "condition_number": 6.139448052374252e+34
+            }
+          }
+        },
+        "cospectral_7v_57_graph_B": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 9.199229264324638,
+            "deg1_T10_reg1e-12": 9.199229264324638,
+            "deg1_T10_reg1e-08": 9.199229264324638,
+            "deg1_T10_reg0.0001": 9.199229264324638,
+            "deg1_T20_reg0.0": 17.213984796522816,
+            "deg1_T20_reg1e-12": 17.213984796522816,
+            "deg1_T20_reg1e-08": 17.213984796522816,
+            "deg1_T20_reg0.0001": 17.213984796522816,
+            "deg1_T50_reg0.0": 36.61702915153384,
+            "deg1_T50_reg1e-12": 36.61702915153384,
+            "deg1_T50_reg1e-08": 36.61702915153384,
+            "deg1_T50_reg0.0001": 36.61702915153384,
+            "deg1_T100_reg0.0": 59.96997589105475,
+            "deg1_T100_reg1e-12": 59.96997589105475,
+            "deg1_T100_reg1e-08": 59.96997589105475,
+            "deg1_T100_reg0.0001": 59.96997589105475,
+            "deg2_T10_reg0.0": 1.8134450228416387e+20,
+            "deg2_T10_reg1e-12": 1.8134450228416387e+20,
+            "deg2_T10_reg1e-08": 1.8134450228416387e+20,
+            "deg2_T10_reg0.0001": 1.8134450228416387e+20,
+            "deg2_T20_reg0.0": 4.83454259109968e+20,
+            "deg2_T20_reg1e-12": 4.83454259109968e+20,
+            "deg2_T20_reg1e-08": 4.83454259109968e+20,
+            "deg2_T20_reg0.0001": 4.83454259109968e+20,
+            "deg2_T50_reg0.0": 1.3840234561729494e+21,
+            "deg2_T50_reg1e-12": 1.3840234561729494e+21,
+            "deg2_T50_reg1e-08": 1.3840234561729494e+21,
+            "deg2_T50_reg0.0001": 1.3840234561729494e+21,
+            "deg2_T100_reg0.0": 1.5734087990644237e+21,
+            "deg2_T100_reg1e-12": 1.5734087990644237e+21,
+            "deg2_T100_reg1e-08": 1.5734087990644237e+21,
+            "deg2_T100_reg0.0001": 1.5734087990644237e+21
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.12892960596286834,
+              "max_drift": 0.8607450664307997,
+              "per_eigenfunction_drift": [
+                6.252713036225543e-07,
+                1.923069259390786e-09,
+                2.9281751912080267e-08
+              ]
+            },
+            "20": {
+              "mean_drift": 0.07245276724602874,
+              "max_drift": 0.9106614628630487,
+              "per_eigenfunction_drift": [
+                3.2191894616673267e-07,
+                3.6235536793327583e-10,
+                2.3472003674029907e-08
+              ]
+            },
+            "50": {
+              "mean_drift": 0.11366084045443894,
+              "max_drift": 0.9732910422005546,
+              "per_eigenfunction_drift": [
+                2.0425210678354233e-07,
+                2.4623580952010116e-10,
+                1.648036818124865e-08
+              ]
+            },
+            "100": {
+              "mean_drift": 0.07700888297939062,
+              "max_drift": 0.687700617813304,
+              "per_eigenfunction_drift": [
+                3.278434920206408e-07,
+                1.7825851905683976e-10,
+                1.0483914403280892e-08
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  -0.35351557715904586,
+                  -0.2794823944006959,
+                  -0.7071067811865486
+                ],
+                [
+                  -0.30514798995234227,
+                  -0.4636709956319563,
+                  4.951757554028834e-16
+                ],
+                [
+                  -0.30514798995234316,
+                  -0.46367099563195774,
+                  3.980312531559036e-16
+                ]
+              ],
+              "dictionary_dim": 7,
+              "condition_number": 36.61702915153384
+            },
+            "2": {
+              "pe_sample_values": [
+                [
+                  0.1261719383658788,
+                  0.028830246342111177,
+                  0.08899034649706683
+                ],
+                [
+                  0.11750024937463174,
+                  0.0140773466597588,
+                  0.1659782431381687
+                ],
+                [
+                  0.11750024937463163,
+                  0.014077346659758995,
+                  0.16597824313816942
+                ]
+              ],
+              "dictionary_dim": 35,
+              "condition_number": 1.3840234561729494e+21
+            }
+          }
+        },
+        "csl_16_2_3_graph_A": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 9.385634939717493,
+            "deg1_T10_reg1e-12": 9.385634939717493,
+            "deg1_T10_reg1e-08": 9.385634939717493,
+            "deg1_T10_reg0.0001": 9.385634939717493,
+            "deg1_T20_reg0.0": 18.429044232546964,
+            "deg1_T20_reg1e-12": 18.429044232546964,
+            "deg1_T20_reg1e-08": 18.429044232546964,
+            "deg1_T20_reg0.0001": 18.429044232546964,
+            "deg1_T50_reg0.0": 44.34389697995123,
+            "deg1_T50_reg1e-12": 44.34389697995123,
+            "deg1_T50_reg1e-08": 44.34389697995123,
+            "deg1_T50_reg0.0001": 44.34389697995123,
+            "deg1_T100_reg0.0": 83.99000295606035,
+            "deg1_T100_reg1e-12": 83.99000295606035,
+            "deg1_T100_reg1e-08": 83.99000295606035,
+            "deg1_T100_reg0.0001": 83.99000295606035,
+            "deg2_T10_reg0.0": 6.769371239384006e+18,
+            "deg2_T10_reg1e-12": 6.769371239384006e+18,
+            "deg2_T10_reg1e-08": 6.769371239384006e+18,
+            "deg2_T10_reg0.0001": 6.769371239384006e+18,
+            "deg2_T20_reg0.0": 7.892178039149057e+18,
+            "deg2_T20_reg1e-12": 7.892178039149057e+18,
+            "deg2_T20_reg1e-08": 7.892178039149057e+18,
+            "deg2_T20_reg0.0001": 7.892178039149057e+18,
+            "deg2_T50_reg0.0": 3.322782626537227e+19,
+            "deg2_T50_reg1e-12": 3.322782626537227e+19,
+            "deg2_T50_reg1e-08": 3.322782626537227e+19,
+            "deg2_T50_reg0.0001": 3.322782626537227e+19,
+            "deg2_T100_reg0.0": 2.263574607628125e+19,
+            "deg2_T100_reg1e-12": 2.263574607628125e+19,
+            "deg2_T100_reg1e-08": 2.263574607628125e+19,
+            "deg2_T100_reg0.0001": 2.263574607628125e+19
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.16540422947758338,
+              "max_drift": 0.7342935810091362,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.528418472027488,
+                0.1597395018673895
+              ]
+            },
+            "20": {
+              "mean_drift": 0.2797696925152215,
+              "max_drift": 0.9517810422016826,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.032382624986313835,
+                0.0008630814696466427
+              ]
+            },
+            "50": {
+              "mean_drift": 0.2311613203290499,
+              "max_drift": 0.8328899860022303,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.03349141280096535
+              ]
+            },
+            "100": {
+              "mean_drift": 0.03553015908263581,
+              "max_drift": 0.1980299676738373,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.011664032063208984
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  0.24999999999998998,
+                  0.17148524009386512,
+                  0.353553390593276
+                ],
+                [
+                  0.24999999999999276,
+                  0.27675010127612,
+                  0.326640741219099
+                ],
+                [
+                  0.24999999999999958,
+                  0.3398822682849968,
+                  0.250000000000005
+                ]
+              ],
+              "dictionary_dim": 16,
+              "condition_number": 44.34389697995123
+            },
+            "2": {
+              "pe_sample_values": [
+                [
+                  0.2314912399740203,
+                  0.002868002663689251,
+                  0.2567023936607742
+                ],
+                [
+                  0.2314912399740563,
+                  0.0028680026636797584,
+                  0.33039760252804207
+                ],
+                [
+                  0.23149123997399612,
+                  0.0028680026636969114,
+                  0.35379277147172355
+                ]
+              ],
+              "dictionary_dim": 152,
+              "condition_number": 3.322782626537227e+19
+            }
+          }
+        },
+        "csl_16_2_3_graph_B": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 9.190491578926446,
+            "deg1_T10_reg1e-12": 9.190491578926446,
+            "deg1_T10_reg1e-08": 9.190491578926446,
+            "deg1_T10_reg0.0001": 9.190491578926446,
+            "deg1_T20_reg0.0": 17.510635012894493,
+            "deg1_T20_reg1e-12": 17.510635012894493,
+            "deg1_T20_reg1e-08": 17.510635012894493,
+            "deg1_T20_reg0.0001": 17.510635012894493,
+            "deg1_T50_reg0.0": 38.85626676882043,
+            "deg1_T50_reg1e-12": 38.85626676882043,
+            "deg1_T50_reg1e-08": 38.85626676882043,
+            "deg1_T50_reg0.0001": 38.85626676882043,
+            "deg1_T100_reg0.0": 66.39151872072586,
+            "deg1_T100_reg1e-12": 66.39151872072586,
+            "deg1_T100_reg1e-08": 66.39151872072586,
+            "deg1_T100_reg0.0001": 66.39151872072586,
+            "deg2_T10_reg0.0": Infinity,
+            "deg2_T10_reg1e-12": Infinity,
+            "deg2_T10_reg1e-08": Infinity,
+            "deg2_T10_reg0.0001": Infinity,
+            "deg2_T20_reg0.0": Infinity,
+            "deg2_T20_reg1e-12": Infinity,
+            "deg2_T20_reg1e-08": Infinity,
+            "deg2_T20_reg0.0001": Infinity,
+            "deg2_T50_reg0.0": Infinity,
+            "deg2_T50_reg1e-12": Infinity,
+            "deg2_T50_reg1e-08": Infinity,
+            "deg2_T50_reg0.0001": Infinity,
+            "deg2_T100_reg0.0": Infinity,
+            "deg2_T100_reg1e-12": Infinity,
+            "deg2_T100_reg1e-08": Infinity,
+            "deg2_T100_reg0.0001": Infinity
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.4880396077576703,
+              "max_drift": 0.9999999999999787,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "20": {
+              "mean_drift": 0.5272194468212794,
+              "max_drift": 0.9999999999999626,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "50": {
+              "mean_drift": 0.6744323891439395,
+              "max_drift": 0.9999999999999799,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "100": {
+              "mean_drift": 0.34985551042627294,
+              "max_drift": 0.9999999999999561,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  -0.24999999999999947,
+                  -0.24999999999999964,
+                  -0.11308517170771006
+                ],
+                [
+                  -0.24999999999999856,
+                  0.24999999999999856,
+                  0.23266845373535341
+                ],
+                [
+                  -0.24999999999999778,
+                  -0.2499999999999977,
+                  -0.31683007282657194
+                ]
+              ],
+              "dictionary_dim": 16,
+              "condition_number": 38.85626676882043
+            },
+            "2": {
+              "pe_sample_values": [
+                [
+                  -0.08588308908257508,
+                  0.08588308908257115,
+                  -0.020111360391902096
+                ],
+                [
+                  -0.08588308908257351,
+                  -0.0858830890825697,
+                  0.020111360391901305
+                ],
+                [
+                  -0.08588308908256102,
+                  0.08588308908255719,
+                  -0.020111360391912463
+                ]
+              ],
+              "dictionary_dim": 152,
+              "condition_number": Infinity
+            }
+          }
+        },
+        "csl_41_3_13_graph_A": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 9.227407741641477,
+            "deg1_T10_reg1e-12": 9.227407741641477,
+            "deg1_T10_reg1e-08": 9.227407741641477,
+            "deg1_T10_reg0.0001": 9.227407741641477,
+            "deg1_T20_reg0.0": 17.946514117425245,
+            "deg1_T20_reg1e-12": 17.946514117425245,
+            "deg1_T20_reg1e-08": 17.946514117425245,
+            "deg1_T20_reg0.0001": 17.946514117425245,
+            "deg1_T50_reg0.0": 43.22663418884016,
+            "deg1_T50_reg1e-12": 43.22663418884016,
+            "deg1_T50_reg1e-08": 43.22663418884016,
+            "deg1_T50_reg0.0001": 43.22663418884016,
+            "deg1_T100_reg0.0": 84.07004305107817,
+            "deg1_T100_reg1e-12": 84.07004305107817,
+            "deg1_T100_reg1e-08": 84.07004305107817,
+            "deg1_T100_reg0.0001": 84.07004305107817
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.06612464843233118,
+              "max_drift": 0.2362065070244429,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.10675575816982219,
+                0.10675575816982219
+              ]
+            },
+            "20": {
+              "mean_drift": 0.19499881402218552,
+              "max_drift": 0.9360130987793737,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.04487701860572413,
+                0.11063928750685348
+              ]
+            },
+            "50": {
+              "mean_drift": 0.3102508556784135,
+              "max_drift": 0.9558879470875946,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.618660482041935,
+                0.21735391491516154
+              ]
+            },
+            "100": {
+              "mean_drift": 0.3499701784358581,
+              "max_drift": 0.9536399825629542,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.07192240915730863,
+                0.5038958575377841
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  -0.15617376188860688,
+                  0.0022231572952750227,
+                  -0.22086305214969237
+                ],
+                [
+                  -0.1561737618886062,
+                  0.014689410987991322,
+                  0.22021499604351819
+                ],
+                [
+                  -0.15617376188860627,
+                  -0.03151577596659388,
+                  -0.21827463077591838
+                ]
+              ],
+              "dictionary_dim": 41,
+              "condition_number": 43.22663418884016
+            }
+          }
+        },
+        "csl_41_3_13_graph_B": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 9.416987716091848,
+            "deg1_T10_reg1e-12": 9.416987716091848,
+            "deg1_T10_reg1e-08": 9.416987716091848,
+            "deg1_T10_reg0.0001": 9.416987716091848,
+            "deg1_T20_reg0.0": 18.63672966411456,
+            "deg1_T20_reg1e-12": 18.63672966411456,
+            "deg1_T20_reg1e-08": 18.63672966411456,
+            "deg1_T20_reg0.0001": 18.63672966411456,
+            "deg1_T50_reg0.0": 46.057881253766084,
+            "deg1_T50_reg1e-12": 46.057881253766084,
+            "deg1_T50_reg1e-08": 46.057881253766084,
+            "deg1_T50_reg0.0001": 46.057881253766084,
+            "deg1_T100_reg0.0": 91.10169933370463,
+            "deg1_T100_reg1e-12": 91.10169933370463,
+            "deg1_T100_reg1e-08": 91.10169933370463,
+            "deg1_T100_reg0.0001": 91.10169933370463
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.2526514835342121,
+              "max_drift": 0.9629492646204625,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.10728104006615746,
+                0.9629492646204625
+              ]
+            },
+            "20": {
+              "mean_drift": 0.14668776068920925,
+              "max_drift": 0.647181654751242,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.35016170197230856,
+                0.647181654751242
+              ]
+            },
+            "50": {
+              "mean_drift": 0.14731074407206962,
+              "max_drift": 0.5252738332754805,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.5252738332754805,
+                0.289875497982524
+              ]
+            },
+            "100": {
+              "mean_drift": 0.43840423561167624,
+              "max_drift": 0.9790742910590692,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.740132950491149,
+                0.2985313498683043
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  -0.15617376188860663,
+                  0.11188875763214075,
+                  -0.22086305214969362
+                ],
+                [
+                  -0.15617376188860718,
+                  0.01577583494206548,
+                  -0.19792986014184677
+                ],
+                [
+                  -0.15617376188860654,
+                  -0.08361323781737727,
+                  -0.13389279455679115
+                ]
+              ],
+              "dictionary_dim": 41,
+              "condition_number": 46.057881253766084
+            }
+          }
+        },
+        "csl_41_13_16_graph_A": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 9.416987716091848,
+            "deg1_T10_reg1e-12": 9.416987716091848,
+            "deg1_T10_reg1e-08": 9.416987716091848,
+            "deg1_T10_reg0.0001": 9.416987716091848,
+            "deg1_T20_reg0.0": 18.63672966411456,
+            "deg1_T20_reg1e-12": 18.63672966411456,
+            "deg1_T20_reg1e-08": 18.63672966411456,
+            "deg1_T20_reg0.0001": 18.63672966411456,
+            "deg1_T50_reg0.0": 46.057881253766084,
+            "deg1_T50_reg1e-12": 46.057881253766084,
+            "deg1_T50_reg1e-08": 46.057881253766084,
+            "deg1_T50_reg0.0001": 46.057881253766084,
+            "deg1_T100_reg0.0": 91.10169933370463,
+            "deg1_T100_reg1e-12": 91.10169933370463,
+            "deg1_T100_reg1e-08": 91.10169933370463,
+            "deg1_T100_reg0.0001": 91.10169933370463
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.2526514835342121,
+              "max_drift": 0.9629492646204625,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.10728104006615746,
+                0.9629492646204625
+              ]
+            },
+            "20": {
+              "mean_drift": 0.14668776068920925,
+              "max_drift": 0.647181654751242,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.35016170197230856,
+                0.647181654751242
+              ]
+            },
+            "50": {
+              "mean_drift": 0.14731074407206962,
+              "max_drift": 0.5252738332754805,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.5252738332754805,
+                0.289875497982524
+              ]
+            },
+            "100": {
+              "mean_drift": 0.43840423561167624,
+              "max_drift": 0.9790742910590692,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.740132950491149,
+                0.2985313498683043
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  -0.15617376188860663,
+                  0.11188875763214075,
+                  -0.22086305214969362
+                ],
+                [
+                  -0.15617376188860718,
+                  0.01577583494206548,
+                  -0.19792986014184677
+                ],
+                [
+                  -0.15617376188860654,
+                  -0.08361323781737727,
+                  -0.13389279455679115
+                ]
+              ],
+              "dictionary_dim": 41,
+              "condition_number": 46.057881253766084
+            }
+          }
+        },
+        "csl_41_13_16_graph_B": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 9.40980795331928,
+            "deg1_T10_reg1e-12": 9.40980795331928,
+            "deg1_T10_reg1e-08": 9.40980795331928,
+            "deg1_T10_reg0.0001": 9.40980795331928,
+            "deg1_T20_reg0.0": 18.625678779161007,
+            "deg1_T20_reg1e-12": 18.625678779161007,
+            "deg1_T20_reg1e-08": 18.625678779161007,
+            "deg1_T20_reg0.0001": 18.625678779161007,
+            "deg1_T50_reg0.0": 46.04479616376443,
+            "deg1_T50_reg1e-12": 46.04479616376443,
+            "deg1_T50_reg1e-08": 46.04479616376443,
+            "deg1_T50_reg0.0001": 46.04479616376443,
+            "deg1_T100_reg0.0": 91.08719908579359,
+            "deg1_T100_reg1e-12": 91.08719908579359,
+            "deg1_T100_reg1e-08": 91.08719908579359,
+            "deg1_T100_reg0.0001": 91.08719908579359
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.32393373048374235,
+              "max_drift": 0.9999999999968628,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.45212074374436195,
+                0.16821948360392214
+              ]
+            },
+            "20": {
+              "mean_drift": 0.31209093675884003,
+              "max_drift": 0.9946062651649834,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.03312772292148691,
+                0.0075937662064048395
+              ]
+            },
+            "50": {
+              "mean_drift": 0.3292399348680332,
+              "max_drift": 0.916971952146076,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.02649322566353407,
+                0.014549268865615694
+              ]
+            },
+            "100": {
+              "mean_drift": 0.16232523155090073,
+              "max_drift": 0.796120919762864,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0014403473745110418,
+                0.013056611320334977
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  0.15617376188860574,
+                  -0.01993634087552967,
+                  0.2208630521496934
+                ],
+                [
+                  0.15617376188860638,
+                  -0.030707059474113476,
+                  -0.215053343181836
+                ],
+                [
+                  0.15617376188860568,
+                  0.0797349874569041,
+                  0.19792986014184824
+                ]
+              ],
+              "dictionary_dim": 41,
+              "condition_number": 46.04479616376443
+            }
+          }
+        },
+        "srg_shrikhande_vs_rook_graph_A": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 8.668615014285491,
+            "deg1_T10_reg1e-12": 8.668615014285491,
+            "deg1_T10_reg1e-08": 8.668615014285491,
+            "deg1_T10_reg0.0001": 8.668615014285491,
+            "deg1_T20_reg0.0": 17.105597008988262,
+            "deg1_T20_reg1e-12": 17.105597008988262,
+            "deg1_T20_reg1e-08": 17.105597008988262,
+            "deg1_T20_reg0.0001": 17.105597008988262,
+            "deg1_T50_reg0.0": 41.23532944354413,
+            "deg1_T50_reg1e-12": 41.23532944354413,
+            "deg1_T50_reg1e-08": 41.23532944354413,
+            "deg1_T50_reg0.0001": 41.23532944354413,
+            "deg1_T100_reg0.0": 78.01527203375498,
+            "deg1_T100_reg1e-12": 78.01527203375498,
+            "deg1_T100_reg1e-08": 78.01527203375498,
+            "deg1_T100_reg0.0001": 78.01527203375498,
+            "deg2_T10_reg0.0": 2.7256065404396054e+20,
+            "deg2_T10_reg1e-12": 2.7256065404396054e+20,
+            "deg2_T10_reg1e-08": 2.7256065404396054e+20,
+            "deg2_T10_reg0.0001": 2.7256065404396054e+20,
+            "deg2_T20_reg0.0": 4.82613229562022e+19,
+            "deg2_T20_reg1e-12": 4.82613229562022e+19,
+            "deg2_T20_reg1e-08": 4.82613229562022e+19,
+            "deg2_T20_reg0.0001": 4.82613229562022e+19,
+            "deg2_T50_reg0.0": 1.769473460158136e+20,
+            "deg2_T50_reg1e-12": 1.769473460158136e+20,
+            "deg2_T50_reg1e-08": 1.769473460158136e+20,
+            "deg2_T50_reg0.0001": 1.769473460158136e+20,
+            "deg2_T100_reg0.0": 2.985175676826357e+20,
+            "deg2_T100_reg1e-12": 2.985175676826357e+20,
+            "deg2_T100_reg1e-08": 2.985175676826357e+20,
+            "deg2_T100_reg0.0001": 2.985175676826357e+20
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.7058914028050816,
+              "max_drift": 0.9999999999999759,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.034588568122308705
+              ]
+            },
+            "20": {
+              "mean_drift": 0.6721039705684733,
+              "max_drift": 0.9999999999999893,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.22561018862839566
+              ]
+            },
+            "50": {
+              "mean_drift": 0.7799441073609313,
+              "max_drift": 0.9999999999999803,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.9999999999999578
+              ]
+            },
+            "100": {
+              "mean_drift": 0.7240329441072633,
+              "max_drift": 0.9999999999999885,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.9999999999998509
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  -0.24999999999999722,
+                  -0.14571389783238178,
+                  -0.02772939557328208
+                ],
+                [
+                  -0.2499999999999995,
+                  0.11290553191327775,
+                  0.21832586459743622
+                ],
+                [
+                  -0.25000000000000144,
+                  0.35724047540274867,
+                  -0.05075393977740976
+                ]
+              ],
+              "dictionary_dim": 16,
+              "condition_number": 41.23532944354413
+            },
+            "2": {
+              "pe_sample_values": [
+                [
+                  0.20805206159418765,
+                  0.003377248683020348,
+                  0.16768959163436725
+                ],
+                [
+                  0.20805206159421338,
+                  0.003377248683014776,
+                  -0.18274642005977687
+                ],
+                [
+                  0.20805206159424475,
+                  0.0033772486830124307,
+                  0.4279721813653291
+                ]
+              ],
+              "dictionary_dim": 152,
+              "condition_number": 1.769473460158136e+20
+            }
+          }
+        },
+        "srg_shrikhande_vs_rook_graph_B": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 8.66861501428549,
+            "deg1_T10_reg1e-12": 8.66861501428549,
+            "deg1_T10_reg1e-08": 8.66861501428549,
+            "deg1_T10_reg0.0001": 8.66861501428549,
+            "deg1_T20_reg0.0": 17.105597008988283,
+            "deg1_T20_reg1e-12": 17.105597008988283,
+            "deg1_T20_reg1e-08": 17.105597008988283,
+            "deg1_T20_reg0.0001": 17.105597008988283,
+            "deg1_T50_reg0.0": 41.23532944354411,
+            "deg1_T50_reg1e-12": 41.23532944354411,
+            "deg1_T50_reg1e-08": 41.23532944354411,
+            "deg1_T50_reg0.0001": 41.23532944354411,
+            "deg1_T100_reg0.0": 78.015272033755,
+            "deg1_T100_reg1e-12": 78.015272033755,
+            "deg1_T100_reg1e-08": 78.015272033755,
+            "deg1_T100_reg0.0001": 78.015272033755,
+            "deg2_T10_reg0.0": 1.5109893816764262e+19,
+            "deg2_T10_reg1e-12": 1.5109893816764262e+19,
+            "deg2_T10_reg1e-08": 1.5109893816764262e+19,
+            "deg2_T10_reg0.0001": 1.5109893816764262e+19,
+            "deg2_T20_reg0.0": 1.5581298195395795e+20,
+            "deg2_T20_reg1e-12": 1.5581298195395795e+20,
+            "deg2_T20_reg1e-08": 1.5581298195395795e+20,
+            "deg2_T20_reg0.0001": 1.5581298195395795e+20,
+            "deg2_T50_reg0.0": 1.729524116042102e+20,
+            "deg2_T50_reg1e-12": 1.729524116042102e+20,
+            "deg2_T50_reg1e-08": 1.729524116042102e+20,
+            "deg2_T50_reg0.0001": 1.729524116042102e+20,
+            "deg2_T100_reg0.0": 1.59129636069461e+20,
+            "deg2_T100_reg1e-12": 1.59129636069461e+20,
+            "deg2_T100_reg1e-08": 1.59129636069461e+20,
+            "deg2_T100_reg0.0001": 1.59129636069461e+20
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.5901469324966087,
+              "max_drift": 0.9999999999999921,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.9999999999999767
+              ]
+            },
+            "20": {
+              "mean_drift": 0.6256118512354737,
+              "max_drift": 0.9999999999999706,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.9614844802690217
+              ]
+            },
+            "50": {
+              "mean_drift": 0.8293692180965995,
+              "max_drift": 0.9999999999999992,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.999999999999995
+              ]
+            },
+            "100": {
+              "mean_drift": 0.7955139786038028,
+              "max_drift": 0.9999999999999912,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.9999999999999647
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  0.2500000000000016,
+                  0.23391746144938175,
+                  -0.00997014686277982
+                ],
+                [
+                  0.2500000000000022,
+                  0.19146860256724008,
+                  0.15147593984263427
+                ],
+                [
+                  0.25000000000000366,
+                  0.09915182820539165,
+                  -0.2283644788174779
+                ]
+              ],
+              "dictionary_dim": 16,
+              "condition_number": 41.23532944354411
+            },
+            "2": {
+              "pe_sample_values": [
+                [
+                  0.20805206159814627,
+                  0.0033772486829869094,
+                  -0.02505108355348882
+                ],
+                [
+                  0.20805206159813336,
+                  0.003377248682989241,
+                  0.042303129244505834
+                ],
+                [
+                  0.20805206159817083,
+                  0.0033772486829863266,
+                  0.5057874251650584
+                ]
+              ],
+              "dictionary_dim": 152,
+              "condition_number": 1.729524116042102e+20
+            }
+          }
+        },
+        "srg_T8_vs_chang0_graph_A": {
+          "condition_numbers": {
+            "deg1_T10_reg0.0": 9.651141949489055,
+            "deg1_T10_reg1e-12": 9.651141949489055,
+            "deg1_T10_reg1e-08": 9.651141949489055,
+            "deg1_T10_reg0.0001": 9.651141949489055,
+            "deg1_T20_reg0.0": 19.217189224354037,
+            "deg1_T20_reg1e-12": 19.217189224354037,
+            "deg1_T20_reg1e-08": 19.217189224354037,
+            "deg1_T20_reg0.0001": 19.217189224354037,
+            "deg1_T50_reg0.0": 47.44428849526357,
+            "deg1_T50_reg1e-12": 47.44428849526357,
+            "deg1_T50_reg1e-08": 47.44428849526357,
+            "deg1_T50_reg0.0001": 47.44428849526357,
+            "deg1_T100_reg0.0": 92.99398492177815,
+            "deg1_T100_reg1e-12": 92.99398492177815,
+            "deg1_T100_reg1e-08": 92.99398492177815,
+            "deg1_T100_reg0.0001": 92.99398492177815,
+            "deg2_T10_reg0.0": 1.1614949412165232e+20,
+            "deg2_T10_reg1e-12": 1.1614949412165232e+20,
+            "deg2_T10_reg1e-08": 1.1614949412165232e+20,
+            "deg2_T10_reg0.0001": 1.1614949412165232e+20,
+            "deg2_T20_reg0.0": 7.495418754016292e+20,
+            "deg2_T20_reg1e-12": 7.495418754016292e+20,
+            "deg2_T20_reg1e-08": 7.495418754016292e+20,
+            "deg2_T20_reg0.0001": 7.495418754016292e+20,
+            "deg2_T50_reg0.0": 8.12608698929142e+20,
+            "deg2_T50_reg1e-12": 8.12608698929142e+20,
+            "deg2_T50_reg1e-08": 8.12608698929142e+20,
+            "deg2_T50_reg0.0001": 8.12608698929142e+20,
+            "deg2_T100_reg0.0": 3.985121318572562e+21,
+            "deg2_T100_reg1e-12": 3.985121318572562e+21,
+            "deg2_T100_reg1e-08": 3.985121318572562e+21,
+            "deg2_T100_reg0.0001": 3.985121318572562e+21
+          },
+          "eigenfunction_drift": {
+            "10": {
+              "mean_drift": 0.6237171783833311,
+              "max_drift": 0.9960607228625683,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.22152905920350618,
+                0.5226876675360197
+              ]
+            },
+            "20": {
+              "mean_drift": 0.640689759008813,
+              "max_drift": 0.9363384969181434,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.386029603277533,
+                0.9270654377190424
+              ]
+            },
+            "50": {
+              "mean_drift": 0.6481384559537338,
+              "max_drift": 0.9731774308355731,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.7371601310860598
+              ]
+            },
+            "100": {
+              "mean_drift": 0.6133315028991638,
+              "max_drift": 0.9801722386598505,
+              "per_eigenfunction_drift": [
+                0.0,
+                0.0,
+                0.8177544791914844
+              ]
+            }
+          },
+          "dictionary_comparison": {
+            "1": {
+              "pe_sample_values": [
+                [
+                  0.1889822365046138,
+                  0.030714456659029197,
+                  0.017964415248411223
+                ],
+                [
+                  0.18898223650461285,
+                  -0.04269213892046432,
+                  -0.020621917041246357
+                ],
+                [
+                  0.18898223650461293,
+                  -0.13634856758355862,
+                  -0.031555100440629334
+                ]
+              ],
+              "dictionary_dim": 28,
+              "condition_number": 47.44428849526357
+            },
+            "2": {
+              "pe_sample_values": [
+                [
+                  0.19026177602947905,
+                  0.0007218577275222328,
+                  -0.175632903609976
+                ],
+                [
+                  0.1902617760294735,
+                  0.0007218577275351738,
+                  -0.09709843484503616
+                ],
+                [
+                  0.19026177602945052,
+                  0.0007218577275333697,
+                  0.14980088135110636
+                ]
+              ],
+              "dictionary_dim": 434,
+              "condition_number": 8.12608698929142e+20
+            }
+          }
+        }
+      }
+    },
+    "cospectral_distinguishing": {
+      "summary": {
+        "kwpe_pairs_distinguished": 525,
+        "rwpe_pairs_distinguished": 338,
+        "total_pairs_tested": 525,
+        "total_cospectral_pairs": 148,
+        "kwpe_cospectral_distinguished": 148,
+        "rwpe_cospectral_distinguished": 66,
+        "kwpe_advantage_pairs": 187
+      },
+      "per_category_results": {
+        "BREC_4Vertex": {
+          "total": 20,
+          "successful": 20,
+          "kwpe_distinguished": 20,
+          "rwpe_distinguished": 0,
+          "kwpe_rate": 1.0,
+          "rwpe_rate": 0.0
+        },
+        "BREC_Basic": {
+          "total": 60,
+          "successful": 60,
+          "kwpe_distinguished": 60,
+          "rwpe_distinguished": 60,
+          "kwpe_rate": 1.0,
+          "rwpe_rate": 1.0
+        },
+        "BREC_CFI": {
+          "total": 100,
+          "successful": 100,
+          "kwpe_distinguished": 100,
+          "rwpe_distinguished": 5,
+          "kwpe_rate": 1.0,
+          "rwpe_rate": 0.05
+        },
+        "BREC_Distance_Regular": {
+          "total": 20,
+          "successful": 20,
+          "kwpe_distinguished": 20,
+          "rwpe_distinguished": 0,
+          "kwpe_rate": 1.0,
+          "rwpe_rate": 0.0
+        },
+        "BREC_Extension": {
+          "total": 100,
+          "successful": 100,
+          "kwpe_distinguished": 100,
+          "rwpe_distinguished": 100,
+          "kwpe_rate": 1.0,
+          "rwpe_rate": 1.0
+        },
+        "BREC_Regular": {
+          "total": 50,
+          "successful": 50,
+          "kwpe_distinguished": 50,
+          "rwpe_distinguished": 50,
+          "kwpe_rate": 1.0,
+          "rwpe_rate": 1.0
+        },
+        "BREC_Strongly_Regular": {
+          "total": 50,
+          "successful": 50,
+          "kwpe_distinguished": 50,
+          "rwpe_distinguished": 0,
+          "kwpe_rate": 1.0,
+          "rwpe_rate": 0.0
+        },
+        "CSL": {
+          "total": 59,
+          "successful": 59,
+          "kwpe_distinguished": 59,
+          "rwpe_distinguished": 59,
+          "kwpe_rate": 1.0,
+          "rwpe_rate": 1.0
+        },
+        "cospectral": {
+          "total": 64,
+          "successful": 64,
+          "kwpe_distinguished": 64,
+          "rwpe_distinguished": 64,
+          "kwpe_rate": 1.0,
+          "rwpe_rate": 1.0
+        },
+        "strongly_regular": {
+          "total": 2,
+          "successful": 2,
+          "kwpe_distinguished": 2,
+          "rwpe_distinguished": 0,
+          "kwpe_rate": 1.0,
+          "rwpe_rate": 0.0
+        }
+      }
+    },
+    "recommendations": {
+      "best_nonlinearity": "tanh",
+      "recommended_T": 50,
+      "recommended_d": 16,
+      "recommended_dictionary_degree": 2,
+      "recommended_regularization": 1e-08,
+      "scalability_limit_n": 1000,
+      "key_findings": [
+        "Convergence: tanh achieves 81.0% convergence rate across test graphs",
+        "KW-PE distinguished 525/525 pairs overall (148/148 cospectral)",
+        "RWPE baseline distinguished 338/525 pairs overall (66/148 cospectral)"
+      ]
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "graph_expressiveness_benchmark",
+      "examples": [
+        {
+          "input": "{\"graph_A\": {\"num_nodes\": 5, \"num_edges\": 4, \"adjacency_matrix\": [[0, 1, 1, 1, 1], [1, 0, 0, 0, 0], [1, 0, 0, 0, 0], [1, 0, 0, 0, 0], [1, 0, 0, 0, 0]], \"edge_list\": [[0, 1], [0, 2], [0, 3], [0, 4]], \"...",
+          "output": "{\"is_isomorphic\": false, \"are_cospectral\": true}",
+          "metadata_fold": 0,
+          "metadata_pair_id": "cospectral_5v_canonical",
+          "metadata_category": "cospectral",
+          "metadata_subcategory": "5_vertex_canonical",
+          "metadata_wl_level": "1-WL",
+          "metadata_difficulty": "easy",
+          "metadata_num_nodes_A": 5,
+          "metadata_num_nodes_B": 5,
+          "metadata_row_index": 0,
+          "metadata_task_type": "graph_pair_classification",
+          "predict_kwpe": "{\"distinguished\": true, \"distance\": 8.293569965752873, \"condition_number\": 4.181238980973628e+34, \"time_s\": 0.004252271028235555}",
+          "predict_rwpe": "{\"distinguished\": true, \"distance\": 4.242640687119286}"
+        },
+        {
+          "input": "{\"graph_A\": {\"num_nodes\": 6, \"num_edges\": 4, \"adjacency_matrix\": [[0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1], [0, 0, 0, 1, 1, 0]], \"edge_list\": ...",
+          "output": "{\"is_isomorphic\": false, \"are_cospectral\": true}",
+          "metadata_fold": 1,
+          "metadata_pair_id": "cospectral_6v_0",
+          "metadata_category": "cospectral",
+          "metadata_subcategory": "6_vertex_atlas",
+          "metadata_wl_level": "1-WL",
+          "metadata_difficulty": "easy",
+          "metadata_num_nodes_A": 6,
+          "metadata_num_nodes_B": 6,
+          "metadata_row_index": 1,
+          "metadata_task_type": "graph_pair_classification",
+          "predict_kwpe": "{\"distinguished\": true, \"distance\": 8.558578976417008, \"condition_number\": Infinity, \"time_s\": 0.004783984157256782}",
+          "predict_rwpe": "{\"distinguished\": true, \"distance\": 4.242640687119286}"
+        },
+        {
+          "input": "{\"graph_A\": {\"num_nodes\": 6, \"num_edges\": 4, \"adjacency_matrix\": [[0, 0, 1, 0, 0, 0], [0, 0, 1, 1, 0, 0], [1, 1, 0, 0, 0, 0], [0, 1, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0]], \"edge_list\": ...",
+          "output": "{\"is_isomorphic\": false, \"are_cospectral\": true}",
+          "metadata_fold": 2,
+          "metadata_pair_id": "cospectral_6v_1",
+          "metadata_category": "cospectral",
+          "metadata_subcategory": "6_vertex_atlas",
+          "metadata_wl_level": "1-WL",
+          "metadata_difficulty": "easy",
+          "metadata_num_nodes_A": 6,
+          "metadata_num_nodes_B": 6,
+          "metadata_row_index": 2,
+          "metadata_task_type": "graph_pair_classification",
+          "predict_kwpe": "{\"distinguished\": true, \"distance\": 7.342917488307419, \"condition_number\": Infinity, \"time_s\": 0.004670252907089889}",
+          "predict_rwpe": "{\"distinguished\": true, \"distance\": 5.347958201936591}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+2026-02-25 02:39:16.233 | INFO     | __main__:main:257 - === ZINC-12k Dataset Preparation ===
+2026-02-25 02:39:16.234 | INFO     | __main__:main:258 - Hardware: 4 CPUs, 32.0GB RAM
+2026-02-25 02:39:16.235 | INFO     | __main__:main:259 - RAM budget: 4.3GB
+2026-02-25 02:39:16.236 | INFO     | __main__:main:265 - --- Processing split: train → train ---
+2026-02-25 02:39:16.240 | INFO     | __main__:load_index_file:109 - Loaded 10000 indices from train.index
+2026-02-25 02:39:16.241 | INFO     | __main__:load_json_split:116 - Loading full_graphs-datasets_ZINC_train.json ...
+2026-02-25 02:39:27.243 | INFO     | __main__:load_json_split:118 - Loaded 220011 graphs from full_graphs-datasets_ZINC_train.json
+2026-02-25 02:39:27.362 | INFO     | __main__:main:285 - Converted 10000 train examples
+2026-02-25 02:39:27.948 | INFO     | __main__:main:265 - --- Processing split: validation → val ---
+2026-02-25 02:39:27.955 | INFO     | __main__:load_index_file:109 - Loaded 1000 indices from val.index
+2026-02-25 02:39:27.956 | INFO     | __main__:load_json_split:116 - Loading full_graphs-datasets_ZINC_validation.json ...
+2026-02-25 02:39:29.341 | INFO     | __main__:load_json_split:118 - Loaded 24445 graphs from full_graphs-datasets_ZINC_validation.json
+2026-02-25 02:39:29.353 | INFO     | __main__:main:285 - Converted 1000 val examples
+2026-02-25 02:39:29.422 | INFO     | __main__:main:265 - --- Processing split: test → test ---
+2026-02-25 02:39:29.428 | INFO     | __main__:load_index_file:109 - Loaded 1000 indices from test.index
+2026-02-25 02:39:29.429 | INFO     | __main__:load_json_split:116 - Loading full_graphs-datasets_ZINC_test.json ...
+2026-02-25 02:39:29.642 | INFO     | __main__:load_json_split:118 - Loaded 5000 graphs from full_graphs-datasets_ZINC_test.json
+2026-02-25 02:39:29.656 | INFO     | __main__:main:285 - Converted 1000 test examples
+2026-02-25 02:39:29.674 | INFO     | __main__:main:291 - Total examples: 12000
+2026-02-25 02:39:29.676 | INFO     | __main__:validate_examples:174 - === Validating dataset ===
+2026-02-25 02:39:29.677 | INFO     | __main__:validate_examples:179 - Split counts: {'train': 10000, 'val': 1000, 'test': 1000}
+2026-02-25 02:39:29.777 | INFO     | __main__:validate_examples:226 - Node features unique: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+2026-02-25 02:39:29.779 | INFO     | __main__:validate_examples:227 - Edge attr unique: [1, 2, 3]
+2026-02-25 02:39:29.781 | INFO     | __main__:validate_examples:228 - Num nodes: min=9, max=37, avg=23.2
+2026-02-25 02:39:29.781 | INFO     | __main__:validate_examples:229 - Target y: min=-42.037, max=3.805, mean=0.016, std=2.009
+2026-02-25 02:39:29.782 | INFO     | __main__:validate_examples:230 - Total examples: 12000
+2026-02-25 02:39:29.784 | INFO     | __main__:validate_examples:243 - Undirected check (100 graphs): 5064 bidir, 0 unidir
+2026-02-25 02:39:29.785 | INFO     | __main__:validate_examples:251 - ✓ Validation PASSED
+2026-02-25 02:39:29.832 | INFO     | __main__:main:312 - Wrote full_data_out.json: 12000 examples, 7.4 MB
+2026-02-25 02:39:29.833 | INFO     | __main__:main:314 - === Done ===
+2026-02-25 02:40:19.566 | INFO     | __main__:main:257 - === ZINC-12k Dataset Preparation ===
+2026-02-25 02:40:19.567 | INFO     | __main__:main:258 - Hardware: 4 CPUs, 32.0GB RAM
+2026-02-25 02:40:19.568 | INFO     | __main__:main:259 - RAM budget: 4.3GB
+2026-02-25 02:40:19.569 | INFO     | __main__:main:265 - --- Processing split: train → train ---
+2026-02-25 02:40:19.575 | INFO     | __main__:load_index_file:109 - Loaded 10000 indices from train.index
+2026-02-25 02:40:19.577 | INFO     | __main__:load_json_split:116 - Loading full_graphs-datasets_ZINC_train.json ...
+2026-02-25 02:40:30.213 | INFO     | __main__:load_json_split:118 - Loaded 220011 graphs from full_graphs-datasets_ZINC_train.json
+2026-02-25 02:40:30.330 | INFO     | __main__:main:285 - Converted 10000 train examples
+2026-02-25 02:40:30.894 | INFO     | __main__:main:265 - --- Processing split: validation → val ---
+2026-02-25 02:40:30.910 | INFO     | __main__:load_index_file:109 - Loaded 1000 indices from val.index
+2026-02-25 02:40:30.912 | INFO     | __main__:load_json_split:116 - Loading full_graphs-datasets_ZINC_validation.json ...
+2026-02-25 02:40:32.108 | INFO     | __main__:load_json_split:118 - Loaded 24445 graphs from full_graphs-datasets_ZINC_validation.json
+2026-02-25 02:40:32.122 | INFO     | __main__:main:285 - Converted 1000 val examples
+2026-02-25 02:40:32.190 | INFO     | __main__:main:265 - --- Processing split: test → test ---
+2026-02-25 02:40:32.199 | INFO     | __main__:load_index_file:109 - Loaded 1000 indices from test.index
+2026-02-25 02:40:32.206 | INFO     | __main__:load_json_split:116 - Loading full_graphs-datasets_ZINC_test.json ...
+2026-02-25 02:40:32.378 | INFO     | __main__:load_json_split:118 - Loaded 5000 graphs from full_graphs-datasets_ZINC_test.json
+2026-02-25 02:40:32.396 | INFO     | __main__:main:285 - Converted 1000 test examples
+2026-02-25 02:40:32.414 | INFO     | __main__:main:291 - Total examples: 12000
+2026-02-25 02:40:32.416 | INFO     | __main__:validate_examples:174 - === Validating dataset ===
+2026-02-25 02:40:32.417 | INFO     | __main__:validate_examples:179 - Split counts: {'train': 10000, 'val': 1000, 'test': 1000}
+2026-02-25 02:40:32.516 | INFO     | __main__:validate_examples:226 - Node features unique: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+2026-02-25 02:40:32.519 | INFO     | __main__:validate_examples:227 - Edge attr unique: [1, 2, 3]
+2026-02-25 02:40:32.520 | INFO     | __main__:validate_examples:228 - Num nodes: min=9, max=37, avg=23.2
+2026-02-25 02:40:32.521 | INFO     | __main__:validate_examples:229 - Target y: min=-42.037, max=3.805, mean=0.016, std=2.009
+2026-02-25 02:40:32.522 | INFO     | __main__:validate_examples:230 - Total examples: 12000
+2026-02-25 02:40:32.525 | INFO     | __main__:validate_examples:243 - Undirected check (100 graphs): 5064 bidir, 0 unidir
+2026-02-25 02:40:32.526 | INFO     | __main__:validate_examples:251 - ✓ Validation PASSED
+2026-02-25 02:40:32.577 | INFO     | __main__:main:312 - Wrote data_out.json: 12000 examples, 7.4 MB
+2026-02-25 02:40:32.578 | INFO     | __main__:main:314 - === Done ===
+2026-02-25 02:44:02.697 | INFO     | __main__:main:257 - === ZINC-12k Dataset Preparation ===
+2026-02-25 02:44:02.699 | INFO     | __main__:main:258 - Hardware: 4 CPUs, 32.0GB RAM
+2026-02-25 02:44:02.700 | INFO     | __main__:main:259 - RAM budget: 4.3GB
+2026-02-25 02:44:02.707 | INFO     | __main__:main:265 - --- Processing split: train → train ---
+2026-02-25 02:44:02.715 | INFO     | __main__:load_index_file:109 - Loaded 10000 indices from train.index
+2026-02-25 02:44:02.716 | INFO     | __main__:load_json_split:116 - Loading full_graphs-datasets_ZINC_train.json ...
+2026-02-25 02:44:13.820 | INFO     | __main__:load_json_split:118 - Loaded 220011 graphs from full_graphs-datasets_ZINC_train.json
+2026-02-25 02:44:13.943 | INFO     | __main__:main:285 - Converted 10000 train examples
+2026-02-25 02:44:14.494 | INFO     | __main__:main:265 - --- Processing split: validation → val ---
+2026-02-25 02:44:14.509 | INFO     | __main__:load_index_file:109 - Loaded 1000 indices from val.index
+2026-02-25 02:44:14.510 | INFO     | __main__:load_json_split:116 - Loading full_graphs-datasets_ZINC_validation.json ...
+2026-02-25 02:44:15.799 | INFO     | __main__:load_json_split:118 - Loaded 24445 graphs from full_graphs-datasets_ZINC_validation.json
+2026-02-25 02:44:15.812 | INFO     | __main__:main:285 - Converted 1000 val examples
+2026-02-25 02:44:15.878 | INFO     | __main__:main:265 - --- Processing split: test → test ---
+2026-02-25 02:44:15.888 | INFO     | __main__:load_index_file:109 - Loaded 1000 indices from test.index
+2026-02-25 02:44:15.889 | INFO     | __main__:load_json_split:116 - Loading full_graphs-datasets_ZINC_test.json ...
+2026-02-25 02:44:16.084 | INFO     | __main__:load_json_split:118 - Loaded 5000 graphs from full_graphs-datasets_ZINC_test.json
+2026-02-25 02:44:16.097 | INFO     | __main__:main:285 - Converted 1000 test examples
+2026-02-25 02:44:16.115 | INFO     | __main__:main:291 - Total examples: 12000
+2026-02-25 02:44:16.117 | INFO     | __main__:validate_examples:174 - === Validating dataset ===
+2026-02-25 02:44:16.120 | INFO     | __main__:validate_examples:179 - Split counts: {'train': 10000, 'val': 1000, 'test': 1000}
+2026-02-25 02:44:16.222 | INFO     | __main__:validate_examples:226 - Node features unique: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+2026-02-25 02:44:16.225 | INFO     | __main__:validate_examples:227 - Edge attr unique: [1, 2, 3]
+2026-02-25 02:44:16.226 | INFO     | __main__:validate_examples:228 - Num nodes: min=9, max=37, avg=23.2
+2026-02-25 02:44:16.228 | INFO     | __main__:validate_examples:229 - Target y: min=-42.037, max=3.805, mean=0.016, std=2.009
+2026-02-25 02:44:16.229 | INFO     | __main__:validate_examples:230 - Total examples: 12000
+2026-02-25 02:44:16.232 | INFO     | __main__:validate_examples:243 - Undirected check (100 graphs): 5064 bidir, 0 unidir
+2026-02-25 02:44:16.233 | INFO     | __main__:validate_examples:251 - ✓ Validation PASSED
+2026-02-25 02:44:16.288 | INFO     | __main__:main:312 - Wrote full_data_out.json: 12000 examples, 7.4 MB
+2026-02-25 02:44:16.289 | INFO     | __main__:main:314 - === Done ===
+2026-02-25 02:48:31.021 | INFO     | __main__:main:265 - === ZINC-12k Dataset Preparation ===
+2026-02-25 02:48:31.023 | INFO     | __main__:main:266 - Hardware: 4 CPUs, 32.0GB RAM
+2026-02-25 02:48:31.024 | INFO     | __main__:main:267 - RAM budget: 4.3GB
+2026-02-25 02:48:31.026 | INFO     | __main__:main:273 - --- Processing split: train → train ---
+2026-02-25 02:48:31.035 | INFO     | __main__:load_index_file:113 - Loaded 10000 indices from train.index
+2026-02-25 02:48:31.036 | INFO     | __main__:load_json_split:122 - Loading full_graphs-datasets_ZINC_train_part_001.json ...
+2026-02-25 02:48:34.530 | INFO     | __main__:load_json_split:124 - Loaded 73337 graphs from full_graphs-datasets_ZINC_train_part_001.json
+2026-02-25 02:48:34.532 | INFO     | __main__:load_json_split:122 - Loading full_graphs-datasets_ZINC_train_part_002.json ...
+2026-02-25 02:48:37.884 | INFO     | __main__:load_json_split:124 - Loaded 73337 graphs from full_graphs-datasets_ZINC_train_part_002.json
+2026-02-25 02:48:37.887 | INFO     | __main__:load_json_split:122 - Loading full_graphs-datasets_ZINC_train_part_003.json ...
+2026-02-25 02:48:41.622 | INFO     | __main__:load_json_split:124 - Loaded 73337 graphs from full_graphs-datasets_ZINC_train_part_003.json
+2026-02-25 02:48:41.624 | INFO     | __main__:load_json_split:126 - Total loaded: 220011 graphs from 3 file(s)
+2026-02-25 02:48:41.736 | INFO     | __main__:main:293 - Converted 10000 train examples
+2026-02-25 02:48:42.344 | INFO     | __main__:main:273 - --- Processing split: validation → val ---
+2026-02-25 02:48:42.408 | INFO     | __main__:load_index_file:113 - Loaded 1000 indices from val.index
+2026-02-25 02:48:42.410 | INFO     | __main__:load_json_split:122 - Loading full_graphs-datasets_ZINC_validation.json ...
+2026-02-25 02:48:43.705 | INFO     | __main__:load_json_split:124 - Loaded 24445 graphs from full_graphs-datasets_ZINC_validation.json
+2026-02-25 02:48:43.707 | INFO     | __main__:load_json_split:126 - Total loaded: 24445 graphs from 1 file(s)
+2026-02-25 02:48:43.720 | INFO     | __main__:main:293 - Converted 1000 val examples
+2026-02-25 02:48:43.784 | INFO     | __main__:main:273 - --- Processing split: test → test ---
+2026-02-25 02:48:43.795 | INFO     | __main__:load_index_file:113 - Loaded 1000 indices from test.index
+2026-02-25 02:48:43.796 | INFO     | __main__:load_json_split:122 - Loading full_graphs-datasets_ZINC_test.json ...
+2026-02-25 02:48:43.945 | INFO     | __main__:load_json_split:124 - Loaded 5000 graphs from full_graphs-datasets_ZINC_test.json
+2026-02-25 02:48:43.946 | INFO     | __main__:load_json_split:126 - Total loaded: 5000 graphs from 1 file(s)
+2026-02-25 02:48:43.959 | INFO     | __main__:main:293 - Converted 1000 test examples
+2026-02-25 02:48:43.976 | INFO     | __main__:main:299 - Total examples: 12000
+2026-02-25 02:48:43.978 | INFO     | __main__:validate_examples:182 - === Validating dataset ===
+2026-02-25 02:48:43.980 | INFO     | __main__:validate_examples:187 - Split counts: {'train': 10000, 'val': 1000, 'test': 1000}
+2026-02-25 02:48:44.075 | INFO     | __main__:validate_examples:234 - Node features unique: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+2026-02-25 02:48:44.078 | INFO     | __main__:validate_examples:235 - Edge attr unique: [1, 2, 3]
+2026-02-25 02:48:44.080 | INFO     | __main__:validate_examples:236 - Num nodes: min=9, max=37, avg=23.2
+2026-02-25 02:48:44.081 | INFO     | __main__:validate_examples:237 - Target y: min=-42.037, max=3.805, mean=0.016, std=2.009
+2026-02-25 02:48:44.083 | INFO     | __main__:validate_examples:238 - Total examples: 12000
+2026-02-25 02:48:44.085 | INFO     | __main__:validate_examples:251 - Undirected check (100 graphs): 5064 bidir, 0 unidir
+2026-02-25 02:48:44.086 | INFO     | __main__:validate_examples:259 - ✓ Validation PASSED
+2026-02-25 02:48:44.143 | INFO     | __main__:main:320 - Wrote full_data_out.json: 12000 examples, 7.4 MB
+2026-02-25 02:48:44.144 | INFO     | __main__:main:322 - === Done ===

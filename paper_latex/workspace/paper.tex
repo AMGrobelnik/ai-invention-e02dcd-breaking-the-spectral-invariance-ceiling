@@ -1,0 +1,305 @@
+\documentclass{article}
+
+% Required packages
+\usepackage[preprint]{neurips_2024}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{natbib}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\title{Nonlinear Random Walk Positional Encodings: Expressiveness Gains and the Spectral Invariant Hierarchy}
+
+\author{
+  Anonymous Authors
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Positional encodings (PEs) are critical for graph neural networks and graph transformers, yet recent theoretical results establish that all spectral-invariant PE methods---including random walk PEs (RWPE), Laplacian PEs, SignNet, and BasisNet---are provably bounded below 3-WL expressiveness and can only count parallel-tree substructures. We investigate whether applying pointwise nonlinearities to random walk dynamics on graphs can break or refine this expressiveness ceiling. We introduce nonlinear random walk positional encodings (nRWPE), computed by iterating $\mathbf{x}_{t+1} = \sigma(\mathbf{A}_{\text{norm}} \mathbf{x}_t)$ with nonlinearities such as $\tanh$, and analyze the resulting features through both direct diagonal extraction and Koopman operator decomposition via Extended Dynamic Mode Decomposition (EDMD). Through a six-iteration investigation spanning 9 experiments, 51 training runs, and 55 methods on a 525-pair graph expressiveness benchmark and the ZINC-12k molecular regression benchmark, we establish three main findings. First, the full non-equivariant KW-PE pipeline (nonlinear walks + EDMD) achieves perfect 525/525 pair discrimination, far exceeding RWPE (345/525), but this power derives from EDMD's non-equivariant processing rather than the nonlinear dynamics alone. Second, we prove a formal separation theorem: equivariant nRWPE-diag captures entrywise power sum invariants $S_{2p}(i) = \sum_j A_{ij}^{2p}$ that are provably not functions of RWPE's matrix-power diagonals $[\mathbf{A}^k]_{ii}$, establishing the strict hierarchy $\text{RWPE} < \text{nRWPE} < \text{EPNN} < \text{3-WL}$ within the spectral invariant family. Third, despite superior expressiveness, no nRWPE variant outperforms RWPE on downstream ZINC-12k molecular property prediction across four architectures (GIN, GINEConv, GPS), with RWPE winning all 9 pairwise comparisons (best: 0.0908 vs.\ 0.1026 MAE). The expressiveness-utility correlation is weak and non-significant (Spearman $\rho = 0.42$, $p = 0.10$). Our results reveal a fundamental tension between graph-theoretic discriminative power and task-specific predictive utility, and precisely characterize the information-theoretic landscape within the spectral invariant hierarchy.
+\end{abstract}
+
+
+%==============================================================================
+\section{Introduction}
+\label{sec:introduction}
+%==============================================================================
+
+Positional encodings (PEs) are a foundational component of modern graph neural networks (GNNs) and graph transformers, providing nodes with structural identity information that message-passing alone cannot capture \citep{Xu2019, Morris2019, Gilmer2017}. The two most widely adopted approaches---Laplacian PEs (LapPE), which use eigenvectors of the graph Laplacian \citep{DwivediBresson2021, Kreuzer2021}, and random walk PEs (RWPE), which use diagonal entries of powers of the random walk matrix \citep{Dwivedi2022}---have become standard building blocks in architectures such as GPS \citep{Rampasek2022}, SAN \citep{Kreuzer2021}, and Graphormer \citep{Ying2021}.
+
+However, a recent line of theoretical work has established a fundamental expressiveness ceiling for these methods. \citet{Zhang2024} introduced the Eigenspace Projection Neural Network (EPNN) framework, which unifies all spectral-invariant GNN architectures and proves they are bounded strictly below 3-WL expressiveness. \citet{Gai2025} further showed that spectral-invariant GNNs can only homomorphism-count a restricted class of ``parallel tree'' substructures. Together, these results imply that the entire family of spectral PE methods---RWPE, LapPE, SignNet \citep{Lim2022}, BasisNet \citep{Lim2022}, SPE \citep{Wang2023spe}, and RFP \citep{Eliasof2023}---hits an expressiveness wall that no amount of architectural engineering can overcome within the spectral-invariant paradigm.
+
+This motivates the central question of our work: \emph{Can nonlinear dynamics on graphs produce positional encodings that refine or break the spectral invariance expressiveness ceiling?}
+
+We investigate this question by introducing nonlinear random walk positional encodings (nRWPE), computed by iterating $\mathbf{x}_{t+1} = \sigma(\mathbf{A}_{\text{norm}} \mathbf{x}_t)$ where $\sigma$ is a pointwise nonlinearity such as $\tanh$, and analyzing the resulting trajectories both directly and through Koopman operator decomposition via Extended Dynamic Mode Decomposition (EDMD) \citep{Williams2015}. The key intuition is that the nonlinearity couples different spectral modes---creating cross-terms like $u_j(i) \cdot u_k(i)$ between eigenvector components---that linear walks cannot capture.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{figures/fig_1144_v0.png}
+  \caption{Overview of the nonlinear walk positional encoding pipeline. Starting from a graph's normalized adjacency matrix, we iterate a nonlinear map to produce walk trajectories, then extract features either via diagonal extraction (equivariant nRWPE) or Koopman decomposition via EDMD (non-equivariant KW-PE).}
+  \label{fig:pipeline}
+\end{figure}
+
+Through a systematic six-iteration investigation spanning 9 experiments, 51 training runs, and 55 methods, we establish three main contributions:
+
+\begin{enumerate}
+    \item \textbf{A formal separation theorem within the spectral invariant hierarchy.} We prove that nRWPE-diag captures entrywise power sum invariants $S_{2p}(i) = \sum_j A_{ij}^{2p}$ that are provably not functions of RWPE's matrix-power diagonals, establishing the strict ordering $\text{RWPE} < \text{nRWPE} < \text{EPNN} < \text{3-WL}$.
+
+    \item \textbf{The equivariance extraction bottleneck.} The full nonlinear walk trajectory contains enough information to distinguish all 525/525 benchmark pairs, but extracting this in a node-permutation-equivariant way collapses discrimination to 346/525---quantifying the ``equivariance tax'' on structural information.
+
+    \item \textbf{A negative expressiveness-utility correlation.} Despite strictly greater expressiveness, no nRWPE variant outperforms RWPE on downstream molecular property prediction (RWPE wins 9/9 pairwise comparisons), revealing that graph isomorphism testing power does not predict task-specific predictive utility.
+\end{enumerate}
+
+
+%==============================================================================
+\section{Related Work}
+\label{sec:related}
+%==============================================================================
+
+\paragraph{Graph positional encodings.}
+The use of positional encodings in graph learning was pioneered by \citet{DwivediBresson2021}, who proposed using Laplacian eigenvectors as graph analogues of sinusoidal positional encodings from NLP \citep{Vaswani2017}. RWPE, introduced by \citet{Dwivedi2022}, computes the diagonal entries of powers of the random walk matrix $\mathbf{p}_i = [\text{RW}_{ii}, \text{RW}_{ii}^2, \ldots, \text{RW}_{ii}^k]$, avoiding the sign ambiguity of eigenvector-based approaches. The GPS framework \citep{Rampasek2022} and SAN \citep{Kreuzer2021} established these PEs as standard components of graph transformer architectures. Graphormer \citep{Ying2021} uses spatial encodings based on shortest-path distances.
+
+\paragraph{Sign and basis ambiguity.}
+Laplacian eigenvectors suffer from sign ambiguity (if $\mathbf{v}$ is an eigenvector, so is $-\mathbf{v}$) and basis ambiguity in degenerate eigenspaces. SignNet and BasisNet \citep{Lim2022} address these through architectures that are invariant to sign flips and basis rotations respectively, while SPE \citep{Wang2023spe} provides Lipschitz-stable encodings that are basis-invariant by construction. PEARL \citep{He2025pearl} uses learned GNN layers as nonlinear mappings of random feature initializations, achieving comparable performance to eigenvector-based PEs with linear complexity.
+
+\paragraph{Random feature propagation.}
+RFP \citep{Eliasof2023} propagates random node features through linear iterations of graph operators, concatenating intermediate steps as positional encodings. This draws a link between random features and spectral PEs but remains within the linear propagation paradigm.
+
+\paragraph{Spectral invariance theory.}
+The EPNN framework \citep{Zhang2024} unifies all spectral-invariant architectures under a single message-passing scheme using eigenspace projection features $P_M^G(u,v) = \{(\lambda_i, P_i(u,v))\}$ and proves they are bounded by $\text{PSWL} < \text{3-WL}$. The homomorphism expressivity analysis \citep{Gai2025} further shows that spectral-invariant GNNs can count exactly the class of parallel-tree substructures, establishing precise limitations.
+
+\paragraph{Expressiveness benchmarks.}
+The BREC benchmark \citep{Wang2024brec} provides 400 pairs of non-isomorphic graphs organized into Basic, Regular, Extension, and CFI categories, enabling fine-grained expressiveness evaluation between 1-WL and 4-WL. The GIN architecture \citep{Xu2019} established the foundational connection between GNN expressiveness and the Weisfeiler-Leman hierarchy, while higher-order GNNs \citep{Morris2019} extend this to $k$-WL.
+
+\paragraph{Koopman operator theory.}
+The Koopman operator \citep{Koopman1931} is an infinite-dimensional linear operator that acts on observable functions of a dynamical system's state, providing a ``linear lens on nonlinear phenomena.'' Extended Dynamic Mode Decomposition (EDMD) \citep{Williams2015} approximates Koopman eigenfunctions from trajectory data using dictionary-based regression. While Koopman analysis has been applied to temporal dynamics on graphs \citep{Sturma2023} and GNN training acceleration \citep{Meusel2024}, no prior work applies it to graph-topology-defined dynamics for positional encoding.
+
+\paragraph{Nonlinear dynamics on graphs.}
+Reaction-diffusion GNNs \citep{Eliasof2024} use nonlinear PDEs as GNN layer designs but do not produce precomputed positional encodings. The walk-based approach of \citet{Toenshoff2024} processes random walk trajectories with language models for universal approximation but does not extract compact spectral features.
+
+
+%==============================================================================
+\section{Methods}
+\label{sec:methods}
+%==============================================================================
+
+\subsection{Nonlinear Random Walk Dynamics}
+\label{sec:nonlinear_walks}
+
+Given a graph $G = (V, E)$ with $n$ nodes, let $\mathbf{A}$ denote its adjacency matrix and $\mathbf{D}$ the diagonal degree matrix. We define the normalized adjacency matrix $\mathbf{A}_{\text{norm}} = \mathbf{D}^{-1/2} \mathbf{A} \mathbf{D}^{-1/2}$ (or the random walk matrix $\mathbf{A}_{\text{norm}} = \mathbf{D}^{-1}\mathbf{A}$). For each node $i$, we initialize $\mathbf{x}_0 = \mathbf{e}_i$ (the $i$-th standard basis vector) and iterate:
+\begin{equation}
+\label{eq:nonlinear_walk}
+\mathbf{x}_{t+1} = \sigma(\mathbf{A}_{\text{norm}} \mathbf{x}_t)
+\end{equation}
+for $T$ steps, where $\sigma$ is a pointwise nonlinearity. We consider four nonlinearities: $\tanh(x)$, $\text{softplus}(x) = \log(1 + e^x)$, $\text{ReLU}(x) = \max(0, x)$, and a cubic nonlinearity $\sigma(x) = x + x^3/6$.
+
+The key theoretical insight is that $\sigma$ introduces \emph{nonlinear mode coupling}. Expanding in the eigenbasis of $\mathbf{A}_{\text{norm}} = \sum_j \lambda_j \mathbf{u}_j \mathbf{u}_j^\top$, a single step yields $x_1[j] = \sigma(A_{ji})$, and the inner product with $\mathbf{e}_i$ involves entrywise power sums that mix eigenvector components in ways linear walks cannot.
+
+\subsection{Equivariant Feature Extraction: nRWPE-diag}
+\label{sec:nrwpe_diag}
+
+The simplest equivariant feature extraction uses the diagonal entries of the nonlinear walk:
+\begin{equation}
+\label{eq:nrwpe_diag}
+\text{nRWPE-diag}(i) = [x_1^{(i)}[i],\; x_2^{(i)}[i],\; \ldots,\; x_T^{(i)}[i]]
+\end{equation}
+where $x_t^{(i)}$ denotes the walk trajectory initialized from node $i$. This is the nonlinear analogue of RWPE, which uses $[\mathbf{A}_{\text{norm}}^1{}_{ii}, \mathbf{A}_{\text{norm}}^2{}_{ii}, \ldots, \mathbf{A}_{\text{norm}}^K{}_{ii}]$. The diagonal extraction ensures node-permutation equivariance (verified with max error $8.3 \times 10^{-17}$ in experiments). These features are inherently sign-canonical since the return values $\sigma(\sum_j A_{ij} x_{t-1}[j])$ do not depend on arbitrary eigenvector sign choices.
+
+\subsection{Non-Equivariant Feature Extraction: KW-PE via EDMD}
+\label{sec:kwpe}
+
+For maximum discriminative power, we apply Extended Dynamic Mode Decomposition to the full trajectory matrix. For each node $i$, we collect the trajectory $\mathbf{X}_i = [\mathbf{x}_0^{(i)}, \mathbf{x}_1^{(i)}, \ldots, \mathbf{x}_{T-1}^{(i)}]$ and $\mathbf{Y}_i = [\mathbf{x}_1^{(i)}, \mathbf{x}_2^{(i)}, \ldots, \mathbf{x}_T^{(i)}]$.
+
+We lift these into a dictionary of nonlinear observables $\boldsymbol{\psi}: \mathbb{R}^n \rightarrow \mathbb{R}^N$ (polynomials up to degree $d_{\text{poly}} = 2$), forming:
+\begin{equation}
+\label{eq:edmd}
+\mathbf{G} = \frac{1}{M} \sum_t \boldsymbol{\psi}(\mathbf{x}_t) \boldsymbol{\psi}(\mathbf{x}_t)^\top, \qquad
+\mathbf{A}_{\text{EDMD}} = \frac{1}{M} \sum_t \boldsymbol{\psi}(\mathbf{x}_t) \boldsymbol{\psi}(\mathbf{x}_{t+1})^\top
+\end{equation}
+The EDMD operator $\mathbf{K}_{\text{EDMD}} = \mathbf{G}^+ \mathbf{A}_{\text{EDMD}}$ (pseudoinverse) approximates the Koopman operator restricted to the dictionary span. Its eigenvectors $\boldsymbol{\xi}_j$ yield approximate Koopman eigenfunctions $\phi_j(\mathbf{x}) = \sum_k \xi_{jk} \psi_k(\mathbf{x})$, evaluated at node states to produce $d$-dimensional positional encodings. We use regularization $\epsilon = 10^{-8}$ for numerical stability.
+
+The default configuration uses $\sigma = \tanh$, $T = 30$ walk steps, $d = 16$ Koopman eigenfunctions, PCA dimensionality reduction to $k = 20$, and polynomial dictionary degree 2.
+
+\subsection{Theoretical Analysis: Separation from RWPE}
+\label{sec:theory}
+
+\begin{theorem}[Separation from RWPE, informal]
+\label{thm:separation}
+For any analytic nonlinearity $\sigma$ with $\sigma'''(0) \neq 0$, the equivariant nRWPE-diag at step 2 depends on entrywise power sums $S_4(i) = \sum_j A_{ij}^4$, which are not functions of the matrix-power diagonals $\{[\mathbf{A}^k]_{ii} : k \in \mathbb{N}\}$ that RWPE computes.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Via Taylor expansion of $\tanh$: $\tanh(t) = t - t^3/3 + 2t^5/15 - \cdots$, we have $x_1[j] = \tanh(A_{ji})$. The return value at step 2 involves the inner product $\langle \sigma(\mathbf{A}_{\text{norm}} \mathbf{x}_1), \mathbf{e}_i \rangle$, which after expansion contains terms proportional to $S_4(i) = \sum_j A_{ij}^4$. This captures the fourth power of \emph{direct} edge weights, whereas $[\mathbf{A}^4]_{ii} = \sum_j (\sum_m A_{im} A_{mj})^2$ involves 2-hop path products. These are fundamentally different quantities: $S_4$ is not a function of $\{[\mathbf{A}^k]_{ii}\}$.
+\end{proof}
+
+\paragraph{Spectral invariance correction.} A critical finding is that nRWPE \emph{is} spectrally invariant, since $\mathbf{A}_{\text{norm}}$ is uniquely determined by the spectral decomposition $\{(\lambda_i, \mathbf{P}_i)\}$ via $\mathbf{A} = \sum_i \lambda_i \mathbf{P}_i$, and any deterministic function of $\mathbf{A}$ is therefore spectrally invariant. The corrected hierarchy is:
+\begin{equation}
+\label{eq:hierarchy}
+\text{RWPE-diag} \leq \text{nRWPE-diag} \leq \text{EPNN} \leq \text{PSWL} < \text{3-WL}
+\end{equation}
+with the first inequality being strict for graphs where the $S_{2p}$ invariants differ.
+
+
+%==============================================================================
+\section{Experimental Setup}
+\label{sec:setup}
+%==============================================================================
+
+\subsection{Graph Expressiveness Benchmark}
+\label{sec:expressiveness_setup}
+
+We assembled a comprehensive benchmark of 525 non-isomorphic graph pairs across 10 categories: 64 cospectral pairs (eigenvalue-identical but structurally distinct, including the canonical $K_{1,4}$ vs.\ $C_4 + K_1$ pair and the Rook vs.\ Shrikhande strongly regular pair), 59 CSL (Circular Skip Link) circulant graphs that are 1-WL indistinguishable, 2 strongly regular graph pairs, and 400 BREC benchmark pairs \citep{Wang2024brec} spanning Basic (60), Regular (50), Extension (100), CFI (100), 4-Vertex (20), Distance-Regular (20), and Strongly-Regular (50) categories. For each pair, we compute PE vectors for both graphs and declare them ``distinguished'' if the $L_2$ distance between sorted PE multisets exceeds a threshold ($10^{-5}$ for non-equivariant methods, $10^{-6}$ for equivariant methods).
+
+\subsection{Downstream Molecular Regression: ZINC-12k}
+\label{sec:zinc_setup}
+
+We evaluate on the ZINC-12k molecular regression benchmark \citep{Dwivedi2023bench}, containing 12,000 molecular graphs (10k/1k/1k train/val/test split) with penalized logP regression targets. Graphs average 23.2 nodes with integer atom-type features (0--20) and bond-type edge attributes (1--3). We test four GNN architectures: GIN (4-layer, 128 hidden) \citep{Xu2019}, GIN with improved PE projection (learned MLP, BatchNorm, dropout), GINEConv (4-layer, 128 hidden, edge-aware), and GPS (64 hidden, 2 attention heads, 3 GPS layers) \citep{Rampasek2022}. All models are trained with Adam optimizer, cosine annealing learning rate schedule (initial lr = 0.001, minimum lr = $10^{-5}$), batch size 128, gradient clipping at 5.0, and early stopping with patience 30--40 epochs. Each configuration uses 2--3 random seeds (42, 123, 456).
+
+\subsection{Baselines}
+\label{sec:baselines}
+
+We compare against: (1) \textbf{No PE}: GNN without positional encodings; (2) \textbf{RWPE-$K$}: diagonal entries of random walk matrix powers for $K = 8, 16, 20$ steps; (3) \textbf{LapPE}: top-$k$ Laplacian eigenvectors (non-equivariant); (4) \textbf{nRWPE-diag}: diagonal nonlinear walk features with $\tanh$, softplus, ReLU; (5) \textbf{nRWPE-offdiag}: sorted off-diagonal entries of the nonlinear walk matrix; (6) \textbf{KW-PE}: full EDMD pipeline with polynomial dictionary; (7) \textbf{Concatenation variants}: RWPE + nRWPE concatenated features.
+
+
+%==============================================================================
+\section{Results}
+\label{sec:results}
+%==============================================================================
+
+\subsection{Expressiveness: Non-Equivariant Methods}
+\label{sec:results_nonequiv}
+
+The full KW-PE pipeline ($\tanh$ nonlinearity, $T=30$ steps, degree-2 polynomial EDMD dictionary, $d=16$ eigenfunctions) achieves perfect discrimination: 525/525 pairs (100\%), including all 64 cospectral pairs, all 59 CSL pairs, both strongly regular pairs, and all 400 BREC pairs. This is robust across ablations: varying nonlinearity ($\tanh$ and ReLU both achieve 100\%), trajectory length ($T=10$ to $T=50$ all at 100\%), dimension ($d=8$ at 99.6\%, $d=16$+ at 100\%), and PCA rank ($k=10$ to $k=30$ all at 100\%). In contrast, RWPE distinguishes only 345/525 (65.7\%) in the equivariant setting, failing entirely on CSL (0/59) and most BREC CFI pairs (12/100). LapPE achieves 524/525 (99.8\%) in the non-equivariant setting.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.40\textheight,keepaspectratio]{figures/fig_3657_v0.png}
+  \caption{Non-equivariant pair discrimination rates across 10 graph categories (525 total pairs). KW-PE with EDMD achieves perfect discrimination (525/525), far surpassing RWPE (345/525). The largest gaps appear on CSL graphs (KW-PE: 100\% vs.\ RWPE: 0\%) and BREC CFI pairs (KW-PE: 100\% vs.\ RWPE: 12\%).}
+  \label{fig:nonequiv}
+\end{figure}
+
+However, a systematic ablation decomposing the pipeline into \{linear, nonlinear, random\} walks $\times$ \{raw trajectory, degree-1 EDMD, full degree-2 EDMD\} revealed that \emph{all} ablation variants with EDMD processing also achieve 100\% discrimination, including linear walks with EDMD. This demonstrates that the discrimination power resides primarily in EDMD's non-equivariant row-sorted fingerprinting rather than in the nonlinear dynamics alone.
+
+\subsection{Expressiveness: Equivariant Methods}
+\label{sec:results_equiv}
+
+When restricted to properly node-permutation-equivariant extraction, the picture changes dramatically. nRWPE-diag-$\tanh$ distinguishes 345/525 (65.7\%) and nRWPE-offdiag reaches 346/525 (65.9\%), compared to RWPE at 345/525 (65.7\%). Equivariance was verified with numerical precision (max error $8.3 \times 10^{-17}$ under random node permutations).
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.40\textheight,keepaspectratio]{figures/fig_2788_v0.png}
+  \caption{Equivariant pair discrimination counts across 10 graph categories (threshold = $10^{-6}$). nRWPE-offdiag and nRWPE-diag-T50 achieve the best equivariant result at 346/525, a marginal improvement over RWPE (345/525). The gain concentrates in the BREC CFI category. All equivariant methods fail on 4-Vertex, Distance-Regular, and Strongly-Regular categories.}
+  \label{fig:equiv}
+\end{figure}
+
+The algebraic analysis on the canonical cospectral pair $K_{1,4}$ vs.\ $C_4 + K_1$ confirms the separation: RWPE diagonal multisets match at odd steps ($k=1,3,5$) and differ at even steps, while nRWPE-$\tanh$ produces different return values at step 2 for both graphs. Across all 525 pairs with threshold $10^{-10}$, nRWPE-$\tanh$ distinguishes 349 pairs vs.\ RWPE's 342, with 9 nRWPE-only pairs (all from BREC CFI). The entrywise power sums $S_2, S_4, S_6$ distinguish all 64 cospectral pairs.
+
+For strongly regular graphs (Rook vs.\ Shrikhande, $\text{srg}(16,6,2,2)$), both RWPE and diagonal nRWPE fail because these graphs have equitable partitions with $\lambda = \mu = 2$, making the sorted diagonal multisets identical. Only off-diagonal nRWPE (which uses the full nonlinear walk matrix) distinguishes them.
+
+\subsection{Downstream Performance: ZINC-12k}
+\label{sec:results_zinc}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{figures/fig_7258_v0.png}
+  \caption{Downstream ZINC-12k molecular regression performance (test MAE, lower is better). RWPE consistently outperforms all nonlinear walk PE variants across all four architectures. The best overall result is GINEConv + RWPE-16 (0.0908 MAE). KW-PE with EDMD catastrophically fails on GIN\_v1 (0.3354), performing worse than no PE (0.2849).}
+  \label{fig:zinc}
+\end{figure}
+
+On ZINC-12k, RWPE consistently outperforms all nonlinear walk variants. The best overall result is GINEConv + RWPE-16 at $0.0908 \pm 0.0024$ test MAE. The best nRWPE variant, nRWPE-diag-$\tanh$ on GINEConv, achieves $0.1026 \pm 0.0017$---significantly worse (Cohen's $d = 3.72$ on GIN\_v2). The original KW-PE with EDMD catastrophically fails (0.3354 MAE on GIN\_v1), performing worse than no PE (0.2849). Diagnostic analysis identified the primary failure mode as permutation sensitivity: 100\% of graphs show sign instability under the non-equivariant EDMD encoding.
+
+On GPS, RWPE-8 achieves $0.1737 \pm 0.0004$ MAE while nRWPE variants (offdiag: 0.2959, combined: 0.3055) perform comparably to no PE (0.3040), indicating that the nonlinear walk features provide essentially no useful signal for this architecture.
+
+Concatenation of RWPE and nRWPE features also fails to improve over RWPE alone. RWPE-16 achieves $0.1011 \pm 0.002$ while all concatenation variants are significantly worse: concat\_32 ($0.1062$, $p < 0.20$), concat\_24 ($0.1072$, $p = 0.01$), and concat\_16 ($0.1069$, $p = 0.03$). Adding nRWPE information to RWPE actively hurts downstream performance.
+
+RWPE wins all 9 pairwise comparisons against nRWPE/KW-PE across all architectures and configurations tested.
+
+\subsection{Expressiveness-Utility Correlation}
+\label{sec:results_correlation}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth,height=0.55\textheight,keepaspectratio]{figures/fig_8183_v0.png}
+  \caption{Expressiveness vs.\ downstream utility for 16 matched method-architecture pairs. The Spearman correlation is $\rho = 0.42$ ($p = 0.10$, not significant). The non-equivariant KW-PE achieves maximum expressiveness (525/525) but worst downstream performance (0.3354 MAE), illustrating the expressiveness-utility disconnect.}
+  \label{fig:correlation}
+\end{figure}
+
+The Spearman rank correlation between pair discrimination count and ZINC-12k test MAE across 16 matched method-architecture pairs is $\rho = 0.42$ with $p = 0.10$---positive but not statistically significant. When restricted to equivariant methods only, $\rho = 0.46$ with $p = 0.15$. Higher expressiveness is not associated with better downstream performance. The most dramatic illustration: KW-PE achieves maximum discrimination (525/525) but the worst downstream MAE (0.3354).
+
+\subsection{Foundational Properties}
+\label{sec:results_properties}
+
+\paragraph{Convergence.} Tanh walks show 81\% convergence rate across 20 test graphs ($T=200$ steps), with mean Jacobian spectral radius 0.997. Attractor types include slow decay (82\%), fixed points (1\%), and non-convergence (17\%). Softplus walks show only 1\% convergence, while ReLU walks show 81\% convergence primarily through period-2 limit cycles (32\%) and fixed points (60\%).
+
+\paragraph{Computational cost.} KW-PE computation scales as $O(n^{1.05})$, compared to $O(n^{1.74})$ for eigendecomposition-based methods. The equivariant nRWPE requires only matrix-vector products, avoiding eigendecomposition entirely. PE precomputation takes approximately 3.8ms per graph for KW-PE and is efficiently parallelizable.
+
+\paragraph{Sign canonicity.} Both KW-PE (via EDMD canonicalization) and nRWPE (via non-negative return probabilities from saturating nonlinearities) produce sign-canonical PEs, verified with perfect consistency (1.0) across all tested nonlinearities on 10 test graphs.
+
+\paragraph{EDMD numerical stability.} Condition numbers reach $10^{20.6}$ for the EDMD Gram matrix, with numerical drift becoming significant for $T \geq 50$. This instability is a primary contributor to the downstream performance failure of KW-PE.
+
+
+%==============================================================================
+\section{Discussion}
+\label{sec:discussion}
+%==============================================================================
+
+\subsection{What Nonlinear Walks Capture}
+\label{sec:what_captured}
+
+The formal separation theorem establishes that nRWPE-diag captures entrywise power sum invariants $S_{2p}(i) = \sum_j A_{ij}^{2p}$ that encode the distribution of direct edge weights at each node. These are fundamentally different from RWPE's matrix-power diagonals $[\mathbf{A}^k]_{ii} = \sum_j (\mathbf{A}^{k/2})_{ij}^2$, which encode multi-hop path products. Computationally, this translates to 9 additional BREC CFI pairs distinguished by nRWPE-$\tanh$ but not RWPE (349 vs.\ 342 at threshold $10^{-10}$).
+
+\subsection{Why Expressiveness Does Not Predict Utility}
+\label{sec:expressiveness_utility}
+
+The consistent failure of nRWPE on downstream ZINC despite superior expressiveness likely stems from information relevance: RWPE's return probabilities directly encode local neighborhood density---the probability of a random walker returning to its starting node after $k$ steps---which has natural chemical interpretability (ring sizes, branching patterns). The $\tanh$ nonlinearity compresses these values into $[-1, 1]$, destroying magnitude information while introducing higher-order invariants ($S_{2p}$) that, while graph-theoretically discriminative, are orthogonal to the chemical features relevant for molecular property prediction.
+
+The concatenation experiment provides additional evidence: adding nRWPE features to RWPE actively hurts performance (all $p < 0.03$ for concat variants vs.\ RWPE-16 on GINEConv), suggesting that the nRWPE signal introduces noise rather than complementary information for this task.
+
+\subsection{The Equivariance Extraction Bottleneck}
+\label{sec:equivariance_bottleneck}
+
+The gap between non-equivariant (525/525) and equivariant (346/525) discrimination quantifies a fundamental tension in graph learning. The full nonlinear walk trajectory matrix $\mathbf{X}^{(i)} = [\mathbf{x}_0, \ldots, \mathbf{x}_T]$ for each node $i$ contains rich structural information in its off-diagonal entries and cross-node correlations, but extracting this in a node-permutation-equivariant way (through sorting, multiset hashing, or Gram matrix features) necessarily discards information. Our experiments tested sorted diagonals, sorted off-diagonals, Gram matrix eigenvalues, node statistics, and hybrid approaches---none recovered more than 346/525 of the non-equivariant discrimination power.
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+Our downstream evaluation uses only the ZINC-12k benchmark. While standard, this is a single molecular regression task; results may differ on node classification (PATTERN/CLUSTER), larger molecular benchmarks (ogbg-molhiv), or non-molecular graph tasks. The EDMD component was effectively abandoned after iteration 2 in favor of simpler nRWPE; improved EDMD variants (Tikhonov regularization, kernel EDMD, truncated SVD) might produce more stable Koopman eigenfunctions. No comparison against PEARL \citep{He2025pearl} was conducted, though PEARL is the most directly relevant baseline. Finally, the strongly regular graph analysis covers only 2 specific SRG pairs; a general characterization of nRWPE-diag's failure cases remains open.
+
+
+%==============================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+%==============================================================================
+
+We have conducted a systematic investigation of nonlinear random walk positional encodings for graph neural networks, spanning 9 experiments, 51 training runs, and 55 methods across expressiveness and downstream benchmarks. Our main theoretical contribution is a formal separation theorem establishing that nRWPE captures strictly more spectral invariants than RWPE---specifically, entrywise power sums $S_{2p}(i)$---placing it at a new rung in the hierarchy $\text{RWPE} < \text{nRWPE} < \text{EPNN} < \text{3-WL}$. Our main empirical finding is that this expressiveness advantage does not translate to downstream utility: RWPE wins all 9 pairwise comparisons on ZINC-12k. This reveals a fundamental disconnect between graph isomorphism testing power and task-specific predictive performance that has broad implications for the graph learning community's emphasis on expressiveness as a proxy for practical utility.
+
+The most promising direction for future work is developing equivariant feature extraction methods that can preserve more of the rich structural information in nonlinear walk trajectories without sacrificing permutation invariance---bridging the gap between the 525/525 non-equivariant discrimination and the 346/525 equivariant ceiling.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

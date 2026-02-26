@@ -1,0 +1,233 @@
+2026-02-26 11:36:23.438 | INFO     | __main__:<module>:61 - Hardware: 4 CPUs, 32.0 GB RAM, RAM budget: 15.0 GB
+2026-02-26 11:36:23.440 | INFO     | __main__:main:1258 - ======================================================================
+2026-02-26 11:36:23.442 | INFO     | __main__:main:1259 - Starting Definitive Final Consolidation Evaluation
+2026-02-26 11:36:23.443 | INFO     | __main__:main:1260 - ======================================================================
+2026-02-26 11:36:23.445 | INFO     | __main__:main:1263 - Loading dependency data...
+2026-02-26 11:36:23.449 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id1_it2__opus/mini_method_out.json
+2026-02-26 11:36:23.455 | INFO     | __main__:main:1272 -   Loaded exp_id1_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id1_it2__opus/mini_method_out.json)
+2026-02-26 11:36:23.457 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id2_it2__opus/mini_method_out.json
+2026-02-26 11:36:23.559 | INFO     | __main__:main:1272 -   Loaded exp_id2_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id2_it2__opus/mini_method_out.json)
+2026-02-26 11:36:23.562 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/mini_method_out.json
+2026-02-26 11:36:23.577 | INFO     | __main__:main:1272 -   Loaded exp_id3_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/mini_method_out.json)
+2026-02-26 11:36:23.583 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id1_it3__opus/mini_method_out.json
+2026-02-26 11:36:23.589 | INFO     | __main__:main:1272 -   Loaded exp_id1_it3 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id1_it3__opus/mini_method_out.json)
+2026-02-26 11:36:23.591 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/mini_method_out.json
+2026-02-26 11:36:23.671 | INFO     | __main__:main:1272 -   Loaded exp_id2_it3 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/mini_method_out.json)
+2026-02-26 11:36:23.677 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/mini_method_out.json
+2026-02-26 11:36:23.684 | INFO     | __main__:main:1272 -   Loaded exp_id1_it4 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/mini_method_out.json)
+2026-02-26 11:36:23.687 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id2_it4__opus/mini_method_out.json
+2026-02-26 11:36:23.693 | INFO     | __main__:main:1272 -   Loaded exp_id2_it4 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id2_it4__opus/mini_method_out.json)
+2026-02-26 11:36:23.696 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id1_it5__opus/mini_method_out.json
+2026-02-26 11:36:23.706 | INFO     | __main__:main:1272 -   Loaded exp_id1_it5 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id1_it5__opus/mini_method_out.json)
+2026-02-26 11:36:23.709 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id2_it5__opus/mini_method_out.json
+2026-02-26 11:36:23.716 | INFO     | __main__:main:1272 -   Loaded exp_id2_it5 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id2_it5__opus/mini_method_out.json)
+2026-02-26 11:36:23.717 | INFO     | __main__:main:1283 - Loaded 9 dependencies
+2026-02-26 11:36:23.718 | INFO     | __main__:build_expressiveness_hierarchy:100 - Building expressiveness hierarchy...
+2026-02-26 11:36:23.720 | INFO     | __main__:build_expressiveness_hierarchy:263 - Non-equivariant methods: 5
+2026-02-26 11:36:23.721 | INFO     | __main__:build_expressiveness_hierarchy:264 - Equivariant methods: 25
+2026-02-26 11:36:23.722 | INFO     | __main__:main:1287 - Expressiveness: 5 non-equiv, 25 equiv methods
+2026-02-26 11:36:23.723 | INFO     | __main__:build_downstream_table:293 - Building downstream table...
+2026-02-26 11:36:23.726 | INFO     | __main__:main:1294 - Downstream: 5 architectures
+2026-02-26 11:36:23.727 | INFO     | __main__:compute_expressiveness_utility_correlation:511 - Computing expressiveness-utility correlation...
+2026-02-26 11:36:23.735 | INFO     | __main__:main:1298 - Correlation: rho=0.4233, p=0.1023
+2026-02-26 11:36:23.737 | INFO     | __main__:build_hypothesis_scorecard:629 - Building hypothesis scorecard...
+2026-02-26 11:36:23.738 | INFO     | __main__:main:1302 - Scorecard overall: 0.367
+2026-02-26 11:36:23.739 | INFO     | __main__:build_contribution_statement:950 - Building contribution statement...
+2026-02-26 11:36:23.741 | INFO     | __main__:main:1306 - Venue: negative_result
+2026-02-26 11:36:23.742 | INFO     | __main__:build_summary_statistics:1021 - Building summary statistics...
+2026-02-26 11:36:23.743 | INFO     | __main__:main:1310 - Summary: 9 experiments, 55 methods
+2026-02-26 11:36:23.745 | ERROR    | __main__:<module>:1331 - An error has been caught in function '<module>', process 'MainProcess' (6474), thread 'MainThread' (133532522895168):
+Traceback (most recent call last):
+
+> File "/workspace/runs/run__20260226_110200/3_invention_loop/iter_6/gen_art/eval_id3_it6__opus/eval.py", line 1331, in <module>
+    main()
+    └ <function main at 0x797259df2f20>
+
+  File "/workspace/runs/run__20260226_110200/3_invention_loop/iter_6/gen_art/eval_id3_it6__opus/eval.py", line 1313, in main
+    output = build_schema_output(
+             └ <function build_schema_output at 0x797259df3060>
+
+TypeError: build_schema_output() takes 6 positional arguments but 7 were given
+2026-02-26 11:36:52.224 | INFO     | __main__:<module>:61 - Hardware: 4 CPUs, 32.0 GB RAM, RAM budget: 15.0 GB
+2026-02-26 11:36:52.226 | INFO     | __main__:main:1261 - ======================================================================
+2026-02-26 11:36:52.227 | INFO     | __main__:main:1262 - Starting Definitive Final Consolidation Evaluation
+2026-02-26 11:36:52.228 | INFO     | __main__:main:1263 - ======================================================================
+2026-02-26 11:36:52.229 | INFO     | __main__:main:1266 - Loading dependency data...
+2026-02-26 11:36:52.233 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id1_it2__opus/mini_method_out.json
+2026-02-26 11:36:52.237 | INFO     | __main__:main:1275 -   Loaded exp_id1_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id1_it2__opus/mini_method_out.json)
+2026-02-26 11:36:52.239 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id2_it2__opus/mini_method_out.json
+2026-02-26 11:36:52.243 | INFO     | __main__:main:1275 -   Loaded exp_id2_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id2_it2__opus/mini_method_out.json)
+2026-02-26 11:36:52.246 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/mini_method_out.json
+2026-02-26 11:36:52.253 | INFO     | __main__:main:1275 -   Loaded exp_id3_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/mini_method_out.json)
+2026-02-26 11:36:52.257 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id1_it3__opus/mini_method_out.json
+2026-02-26 11:36:52.261 | INFO     | __main__:main:1275 -   Loaded exp_id1_it3 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id1_it3__opus/mini_method_out.json)
+2026-02-26 11:36:52.263 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/mini_method_out.json
+2026-02-26 11:36:52.268 | INFO     | __main__:main:1275 -   Loaded exp_id2_it3 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/mini_method_out.json)
+2026-02-26 11:36:52.271 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/mini_method_out.json
+2026-02-26 11:36:52.275 | INFO     | __main__:main:1275 -   Loaded exp_id1_it4 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/mini_method_out.json)
+2026-02-26 11:36:52.277 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id2_it4__opus/mini_method_out.json
+2026-02-26 11:36:52.280 | INFO     | __main__:main:1275 -   Loaded exp_id2_it4 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id2_it4__opus/mini_method_out.json)
+2026-02-26 11:36:52.283 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id1_it5__opus/mini_method_out.json
+2026-02-26 11:36:52.287 | INFO     | __main__:main:1275 -   Loaded exp_id1_it5 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id1_it5__opus/mini_method_out.json)
+2026-02-26 11:36:52.289 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id2_it5__opus/mini_method_out.json
+2026-02-26 11:36:52.293 | INFO     | __main__:main:1275 -   Loaded exp_id2_it5 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id2_it5__opus/mini_method_out.json)
+2026-02-26 11:36:52.294 | INFO     | __main__:main:1286 - Loaded 9 dependencies
+2026-02-26 11:36:52.295 | INFO     | __main__:build_expressiveness_hierarchy:100 - Building expressiveness hierarchy...
+2026-02-26 11:36:52.296 | INFO     | __main__:build_expressiveness_hierarchy:263 - Non-equivariant methods: 5
+2026-02-26 11:36:52.297 | INFO     | __main__:build_expressiveness_hierarchy:264 - Equivariant methods: 25
+2026-02-26 11:36:52.298 | INFO     | __main__:main:1290 - Expressiveness: 5 non-equiv, 25 equiv methods
+2026-02-26 11:36:52.299 | INFO     | __main__:build_downstream_table:293 - Building downstream table...
+2026-02-26 11:36:52.308 | INFO     | __main__:main:1297 - Downstream: 5 architectures
+2026-02-26 11:36:52.310 | INFO     | __main__:compute_expressiveness_utility_correlation:511 - Computing expressiveness-utility correlation...
+2026-02-26 11:36:52.314 | INFO     | __main__:main:1301 - Correlation: rho=0.4233, p=0.1023
+2026-02-26 11:36:52.315 | INFO     | __main__:build_hypothesis_scorecard:629 - Building hypothesis scorecard...
+2026-02-26 11:36:52.317 | INFO     | __main__:main:1305 - Scorecard overall: 0.367
+2026-02-26 11:36:52.318 | INFO     | __main__:build_contribution_statement:950 - Building contribution statement...
+2026-02-26 11:36:52.320 | INFO     | __main__:main:1309 - Venue: negative_result
+2026-02-26 11:36:52.321 | INFO     | __main__:build_summary_statistics:1021 - Building summary statistics...
+2026-02-26 11:36:52.321 | INFO     | __main__:main:1313 - Summary: 9 experiments, 55 methods
+2026-02-26 11:36:52.322 | INFO     | __main__:build_schema_output:1097 - Building schema-compliant output...
+2026-02-26 11:36:52.342 | INFO     | __main__:main:1323 - Saved output to /workspace/runs/run__20260226_110200/3_invention_loop/iter_6/gen_art/eval_id3_it6__opus/eval_out.json (87.2 KB)
+2026-02-26 11:36:52.343 | INFO     | __main__:main:1326 - ======================================================================
+2026-02-26 11:36:52.344 | INFO     | __main__:main:1327 - KEY METRICS:
+2026-02-26 11:36:52.345 | INFO     | __main__:main:1329 -   best_non_equivariant_discrimination_count: 525
+2026-02-26 11:36:52.346 | INFO     | __main__:main:1329 -   best_non_equivariant_discrimination_rate: 1.0
+2026-02-26 11:36:52.348 | INFO     | __main__:main:1329 -   best_equivariant_discrimination_count: 346
+2026-02-26 11:36:52.349 | INFO     | __main__:main:1329 -   best_equivariant_discrimination_rate: 0.659047619047619
+2026-02-26 11:36:52.351 | INFO     | __main__:main:1329 -   best_downstream_mae: 0.09077142427364986
+2026-02-26 11:36:52.351 | INFO     | __main__:main:1329 -   expressiveness_utility_spearman_rho: 0.4233
+2026-02-26 11:36:52.352 | INFO     | __main__:main:1329 -   expressiveness_utility_spearman_p: 0.1023
+2026-02-26 11:36:52.354 | INFO     | __main__:main:1329 -   hypothesis_overall_score: 0.367
+2026-02-26 11:36:52.356 | INFO     | __main__:main:1329 -   claim_1_score: 0.7
+2026-02-26 11:36:52.357 | INFO     | __main__:main:1329 -   claim_2_score: 0.7
+2026-02-26 11:36:52.358 | INFO     | __main__:main:1329 -   claim_3_score: 0.1
+2026-02-26 11:36:52.359 | INFO     | __main__:main:1329 -   claim_4_score: 0.7
+2026-02-26 11:36:52.360 | INFO     | __main__:main:1329 -   claim_5_score: 0.0
+2026-02-26 11:36:52.361 | INFO     | __main__:main:1329 -   rwpe_wins: 9
+2026-02-26 11:36:52.363 | INFO     | __main__:main:1329 -   nrwpe_wins: 0
+2026-02-26 11:36:52.364 | INFO     | __main__:main:1329 -   total_experiments: 9
+2026-02-26 11:36:52.365 | INFO     | __main__:main:1329 -   total_methods_tested: 55
+2026-02-26 11:36:52.366 | INFO     | __main__:main:1329 -   total_training_runs: 51
+2026-02-26 11:36:52.367 | INFO     | __main__:main:1330 - ======================================================================
+2026-02-26 11:38:53.281 | INFO     | __main__:<module>:61 - Hardware: 4 CPUs, 32.0 GB RAM, RAM budget: 15.0 GB
+2026-02-26 11:38:53.283 | INFO     | __main__:main:1295 - ======================================================================
+2026-02-26 11:38:53.284 | INFO     | __main__:main:1296 - Starting Definitive Final Consolidation Evaluation
+2026-02-26 11:38:53.285 | INFO     | __main__:main:1297 - ======================================================================
+2026-02-26 11:38:53.287 | INFO     | __main__:main:1300 - Loading dependency data...
+2026-02-26 11:38:53.290 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id1_it2__opus/mini_method_out.json
+2026-02-26 11:38:53.295 | INFO     | __main__:main:1309 -   Loaded exp_id1_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id1_it2__opus/mini_method_out.json)
+2026-02-26 11:38:53.297 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id2_it2__opus/mini_method_out.json
+2026-02-26 11:38:53.309 | INFO     | __main__:main:1309 -   Loaded exp_id2_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id2_it2__opus/mini_method_out.json)
+2026-02-26 11:38:53.311 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/mini_method_out.json
+2026-02-26 11:38:53.322 | INFO     | __main__:main:1309 -   Loaded exp_id3_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/mini_method_out.json)
+2026-02-26 11:38:53.326 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id1_it3__opus/mini_method_out.json
+2026-02-26 11:38:53.329 | INFO     | __main__:main:1309 -   Loaded exp_id1_it3 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id1_it3__opus/mini_method_out.json)
+2026-02-26 11:38:53.331 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/mini_method_out.json
+2026-02-26 11:38:53.337 | INFO     | __main__:main:1309 -   Loaded exp_id2_it3 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/mini_method_out.json)
+2026-02-26 11:38:53.339 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/mini_method_out.json
+2026-02-26 11:38:53.346 | INFO     | __main__:main:1309 -   Loaded exp_id1_it4 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/mini_method_out.json)
+2026-02-26 11:38:53.348 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id2_it4__opus/mini_method_out.json
+2026-02-26 11:38:53.353 | INFO     | __main__:main:1309 -   Loaded exp_id2_it4 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id2_it4__opus/mini_method_out.json)
+2026-02-26 11:38:53.356 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id1_it5__opus/mini_method_out.json
+2026-02-26 11:38:53.359 | INFO     | __main__:main:1309 -   Loaded exp_id1_it5 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id1_it5__opus/mini_method_out.json)
+2026-02-26 11:38:53.361 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id2_it5__opus/mini_method_out.json
+2026-02-26 11:38:53.367 | INFO     | __main__:main:1309 -   Loaded exp_id2_it5 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id2_it5__opus/mini_method_out.json)
+2026-02-26 11:38:53.368 | INFO     | __main__:main:1320 - Loaded 9 dependencies
+2026-02-26 11:38:53.369 | INFO     | __main__:build_expressiveness_hierarchy:100 - Building expressiveness hierarchy...
+2026-02-26 11:38:53.371 | INFO     | __main__:build_expressiveness_hierarchy:263 - Non-equivariant methods: 5
+2026-02-26 11:38:53.371 | INFO     | __main__:build_expressiveness_hierarchy:264 - Equivariant methods: 25
+2026-02-26 11:38:53.372 | INFO     | __main__:main:1324 - Expressiveness: 5 non-equiv, 25 equiv methods
+2026-02-26 11:38:53.374 | INFO     | __main__:build_downstream_table:293 - Building downstream table...
+2026-02-26 11:38:53.376 | INFO     | __main__:main:1331 - Downstream: 5 architectures
+2026-02-26 11:38:53.377 | INFO     | __main__:compute_expressiveness_utility_correlation:511 - Computing expressiveness-utility correlation...
+2026-02-26 11:38:53.387 | INFO     | __main__:main:1335 - Correlation: rho=0.4233, p=0.1023
+2026-02-26 11:38:53.388 | INFO     | __main__:build_hypothesis_scorecard:629 - Building hypothesis scorecard...
+2026-02-26 11:38:53.389 | INFO     | __main__:main:1339 - Scorecard overall: 0.45
+2026-02-26 11:38:53.391 | INFO     | __main__:build_contribution_statement:984 - Building contribution statement...
+2026-02-26 11:38:53.392 | INFO     | __main__:main:1343 - Venue: workshop
+2026-02-26 11:38:53.393 | INFO     | __main__:build_summary_statistics:1055 - Building summary statistics...
+2026-02-26 11:38:53.394 | INFO     | __main__:main:1347 - Summary: 9 experiments, 55 methods
+2026-02-26 11:38:53.395 | INFO     | __main__:build_schema_output:1131 - Building schema-compliant output...
+2026-02-26 11:38:53.417 | INFO     | __main__:main:1357 - Saved output to /workspace/runs/run__20260226_110200/3_invention_loop/iter_6/gen_art/eval_id3_it6__opus/eval_out.json (87.7 KB)
+2026-02-26 11:38:53.419 | INFO     | __main__:main:1360 - ======================================================================
+2026-02-26 11:38:53.419 | INFO     | __main__:main:1361 - KEY METRICS:
+2026-02-26 11:38:53.421 | INFO     | __main__:main:1363 -   best_non_equivariant_discrimination_count: 525
+2026-02-26 11:38:53.422 | INFO     | __main__:main:1363 -   best_non_equivariant_discrimination_rate: 1.0
+2026-02-26 11:38:53.423 | INFO     | __main__:main:1363 -   best_equivariant_discrimination_count: 346
+2026-02-26 11:38:53.424 | INFO     | __main__:main:1363 -   best_equivariant_discrimination_rate: 0.659047619047619
+2026-02-26 11:38:53.425 | INFO     | __main__:main:1363 -   best_downstream_mae: 0.09077142427364986
+2026-02-26 11:38:53.427 | INFO     | __main__:main:1363 -   expressiveness_utility_spearman_rho: 0.4233
+2026-02-26 11:38:53.428 | INFO     | __main__:main:1363 -   expressiveness_utility_spearman_p: 0.1023
+2026-02-26 11:38:53.429 | INFO     | __main__:main:1363 -   hypothesis_overall_score: 0.45
+2026-02-26 11:38:53.430 | INFO     | __main__:main:1363 -   claim_1_score: 0.7
+2026-02-26 11:38:53.430 | INFO     | __main__:main:1363 -   claim_2_score: 0.7
+2026-02-26 11:38:53.431 | INFO     | __main__:main:1363 -   claim_3_score: 0.6
+2026-02-26 11:38:53.433 | INFO     | __main__:main:1363 -   claim_4_score: 0.7
+2026-02-26 11:38:53.434 | INFO     | __main__:main:1363 -   claim_5_score: 0.0
+2026-02-26 11:38:53.435 | INFO     | __main__:main:1363 -   rwpe_wins: 9
+2026-02-26 11:38:53.436 | INFO     | __main__:main:1363 -   nrwpe_wins: 0
+2026-02-26 11:38:53.437 | INFO     | __main__:main:1363 -   total_experiments: 9
+2026-02-26 11:38:53.438 | INFO     | __main__:main:1363 -   total_methods_tested: 55
+2026-02-26 11:38:53.439 | INFO     | __main__:main:1363 -   total_training_runs: 51
+2026-02-26 11:38:53.440 | INFO     | __main__:main:1364 - ======================================================================
+2026-02-26 11:40:01.880 | INFO     | __main__:<module>:61 - Hardware: 4 CPUs, 32.0 GB RAM, RAM budget: 15.0 GB
+2026-02-26 11:40:01.883 | INFO     | __main__:main:1296 - ======================================================================
+2026-02-26 11:40:01.884 | INFO     | __main__:main:1297 - Starting Definitive Final Consolidation Evaluation
+2026-02-26 11:40:01.885 | INFO     | __main__:main:1298 - ======================================================================
+2026-02-26 11:40:01.887 | INFO     | __main__:main:1301 - Loading dependency data...
+2026-02-26 11:40:01.892 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id1_it2__opus/mini_method_out.json
+2026-02-26 11:40:01.897 | INFO     | __main__:main:1310 -   Loaded exp_id1_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id1_it2__opus/mini_method_out.json)
+2026-02-26 11:40:01.907 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id2_it2__opus/mini_method_out.json
+2026-02-26 11:40:01.912 | INFO     | __main__:main:1310 -   Loaded exp_id2_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id2_it2__opus/mini_method_out.json)
+2026-02-26 11:40:01.915 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/mini_method_out.json
+2026-02-26 11:40:01.922 | INFO     | __main__:main:1310 -   Loaded exp_id3_it2 from mini (/workspace/runs/run__20260225_014759/3_invention_loop/iter_2/gen_art/exp_id3_it2__opus/mini_method_out.json)
+2026-02-26 11:40:01.928 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id1_it3__opus/mini_method_out.json
+2026-02-26 11:40:01.933 | INFO     | __main__:main:1310 -   Loaded exp_id1_it3 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id1_it3__opus/mini_method_out.json)
+2026-02-26 11:40:01.935 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/mini_method_out.json
+2026-02-26 11:40:01.941 | INFO     | __main__:main:1310 -   Loaded exp_id2_it3 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_3/gen_art/exp_id2_it3__opus/mini_method_out.json)
+2026-02-26 11:40:01.944 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/mini_method_out.json
+2026-02-26 11:40:01.949 | INFO     | __main__:main:1310 -   Loaded exp_id1_it4 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id1_it4__opus/mini_method_out.json)
+2026-02-26 11:40:01.952 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id2_it4__opus/mini_method_out.json
+2026-02-26 11:40:01.957 | INFO     | __main__:main:1310 -   Loaded exp_id2_it4 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/exp_id2_it4__opus/mini_method_out.json)
+2026-02-26 11:40:01.961 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id1_it5__opus/mini_method_out.json
+2026-02-26 11:40:01.965 | INFO     | __main__:main:1310 -   Loaded exp_id1_it5 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id1_it5__opus/mini_method_out.json)
+2026-02-26 11:40:01.967 | DEBUG    | __main__:load_json:90 - Loading /workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id2_it5__opus/mini_method_out.json
+2026-02-26 11:40:01.972 | INFO     | __main__:main:1310 -   Loaded exp_id2_it5 from mini (/workspace/runs/run__20260225_141527/3_invention_loop/iter_5/gen_art/exp_id2_it5__opus/mini_method_out.json)
+2026-02-26 11:40:01.973 | INFO     | __main__:main:1321 - Loaded 9 dependencies
+2026-02-26 11:40:01.974 | INFO     | __main__:build_expressiveness_hierarchy:100 - Building expressiveness hierarchy...
+2026-02-26 11:40:01.976 | INFO     | __main__:build_expressiveness_hierarchy:263 - Non-equivariant methods: 5
+2026-02-26 11:40:01.977 | INFO     | __main__:build_expressiveness_hierarchy:264 - Equivariant methods: 25
+2026-02-26 11:40:01.979 | INFO     | __main__:main:1325 - Expressiveness: 5 non-equiv, 25 equiv methods
+2026-02-26 11:40:01.980 | INFO     | __main__:build_downstream_table:293 - Building downstream table...
+2026-02-26 11:40:01.983 | INFO     | __main__:main:1332 - Downstream: 5 architectures
+2026-02-26 11:40:01.984 | INFO     | __main__:compute_expressiveness_utility_correlation:512 - Computing expressiveness-utility correlation...
+2026-02-26 11:40:01.987 | INFO     | __main__:main:1336 - Correlation: rho=0.4233, p=0.1023
+2026-02-26 11:40:01.989 | INFO     | __main__:build_hypothesis_scorecard:630 - Building hypothesis scorecard...
+2026-02-26 11:40:01.990 | INFO     | __main__:main:1340 - Scorecard overall: 0.45
+2026-02-26 11:40:01.991 | INFO     | __main__:build_contribution_statement:985 - Building contribution statement...
+2026-02-26 11:40:01.992 | INFO     | __main__:main:1344 - Venue: workshop
+2026-02-26 11:40:01.994 | INFO     | __main__:build_summary_statistics:1056 - Building summary statistics...
+2026-02-26 11:40:01.995 | INFO     | __main__:main:1348 - Summary: 9 experiments, 55 methods
+2026-02-26 11:40:01.997 | INFO     | __main__:build_schema_output:1132 - Building schema-compliant output...
+2026-02-26 11:40:02.019 | INFO     | __main__:main:1358 - Saved output to /workspace/runs/run__20260226_110200/3_invention_loop/iter_6/gen_art/eval_id3_it6__opus/eval_out.json (87.0 KB)
+2026-02-26 11:40:02.020 | INFO     | __main__:main:1361 - ======================================================================
+2026-02-26 11:40:02.022 | INFO     | __main__:main:1362 - KEY METRICS:
+2026-02-26 11:40:02.023 | INFO     | __main__:main:1364 -   best_non_equivariant_discrimination_count: 525
+2026-02-26 11:40:02.024 | INFO     | __main__:main:1364 -   best_non_equivariant_discrimination_rate: 1.0
+2026-02-26 11:40:02.025 | INFO     | __main__:main:1364 -   best_equivariant_discrimination_count: 346
+2026-02-26 11:40:02.026 | INFO     | __main__:main:1364 -   best_equivariant_discrimination_rate: 0.659047619047619
+2026-02-26 11:40:02.027 | INFO     | __main__:main:1364 -   best_downstream_mae: 0.09077142427364986
+2026-02-26 11:40:02.028 | INFO     | __main__:main:1364 -   expressiveness_utility_spearman_rho: 0.4233
+2026-02-26 11:40:02.029 | INFO     | __main__:main:1364 -   expressiveness_utility_spearman_p: 0.1023
+2026-02-26 11:40:02.031 | INFO     | __main__:main:1364 -   hypothesis_overall_score: 0.45
+2026-02-26 11:40:02.032 | INFO     | __main__:main:1364 -   claim_1_score: 0.7
+2026-02-26 11:40:02.033 | INFO     | __main__:main:1364 -   claim_2_score: 0.7
+2026-02-26 11:40:02.033 | INFO     | __main__:main:1364 -   claim_3_score: 0.6
+2026-02-26 11:40:02.036 | INFO     | __main__:main:1364 -   claim_4_score: 0.7
+2026-02-26 11:40:02.037 | INFO     | __main__:main:1364 -   claim_5_score: 0.0
+2026-02-26 11:40:02.038 | INFO     | __main__:main:1364 -   rwpe_wins: 9
+2026-02-26 11:40:02.039 | INFO     | __main__:main:1364 -   nrwpe_wins: 0
+2026-02-26 11:40:02.039 | INFO     | __main__:main:1364 -   total_experiments: 9
+2026-02-26 11:40:02.041 | INFO     | __main__:main:1364 -   total_methods_tested: 55
+2026-02-26 11:40:02.042 | INFO     | __main__:main:1364 -   total_training_runs: 51
+2026-02-26 11:40:02.043 | INFO     | __main__:main:1365 - ======================================================================

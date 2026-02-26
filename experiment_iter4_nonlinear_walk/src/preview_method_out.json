@@ -1,0 +1,1955 @@
+{
+  "metadata": {
+    "title": "Nonlinear Walk Gram Matrix Equivariant Features for Graph Discrimination",
+    "description": "Tests whether equivariant features from the nonlinear walk Gram matrix G_NL distinguish graph pairs better than RWPE and nRWPE baselines.",
+    "method_name": "G_NL (Nonlinear Walk Gram Matrix)",
+    "baselines": [
+      "RWPE_diag",
+      "nRWPE_diag"
+    ],
+    "nonlinearities": [
+      "tanh",
+      "softplus",
+      "relu"
+    ],
+    "trajectory_length": 30,
+    "rwpe_steps": 20,
+    "discrimination_threshold": 1e-06,
+    "num_examples": 525,
+    "runtime_seconds": 208.56,
+    "overall_results": {
+      "total": 525,
+      "G_NL_diag_linear": {
+        "distinguished": 324,
+        "rate": 0.6171428571428571,
+        "median_distance": 0.022826022976750616
+      },
+      "G_NL_diag_mild": {
+        "distinguished": 227,
+        "rate": 0.43238095238095237,
+        "median_distance": 2.807863944322105e-07
+      },
+      "G_NL_diag_relu": {
+        "distinguished": 324,
+        "rate": 0.6171428571428571,
+        "median_distance": 0.022826022976750616
+      },
+      "G_NL_diag_softplus": {
+        "distinguished": 324,
+        "rate": 0.6171428571428571,
+        "median_distance": 0.015343468213701967
+      },
+      "G_NL_diag_tanh": {
+        "distinguished": 325,
+        "rate": 0.6190476190476191,
+        "median_distance": 0.012704466242346793
+      },
+      "G_NL_eig_linear": {
+        "distinguished": 316,
+        "rate": 0.6019047619047619,
+        "median_distance": 0.1616644519040453
+      },
+      "G_NL_eig_mild": {
+        "distinguished": 323,
+        "rate": 0.6152380952380953,
+        "median_distance": 0.0047767647947640985
+      },
+      "G_NL_eig_relu": {
+        "distinguished": 316,
+        "rate": 0.6019047619047619,
+        "median_distance": 0.1616644519040453
+      },
+      "G_NL_eig_softplus": {
+        "distinguished": 323,
+        "rate": 0.6152380952380953,
+        "median_distance": 0.06172204627707351
+      },
+      "G_NL_eig_tanh": {
+        "distinguished": 324,
+        "rate": 0.6171428571428571,
+        "median_distance": 0.17369704594425125
+      },
+      "G_NL_hybrid_linear": {
+        "distinguished": 324,
+        "rate": 0.6171428571428571,
+        "median_distance": 0.022826022976750616
+      },
+      "G_NL_hybrid_mild": {
+        "distinguished": 262,
+        "rate": 0.4990476190476191,
+        "median_distance": 9.73111338437824e-07
+      },
+      "G_NL_hybrid_relu": {
+        "distinguished": 324,
+        "rate": 0.6171428571428571,
+        "median_distance": 0.022826022976750616
+      },
+      "G_NL_hybrid_softplus": {
+        "distinguished": 324,
+        "rate": 0.6171428571428571,
+        "median_distance": 0.13749869985511132
+      },
+      "G_NL_hybrid_tanh": {
+        "distinguished": 325,
+        "rate": 0.6190476190476191,
+        "median_distance": 0.07797643655071367
+      },
+      "G_NL_nodestats_tanh": {
+        "distinguished": 327,
+        "rate": 0.6228571428571429,
+        "median_distance": 0.7356860155973701
+      },
+      "RWPE_diag": {
+        "distinguished": 345,
+        "rate": 0.6571428571428571,
+        "median_distance": 0.03249439094898179
+      },
+      "nRWPE_diag": {
+        "distinguished": 345,
+        "rate": 0.6571428571428571,
+        "median_distance": 0.017492258621905513
+      }
+    },
+    "per_category_results": {
+      "BREC_4Vertex": {
+        "total": 20,
+        "G_NL_diag_linear": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 8.286817471267754e-16,
+          "min_distance": 0.0,
+          "max_distance": 1.1749496091904413e-15
+        },
+        "G_NL_diag_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 0.0,
+          "min_distance": 0.0,
+          "max_distance": 0.0
+        },
+        "G_NL_diag_relu": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 8.286817471267754e-16,
+          "min_distance": 0.0,
+          "max_distance": 1.1749496091904413e-15
+        },
+        "G_NL_diag_softplus": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 4.455595886216866e-12,
+          "min_distance": 2.5724394843074972e-12,
+          "max_distance": 6.8060351382408795e-12
+        },
+        "G_NL_diag_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.3136335981433192e-15,
+          "min_distance": 4.440892098500626e-16,
+          "max_distance": 2.1065000811460206e-15
+        },
+        "G_NL_eig_linear": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 8.441984263465049e-15,
+          "min_distance": 2.5799251709695548e-15,
+          "max_distance": 2.904798350569321e-14
+        },
+        "G_NL_eig_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 2.1978718807080634e-15,
+          "min_distance": 1.5543122344752192e-15,
+          "max_distance": 2.9541113323650215e-15
+        },
+        "G_NL_eig_relu": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 8.441984263465049e-15,
+          "min_distance": 2.5799251709695548e-15,
+          "max_distance": 2.904798350569321e-14
+        },
+        "G_NL_eig_softplus": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.0446836978183913e-10,
+          "min_distance": 5.822215964222776e-11,
+          "max_distance": 7.358118617176586e-10
+        },
+        "G_NL_eig_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 8.171393522068174e-15,
+          "min_distance": 3.374785818259932e-15,
+          "max_distance": 2.898596501527858e-14
+        },
+        "G_NL_hybrid_linear": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.4675109761945928e-14,
+          "min_distance": 1.0058400026574543e-14,
+          "max_distance": 2.6840775355661563e-14
+        },
+        "G_NL_hybrid_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 8.005932084973442e-16,
+          "min_distance": 5.438959822042073e-16,
+          "max_distance": 9.678699938266253e-16
+        },
+        "G_NL_hybrid_relu": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.4675109761945928e-14,
+          "min_distance": 1.0058400026574543e-14,
+          "max_distance": 2.6840775355661563e-14
+        },
+        "G_NL_hybrid_softplus": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 3.186904012385294e-10,
+          "min_distance": 2.0166186460398766e-10,
+          "max_distance": 4.65679050537333e-10
+        },
+        "G_NL_hybrid_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 2.7873458524611486e-14,
+          "min_distance": 1.4235120126948258e-14,
+          "max_distance": 4.8097137176349877e-14
+        },
+        "G_NL_nodestats_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.2167038838010126e-12,
+          "min_distance": 9.63556878999362e-13,
+          "max_distance": 1.6784725006286922e-12
+        },
+        "RWPE_diag": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.943200015769372e-16,
+          "min_distance": 5.3072333128159466e-17,
+          "max_distance": 1.9781933438751165e-16
+        },
+        "nRWPE_diag": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.2556465949540242e-16,
+          "min_distance": 8.811302451006347e-17,
+          "max_distance": 2.0325156163509841e-16
+        }
+      },
+      "BREC_Basic": {
+        "total": 60,
+        "G_NL_diag_linear": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.0412945816542683,
+          "min_distance": 8.881784197001252e-16,
+          "max_distance": 0.5166548760019988
+        },
+        "G_NL_diag_mild": {
+          "distinguished": 42,
+          "rate": 0.7,
+          "median_distance": 2.3775177302031497e-06,
+          "min_distance": 0.0,
+          "max_distance": 0.00031176860077310187
+        },
+        "G_NL_diag_relu": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.0412945816542683,
+          "min_distance": 8.881784197001252e-16,
+          "max_distance": 0.5166548760019988
+        },
+        "G_NL_diag_softplus": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.033834509795922174,
+          "min_distance": 0.0,
+          "max_distance": 0.2821325051388747
+        },
+        "G_NL_diag_tanh": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.021473752880265796,
+          "min_distance": 7.691850745534255e-16,
+          "max_distance": 0.1823969215037337
+        },
+        "G_NL_eig_linear": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.22612760509461483,
+          "min_distance": 3.820199830714189e-15,
+          "max_distance": 1.6631180435517536
+        },
+        "G_NL_eig_mild": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.005939675155591943,
+          "min_distance": 1.0648885158809838e-15,
+          "max_distance": 0.0565051839588055
+        },
+        "G_NL_eig_relu": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.22612760509461483,
+          "min_distance": 3.820199830714189e-15,
+          "max_distance": 1.6631180435517536
+        },
+        "G_NL_eig_softplus": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.07438342872117149,
+          "min_distance": 1.931182283781005e-12,
+          "max_distance": 0.7428802430702155
+        },
+        "G_NL_eig_tanh": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.21851479186535872,
+          "min_distance": 4.356829757045895e-15,
+          "max_distance": 1.4773445853665297
+        },
+        "G_NL_hybrid_linear": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.0412945816542683,
+          "min_distance": 8.881784197001252e-16,
+          "max_distance": 0.5166548760019988
+        },
+        "G_NL_hybrid_mild": {
+          "distinguished": 51,
+          "rate": 0.85,
+          "median_distance": 1.3416269729153958e-05,
+          "min_distance": 0.0,
+          "max_distance": 0.001067494455048244
+        },
+        "G_NL_hybrid_relu": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.0412945816542683,
+          "min_distance": 8.881784197001252e-16,
+          "max_distance": 0.5166548760019988
+        },
+        "G_NL_hybrid_softplus": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.23927337713236851,
+          "min_distance": 1.2862197421537486e-12,
+          "max_distance": 2.321915505552196
+        },
+        "G_NL_hybrid_tanh": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.1354478264360254,
+          "min_distance": 7.160723346098895e-15,
+          "max_distance": 2.0776086017916806
+        },
+        "G_NL_nodestats_tanh": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.9248196488678264,
+          "min_distance": 2.154047289989066e-14,
+          "max_distance": 9.724422486913289
+        },
+        "RWPE_diag": {
+          "distinguished": 60,
+          "rate": 1.0,
+          "median_distance": 0.07058899139979835,
+          "min_distance": 0.008757012463266118,
+          "max_distance": 0.27969579715733905
+        },
+        "nRWPE_diag": {
+          "distinguished": 55,
+          "rate": 0.9166666666666666,
+          "median_distance": 0.022785584698945205,
+          "min_distance": 1.496293273509629e-16,
+          "max_distance": 0.1513618962857982
+        }
+      },
+      "BREC_CFI": {
+        "total": 100,
+        "G_NL_diag_linear": {
+          "distinguished": 1,
+          "rate": 0.01,
+          "median_distance": 0.0,
+          "min_distance": 0.0,
+          "max_distance": 0.012300482593375127
+        },
+        "G_NL_diag_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 0.0,
+          "min_distance": 0.0,
+          "max_distance": 0.0
+        },
+        "G_NL_diag_relu": {
+          "distinguished": 1,
+          "rate": 0.01,
+          "median_distance": 0.0,
+          "min_distance": 0.0,
+          "max_distance": 0.012300482593375127
+        },
+        "G_NL_diag_softplus": {
+          "distinguished": 1,
+          "rate": 0.01,
+          "median_distance": 2.5724394843074972e-12,
+          "min_distance": 0.0,
+          "max_distance": 0.00019837408370890994
+        },
+        "G_NL_diag_tanh": {
+          "distinguished": 2,
+          "rate": 0.02,
+          "median_distance": 2.220446049250313e-16,
+          "min_distance": 0.0,
+          "max_distance": 0.011216298618734081
+        },
+        "G_NL_eig_linear": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 2.7118987805845334e-14,
+          "min_distance": 1.0081656473867266e-14,
+          "max_distance": 9.501368817087787e-14
+        },
+        "G_NL_eig_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 6.288214174563413e-15,
+          "min_distance": 2.7194799110210367e-15,
+          "max_distance": 9.752283983032295e-15
+        },
+        "G_NL_eig_relu": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 2.7118987805845334e-14,
+          "min_distance": 1.0081656473867266e-14,
+          "max_distance": 9.501368817087787e-14
+        },
+        "G_NL_eig_softplus": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 2.023261439899359e-10,
+          "min_distance": 1.4966214580890596e-11,
+          "max_distance": 1.7814553342862192e-08
+        },
+        "G_NL_eig_tanh": {
+          "distinguished": 1,
+          "rate": 0.01,
+          "median_distance": 2.8010968635122588e-14,
+          "min_distance": 1.0114613123884174e-14,
+          "max_distance": 2.0034843552781366e-05
+        },
+        "G_NL_hybrid_linear": {
+          "distinguished": 1,
+          "rate": 0.01,
+          "median_distance": 9.41008164741723e-15,
+          "min_distance": 0.0,
+          "max_distance": 0.012300482593375127
+        },
+        "G_NL_hybrid_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 2.220446049250313e-16,
+          "min_distance": 0.0,
+          "max_distance": 7.691850745534255e-16
+        },
+        "G_NL_hybrid_relu": {
+          "distinguished": 1,
+          "rate": 0.01,
+          "median_distance": 9.41008164741723e-15,
+          "min_distance": 0.0,
+          "max_distance": 0.012300482593375127
+        },
+        "G_NL_hybrid_softplus": {
+          "distinguished": 1,
+          "rate": 0.01,
+          "median_distance": 3.292772782105651e-10,
+          "min_distance": 0.0,
+          "max_distance": 0.003842243149707087
+        },
+        "G_NL_hybrid_tanh": {
+          "distinguished": 2,
+          "rate": 0.02,
+          "median_distance": 8.702335715267317e-15,
+          "min_distance": 0.0,
+          "max_distance": 0.011597217646416837
+        },
+        "G_NL_nodestats_tanh": {
+          "distinguished": 4,
+          "rate": 0.04,
+          "median_distance": 2.4139935544073054e-14,
+          "min_distance": 1.0367794250182005e-14,
+          "max_distance": 0.22926033101331997
+        },
+        "RWPE_diag": {
+          "distinguished": 12,
+          "rate": 0.12,
+          "median_distance": 2.800298705241011e-17,
+          "min_distance": 0.0,
+          "max_distance": 0.28621107551136127
+        },
+        "nRWPE_diag": {
+          "distinguished": 22,
+          "rate": 0.22,
+          "median_distance": 1.0097119210411964e-16,
+          "min_distance": 1.4487797323362434e-17,
+          "max_distance": 0.11359399463930982
+        }
+      },
+      "BREC_Distance_Regular": {
+        "total": 20,
+        "G_NL_diag_linear": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.6616296724220897e-15,
+          "min_distance": 0.0,
+          "max_distance": 5.66975148377389e-15
+        },
+        "G_NL_diag_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 0.0,
+          "min_distance": 0.0,
+          "max_distance": 0.0
+        },
+        "G_NL_diag_relu": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.6616296724220897e-15,
+          "min_distance": 0.0,
+          "max_distance": 5.66975148377389e-15
+        },
+        "G_NL_diag_softplus": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 3.150582065370831e-12,
+          "min_distance": 0.0,
+          "max_distance": 6.301164130741662e-12
+        },
+        "G_NL_diag_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 6.986110290134678e-16,
+          "min_distance": 0.0,
+          "max_distance": 1.1749496091904413e-15
+        },
+        "G_NL_eig_linear": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 7.043789241813164e-15,
+          "min_distance": 0.0,
+          "max_distance": 2.507924760621873e-14
+        },
+        "G_NL_eig_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 0.0,
+          "min_distance": 0.0,
+          "max_distance": 2.1181705310112556e-15
+        },
+        "G_NL_eig_relu": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 7.043789241813164e-15,
+          "min_distance": 0.0,
+          "max_distance": 2.507924760621873e-14
+        },
+        "G_NL_eig_softplus": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 8.579542647691371e-11,
+          "min_distance": 8.338386919547414e-13,
+          "max_distance": 2.555154187807141e-10
+        },
+        "G_NL_eig_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 5.762195237089212e-15,
+          "min_distance": 1.2947314098277875e-15,
+          "max_distance": 1.559379280465073e-14
+        },
+        "G_NL_hybrid_linear": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 8.010883172220993e-15,
+          "min_distance": 0.0,
+          "max_distance": 2.371203513400476e-14
+        },
+        "G_NL_hybrid_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 0.0,
+          "min_distance": 0.0,
+          "max_distance": 2.220446049250313e-16
+        },
+        "G_NL_hybrid_relu": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 8.010883172220993e-15,
+          "min_distance": 0.0,
+          "max_distance": 2.371203513400476e-14
+        },
+        "G_NL_hybrid_softplus": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.1644373660085738e-10,
+          "min_distance": 0.0,
+          "max_distance": 2.8521034595271036e-10
+        },
+        "G_NL_hybrid_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 7.167602049218537e-15,
+          "min_distance": 0.0,
+          "max_distance": 1.5931603693754768e-14
+        },
+        "G_NL_nodestats_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 5.007747312763848e-14,
+          "min_distance": 5.4672143489065705e-16,
+          "max_distance": 6.82589214311383e-14
+        },
+        "RWPE_diag": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.0174684546111117e-16,
+          "min_distance": 0.0,
+          "max_distance": 2.0816681711721685e-16
+        },
+        "nRWPE_diag": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.5162711633805518e-16,
+          "min_distance": 8.457555311126093e-17,
+          "max_distance": 2.1274245860452972e-16
+        }
+      },
+      "BREC_Extension": {
+        "total": 100,
+        "G_NL_diag_linear": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.03200832127564536,
+          "min_distance": 7.691850745534255e-16,
+          "max_distance": 9.673957564291479
+        },
+        "G_NL_diag_mild": {
+          "distinguished": 58,
+          "rate": 0.58,
+          "median_distance": 1.803723622677353e-06,
+          "min_distance": 0.0,
+          "max_distance": 0.0023907333920050876
+        },
+        "G_NL_diag_relu": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.03200832127564536,
+          "min_distance": 7.691850745534255e-16,
+          "max_distance": 9.673957564291479
+        },
+        "G_NL_diag_softplus": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.025731859182795053,
+          "min_distance": 0.0,
+          "max_distance": 0.8045546769954274
+        },
+        "G_NL_diag_tanh": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.01992586058179254,
+          "min_distance": 0.0,
+          "max_distance": 4.397685673444587
+        },
+        "G_NL_eig_linear": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.3134033307442622,
+          "min_distance": 3.524848827571324e-15,
+          "max_distance": 28.18112274340353
+        },
+        "G_NL_eig_mild": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.008193415147312023,
+          "min_distance": 1.897149936107019e-15,
+          "max_distance": 0.10278704276600505
+        },
+        "G_NL_eig_relu": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.3134033307442622,
+          "min_distance": 3.524848827571324e-15,
+          "max_distance": 28.18112274340353
+        },
+        "G_NL_eig_softplus": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.08357184385058866,
+          "min_distance": 1.581398948261514e-12,
+          "max_distance": 1.9978500536233421
+        },
+        "G_NL_eig_tanh": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.2976962687915669,
+          "min_distance": 2.7285297859879227e-15,
+          "max_distance": 18.503034770464602
+        },
+        "G_NL_hybrid_linear": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.03200832127564536,
+          "min_distance": 1.6298739516698084e-14,
+          "max_distance": 9.673957564291479
+        },
+        "G_NL_hybrid_mild": {
+          "distinguished": 79,
+          "rate": 0.79,
+          "median_distance": 7.431996889101154e-06,
+          "min_distance": 0.0,
+          "max_distance": 0.005514478537453288
+        },
+        "G_NL_hybrid_relu": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.03200832127564536,
+          "min_distance": 1.6298739516698084e-14,
+          "max_distance": 9.673957564291479
+        },
+        "G_NL_hybrid_softplus": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.21145735035789343,
+          "min_distance": 5.1448789686149945e-12,
+          "max_distance": 6.424752341167107
+        },
+        "G_NL_hybrid_tanh": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.1276935632194826,
+          "min_distance": 1.3759600911837627e-14,
+          "max_distance": 13.877971761646592
+        },
+        "G_NL_nodestats_tanh": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 1.1491099852394608,
+          "min_distance": 4.7794060112443853e-14,
+          "max_distance": 98.88540693753032
+        },
+        "RWPE_diag": {
+          "distinguished": 100,
+          "rate": 1.0,
+          "median_distance": 0.031902591331532316,
+          "min_distance": 0.000860148527933645,
+          "max_distance": 1.2079226890589505
+        },
+        "nRWPE_diag": {
+          "distinguished": 97,
+          "rate": 0.97,
+          "median_distance": 0.017638804759788525,
+          "min_distance": 1.6405752336546965e-16,
+          "max_distance": 0.8456855989332651
+        }
+      },
+      "BREC_Regular": {
+        "total": 50,
+        "G_NL_diag_linear": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.07668676027893948,
+          "min_distance": 2.6645352591003757e-15,
+          "max_distance": 8.46485370681298
+        },
+        "G_NL_diag_mild": {
+          "distinguished": 41,
+          "rate": 0.82,
+          "median_distance": 4.188755885863416e-06,
+          "min_distance": 0.0,
+          "max_distance": 0.00022113343357221875
+        },
+        "G_NL_diag_relu": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.07668676027893948,
+          "min_distance": 2.6645352591003757e-15,
+          "max_distance": 8.46485370681298
+        },
+        "G_NL_diag_softplus": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.04823353520756872,
+          "min_distance": 1.2862197421537486e-12,
+          "max_distance": 0.6000901992546345
+        },
+        "G_NL_diag_tanh": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.035568339691962644,
+          "min_distance": 2.4725840765205216e-15,
+          "max_distance": 4.430025592785155
+        },
+        "G_NL_eig_linear": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.35752598278210207,
+          "min_distance": 1.1126628344342348e-14,
+          "max_distance": 27.01981097837125
+        },
+        "G_NL_eig_mild": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.007649480040413015,
+          "min_distance": 1.7763568394002505e-15,
+          "max_distance": 0.042305150636843245
+        },
+        "G_NL_eig_relu": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.35752598278210207,
+          "min_distance": 1.1126628344342348e-14,
+          "max_distance": 27.01981097837125
+        },
+        "G_NL_eig_softplus": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.11959274175579318,
+          "min_distance": 4.149574596840528e-12,
+          "max_distance": 1.6068599922154152
+        },
+        "G_NL_eig_tanh": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.3466369108823706,
+          "min_distance": 7.562566735475685e-15,
+          "max_distance": 18.469564602453243
+        },
+        "G_NL_hybrid_linear": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.07668676027893948,
+          "min_distance": 2.4242552967656972e-14,
+          "max_distance": 8.46485370681298
+        },
+        "G_NL_hybrid_mild": {
+          "distinguished": 46,
+          "rate": 0.92,
+          "median_distance": 1.658848841978887e-05,
+          "min_distance": 2.220446049250313e-16,
+          "max_distance": 0.000655719593472233
+        },
+        "G_NL_hybrid_relu": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.07668676027893948,
+          "min_distance": 2.4242552967656972e-14,
+          "max_distance": 8.46485370681298
+        },
+        "G_NL_hybrid_softplus": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.35960189147801325,
+          "min_distance": 8.235824805649297e-12,
+          "max_distance": 4.985886751079739
+        },
+        "G_NL_hybrid_tanh": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.25990156241619117,
+          "min_distance": 2.918514283693653e-14,
+          "max_distance": 12.788167950718629
+        },
+        "G_NL_nodestats_tanh": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 3.5431882146605607,
+          "min_distance": 2.0332602355461891e-13,
+          "max_distance": 92.16064702757477
+        },
+        "RWPE_diag": {
+          "distinguished": 50,
+          "rate": 1.0,
+          "median_distance": 0.08129650110390771,
+          "min_distance": 0.0008288890955064813,
+          "max_distance": 1.0512348941917817
+        },
+        "nRWPE_diag": {
+          "distinguished": 49,
+          "rate": 0.98,
+          "median_distance": 0.03338416995348599,
+          "min_distance": 3.925231146709438e-16,
+          "max_distance": 0.8448075253181714
+        }
+      },
+      "BREC_Strongly_Regular": {
+        "total": 50,
+        "G_NL_diag_linear": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.040402812853662e-15,
+          "min_distance": 2.220446049250313e-16,
+          "max_distance": 2.0350724194510405e-15
+        },
+        "G_NL_diag_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 0.0,
+          "min_distance": 0.0,
+          "max_distance": 0.0
+        },
+        "G_NL_diag_relu": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.040402812853662e-15,
+          "min_distance": 2.220446049250313e-16,
+          "max_distance": 2.0350724194510405e-15
+        },
+        "G_NL_diag_softplus": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 2.6504617948131408e-12,
+          "min_distance": 0.0,
+          "max_distance": 9.710746100637435e-12
+        },
+        "G_NL_diag_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 7.691850745534255e-16,
+          "min_distance": 0.0,
+          "max_distance": 2.6272671962866384e-15
+        },
+        "G_NL_eig_linear": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 6.121049216607774e-15,
+          "min_distance": 1.5543122344752192e-15,
+          "max_distance": 2.921722278147407e-14
+        },
+        "G_NL_eig_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.3229506138467534e-15,
+          "min_distance": 0.0,
+          "max_distance": 3.0282846668030173e-15
+        },
+        "G_NL_eig_relu": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 6.121049216607774e-15,
+          "min_distance": 1.5543122344752192e-15,
+          "max_distance": 2.921722278147407e-14
+        },
+        "G_NL_eig_softplus": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 3.286380132863148e-11,
+          "min_distance": 2.7712249585735316e-12,
+          "max_distance": 1.1775249448925982e-10
+        },
+        "G_NL_eig_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 5.752546808148436e-15,
+          "min_distance": 2.296847253011292e-15,
+          "max_distance": 1.788251910257522e-14
+        },
+        "G_NL_hybrid_linear": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.6121070824237204e-14,
+          "min_distance": 5.04876895886056e-15,
+          "max_distance": 6.083535926452951e-14
+        },
+        "G_NL_hybrid_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 2.220446049250313e-16,
+          "min_distance": 0.0,
+          "max_distance": 7.021666937153402e-16
+        },
+        "G_NL_hybrid_relu": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.6121070824237204e-14,
+          "min_distance": 5.04876895886056e-15,
+          "max_distance": 6.083535926452951e-14
+        },
+        "G_NL_hybrid_softplus": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 7.715978296294781e-11,
+          "min_distance": 1.456611915095615e-11,
+          "max_distance": 2.6031575085186283e-10
+        },
+        "G_NL_hybrid_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.305411575555136e-14,
+          "min_distance": 3.66205343881779e-15,
+          "max_distance": 3.399241107839332e-14
+        },
+        "G_NL_nodestats_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 4.5341315659537904e-13,
+          "min_distance": 1.7477667246851196e-14,
+          "max_distance": 9.948290144494257e-13
+        },
+        "RWPE_diag": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.5523158678734594e-16,
+          "min_distance": 3.141717836627692e-17,
+          "max_distance": 2.7962967607555853e-16
+        },
+        "nRWPE_diag": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.460375178441358e-16,
+          "min_distance": 6.646504201411613e-17,
+          "max_distance": 3.1178728957888216e-16
+        }
+      },
+      "CSL": {
+        "total": 59,
+        "G_NL_diag_linear": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 1.6172580942962522,
+          "min_distance": 0.0,
+          "max_distance": 6.967211404870188
+        },
+        "G_NL_diag_mild": {
+          "distinguished": 22,
+          "rate": 0.3728813559322034,
+          "median_distance": 6.597055448962145e-13,
+          "min_distance": 0.0,
+          "max_distance": 5.520401219616389e-05
+        },
+        "G_NL_diag_relu": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 1.6172580942962522,
+          "min_distance": 0.0,
+          "max_distance": 6.967211404870188
+        },
+        "G_NL_diag_softplus": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 0.09275762893719275,
+          "min_distance": 6.431098710768743e-13,
+          "max_distance": 0.7488981122919035
+        },
+        "G_NL_diag_tanh": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 1.4352018709111292,
+          "min_distance": 1.0877919644084146e-15,
+          "max_distance": 5.576724103396862
+        },
+        "G_NL_eig_linear": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 7.8057459655349595,
+          "min_distance": 2.199390761715283e-14,
+          "max_distance": 28.05529078577521
+        },
+        "G_NL_eig_mild": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 0.022745749950306964,
+          "min_distance": 1.3136335981433192e-15,
+          "max_distance": 0.041460172796891494
+        },
+        "G_NL_eig_relu": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 7.8057459655349595,
+          "min_distance": 2.199390761715283e-14,
+          "max_distance": 28.05529078577521
+        },
+        "G_NL_eig_softplus": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 0.49713113705642475,
+          "min_distance": 2.2154521356729987e-11,
+          "max_distance": 4.093637605349049
+        },
+        "G_NL_eig_tanh": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 7.118194096875812,
+          "min_distance": 2.9707543448020184e-15,
+          "max_distance": 23.1877315764669
+        },
+        "G_NL_hybrid_linear": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 1.617258094296252,
+          "min_distance": 5.0242958677880805e-15,
+          "max_distance": 6.967211404870188
+        },
+        "G_NL_hybrid_mild": {
+          "distinguished": 22,
+          "rate": 0.3728813559322034,
+          "median_distance": 2.0691407440294594e-11,
+          "min_distance": 0.0,
+          "max_distance": 0.00022899926422484341
+        },
+        "G_NL_hybrid_relu": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 1.617258094296252,
+          "min_distance": 5.0242958677880805e-15,
+          "max_distance": 6.967211404870188
+        },
+        "G_NL_hybrid_softplus": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 2.853712148968968,
+          "min_distance": 1.6282241440392825e-11,
+          "max_distance": 26.063665064916464
+        },
+        "G_NL_hybrid_tanh": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 1.9787163214526886,
+          "min_distance": 8.77005919358864e-15,
+          "max_distance": 10.974110931036911
+        },
+        "G_NL_nodestats_tanh": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 26.607661291205034,
+          "min_distance": 5.562623838591139e-14,
+          "max_distance": 137.65627117135108
+        },
+        "RWPE_diag": {
+          "distinguished": 59,
+          "rate": 1.0,
+          "median_distance": 0.5659406076336035,
+          "min_distance": 0.049000802607573696,
+          "max_distance": 1.5994737352272985
+        },
+        "nRWPE_diag": {
+          "distinguished": 58,
+          "rate": 0.9830508474576272,
+          "median_distance": 0.2889344962160301,
+          "min_distance": 1.5868690564398535e-16,
+          "max_distance": 1.0831484889883005
+        }
+      },
+      "cospectral": {
+        "total": 64,
+        "G_NL_diag_linear": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 3.6181087016400557,
+          "min_distance": 1.9571724137122763,
+          "max_distance": 33.36580556773349
+        },
+        "G_NL_diag_mild": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 0.07791566526746957,
+          "min_distance": 0.0024877863305639535,
+          "max_distance": 1.1355614893301293
+        },
+        "G_NL_diag_relu": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 3.6181087016400557,
+          "min_distance": 1.9571724137122763,
+          "max_distance": 33.36580556773349
+        },
+        "G_NL_diag_softplus": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 82.17216577941002,
+          "min_distance": 3.467974640471559,
+          "max_distance": 1453.6432102886188
+        },
+        "G_NL_diag_tanh": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 2.4397098412647686,
+          "min_distance": 1.1072403251106746,
+          "max_distance": 5.940639381683494
+        },
+        "G_NL_eig_linear": {
+          "distinguished": 57,
+          "rate": 0.890625,
+          "median_distance": 0.5253511204355087,
+          "min_distance": 1.4477240129109816e-14,
+          "max_distance": 41.958114862059254
+        },
+        "G_NL_eig_mild": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 0.03671899340742783,
+          "min_distance": 0.006023080574711404,
+          "max_distance": 1.0995717275832664
+        },
+        "G_NL_eig_relu": {
+          "distinguished": 57,
+          "rate": 0.890625,
+          "median_distance": 0.5253511204355087,
+          "min_distance": 1.4477240129109816e-14,
+          "max_distance": 41.958114862059254
+        },
+        "G_NL_eig_softplus": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 217.34577609211203,
+          "min_distance": 1.0630130530687893,
+          "max_distance": 3845.326322932016
+        },
+        "G_NL_eig_tanh": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 1.000898955494744,
+          "min_distance": 0.09687361349144157,
+          "max_distance": 9.247830588085455
+        },
+        "G_NL_hybrid_linear": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 13.792133026703834,
+          "min_distance": 5.809552872139184,
+          "max_distance": 47.434164902525886
+        },
+        "G_NL_hybrid_mild": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 0.13074666490257814,
+          "min_distance": 0.004915689164178472,
+          "max_distance": 1.5530186814806726
+        },
+        "G_NL_hybrid_relu": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 13.792133026703834,
+          "min_distance": 5.809552872139184,
+          "max_distance": 47.434164902525886
+        },
+        "G_NL_hybrid_softplus": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 581.0916517488583,
+          "min_distance": 14.014328742297607,
+          "max_distance": 10277.38864616479
+        },
+        "G_NL_hybrid_tanh": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 8.510437121747469,
+          "min_distance": 3.3661790379820076,
+          "max_distance": 19.72146638286843
+        },
+        "G_NL_nodestats_tanh": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 59.10391079884505,
+          "min_distance": 27.4112908720308,
+          "max_distance": 115.23108915521232
+        },
+        "RWPE_diag": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 0.9107609418972844,
+          "min_distance": 0.2887390256941342,
+          "max_distance": 3.880276538850236
+        },
+        "nRWPE_diag": {
+          "distinguished": 64,
+          "rate": 1.0,
+          "median_distance": 0.7328823994380815,
+          "min_distance": 0.28814328019525753,
+          "max_distance": 1.8144649675261015
+        }
+      },
+      "strongly_regular": {
+        "total": 2,
+        "G_NL_diag_linear": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.3130810567576328e-15,
+          "min_distance": 1.0877919644084146e-15,
+          "max_distance": 1.538370149106851e-15
+        },
+        "G_NL_diag_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 0.0,
+          "min_distance": 0.0,
+          "max_distance": 0.0
+        },
+        "G_NL_diag_relu": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.3130810567576328e-15,
+          "min_distance": 1.0877919644084146e-15,
+          "max_distance": 1.538370149106851e-15
+        },
+        "G_NL_diag_softplus": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 4.206918004685612e-12,
+          "min_distance": 6.431098710768743e-13,
+          "max_distance": 7.77072613829435e-12
+        },
+        "G_NL_diag_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 7.581077015868176e-16,
+          "min_distance": 6.280369834735101e-16,
+          "max_distance": 8.881784197001252e-16
+        },
+        "G_NL_eig_linear": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.441235771488695e-14,
+          "min_distance": 1.093668298681716e-14,
+          "max_distance": 1.788803244295674e-14
+        },
+        "G_NL_eig_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.3229834214604202e-15,
+          "min_distance": 0.0,
+          "max_distance": 2.6459668429208404e-15
+        },
+        "G_NL_eig_relu": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.441235771488695e-14,
+          "min_distance": 1.093668298681716e-14,
+          "max_distance": 1.788803244295674e-14
+        },
+        "G_NL_eig_softplus": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 3.1147691501249016e-11,
+          "min_distance": 3.380594209787718e-12,
+          "max_distance": 5.891478879271031e-11
+        },
+        "G_NL_eig_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 5.840950302285446e-15,
+          "min_distance": 4.418631847554177e-15,
+          "max_distance": 7.263268757016716e-15
+        },
+        "G_NL_hybrid_linear": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 8.054964971372676e-15,
+          "min_distance": 8.018239443638015e-15,
+          "max_distance": 8.09169049910734e-15
+        },
+        "G_NL_hybrid_mild": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 0.0,
+          "min_distance": 0.0,
+          "max_distance": 0.0
+        },
+        "G_NL_hybrid_relu": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 8.054964971372676e-15,
+          "min_distance": 8.018239443638015e-15,
+          "max_distance": 8.09169049910734e-15
+        },
+        "G_NL_hybrid_softplus": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 6.914374425341745e-11,
+          "min_distance": 1.456611915095615e-11,
+          "max_distance": 1.2372136935587876e-10
+        },
+        "G_NL_hybrid_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.732560185073194e-14,
+          "min_distance": 1.549864980054063e-14,
+          "max_distance": 1.915255390092325e-14
+        },
+        "G_NL_nodestats_tanh": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.5319865917368977e-13,
+          "min_distance": 8.874098137084186e-14,
+          "max_distance": 2.1765633697653769e-13
+        },
+        "RWPE_diag": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 1.3356609271823315e-16,
+          "min_distance": 1.090532778351535e-16,
+          "max_distance": 1.5807890760131279e-16
+        },
+        "nRWPE_diag": {
+          "distinguished": 0,
+          "rate": 0.0,
+          "median_distance": 2.0307752751995082e-16,
+          "min_distance": 1.790718670647276e-16,
+          "max_distance": 2.2708318797517407e-16
+        }
+      }
+    },
+    "equivariance_verification": {
+      "all_passed": true,
+      "n_graphs_tested": 20,
+      "n_perms_per_graph": 10,
+      "details": [
+        {
+          "pair_idx": 0,
+          "pair_id": "cospectral_5v_canonical",
+          "n_nodes": 5,
+          "passed": true,
+          "max_gram_error": 0.0,
+          "max_eig_error": 2.890846798895627e-15,
+          "n_perms": 10
+        },
+        {
+          "pair_idx": 1,
+          "pair_id": "cospectral_6v_0",
+          "n_nodes": 6,
+          "passed": true,
+          "max_gram_error": 0.0,
+          "max_eig_error": 0.0,
+          "n_perms": 10
+        },
+        {
+          "pair_idx": 2,
+          "pair_id": "cospectral_6v_1",
+          "n_nodes": 6,
+          "passed": true,
+          "max_gram_error": 2.432376777795247e-15,
+          "max_eig_error": 9.041333491445128e-15,
+          "n_perms": 10
+        }
+      ]
+    },
+    "hard_pair_diagnostics": [
+      {
+        "pair_idx": 64,
+        "pair_id": "csl_41_2_3",
+        "category": "CSL",
+        "subcategory": "n41",
+        "rwpe_distinguished": true,
+        "gnl_eig_tanh_distinguished": true,
+        "linear_gram_eig_distance": 10.721494965119138,
+        "nonlinear_gram_eig_distance": 8.941167822388328,
+        "top_eigenvalue_diffs": [
+          [
+            39,
+            4.819870506073588
+          ],
+          [
+            38,
+            4.819870506073576
+          ],
+          [
+            37,
+            3.4919635678772485
+          ]
+        ]
+      },
+      {
+        "pair_idx": 65,
+        "pair_id": "csl_41_2_4",
+        "category": "CSL",
+        "subcategory": "n41",
+        "rwpe_distinguished": true,
+        "gnl_eig_tanh_distinguished": true,
+        "linear_gram_eig_distance": 13.17408837391472,
+        "nonlinear_gram_eig_distance": 11.955610619251269,
+        "top_eigenvalue_diffs": [
+          [
+            39,
+            8.349340895629702
+          ],
+          [
+            38,
+            8.349340895629695
+          ],
+          [
+            37,
+            0.9483183056596349
+          ]
+        ]
+      },
+      {
+        "pair_idx": 66,
+        "pair_id": "csl_41_2_5",
+        "category": "CSL",
+        "subcategory": "n41",
+        "rwpe_distinguished": true,
+        "gnl_eig_tanh_distinguished": true,
+        "linear_gram_eig_distance": 3.672238447504064,
+        "nonlinear_gram_eig_distance": 3.282933656724574,
+        "top_eigenvalue_diffs": [
+          [
+            39,
+            2.0900690156059305
+          ],
+          [
+            38,
+            2.090069015605925
+          ],
+          [
+            36,
+            0.8511944320987741
+          ]
+        ]
+      }
+    ],
+    "trajectory_length_ablation": {
+      "5": {
+        "overall_distinguished": 323,
+        "overall_rate": 0.6152380952380953,
+        "per_category": {
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0
+          },
+          "CSL": {
+            "distinguished": 58,
+            "total": 59,
+            "rate": 0.9830508474576272
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0
+          },
+          "BREC_Basic": {
+            "distinguished": 55,
+            "total": 60,
+            "rate": 0.9166666666666666
+          },
+          "BREC_Regular": {
+            "distinguished": 49,
+            "total": 50,
+            "rate": 0.98
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0
+          },
+          "BREC_Extension": {
+            "distinguished": 97,
+            "total": 100,
+            "rate": 0.97
+          },
+          "BREC_CFI": {
+            "distinguished": 0,
+            "total": 100,
+            "rate": 0.0
+          },
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          }
+        }
+      },
+      "10": {
+        "overall_distinguished": 324,
+        "overall_rate": 0.6171428571428571,
+        "per_category": {
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0
+          },
+          "CSL": {
+            "distinguished": 58,
+            "total": 59,
+            "rate": 0.9830508474576272
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0
+          },
+          "BREC_Basic": {
+            "distinguished": 55,
+            "total": 60,
+            "rate": 0.9166666666666666
+          },
+          "BREC_Regular": {
+            "distinguished": 49,
+            "total": 50,
+            "rate": 0.98
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0
+          },
+          "BREC_Extension": {
+            "distinguished": 97,
+            "total": 100,
+            "rate": 0.97
+          },
+          "BREC_CFI": {
+            "distinguished": 1,
+            "total": 100,
+            "rate": 0.01
+          },
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          }
+        }
+      },
+      "15": {
+        "overall_distinguished": 324,
+        "overall_rate": 0.6171428571428571,
+        "per_category": {
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0
+          },
+          "CSL": {
+            "distinguished": 58,
+            "total": 59,
+            "rate": 0.9830508474576272
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0
+          },
+          "BREC_Basic": {
+            "distinguished": 55,
+            "total": 60,
+            "rate": 0.9166666666666666
+          },
+          "BREC_Regular": {
+            "distinguished": 49,
+            "total": 50,
+            "rate": 0.98
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0
+          },
+          "BREC_Extension": {
+            "distinguished": 97,
+            "total": 100,
+            "rate": 0.97
+          },
+          "BREC_CFI": {
+            "distinguished": 1,
+            "total": 100,
+            "rate": 0.01
+          },
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          }
+        }
+      },
+      "20": {
+        "overall_distinguished": 324,
+        "overall_rate": 0.6171428571428571,
+        "per_category": {
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0
+          },
+          "CSL": {
+            "distinguished": 58,
+            "total": 59,
+            "rate": 0.9830508474576272
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0
+          },
+          "BREC_Basic": {
+            "distinguished": 55,
+            "total": 60,
+            "rate": 0.9166666666666666
+          },
+          "BREC_Regular": {
+            "distinguished": 49,
+            "total": 50,
+            "rate": 0.98
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0
+          },
+          "BREC_Extension": {
+            "distinguished": 97,
+            "total": 100,
+            "rate": 0.97
+          },
+          "BREC_CFI": {
+            "distinguished": 1,
+            "total": 100,
+            "rate": 0.01
+          },
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          }
+        }
+      },
+      "30": {
+        "overall_distinguished": 324,
+        "overall_rate": 0.6171428571428571,
+        "per_category": {
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0
+          },
+          "CSL": {
+            "distinguished": 58,
+            "total": 59,
+            "rate": 0.9830508474576272
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0
+          },
+          "BREC_Basic": {
+            "distinguished": 55,
+            "total": 60,
+            "rate": 0.9166666666666666
+          },
+          "BREC_Regular": {
+            "distinguished": 49,
+            "total": 50,
+            "rate": 0.98
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0
+          },
+          "BREC_Extension": {
+            "distinguished": 97,
+            "total": 100,
+            "rate": 0.97
+          },
+          "BREC_CFI": {
+            "distinguished": 1,
+            "total": 100,
+            "rate": 0.01
+          },
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          }
+        }
+      },
+      "50": {
+        "overall_distinguished": 324,
+        "overall_rate": 0.6171428571428571,
+        "per_category": {
+          "cospectral": {
+            "distinguished": 64,
+            "total": 64,
+            "rate": 1.0
+          },
+          "CSL": {
+            "distinguished": 58,
+            "total": 59,
+            "rate": 0.9830508474576272
+          },
+          "strongly_regular": {
+            "distinguished": 0,
+            "total": 2,
+            "rate": 0.0
+          },
+          "BREC_Basic": {
+            "distinguished": 55,
+            "total": 60,
+            "rate": 0.9166666666666666
+          },
+          "BREC_Regular": {
+            "distinguished": 49,
+            "total": 50,
+            "rate": 0.98
+          },
+          "BREC_Strongly_Regular": {
+            "distinguished": 0,
+            "total": 50,
+            "rate": 0.0
+          },
+          "BREC_Extension": {
+            "distinguished": 97,
+            "total": 100,
+            "rate": 0.97
+          },
+          "BREC_CFI": {
+            "distinguished": 1,
+            "total": 100,
+            "rate": 0.01
+          },
+          "BREC_4Vertex": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          },
+          "BREC_Distance_Regular": {
+            "distinguished": 0,
+            "total": 20,
+            "rate": 0.0
+          }
+        }
+      }
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "graph_expressiveness_benchmark",
+      "examples": [
+        {
+          "input": "{\"graph_A\": {\"num_nodes\": 5, \"num_edges\": 4, \"adjacency_matrix\": [[0, 1, 1, 1, 1], [1, 0, 0, 0, 0], [1, 0, 0, 0, 0], [1, 0, 0, 0, 0], [1, 0, 0, 0, 0]], \"edge_list\": [[0, 1], [0, 2], [0, 3], [0, 4]], \"...",
+          "output": "{\"is_isomorphic\": false, \"are_cospectral\": true}",
+          "metadata_fold": 0,
+          "metadata_pair_id": "cospectral_5v_canonical",
+          "metadata_category": "cospectral",
+          "metadata_subcategory": "5_vertex_canonical",
+          "metadata_wl_level": "1-WL",
+          "metadata_difficulty": "easy",
+          "metadata_num_nodes_A": 5,
+          "metadata_num_nodes_B": 5,
+          "metadata_row_index": 0,
+          "metadata_task_type": "graph_pair_classification",
+          "predict_G_NL_diag_linear": "{\"distinguished\": true, \"distance\": 21.21320343559639}",
+          "predict_G_NL_diag_mild": "{\"distinguished\": true, \"distance\": 0.18193877715467546}",
+          "predict_G_NL_diag_relu": "{\"distinguished\": true, \"distance\": 21.21320343559639}",
+          "predict_G_NL_diag_softplus": "{\"distinguished\": true, \"distance\": 615.9101545054002}",
+          "predict_G_NL_diag_tanh": "{\"distinguished\": true, \"distance\": 4.691219786404104}",
+          "predict_G_NL_eig_linear": "{\"distinguished\": false, \"distance\": 2.96501807217738e-13}",
+          "predict_G_NL_eig_mild": "{\"distinguished\": true, \"distance\": 0.03030825951350929}",
+          "predict_G_NL_eig_relu": "{\"distinguished\": false, \"distance\": 2.96501807217738e-13}",
+          "predict_G_NL_eig_softplus": "{\"distinguished\": true, \"distance\": 1376.4150100097206}",
+          "predict_G_NL_eig_tanh": "{\"distinguished\": true, \"distance\": 5.043408886845518}",
+          "predict_G_NL_hybrid_linear": "{\"distinguished\": true, \"distance\": 36.74234614174765}",
+          "predict_G_NL_hybrid_mild": "{\"distinguished\": true, \"distance\": 0.2845613563726051}",
+          "predict_G_NL_hybrid_relu": "{\"distinguished\": true, \"distance\": 36.74234614174765}",
+          "predict_G_NL_hybrid_softplus": "{\"distinguished\": true, \"distance\": 3139.125693076314}",
+          "predict_G_NL_hybrid_tanh": "{\"distinguished\": true, \"distance\": 9.27881476048795}",
+          "predict_G_NL_nodestats_tanh": "{\"distinguished\": true, \"distance\": 63.0690800085261}",
+          "predict_RWPE_diag": "{\"distinguished\": true, \"distance\": 2.23606797749979}",
+          "predict_nRWPE_diag": "{\"distinguished\": true, \"distance\": 1.5534316077696917}"
+        },
+        {
+          "input": "{\"graph_A\": {\"num_nodes\": 6, \"num_edges\": 4, \"adjacency_matrix\": [[0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1], [0, 0, 0, 1, 1, 0]], \"edge_list\": ...",
+          "output": "{\"is_isomorphic\": false, \"are_cospectral\": true}",
+          "metadata_fold": 1,
+          "metadata_pair_id": "cospectral_6v_0",
+          "metadata_category": "cospectral",
+          "metadata_subcategory": "6_vertex_atlas",
+          "metadata_wl_level": "1-WL",
+          "metadata_difficulty": "easy",
+          "metadata_num_nodes_A": 6,
+          "metadata_num_nodes_B": 6,
+          "metadata_row_index": 1,
+          "metadata_task_type": "graph_pair_classification",
+          "predict_G_NL_diag_linear": "{\"distinguished\": true, \"distance\": 21.21320343559639}",
+          "predict_G_NL_diag_mild": "{\"distinguished\": true, \"distance\": 0.18193877715467546}",
+          "predict_G_NL_diag_relu": "{\"distinguished\": true, \"distance\": 21.21320343559639}",
+          "predict_G_NL_diag_softplus": "{\"distinguished\": true, \"distance\": 673.2903633398571}",
+          "predict_G_NL_diag_tanh": "{\"distinguished\": true, \"distance\": 4.691219786404104}",
+          "predict_G_NL_eig_linear": "{\"distinguished\": false, \"distance\": 2.939879164199384e-13}",
+          "predict_G_NL_eig_mild": "{\"distinguished\": true, \"distance\": 0.03030825951350929}",
+          "predict_G_NL_eig_relu": "{\"distinguished\": false, \"distance\": 2.939879164199384e-13}",
+          "predict_G_NL_eig_softplus": "{\"distinguished\": true, \"distance\": 1648.3780665222137}",
+          "predict_G_NL_eig_tanh": "{\"distinguished\": true, \"distance\": 5.043408886845518}",
+          "predict_G_NL_hybrid_linear": "{\"distinguished\": true, \"distance\": 36.74234614174765}",
+          "predict_G_NL_hybrid_mild": "{\"distinguished\": true, \"distance\": 0.2845613563726051}",
+          "predict_G_NL_hybrid_relu": "{\"distinguished\": true, \"distance\": 36.74234614174765}",
+          "predict_G_NL_hybrid_softplus": "{\"distinguished\": true, \"distance\": 4093.8067017271023}",
+          "predict_G_NL_hybrid_tanh": "{\"distinguished\": true, \"distance\": 9.27881476048795}",
+          "predict_G_NL_nodestats_tanh": "{\"distinguished\": true, \"distance\": 63.052175574428944}",
+          "predict_RWPE_diag": "{\"distinguished\": true, \"distance\": 2.23606797749979}",
+          "predict_nRWPE_diag": "{\"distinguished\": true, \"distance\": 1.5534316077696917}"
+        },
+        {
+          "input": "{\"graph_A\": {\"num_nodes\": 6, \"num_edges\": 4, \"adjacency_matrix\": [[0, 0, 1, 0, 0, 0], [0, 0, 1, 1, 0, 0], [1, 1, 0, 0, 0, 0], [0, 1, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0]], \"edge_list\": ...",
+          "output": "{\"is_isomorphic\": false, \"are_cospectral\": true}",
+          "metadata_fold": 2,
+          "metadata_pair_id": "cospectral_6v_1",
+          "metadata_category": "cospectral",
+          "metadata_subcategory": "6_vertex_atlas",
+          "metadata_wl_level": "1-WL",
+          "metadata_difficulty": "easy",
+          "metadata_num_nodes_A": 6,
+          "metadata_num_nodes_B": 6,
+          "metadata_row_index": 2,
+          "metadata_task_type": "graph_pair_classification",
+          "predict_G_NL_diag_linear": "{\"distinguished\": true, \"distance\": 27.449954463181616}",
+          "predict_G_NL_diag_mild": "{\"distinguished\": true, \"distance\": 0.8760833586584156}",
+          "predict_G_NL_diag_relu": "{\"distinguished\": true, \"distance\": 27.449954463181616}",
+          "predict_G_NL_diag_softplus": "{\"distinguished\": true, \"distance\": 570.3607944660744}",
+          "predict_G_NL_diag_tanh": "{\"distinguished\": true, \"distance\": 3.998624968031456}",
+          "predict_G_NL_eig_linear": "{\"distinguished\": true, \"distance\": 41.012193310136844}",
+          "predict_G_NL_eig_mild": "{\"distinguished\": true, \"distance\": 0.7983822072071095}",
+          "predict_G_NL_eig_relu": "{\"distinguished\": true, \"distance\": 41.012193310136844}",
+          "predict_G_NL_eig_softplus": "{\"distinguished\": true, \"distance\": 1395.0053399216947}",
+          "predict_G_NL_eig_tanh": "{\"distinguished\": true, \"distance\": 6.523886456028004}",
+          "predict_G_NL_hybrid_linear": "{\"distinguished\": true, \"distance\": 41.601776331004885}",
+          "predict_G_NL_hybrid_mild": "{\"distinguished\": true, \"distance\": 1.2010044236683253}",
+          "predict_G_NL_hybrid_relu": "{\"distinguished\": true, \"distance\": 41.601776331004885}",
+          "predict_G_NL_hybrid_softplus": "{\"distinguished\": true, \"distance\": 3464.5465038407847}",
+          "predict_G_NL_hybrid_tanh": "{\"distinguished\": true, \"distance\": 9.759591174144985}",
+          "predict_G_NL_nodestats_tanh": "{\"distinguished\": true, \"distance\": 80.47634062067893}",
+          "predict_RWPE_diag": "{\"distinguished\": true, \"distance\": 2.8138595685804746}",
+          "predict_nRWPE_diag": "{\"distinguished\": true, \"distance\": 1.0570092465288834}"
+        }
+      ]
+    }
+  ]
+}

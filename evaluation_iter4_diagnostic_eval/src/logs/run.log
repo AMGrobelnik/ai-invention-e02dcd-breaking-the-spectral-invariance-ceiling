@@ -1,0 +1,127 @@
+2026-02-25 17:30:40.845 | INFO     | __main__:<module>:72 - Hardware: 4 CPUs, 32.0GB RAM (container)
+2026-02-25 17:30:40.846 | INFO     | __main__:<module>:78 - RAM budget: 20.8GB, CPU time limit: 3500s
+2026-02-25 17:30:40.849 | INFO     | __main__:main:897 - Loading 525-pair expressiveness data from dep1...
+2026-02-25 17:30:40.918 | INFO     | __main__:main:903 - Loaded 3 examples from dep1
+2026-02-25 17:30:40.920 | INFO     | __main__:main:922 - Parsed 3 valid pairs
+2026-02-25 17:30:40.921 | INFO     | __main__:analysis1_pair_overlap:258 - === ANALYSIS 1: Pair-Level Overlap RWPE vs nRWPE-diag ===
+2026-02-25 17:30:40.955 | INFO     | __main__:analysis1_pair_overlap:285 -   Analysis 1 progress: 3/3
+2026-02-25 17:30:40.957 | INFO     | __main__:analysis1_pair_overlap:319 -   Overlap: both=3, rwpe_only=0, nrwpe_only=0, neither=0
+2026-02-25 17:30:40.959 | INFO     | __main__:analysis1_pair_overlap:320 -   RWPE total: 3, nRWPE-diag total: 3
+2026-02-25 17:30:40.961 | INFO     | __main__:analysis1_pair_overlap:321 -   Jaccard similarity: 1.0000
+2026-02-25 17:30:40.962 | INFO     | __main__:main:928 - Analysis 1 completed in 0.0s
+2026-02-25 17:30:40.964 | INFO     | __main__:analysis2_spectral_invariance:340 - === ANALYSIS 2: Spectral Invariance Test on Cospectral Pairs ===
+2026-02-25 17:30:40.966 | INFO     | __main__:analysis2_spectral_invariance:346 -   Found 3 cospectral pairs
+2026-02-25 17:30:40.998 | INFO     | __main__:analysis2_spectral_invariance:454 -   Spectral invariance results:
+2026-02-25 17:30:41.000 | INFO     | __main__:analysis2_spectral_invariance:455 -     tanh diag matches on cospectral: 0/3
+2026-02-25 17:30:41.009 | INFO     | __main__:analysis2_spectral_invariance:456 -     softplus diag matches: 0/3
+2026-02-25 17:30:41.011 | INFO     | __main__:analysis2_spectral_invariance:457 -     relu diag matches: 0/3
+2026-02-25 17:30:41.013 | INFO     | __main__:main:932 - Analysis 2 completed in 0.1s
+2026-02-25 17:30:41.014 | INFO     | __main__:analysis3_information_hierarchy:559 - === ANALYSIS 3: Information Content Hierarchy ===
+2026-02-25 17:30:41.079 | INFO     | __main__:analysis3_information_hierarchy:620 -   degree_only: 3/3
+2026-02-25 17:30:41.080 | INFO     | __main__:analysis3_information_hierarchy:620 -   RWPE: 3/3
+2026-02-25 17:30:41.082 | INFO     | __main__:analysis3_information_hierarchy:620 -   nRWPE_diag: 3/3
+2026-02-25 17:30:41.084 | INFO     | __main__:analysis3_information_hierarchy:620 -   nRWPE_offdiag: 3/3
+2026-02-25 17:30:41.085 | INFO     | __main__:analysis3_information_hierarchy:620 -   nRWPE_Gram: 3/3
+2026-02-25 17:30:41.087 | INFO     | __main__:analysis3_information_hierarchy:620 -   full_trajectory: 3/3
+2026-02-25 17:30:41.089 | INFO     | __main__:main:936 - Analysis 3 completed in 0.1s
+2026-02-25 17:30:41.091 | INFO     | __main__:analysis4_zinc_attribution:675 - === ANALYSIS 4: Downstream Performance Attribution (ZINC) ===
+2026-02-25 17:30:41.157 | INFO     | __main__:analysis4_zinc_attribution:695 -   Loaded 4 results from exp_id2_it2
+2026-02-25 17:30:41.169 | INFO     | __main__:analysis4_zinc_attribution:721 -   Total ZINC entries: 9
+2026-02-25 17:30:41.178 | INFO     | __main__:analysis4_zinc_attribution:773 -   Quality-MAE correlations computed for 2 metrics
+2026-02-25 17:30:41.180 | INFO     | __main__:analysis4_zinc_attribution:779 -   GIN_(no_PE)                   : MAE=0.2849 ± 0.0000
+2026-02-25 17:30:41.182 | INFO     | __main__:analysis4_zinc_attribution:779 -   GIN_plus_RWPE                 : MAE=0.1845 ± 0.0000
+2026-02-25 17:30:41.183 | INFO     | __main__:analysis4_zinc_attribution:779 -   GIN_plus_LapPE                : MAE=0.2394 ± 0.0000
+2026-02-25 17:30:41.185 | INFO     | __main__:analysis4_zinc_attribution:779 -   GIN_plus_KW-PE                : MAE=0.3354 ± 0.0000
+2026-02-25 17:30:41.186 | INFO     | __main__:analysis4_zinc_attribution:779 -   iter3_rwpe                    : MAE=0.1707 ± 0.0020
+2026-02-25 17:30:41.188 | INFO     | __main__:analysis4_zinc_attribution:779 -   iter3_nrwpe_diag              : MAE=0.1825 ± 0.0030
+2026-02-25 17:30:41.189 | INFO     | __main__:analysis4_zinc_attribution:779 -   iter3_nrwpe_multi             : MAE=0.3198 ± 0.1013
+2026-02-25 17:30:41.191 | INFO     | __main__:analysis4_zinc_attribution:779 -   iter3_nrwpe_combined          : MAE=0.1954 ± 0.0346
+2026-02-25 17:30:41.193 | INFO     | __main__:analysis4_zinc_attribution:779 -   iter3_no_pe                   : MAE=0.2604 ± 0.0031
+2026-02-25 17:30:41.197 | INFO     | __main__:main:940 - Analysis 4 completed in 0.1s
+2026-02-25 17:30:41.199 | INFO     | __main__:analysis5_hypothesis_scorecard:793 - === ANALYSIS 5: Hypothesis Scorecard ===
+2026-02-25 17:30:41.208 | INFO     | __main__:analysis5_hypothesis_scorecard:884 -   [                supported] KW-PEs break spectral invariance
+2026-02-25 17:30:41.209 | INFO     | __main__:analysis5_hypothesis_scorecard:884 -   [      partially_supported] Sign-canonical PEs without auxiliary networks
+2026-02-25 17:30:41.211 | INFO     | __main__:analysis5_hypothesis_scorecard:884 -   [                supported] Distinguish cospectral graphs
+2026-02-25 17:30:41.212 | INFO     | __main__:analysis5_hypothesis_scorecard:884 -   [                  refuted] Avoid eigendecomposition costs
+2026-02-25 17:30:41.214 | INFO     | __main__:analysis5_hypothesis_scorecard:884 -   [                  refuted] Superior downstream performance
+2026-02-25 17:30:41.216 | INFO     | __main__:main:944 - Analysis 5 completed in 0.0s
+2026-02-25 17:30:41.217 | INFO     | __main__:main:947 - Total time: 0.4s
+2026-02-25 17:30:41.231 | INFO     | __main__:main:1034 - Output written to /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/eval_id3_it4__opus/eval_out.json
+2026-02-25 17:30:41.233 | INFO     | __main__:main:1036 - Output file size: 0.02 MB
+2026-02-25 17:30:53.804 | INFO     | __main__:<module>:72 - Hardware: 4 CPUs, 32.0GB RAM (container)
+2026-02-25 17:30:53.808 | INFO     | __main__:<module>:78 - RAM budget: 20.8GB, CPU time limit: 3500s
+2026-02-25 17:30:53.810 | INFO     | __main__:main:897 - Loading 525-pair expressiveness data from dep1...
+2026-02-25 17:30:53.863 | INFO     | __main__:main:903 - Loaded 525 examples from dep1
+2026-02-25 17:30:54.064 | INFO     | __main__:main:922 - Parsed 525 valid pairs
+2026-02-25 17:30:54.065 | INFO     | __main__:analysis1_pair_overlap:258 - === ANALYSIS 1: Pair-Level Overlap RWPE vs nRWPE-diag ===
+2026-02-25 17:30:54.107 | INFO     | __main__:analysis1_pair_overlap:285 -   Analysis 1 progress: 50/525
+2026-02-25 17:30:54.225 | INFO     | __main__:analysis1_pair_overlap:285 -   Analysis 1 progress: 100/525
+2026-02-25 17:30:54.299 | INFO     | __main__:analysis1_pair_overlap:285 -   Analysis 1 progress: 150/525
+2026-02-25 17:30:54.355 | INFO     | __main__:analysis1_pair_overlap:285 -   Analysis 1 progress: 200/525
+2026-02-25 17:30:54.417 | INFO     | __main__:analysis1_pair_overlap:285 -   Analysis 1 progress: 250/525
+2026-02-25 17:30:54.514 | INFO     | __main__:analysis1_pair_overlap:285 -   Analysis 1 progress: 300/525
+2026-02-25 17:30:54.563 | INFO     | __main__:analysis1_pair_overlap:285 -   Analysis 1 progress: 350/525
+2026-02-25 17:30:54.690 | INFO     | __main__:analysis1_pair_overlap:285 -   Analysis 1 progress: 400/525
+2026-02-25 17:30:54.973 | INFO     | __main__:analysis1_pair_overlap:285 -   Analysis 1 progress: 450/525
+2026-02-25 17:30:55.549 | INFO     | __main__:analysis1_pair_overlap:285 -   Analysis 1 progress: 500/525
+2026-02-25 17:30:55.640 | INFO     | __main__:analysis1_pair_overlap:285 -   Analysis 1 progress: 525/525
+2026-02-25 17:30:55.643 | INFO     | __main__:analysis1_pair_overlap:319 -   Overlap: both=357, rwpe_only=4, nrwpe_only=73, neither=91
+2026-02-25 17:30:55.644 | INFO     | __main__:analysis1_pair_overlap:320 -   RWPE total: 361, nRWPE-diag total: 430
+2026-02-25 17:30:55.646 | INFO     | __main__:analysis1_pair_overlap:321 -   Jaccard similarity: 0.8226
+2026-02-25 17:30:55.648 | INFO     | __main__:main:928 - Analysis 1 completed in 1.6s
+2026-02-25 17:30:55.650 | INFO     | __main__:analysis2_spectral_invariance:340 - === ANALYSIS 2: Spectral Invariance Test on Cospectral Pairs ===
+2026-02-25 17:30:55.653 | INFO     | __main__:analysis2_spectral_invariance:346 -   Found 64 cospectral pairs
+2026-02-25 17:30:55.703 | INFO     | __main__:analysis2_spectral_invariance:446 -   Analysis 2 progress: 10/64
+2026-02-25 17:30:55.762 | INFO     | __main__:analysis2_spectral_invariance:446 -   Analysis 2 progress: 20/64
+2026-02-25 17:30:55.817 | INFO     | __main__:analysis2_spectral_invariance:446 -   Analysis 2 progress: 30/64
+2026-02-25 17:30:55.872 | INFO     | __main__:analysis2_spectral_invariance:446 -   Analysis 2 progress: 40/64
+2026-02-25 17:30:55.928 | INFO     | __main__:analysis2_spectral_invariance:446 -   Analysis 2 progress: 50/64
+2026-02-25 17:30:55.982 | INFO     | __main__:analysis2_spectral_invariance:446 -   Analysis 2 progress: 60/64
+2026-02-25 17:30:56.005 | INFO     | __main__:analysis2_spectral_invariance:454 -   Spectral invariance results:
+2026-02-25 17:30:56.009 | INFO     | __main__:analysis2_spectral_invariance:455 -     tanh diag matches on cospectral: 0/64
+2026-02-25 17:30:56.010 | INFO     | __main__:analysis2_spectral_invariance:456 -     softplus diag matches: 0/64
+2026-02-25 17:30:56.012 | INFO     | __main__:analysis2_spectral_invariance:457 -     relu diag matches: 0/64
+2026-02-25 17:30:56.013 | INFO     | __main__:main:932 - Analysis 2 completed in 0.4s
+2026-02-25 17:30:56.014 | INFO     | __main__:analysis3_information_hierarchy:559 - === ANALYSIS 3: Information Content Hierarchy ===
+2026-02-25 17:30:56.613 | INFO     | __main__:analysis3_information_hierarchy:598 -   Analysis 3 progress: 50/525
+2026-02-25 17:32:04.609 | INFO     | __main__:analysis3_information_hierarchy:598 -   Analysis 3 progress: 100/525
+2026-02-25 17:32:31.568 | INFO     | __main__:analysis3_information_hierarchy:598 -   Analysis 3 progress: 150/525
+2026-02-25 17:32:32.995 | INFO     | __main__:analysis3_information_hierarchy:598 -   Analysis 3 progress: 200/525
+2026-02-25 17:32:46.784 | INFO     | __main__:analysis3_information_hierarchy:598 -   Analysis 3 progress: 250/525
+2026-02-25 17:33:37.666 | INFO     | __main__:analysis3_information_hierarchy:598 -   Analysis 3 progress: 300/525
+2026-02-25 17:33:39.013 | INFO     | __main__:analysis3_information_hierarchy:598 -   Analysis 3 progress: 350/525
+2026-02-25 17:34:42.366 | INFO     | __main__:analysis3_information_hierarchy:598 -   Analysis 3 progress: 400/525
+2026-02-25 17:38:21.379 | INFO     | __main__:analysis3_information_hierarchy:598 -   Analysis 3 progress: 450/525
+2026-02-25 17:44:53.617 | INFO     | __main__:analysis3_information_hierarchy:598 -   Analysis 3 progress: 500/525
+2026-02-25 17:45:55.617 | INFO     | __main__:analysis3_information_hierarchy:598 -   Analysis 3 progress: 525/525
+2026-02-25 17:45:55.651 | INFO     | __main__:analysis3_information_hierarchy:620 -   degree_only: 64/525
+2026-02-25 17:45:55.654 | INFO     | __main__:analysis3_information_hierarchy:620 -   RWPE: 361/525
+2026-02-25 17:45:55.655 | INFO     | __main__:analysis3_information_hierarchy:620 -   nRWPE_diag: 430/525
+2026-02-25 17:45:55.657 | INFO     | __main__:analysis3_information_hierarchy:620 -   nRWPE_offdiag: 452/525
+2026-02-25 17:45:55.659 | INFO     | __main__:analysis3_information_hierarchy:620 -   nRWPE_Gram: 431/525
+2026-02-25 17:45:55.668 | INFO     | __main__:analysis3_information_hierarchy:620 -   full_trajectory: 525/525
+2026-02-25 17:45:55.672 | INFO     | __main__:main:936 - Analysis 3 completed in 899.7s
+2026-02-25 17:45:55.674 | INFO     | __main__:analysis4_zinc_attribution:675 - === ANALYSIS 4: Downstream Performance Attribution (ZINC) ===
+2026-02-25 17:45:55.846 | INFO     | __main__:analysis4_zinc_attribution:695 -   Loaded 4 results from exp_id2_it2
+2026-02-25 17:45:55.862 | INFO     | __main__:analysis4_zinc_attribution:721 -   Total ZINC entries: 9
+2026-02-25 17:45:55.873 | INFO     | __main__:analysis4_zinc_attribution:773 -   Quality-MAE correlations computed for 2 metrics
+2026-02-25 17:45:55.874 | INFO     | __main__:analysis4_zinc_attribution:779 -   GIN_(no_PE)                   : MAE=0.2849 ± 0.0000
+2026-02-25 17:45:55.877 | INFO     | __main__:analysis4_zinc_attribution:779 -   GIN_plus_RWPE                 : MAE=0.1845 ± 0.0000
+2026-02-25 17:45:55.880 | INFO     | __main__:analysis4_zinc_attribution:779 -   GIN_plus_LapPE                : MAE=0.2394 ± 0.0000
+2026-02-25 17:45:55.883 | INFO     | __main__:analysis4_zinc_attribution:779 -   GIN_plus_KW-PE                : MAE=0.3354 ± 0.0000
+2026-02-25 17:45:55.885 | INFO     | __main__:analysis4_zinc_attribution:779 -   iter3_rwpe                    : MAE=0.1707 ± 0.0020
+2026-02-25 17:45:55.888 | INFO     | __main__:analysis4_zinc_attribution:779 -   iter3_nrwpe_diag              : MAE=0.1825 ± 0.0030
+2026-02-25 17:45:55.889 | INFO     | __main__:analysis4_zinc_attribution:779 -   iter3_nrwpe_multi             : MAE=0.3198 ± 0.1013
+2026-02-25 17:45:55.892 | INFO     | __main__:analysis4_zinc_attribution:779 -   iter3_nrwpe_combined          : MAE=0.1954 ± 0.0346
+2026-02-25 17:45:55.894 | INFO     | __main__:analysis4_zinc_attribution:779 -   iter3_no_pe                   : MAE=0.2604 ± 0.0031
+2026-02-25 17:45:55.902 | INFO     | __main__:main:940 - Analysis 4 completed in 0.2s
+2026-02-25 17:45:55.910 | INFO     | __main__:analysis5_hypothesis_scorecard:793 - === ANALYSIS 5: Hypothesis Scorecard ===
+2026-02-25 17:45:55.913 | INFO     | __main__:analysis5_hypothesis_scorecard:884 -   [                supported] KW-PEs break spectral invariance
+2026-02-25 17:45:55.915 | INFO     | __main__:analysis5_hypothesis_scorecard:884 -   [      partially_supported] Sign-canonical PEs without auxiliary networks
+2026-02-25 17:45:55.918 | INFO     | __main__:analysis5_hypothesis_scorecard:884 -   [                supported] Distinguish cospectral graphs
+2026-02-25 17:45:55.921 | INFO     | __main__:analysis5_hypothesis_scorecard:884 -   [                  refuted] Avoid eigendecomposition costs
+2026-02-25 17:45:55.923 | INFO     | __main__:analysis5_hypothesis_scorecard:884 -   [                  refuted] Superior downstream performance
+2026-02-25 17:45:55.925 | INFO     | __main__:main:944 - Analysis 5 completed in 0.0s
+2026-02-25 17:45:55.928 | INFO     | __main__:main:947 - Total time: 902.1s
+2026-02-25 17:45:55.987 | INFO     | __main__:main:1034 - Output written to /workspace/runs/run__20260225_141527/3_invention_loop/iter_4/gen_art/eval_id3_it4__opus/eval_out.json
+2026-02-25 17:45:55.990 | INFO     | __main__:main:1036 - Output file size: 0.32 MB
